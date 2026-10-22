@@ -82,9 +82,6 @@
           <a class="btn btn-ligne" href="#budget">Simuler mon budget</a>
         </div>
         <p class="petit source">Sources : Parcoursup session ${psup.session} (taux d'accès, places, admis), carte des loyers 2025 (ANIL), InserSup (emploi). Le taux d'accès change chaque année : il indique l'an dernier, pas tes chances.</p>`;
-      A.gagner(15, "comparer-precis", "Formations comparées");
-      if (rs.length > 1) A.activite("comparer", "x");
-      A.tamponner("comparateur");
     }).catch(() => { A.$("#cmp-zone").innerHTML = A.messageErreurDonnees; });
 
     el.onclick = ev => {

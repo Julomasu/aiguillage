@@ -114,7 +114,7 @@ Rules:
     if (ecoles.length) lignes.push("ÉCOLES CITÉES (annuaire du site, à vérifier sur le site de l'école) :\n" + ecoles.map(o => `- #ecole-${o.id} ${resumeEcole(o)}`).join("\n"));
     const villeCitee = await villeDansQuestion(question);
     if (villeCitee) lignes.push(villeCitee);
-    lignes.push("PAGES UTILES DU SITE : [le test](#test), [le plan](#plan), [la carte des formations](#carte), [le simulateur de budget](#budget), [le décodeur du jargon](#decodeur), [le calendrier](#calendrier).");
+    lignes.push("PAGES UTILES DU SITE : [le test](#test), [l'arborescence](#plan), [la carte des formations](#carte), [le simulateur de budget](#budget), [le décodeur du jargon](#decodeur), [le calendrier](#calendrier).");
     return lignes.join("\n\n");
   }
 
@@ -342,8 +342,6 @@ Rules:
         }
       }
       conversation.push({ role: "assistant", content: texte });
-      A.gagner(10, "assistant", "Première question posée à l'assistant");
-      A.activite("assistant", String(conversation.length));
     } catch (e) {
       const code = e && e.code;
       const msg = code === "cancelled" || (e && e.name === "AbortError") ? "Réponse arrêtée."

@@ -1,9 +1,9 @@
-/* Noyau : état sauvegardé, petits utilitaires, progression (km & tampons), routeur. */
+/* Noyau : état sauvegardé, petits utilitaires, routeur. */
 (function () {
   const CLE = "aiguillage.v1";
 
   const etatInitial = () => ({
-    km: 0, gains: {}, badges: {}, lus: [], lignes: [], favs: [], profil: null,
+    lus: [], lignes: [], favs: [], profil: null,
     check: [], flips: [], vfBest: 0, compare: [], ville: null, budget: null, compareF: [],
     reglages: { theme: "system", taille: 1, calme: false, voix: 1 }
   });
@@ -44,8 +44,8 @@
 
   A.pastilleLigne = function (id, avecNom) {
     const l = A.ligneParId[id];
-    return `<span class="pastille" style="--c:${l.couleur};--ct:${l.texte}" title="Ligne ${l.num} · ${A.e(l.nom)}">` +
-      `<b>${l.num}</b>${avecNom === false ? "" : `<span>${A.e(l.court)}</span>`}</span>`;
+    return `<span class="pastille" style="--c:${l.couleur};--ct:${l.texte}" title="${A.e(l.nom)}">` +
+      `<b aria-hidden="true"></b>${avecNom === false ? "" : `<span>${A.e(l.court)}</span>`}</span>`;
   };
 
   A.tagAcces = function (niv) {
@@ -165,60 +165,11 @@
     setTimeout(() => t.remove(), 3700);
   };
 
-  /* ——— Progression : chaque action ne rapporte des km qu'une fois */
-  A.niveau = function () {
-    let n = A.niveaux[0], suivant = null;
-    for (let i = 0; i < A.niveaux.length; i++) {
-      if (A.etat.km >= A.niveaux[i].km) { n = A.niveaux[i]; suivant = A.niveaux[i + 1] || null; }
-    }
-    return { n, suivant };
-  };
-
-  A.gagner = function (km, cle, message) {
-    if (cle && A.etat.gains[cle]) return false;
-    if (cle) A.etat.gains[cle] = 1;
-    const avant = A.niveau().n;
-    A.etat.km += km;
-    A.sauver();
-    if (message !== false) A.toast(`+${km} km`, message || "Tu avances sur ton trajet", "🚆");
-    const apres = A.niveau().n;
-    if (apres !== avant) setTimeout(() => A.toast("Nouveau niveau !", apres.nom, "🏅"), 600);
-    A.majCompteur();
-    return true;
-  };
-
-  A.tamponner = function (id) {
-    if (A.etat.badges[id]) return;
-    const b = A.badges.find(x => x.id === id);
-    if (!b) return;
-    A.etat.badges[id] = Date.now();
-    A.sauver();
-    setTimeout(() => A.toast("Tampon débloqué : " + b.nom, b.desc, b.emoji), 400);
-    A.gagner(30, "badge-" + id, false);
-  };
-
-  A.verifierTampons = function () {
-    const s = A.etat;
-    if (s.profil) A.tamponner("profil");
-    if (s.lus.length >= 5) A.tamponner("curieux");
-    if (s.lus.length >= 15) A.tamponner("lecteur");
-    if (s.lignes.length >= 5) A.tamponner("cartographe");
-    if (s.flips.length >= 10) A.tamponner("decodeur");
-    if (s.vfBest >= 10) A.tamponner("mythbuster");
-    if (A.checklist.filter(c => s.check.includes(c.id)).length >= 5) A.tamponner("organise");
-    if (s.favs.length >= 3) A.tamponner("collection");
-  };
-
-  A.majCompteur = function () {
-    A.$$("[data-km]").forEach(el => { el.textContent = A.etat.km; });
-  };
-
   A.basculerFavori = function (id) {
     const i = A.etat.favs.indexOf(id);
     if (i >= 0) A.etat.favs.splice(i, 1);
-    else { A.etat.favs.push(id); A.gagner(5, "fav-" + id, "Ajouté à ton carnet"); }
+    else A.etat.favs.push(id);
     A.sauver();
-    A.verifierTampons();
     return i < 0;
   };
 
@@ -269,7 +220,7 @@
   /* Les cinq pôles du site : chaque page appartient à un pôle, et un pôle affiche sa sous-navigation.
      pages : [identifiant de page, icône, libellé]. Un identifiant de page = son adresse (#budget). */
   A.HUBS = [
-    { id: "decouvrir", nom: "Me découvrir", emoji: "🎯", c: "#FFC629", desc: "Un test pour trouver les métiers et les pistes qui te ressemblent, et le plan pour voir où mène chaque voie.", pages: [["test", "🎯", "Le test"], ["resultat", "📊", "Mes résultats"], ["plan", "🚇", "Le plan"]] },
+    { id: "decouvrir", nom: "Me découvrir", emoji: "🎯", c: "#FFC629", desc: "Un test pour trouver les métiers et les pistes qui te ressemblent, et l'arborescence pour voir où mène chaque domaine.", pages: [["test", "🎯", "Le test"], ["resultat", "📊", "Mes résultats"], ["plan", "🌳", "L'arborescence"]] },
     { id: "metiers", nom: "Métiers", emoji: "💼", c: "#E4572E", desc: "Des fiches complètes : journée type, salaire, qui recrute, comment y entrer, ce qu'il faut savoir.", pages: [["metiers", "💼", "Tous les métiers"]] },
     { id: "formations", nom: "Formations & écoles", emoji: "🏫", c: "#2F5BEA", desc: "BTS, BUT, prépa, fac, écoles : compare, trouve près de chez toi, et change de voie avec les passerelles.", pages: [["formations", "⚖️", "BTS, BUT, prépa, fac…"], ["ecoles", "🏫", "Annuaire des écoles"], ["carte", "🗺️", "Carte"], ["comparer", "🔀", "Comparer 2 formations"], ["passerelles", "🌉", "Passerelles & tests"]] },
     { id: "demarches", nom: "Démarches & argent", emoji: "🧾", c: "#1B998B", desc: "Ta situation, ton budget, les aides, le calendrier Parcoursup et les portes ouvertes.", pages: [["parcours", "🧭", "Ta situation"], ["budget", "💶", "Budget"], ["aides", "🧾", "Aides"], ["calendrier", "📅", "Calendrier"], ["jpo", "🚪", "Portes ouvertes"]] },
@@ -354,7 +305,6 @@
       u.onerror = () => { lectureEnCours = false; majBoutonAudio(); };
       synthese.speak(u);
     });
-    A.gagner(5, "audio", "Lecture à voix haute activée");
   };
 
   function majBoutonAudio() {
@@ -401,11 +351,6 @@
 
   A.demarrer = function () {
     A.appliquerReglages();
-    if (!A.etat.badges.depart) {
-      A.etat.badges.depart = Date.now();
-      A.sauver();
-    }
-    A.majCompteur();
 
     document.addEventListener("click", ev => {
       const plus = ev.target.closest("[data-ouvre-plus]");

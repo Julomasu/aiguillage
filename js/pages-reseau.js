@@ -46,10 +46,7 @@
   function cocher(id) {
     const n = A.ajouterUnique(A.etat.check, id);
     A.sauver();
-    A.gagner(5, "reseau-" + id, "Étape réseau validée");
-    A.activite("reseau", id);
     const faites = [...ETAPES, ...MISSIONS].filter(x => A.etat.check.includes(x.id)).length;
-    if (faites >= 6) A.tamponner("reseau");
     return n;
   }
 
@@ -160,7 +157,7 @@
     el.onclick = ev => {
       const b = ev.target.closest("button, #li-lien");
       if (!b) return;
-      if (b.id === "li-lien") { A.gagner(10, "linkedin-recherche", "Exploration LinkedIn lancée"); return; }
+      if (b.id === "li-lien") { return; }
       if (b.dataset.coche) {
         const id = b.dataset.coche;
         if (A.etat.check.includes(id)) return;
@@ -173,7 +170,7 @@
         A.pages.reseau(el);
       } else if ("copier" in b.dataset) {
         const texte = message();
-        const ok = () => { A.toast("Message copié", "Colle-le dans LinkedIn", "📋"); A.gagner(10, "message-copie", false); };
+        const ok = () => { A.toast("Message copié", "Colle-le dans LinkedIn", "📋"); };
         const repli = () => {
           const z = A.$("#gen-message"), r = document.createRange();
           r.selectNodeContents(z); const s = getSelection(); s.removeAllRanges(); s.addRange(r);

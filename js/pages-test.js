@@ -42,15 +42,10 @@
     };
   }
 
-  function lignePro() {
+  function barreProgres() {
     const total = A.questions.length;
-    const courant = t.etape - 1;
-    let gares = "";
-    for (let i = 0; i < total; i++) {
-      const etat = i < courant ? "faite" : i === courant ? "ici" : "";
-      gares += `<span class="tl-gare ${etat}"></span>`;
-    }
-    return `<div class="tl" aria-hidden="true"><span class="tl-rail" style="--p:${Math.max(0, courant) / (total - 1)}"></span>${gares}</div>`;
+    const fait = Math.max(0, t.etape - 1);
+    return `<div class="tl-fil" aria-hidden="true"><span style="--p:${fait / total}"></span></div>`;
   }
 
   function dessiner(el) {
@@ -88,7 +83,7 @@
       el.innerHTML = `
         <section class="test">
           <p class="surtitre">Le test · étape 2 sur 3 · situation ${i + 1}/${nbQ}</p>
-          ${lignePro()}
+          ${barreProgres()}
           <div class="carte-q" data-index="${i}">
             <span class="cq-emoji" aria-hidden="true">${q.e}</span>
             <h1 class="cq-titre"><span class="petit">Ça te plairait de…</span>${A.e(q.t)} ?</h1>
@@ -117,7 +112,7 @@
           </fieldset>
           <div class="actions">
             <button type="button" class="btn-texte" data-precedent>← Retour</button>
-            <button type="button" class="btn btn-signal" data-finir ${t.duree && t.alternance ? "" : "disabled"}>Voir mon trajet</button>
+            <button type="button" class="btn btn-signal" data-finir ${t.duree && t.alternance ? "" : "disabled"}>Voir mes résultats</button>
           </div>
         </section>`;
     }
@@ -182,9 +177,6 @@
     };
     A.ajouterUnique(A.etat.check, "c2");
     A.sauver();
-    A.gagner(80, "test", "Test terminé, ton profil est prêt");
-    A.activite("test", "x");
-    A.verifierTampons();
     t = null;
     A.aller("resultat");
   }
@@ -239,7 +231,7 @@
           <p class="chapo">${A.e(A.profils[a].phrase)} ${A.e(A.profils[b].phrase)}</p>
           <p class="petit">Point de départ : ${A.e(bacNom)}.</p>
           <div class="actions">
-            <a class="btn btn-signal" href="#plan">Voir sur le plan</a>
+            <a class="btn btn-signal" href="#plan">Voir où mènent les domaines</a>
             <a class="btn btn-ligne" href="#test">Refaire le test</a>
           </div>
         </div>

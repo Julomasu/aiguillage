@@ -60,10 +60,9 @@ Le site doit être servi en HTTP (pas en ouvrant `index.html` à la main), car i
 | Assistant | `#assistant` | Chat qui répond à partir des fiches, du profil et des données Parcoursup : mode guidé gratuit, ou Claude quand il est disponible |
 | Comparer | `#comparer` | Deux formations précises côte à côte : taux d'accès, places, profil des admis, coût, emploi à 18 mois |
 | Portes ouvertes | `#jpo` | Les établissements de sa ville (Parcoursup) + planning personnel avec export agenda `.ics` (rappels la veille et le jour même). Les dates ne sont pas des données ouvertes : chaque personne saisit les siennes |
-| Défis de la semaine | `#defis` | 3 défis tirés au sort chaque semaine (graine = semaine ISO, donc les mêmes pour tout le monde), série de semaines |
 | Espace prof / Psy-EN | `#classe` | Code de classe, lien à envoyer aux élèves, profils anonymes (code court avec somme de contrôle, sans serveur) et synthèse de la classe |
 | Témoignages | `#temoignages` | Formulaire (texte ou lien vidéo) → ticket GitHub → relecture → publication dans `data/temoignages.json` |
-| Décodeur, Vrai/faux, Calendrier, Aides, Carnet | `#decodeur`… | Jargon, idées reçues, étapes de terminale, aides, progression (km, tampons) |
+| Décodeur, Vrai/faux, Calendrier, Aides, Carnet | `#decodeur`… | Jargon, idées reçues, étapes de terminale, aides, favoris |
 
 Emploi à 18 mois : `data/insertion.json` reprend les lignes nationales d'**InserSup** (MESR). Les BTS et BUT n'y figurent pas : les fiches l'indiquent.
 
@@ -131,7 +130,7 @@ css/style.css            styles (tokens en haut du fichier)
 js/data/*.js             contenus rédigés : lignes, formations, métiers, test, lexique, chiffres officiels
 js/core.js               état local, progression, chargement de data/, routeur
 js/pages-*.js            une fonction de rendu par page (A.pages.<nom>)
-js/defis.js, config.js   défis hebdomadaires ; réglages du dépôt (témoignages)
+js/config.js            réglages du dépôt (témoignages)
 js/i18n.js, js/i18n/     version anglaise
 data/*.json              données ouvertes converties (générées)
 serveur/                 serveur Node (site + API de l'assistant)
@@ -148,7 +147,7 @@ Les salaires et certains niveaux d'accès sont des estimations rédigées : à f
 
 ## Organisation du site
 
-Cinq pôles, chacun avec sa sous-navigation (définis dans `A.HUBS`, `js/core.js`) : **Me découvrir** (test, résultats, plan), **Métiers**, **Formations & écoles** (familles de formations, annuaire, carte, comparer, passerelles), **Démarches & argent** (ta situation, budget, aides, calendrier, portes ouvertes), **Ressources** (réseau, témoignages, décodeur, vrai ou faux). Le menu « Plus » regroupe les ressources et « Mon espace » (carnet, défis, espace enseignant). Les adresses des pages ne changent pas (`#budget`, `#metier-avocat`…). Les aides ont une source unique (`A.aides`, page « Aides »), dont « Ta situation » extrait celles qui te concernent.
+Cinq pôles, chacun avec sa sous-navigation (définis dans `A.HUBS`, `js/core.js`) : **Me découvrir** (test, résultats, arborescence), **Métiers**, **Formations & écoles** (familles de formations, annuaire, carte, comparer, passerelles), **Démarches & argent** (ta situation, budget, aides, calendrier, portes ouvertes), **Ressources** (réseau, témoignages, décodeur, vrai ou faux). Le menu « Plus » regroupe les ressources et « Mon espace » (favoris, espace enseignant). Les adresses des pages ne changent pas (`#budget`, `#metier-avocat`…). Les aides ont une source unique (`A.aides`, page « Aides »), dont « Ta situation » extrait celles qui te concernent.
 
 ## Fiches métiers détaillées, passerelles, « ta situation »
 

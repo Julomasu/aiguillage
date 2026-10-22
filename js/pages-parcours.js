@@ -163,7 +163,6 @@
   function avancer(el) {
     const r = rep();
     noeud = prochain(r);
-    if (!noeud) A.gagner(40, "parcours", T("Ton parcours est tracé", "Your path is mapped out"));
     dessiner(el);
     const h = A.$("h1", el); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
   }

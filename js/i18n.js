@@ -58,12 +58,11 @@
     const D = A.EN_DATA || {};
     const parId = (liste, tr) => liste.forEach(o => { const t = tr[o.id]; if (t) Object.assign(o, t); });
     parId(A.lignes, D.lignes || {}); parId(A.specialites, D.specialites || {}); parId(A.series, D.series || {});
-    parId(A.bacs, D.bacs || {}); parId(A.types, D.types || {}); parId(A.badges, D.badges || {});
+    parId(A.bacs, D.bacs || {}); parId(A.types, D.types || {});
     A.formations.forEach(f => { const t = (D.formations || {})[f.id] || (D.formations_plus || {})[f.id]; if (t) Object.assign(f, t); });
     A.metiers.forEach(m => { const t = (D.metiers || {})[m.id]; if (t) Object.assign(m, t); });
     A.acces.forEach((a, i) => { if (D.acces && D.acces[i]) a.label = D.acces[i]; });
     Object.keys(A.profils).forEach(k => { if (D.profils && D.profils[k]) Object.assign(A.profils[k], D.profils[k]); });
-    A.niveaux.forEach((n, i) => { if (D.niveaux && D.niveaux[i]) n.nom = D.niveaux[i]; });
     const parIndex = (liste, tr) => liste.forEach((o, i) => { if (tr && tr[i]) Object.assign(o, tr[i]); });
     parIndex(A.questions, D.questions); parIndex(A.reponses, D.reponses); parIndex(A.lexique, D.lexique); parIndex(A.vraiFaux, D.vraiFaux);
     parId(A.chiffres.bourses, D.bourses || {}); parIndex(A.calendrier, D.calendrier); parIndex(A.checklist, D.checklist); parIndex(A.aides, D.aides); parIndex(A.couts, D.couts);

@@ -1,4 +1,4 @@
-/* Décodeur, vrai ou faux, calendrier, aides, carnet. */
+/* Décodeur, vrai ou faux, calendrier, aides, favoris. */
 (function () {
   /* ——— Décodeur de jargon */
   let rechercheMot = "";
@@ -37,9 +37,6 @@
         const n = A.ajouterUnique(A.etat.flips, c.dataset.mot);
         A.sauver();
         A.$("#nb-flips").textContent = n;
-        A.gagner(2, "mot-" + c.dataset.mot, false);
-        A.activite("mot", c.dataset.mot);
-        A.verifierTampons();
       }
     };
     maj();
@@ -76,9 +73,6 @@
     vf.fini = true;
     A.etat.vfBest = Math.max(A.etat.vfBest, vf.score);
     A.sauver();
-    A.gagner(40, "vraifaux", "Quiz vrai ou faux terminé");
-    A.activite("quiz", "x");
-    A.verifierTampons();
   }
 
   function dessinerVF(el) {
@@ -139,13 +133,12 @@
       const cb = ev.target.closest("[data-check]");
       if (!cb) return;
       const id = cb.dataset.check, liste = A.etat.check, i = liste.indexOf(id);
-      if (cb.checked && i < 0) { liste.push(id); A.gagner(5, "check-" + id, "Étape cochée"); }
+      if (cb.checked && i < 0) { liste.push(id); }
       if (!cb.checked && i >= 0) liste.splice(i, 1);
       A.sauver();
       const n = A.checklist.filter(c => liste.includes(c.id)).length;
       A.$("#nb-check").textContent = n;
       A.$("#jauge-check").style.width = (n / A.checklist.length * 100) + "%";
-      A.verifierTampons();
     };
     el.onclick = null;
   };
@@ -181,33 +174,18 @@
         <p>Fais ta demande de bourse (DSE) au printemps de ta terminale, même si tu penses ne pas y avoir droit. Les plafonds sont plus hauts qu'on ne croit, et sans demande, aucune chance de l'obtenir.</p>
       </aside>`;
     el.onclick = null;
-    A.gagner(10, "aides", "Tu connais tes droits");
-    A.tamponner("budget");
   };
 
-  /* ——— Carnet de voyage */
+  /* ——— Mes favoris : le profil et les métiers gardés (stockés sur l'appareil) */
   let confirmerReset = false;
   A.pages.carnet = function (el) {
-    const s = A.etat, { n, suivant } = A.niveau(), p = s.profil;
+    const s = A.etat, p = s.profil;
     const favs = s.favs.map(id => A.metierParId[id]).filter(Boolean);
     el.innerHTML = `
       <section class="tete-page">
-        <p class="surtitre">Ton carnet de voyage</p>
-        <h1>${A.e(n.nom)}</h1>
-        <p class="carnet-km"><span data-km>${s.km}</span> km parcourus</p>
-        ${suivant ? `<div class="jauge"><span style="width:${Math.round((s.km - n.km) / (suivant.km - n.km) * 100)}%"></span></div><p class="petit">Prochain niveau : ${A.e(suivant.nom)} à ${suivant.km} km</p>` : ""}
-      </section>
-
-      <section class="bloc">
-        <h2>Tes tampons</h2>
-        <div class="tampons">${A.badges.map(b => {
-          const t = s.badges[b.id];
-          return `<div class="tampon ${t ? "obtenu" : ""}">
-            <span class="tp-cercle" aria-hidden="true">${t ? b.emoji : "?"}</span>
-            <strong>${A.e(b.nom)}</strong>
-            <span class="petit">${t ? "Obtenu le " + new Date(t).toLocaleDateString(A.locale) : A.e(b.desc)}</span>
-          </div>`;
-        }).join("")}</div>
+        <p class="surtitre">Sur cet appareil</p>
+        <h1>Mes favoris</h1>
+        <p class="chapo">Ton profil et les métiers que tu as gardés. Rien n'est envoyé : tout reste dans ce navigateur.</p>
       </section>
 
       <section class="bloc">
@@ -217,28 +195,20 @@
 
       <section class="bloc">
         <h2>Tes métiers favoris</h2>
-        ${favs.length ? `<div class="grille-metiers">${favs.map(m => A.carteMetier(m, A.compatibilite(m, p))).join("")}</div>` : `<p>Aucun favori pour l'instant. Sur une fiche métier, appuie sur « Ajouter à mon carnet ».</p>`}
-      </section>
-
-      <section class="bloc stats-carnet">
-        <div><strong>${s.lus.length}</strong><span>fiches lues</span></div>
-        <div><strong>${s.lignes.length}/${A.lignes.length}</strong><span>lignes explorées</span></div>
-        <div><strong>${s.flips.length}</strong><span>mots décodés</span></div>
-        <div><strong>${A.checklist.filter(c => s.check.includes(c.id)).length}/${A.checklist.length}</strong><span>étapes cochées</span></div>
+        ${favs.length ? `<div class="grille-metiers">${favs.map(m => A.carteMetier(m, A.compatibilite(m, p))).join("")}</div>` : `<p>Aucun favori pour l'instant. Sur une fiche métier, appuie sur « Ajouter à mes favoris ».</p>`}
       </section>
 
       <section class="bloc zone-reset">
-        <p class="petit">Ton carnet est enregistré seulement sur cet appareil, dans ce navigateur. Aucune donnée n'est envoyée.</p>
-        ${confirmerReset ? `<p><strong>Tout effacer ? Ton profil, tes km et tes tampons seront perdus.</strong></p>
+        ${confirmerReset ? `<p><strong>Tout effacer ? Ton profil, tes favoris et tes réponses seront perdus.</strong></p>
           <div class="actions"><button type="button" class="btn btn-danger" data-reset-ok>Oui, tout effacer</button><button type="button" class="btn btn-ligne" data-reset-non>Annuler</button></div>`
-          : `<button type="button" class="btn-texte" data-reset>Effacer mon carnet</button>`}
+          : `<button type="button" class="btn-texte" data-reset>Effacer mes données</button>`}
       </section>`;
     el.onclick = ev => {
       const b = ev.target.closest("button");
       if (!b) return;
       if ("reset" in b.dataset) { confirmerReset = true; A.pages.carnet(el); A.$("[data-reset-non]").focus(); }
       if ("resetNon" in b.dataset) { confirmerReset = false; A.pages.carnet(el); }
-      if ("resetOk" in b.dataset) { confirmerReset = false; A.reinitialiser(); A.majCompteur(); A.toast("Carnet effacé", "Nouveau départ !", "🧹"); A.pages.carnet(el); }
+      if ("resetOk" in b.dataset) { confirmerReset = false; A.reinitialiser(); A.toast("Données effacées", "Nouveau départ", "🧹"); A.pages.carnet(el); }
     };
   };
 })();

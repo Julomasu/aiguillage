@@ -152,9 +152,7 @@
       if (!nom || !date) { A.toast("Il manque une information", "Indique l'établissement et la date", "📅"); return; }
       evts().push({ id: "jpo" + Date.now().toString(36), nom, type: A.$("#jpo-type").value, date, heure: A.$("#jpo-heure").value || "10:00", lieu: A.$("#jpo-lieu").value.trim() });
       A.sauver();
-      A.gagner(10, "jpo-ajout", "Porte ouverte ajoutée à ton planning");
-      A.activite("jpo", "x");
-      A.ajouterUnique(A.etat.check, "c3"); A.sauver(); A.verifierTampons();
+      A.ajouterUnique(A.etat.check, "c3"); A.sauver();
       A.pages.jpo(el);
     });
 

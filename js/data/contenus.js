@@ -152,31 +152,6 @@ A.couts = [
   { f: "En apprentissage", c: "Formation gratuite et tu es payé·e (seule la CVEC de 105 € est due)", niv: 0 }
 ];
 
-A.badges = [
-  { id: "depart",     nom: "Premier départ",   emoji: "🎫", desc: "Ouvrir Aiguillage pour la première fois" },
-  { id: "profil",     nom: "Profil validé",    emoji: "🧭", desc: "Terminer le test d'orientation" },
-  { id: "curieux",    nom: "Curieux·se",       emoji: "👀", desc: "Lire 5 fiches métiers" },
-  { id: "lecteur",    nom: "Grand·e lecteur·rice", emoji: "📖", desc: "Lire 15 fiches métiers" },
-  { id: "cartographe",nom: "Cartographe",      emoji: "🗺️", desc: "Explorer 5 lignes du plan" },
-  { id: "decodeur",   nom: "Décodeur·se",      emoji: "🔓", desc: "Retourner 10 cartes du décodeur" },
-  { id: "mythbuster", nom: "Briseur·se de mythes", emoji: "💥", desc: "Faire 10/12 ou plus au vrai ou faux" },
-  { id: "organise",   nom: "Organisé·e",       emoji: "✅", desc: "Cocher 5 étapes du calendrier" },
-  { id: "collection", nom: "Collectionneur·se",emoji: "⭐", desc: "Mettre 3 métiers en favoris" },
-  { id: "comparateur",nom: "Comparateur·rice", emoji: "⚖️", desc: "Comparer 2 types de formations" },
-  { id: "budget",     nom: "Budget malin",     emoji: "💶", desc: "Découvrir les aides financières" },
-  { id: "defi",       nom: "Défi relevé",      emoji: "🎯", desc: "Réussir un défi de la semaine" },
-  { id: "serie",      nom: "Régulier·ère",     emoji: "🔥", desc: "Relever des défis 3 semaines de suite" },
-  { id: "reseau",     nom: "Réseauteur·se",    emoji: "🔗", desc: "Valider 6 étapes de la page Réseau & LinkedIn" }
-];
-
-/* Niveaux selon les « km » parcourus (XP). */
-A.niveaux = [
-  { km: 0,   nom: "Voyageur·se débutant·e" },
-  { km: 100, nom: "Explorateur·rice" },
-  { km: 250, nom: "Aventurier·ère" },
-  { km: 500, nom: "Navigateur·rice" },
-  { km: 900, nom: "Grand·e cartographe" }
-];
 
 /* Chiffres officiels utilisés par le simulateur de budget */
 A.chiffres = {

@@ -210,7 +210,7 @@
             <h1>${A.e(m.nom)}</h1>
             <p class="chapo">${A.e(m.accroche)}</p>
           </div>
-          <button type="button" class="btn-fav" data-fav aria-pressed="${fav}">${fav ? "★ Dans mon carnet" : "☆ Ajouter à mon carnet"}</button>
+          <button type="button" class="btn-fav" data-fav aria-pressed="${fav}">${fav ? "★ Dans mes favoris" : "☆ Ajouter à mes favoris"}</button>
         </header>
 
         <div class="chiffres">
@@ -238,14 +238,7 @@
 
         <section class="bloc">
           <h2>Les études qui y mènent</h2>
-          <ol class="trajet">
-            <li class="tr-depart"><span class="tr-gare"></span><span>Ton bac${p ? "" : ""}</span></li>
-            ${m.formations.map(fid => {
-              const f = A.formationParId[fid];
-              return `<li><span class="tr-gare"></span><a href="#formation-${f.id}"><strong>${A.e(f.nom)}</strong><span>${A.e(A.dureeFormation(f))} · ${A.e(f.long)}</span></a>${p ? A.tagAcces(f.acces[p.bac]) : ""}</li>`;
-            }).join("")}
-            <li class="tr-terminus"><span class="tr-gare"></span><strong>${A.e(m.nom)}</strong></li>
-          </ol>
+          <div class="liste-formations">${m.formations.map(fid => A.ligneFormation(A.formationParId[fid], p && p.bac)).join("")}</div>
           <p class="petit">Ce sont les chemins les plus courants. Il en existe d'autres (reconversion, passerelles, alternance).</p>
         </section>
 
@@ -266,14 +259,11 @@
       if (!b) return;
       const ajoute = A.basculerFavori(m.id);
       b.setAttribute("aria-pressed", String(ajoute));
-      b.textContent = ajoute ? "★ Dans mon carnet" : "☆ Ajouter à mon carnet";
+      b.textContent = ajoute ? "★ Dans mes favoris" : "☆ Ajouter à mes favoris";
     };
 
     A.ajouterUnique(A.etat.lus, m.id);
     A.sauver();
-    A.gagner(10, "lu-" + m.id, "Fiche lue : " + m.nom);
-    A.activite("metier", m.id); A.activite("metier-" + m.ligne, m.id);
-    A.verifierTampons();
   };
 
   /* ——— Formations : types, comparateur, liste */
@@ -300,7 +290,7 @@
 
 
       <section class="bloc">
-        <h2>Toutes les formations du plan</h2>
+        <h2>Toutes les formations</h2>
         <label class="recherche"><span class="sr">Chercher une formation</span>
           <input id="q-formation" type="search" placeholder="Chercher : BUT, infirmier, prépa…" value="${A.e(rechercheFormation)}" autocomplete="off">
         </label>
@@ -356,7 +346,6 @@
       A.sauver();
       A.$$("[data-cmp]").forEach(x => x.setAttribute("aria-pressed", String(c.includes(x.dataset.cmp))));
       majComparateur();
-      if (c.length >= 2) { A.gagner(15, "comparer", "Formations comparées"); A.tamponner("comparateur"); }
     };
     A.insertion().then(ins => { A.insRecords = ins; majComparateur(); }).catch(() => {});
     majComparateur();
@@ -401,7 +390,7 @@
         <aside class="encart encart-savais"><strong>Bon à savoir</strong><p>${A.e(t.bonASavoir)}</p></aside>
         <section class="bloc" id="psup-type" hidden></section>
         <section class="bloc" id="ins-type" hidden></section>
-        ${liste.length ? `<section class="bloc"><h2>Exemples sur le plan</h2><div class="liste-formations">${liste.map(f => A.ligneFormation(f, p && p.bac)).join("")}</div></section>` : ""}
+        ${liste.length ? `<section class="bloc"><h2>Exemples de formations</h2><div class="liste-formations">${liste.map(f => A.ligneFormation(f, p && p.bac)).join("")}</div></section>` : ""}
       </article>`;
   };
 
@@ -468,8 +457,6 @@
         ${metiers.length ? `<section class="bloc"><h2>Ça mène à</h2><div class="grille-metiers">${metiers.map(m => A.carteMetier(m, A.compatibilite(m, p))).join("")}</div></section>` : ""}
         <p class="petit source">Vérifie toujours la fiche officielle : <a href="https://www.parcoursup.gouv.fr" target="_blank" rel="noopener">Parcoursup</a> (taux d'accès, attendus) et <a href="https://www.onisep.fr/recherche?text=${encodeURIComponent(f.long)}" target="_blank" rel="noopener">Onisep</a>.</p>
       </article>`;
-    A.gagner(5, "formation-" + f.id, false);
-    A.activite("formation", f.id);
     if (f.psup) statsFormation(f);
     if (f.insertion) A.insertion().then(ins => {
       const z = A.$("#ins-formation"), r = A.recordInsertion(f.insertion, ins);

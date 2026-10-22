@@ -1,44 +1,28 @@
-/* Accueil : le plan du réseau en miniature + les portes d'entrée. */
+/* Accueil : une phrase pour comprendre le site, trois étapes, puis les cinq grandes parties. */
 (function () {
-  /* Petit plan radial : le bac au centre, une ligne par domaine. */
-  A.miniPlan = function () {
-    const cx = 200, cy = 200, n = A.lignes.length;
-    let traits = "", gares = "";
-    A.lignes.forEach((l, i) => {
-      const ang = (-90 + i * 360 / n) * Math.PI / 180;
-      const x2 = cx + Math.cos(ang) * 168, y2 = cy + Math.sin(ang) * 168;
-      const coude = i % 2 ? 0.55 : 0.45;
-      const xm = cx + Math.cos(ang) * 168 * coude, ym = cy + Math.sin(ang) * 168 * coude;
-      traits += `<path class="mp-trait" style="--d:${i * 70}ms" d="M${cx} ${cy} L${xm.toFixed(1)} ${ym.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${l.couleur}"/>`;
-      [0.45, 0.72, 1].forEach((k, j) => {
-        const x = cx + Math.cos(ang) * 168 * k, y = cy + Math.sin(ang) * 168 * k;
-        gares += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${j === 2 ? 7 : 4.5}" class="mp-gare" stroke="${l.couleur}"/>`;
-      });
-    });
-    return `<svg class="mini-plan" viewBox="0 0 400 400" role="img" aria-label="Plan stylisé : dix lignes partent du bac vers dix grands domaines">
-      ${traits}${gares}
-      <circle cx="${cx}" cy="${cy}" r="30" class="mp-centre"/>
-      <text x="${cx}" y="${cy + 5}" text-anchor="middle" class="mp-texte">BAC</text>
-    </svg>`;
-  };
-
+  const ETAPES = [
+    ["🎯", "Découvre ce qui te ressemble", "Le test te propose des métiers et des formations à partir de ce que tu aimes faire.", "#test"],
+    ["🏫", "Compare les formations", "Coût, sélection, débouchés, écoles près de chez toi : tout est au même endroit.", "#formations"],
+    ["🧾", "Prépare tes démarches", "Aides, budget, calendrier Parcoursup : ce qu'il faut faire, et quand.", "#parcours"]
+  ];
 
   A.pages.accueil = function (el) {
-    const s = A.etat, { n, suivant } = A.niveau();
-    const profil = s.profil;
-    const nbTampons = Object.keys(s.badges).length;
+    const profil = A.etat.profil;
     el.innerHTML = `
       <section class="hero">
         <div class="hero-texte">
           <p class="surtitre">Orientation après le bac</p>
-          <h1>Dix lignes, des centaines de gares.<br><span class="surligne">Trouve ton trajet.</span></h1>
-          <p class="chapo">Aiguillage t'aide à comprendre les études supérieures sans jargon : quel bac mène où, combien ça coûte, ce qu'on fait vraiment dans chaque métier. Gratuit, sans inscription.</p>
+          <h1>Choisis tes études <span class="surligne">sans te perdre.</span></h1>
+          <p class="chapo">Métiers, formations, écoles, aides : Aiguillage t'explique les études supérieures sans jargon, avec les chiffres officiels. Gratuit, sans inscription.</p>
           <div class="actions">
             <a class="btn btn-signal" href="#test">${profil ? "Refaire le test" : "Faire le test (5 min)"}</a>
-            <a class="btn btn-ligne" href="#plan">Explorer le plan</a>
+            <a class="btn btn-ligne" href="#metiers">Voir les métiers</a>
           </div>
         </div>
-        <div class="hero-plan">${A.miniPlan()}</div>
+        <ol class="hero-etapes">${ETAPES.map(([ico, titre, texte, lien], i) => `
+          <li><a href="${lien}"><span class="he-num" aria-hidden="true">${i + 1}</span><span class="he-ico" aria-hidden="true">${ico}</span>
+            <span class="he-corps"><strong>${A.e(titre)}</strong><span>${A.e(texte)}</span></span></a></li>`).join("")}
+        </ol>
       </section>
 
       ${profil ? `
@@ -60,24 +44,6 @@
           ${h.pages.length > 1 ? `<ul class="hub-liens">${h.pages.map(([id, ico, nom]) => `<li><a href="#${id}"><span aria-hidden="true">${ico}</span><span>${A.e(nom)}</span></a></li>`).join("")}</ul>` : ""}
         </article>`).join("")}
       </section>
-
-      <section class="carte-progres">
-        <div class="cp-niveau">
-          <p class="surtitre">Ton carnet de voyage</p>
-          <p class="cp-km"><span data-km>${s.km}</span> km</p>
-          <p class="cp-nom">${A.e(n.nom)}</p>
-          ${suivant ? `<div class="jauge" role="progressbar" aria-label="Progression vers le niveau suivant" aria-valuemin="${n.km}" aria-valuemax="${suivant.km}" aria-valuenow="${s.km}"><span style="width:${Math.round((s.km - n.km) / (suivant.km - n.km) * 100)}%"></span></div>
-          <p class="petit">Encore ${suivant.km - s.km} km pour devenir ${A.e(suivant.nom)}</p>` : `<p class="petit">Niveau maximum atteint. Respect.</p>`}
-        </div>
-        <div class="cp-tampons">
-          <p class="petit">${nbTampons} tampon${nbTampons > 1 ? "s" : ""} sur ${A.badges.length}</p>
-          <div class="mini-tampons">${A.badges.map(b => `<span class="mini-tampon ${s.badges[b.id] ? "ok" : ""}" title="${A.e(b.nom)}">${s.badges[b.id] ? b.emoji : "·"}</span>`).join("")}</div>
-          <a class="lien-fleche" href="#carnet">Ouvrir mon carnet</a>
-        </div>
-      </section>
-
-      ${A.blocDefis(true)}
-
     `;
   };
 })();

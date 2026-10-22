@@ -289,7 +289,6 @@
       el.onclick = ev => {
         if (ev.target.closest("[data-carte]")) { A.carteDemande = { ecole: o.n, ids: o.pi || [] }; A.aller("carte"); }
       };
-      A.gagner(5, "ecole-" + o.id, "Fiche lue : " + o.n);
     }).catch(() => { el.innerHTML = A.messageErreurDonnees; });
   };
 })();

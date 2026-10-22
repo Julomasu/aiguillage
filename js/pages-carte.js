@@ -254,8 +254,6 @@
       if (!v) return;
       A.etat.ville = v; A.sauver();
       f.voirPlus = 0; carte.selection = null;
-      A.gagner(15, "carte", "Carte explorée autour de " + v.nom);
-      A.activite("carte", v.nom);
       recentrer(); maj();
     };
     A.$("#carte-ville").addEventListener("change", ev => choisirVille(ev.target.value));
