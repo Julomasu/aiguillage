@@ -163,7 +163,7 @@
     return `
         <section class="bloc bloc-acces">
           <h2>Qui recrute</h2>
-          <div class="emp-groupes">${d.emp.map(([t, l, r]) => `<div class="emp-groupe"><h3>${A.e(t)}</h3><p>${A.e(l)}</p>${r ? `<p class="emp-note">${A.e(r)}</p>` : ""}</div>`).join("")}</div>
+          <div class="emp-groupes">${d.emp.map(([t, l, r]) => `<div class="emp-groupe"><h3>${A.e(t)}</h3>${A.employeursHtml(l)}${r ? `<p class="emp-note">${A.e(r)}</p>` : ""}</div>`).join("")}</div>
           <p class="petit">Liste indicative et non exhaustive. Vérifie les offres actuelles sur les sites carrière des entreprises.</p>
         </section>
 

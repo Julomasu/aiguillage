@@ -132,7 +132,8 @@
   function carteEcole(o) {
     const reco = (o.r || []).slice(0, 2).map(r => `<span class="ec-reco">${A.e(trData(r))}</span>`).join("");
     return `<article class="ec" id="ec-${A.e(o.id)}">
-      <header>
+      <header class="ec-carte-logo">
+        ${A.logoEcole(o, 44)}
         <h3><a href="#ecole-${A.e(o.id)}">${A.e(o.n)}</a>${o.s && !sa(o.n).includes(sa(o.s)) ? ` <span class="ec-sigle">${A.e(o.s)}</span>` : ""}</h3>
         ${o.dist != null && o.dist !== Infinity ? `<span class="ec-dist">${o.dist < 1 ? "< 1" : Math.round(o.dist)} km</span>` : ""}
       </header>
@@ -251,7 +252,7 @@
         <section class="tete-page ec-tete">
           <a class="retour" href="#ecoles">← L'annuaire</a>
           <p class="surtitre">${o.c.map(c => (CAT[c] || CAT.autre).nom).join(" · ")}</p>
-          <h1>${A.e(o.n)}${o.s && !sa(o.n).includes(sa(o.s)) ? ` <small class="ec-sigle">${A.e(o.s)}</small>` : ""}</h1>
+          <div class="ec-tete-logo">${A.logoEcole(o, 72)}<h1>${A.e(o.n)}${o.s && !sa(o.n).includes(sa(o.s)) ? ` <small class="ec-sigle">${A.e(o.s)}</small>` : ""}</h1></div>
           <div class="ec-lignes">${o.c.map(puceCat).join("")}<span class="ec-statut">${A.e(STATUT[o.st] || "")}</span>${badgeParcoursup(o)}</div>
         </section>
         <div class="ec-grille">

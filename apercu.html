@@ -20,7 +20,6 @@
     </nav>
     <button type="button" class="btn-langue" id="btn-langue" aria-label="Switch to English">EN</button>
     <button type="button" class="btn-audio" id="btn-audio" aria-pressed="false" aria-label="Écouter cette page à voix haute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><span>Écouter</span></button>
-    <a class="km-chip" href="#carnet" data-nav="carnet" aria-label="Mon carnet de voyage"><span data-km>0</span>&nbsp;km</a>
   </div>
 </header>
 
@@ -32,8 +31,7 @@
     <a href="#decodeur" data-nav="ressources"><span class="plus-ico" aria-hidden="true">🔓</span><strong>Le décodeur</strong><span>Le jargon expliqué</span></a>
     <a href="#vraifaux" data-nav="ressources"><span class="plus-ico" aria-hidden="true">✅</span><strong>Vrai ou faux</strong><span>Les idées reçues</span></a>
     <p class="plus-titre">Mon espace</p>
-    <a href="#carnet" data-nav="carnet"><span class="plus-ico" aria-hidden="true">📓</span><strong>Mon carnet</strong><span>Km, tampons, favoris</span></a>
-    <a href="#defis" data-nav="defis"><span class="plus-ico" aria-hidden="true">🏆</span><strong>Défis de la semaine</strong><span>3 défis, 25 km chacun</span></a>
+    <a href="#carnet" data-nav="carnet"><span class="plus-ico" aria-hidden="true">⭐</span><strong>Mes favoris</strong><span>Ton profil et tes métiers gardés</span></a>
     <a href="#classe" data-nav="classe"><span class="plus-ico" aria-hidden="true">🧑‍🏫</span><strong>Espace enseignant·e</strong><span>Lancer le test en classe</span></a>
     <a href="#assistant" data-nav="assistant" class="plus-mobile"><span class="plus-ico" aria-hidden="true">💬</span><strong>L'assistant</strong><span>Pose tes questions</span></a>
   </nav>
@@ -56,6 +54,7 @@
     </div>
     <div class="reg-ligne">
       <button type="button" data-reglage="calme:1">Réduire les animations</button>
+      <button type="button" data-reglage="logos:1">Logos des écoles</button>
     </div>
   </div>
 </div>
@@ -65,7 +64,7 @@
 
 <footer class="pied">
   <p><strong>Aiguillage</strong> est un outil d'information indépendant. Les chiffres (salaires, coûts, accès) sont indicatifs : vérifie toujours sur <a href="https://www.parcoursup.gouv.fr" target="_blank" rel="noopener">Parcoursup</a> et <a href="https://www.onisep.fr" target="_blank" rel="noopener">Onisep</a>, et parles-en au/à la Psy-EN de ton lycée.</p>
-  <p class="petit">Données officielles : Parcoursup 2025 (MESR), ROME (France Travail), carte des loyers 2025 (ANIL), barèmes service-public.gouv.fr, sous Licence Ouverte. Ton carnet reste sur ton appareil. En mode guidé, l'assistant n'envoie rien ; avec Claude, seules tes questions lui sont envoyées pour y répondre.</p>
+  <p class="petit">Données officielles : Parcoursup 2025 (MESR), ROME (France Travail), carte des loyers 2025 (ANIL), barèmes service-public.gouv.fr, sous Licence Ouverte. Tes réponses et tes favoris restent sur ton appareil. Les logos sont ceux des sites de chaque organisme (désactivables dans « Plus »). En mode guidé, l'assistant n'envoie rien ; avec Claude, seules tes questions lui sont envoyées pour y répondre.</p>
 </footer>
 
 <nav class="onglets" aria-label="Navigation rapide">
@@ -91,7 +90,7 @@
 <script src="js/data/metiers-acces-5.js"></script>
 <script src="js/data/metiers-acces-6.js"></script>
 <script src="js/core.js"></script>
-<script src="js/defis.js"></script>
+<script src="js/logos.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/config.js"></script>
 <script src="js/pages-accueil.js"></script>

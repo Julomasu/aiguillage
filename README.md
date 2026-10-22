@@ -156,3 +156,7 @@ Cinq pôles, chacun avec sa sous-navigation (définis dans `A.HUBS`, `js/core.js
 - **Ta situation** (`#parcours`) : parcours à embranchements (revenus, handicap, études payantes, prêt, rester ou partir, Paris…) qui aboutit à un plan d'aides, de financement et de lieu. Il est proposé au début du test (« Tu veux découvrir quel métier est fait pour toi ? ») et à la fin des résultats.
 - **Transport** : le simulateur de budget utilise le pass étudiant de la ville (Paris : forfait Imagine R Étudiant, soit environ 44 € par mois en 9 mensualités).
 - Version anglaise de ces contenus : `js/i18n/en-data-acces-*.js`, `en-data-passerelles.js`, `en-new-ui.js`.
+
+## Logos
+
+`js/logos.js` affiche les logos des écoles, des employeurs cités et des sites officiels. L'icône de chaque organisme est chargée par le navigateur depuis le service de favicons de Google (aucune donnée n'est envoyée à Aiguillage) ; sans logo connu ou hors ligne, la pastille affiche les initiales ou une icône. Les visiteurs peuvent désactiver les logos dans « Plus ». LinkedIn est dessiné en local (SVG). Pour ajouter un logo d'école, ajoute son identifiant et son site dans `A.LOGO_ECOLES`. Les logos et marques appartiennent à leurs propriétaires.

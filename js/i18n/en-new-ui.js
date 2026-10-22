@@ -62,6 +62,8 @@ A.EN_UI = Object.assign(A.EN_UI || {}, {
   "★ Dans mes favoris": "★ In my favourites",
   "☆ Ajouter à mes favoris": "☆ Add to my favourites",
   "Ton profil et tes métiers gardés": "Your profile and the careers you kept",
+  "Logos des écoles": "School logos",
+  "Données officielles : Parcoursup {n} (MESR), ROME (France Travail), carte des loyers {n} (ANIL), barèmes service-public.gouv.fr, sous Licence Ouverte. Tes réponses et tes favoris restent sur ton appareil. Les logos sont ceux des sites de chaque organisme (désactivables dans « Plus »). En mode guidé, l'assistant n'envoie rien ; avec Claude, seules tes questions lui sont envoyées pour y répondre.": "Official data: Parcoursup {n} (Ministry of Higher Education), ROME (France Travail), rent map {n} (ANIL), rates from service-public.gouv.fr, under the French Open License. Your answers and favourites stay on your device. Logos come from each organisation's own website (you can turn them off in “Plus”). In guided mode the assistant sends nothing; with Claude, only your questions are sent to it so it can answer.",
   /* Leftovers found by the crawl */
   "Pas encore de profil": "No profile yet",
   "Pas encore de profil.": "No profile yet.",
