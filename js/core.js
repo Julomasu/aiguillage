@@ -215,7 +215,7 @@
 
   /* ——— Routeur : #accueil, #metiers, #metier-infirmier, #formation-bts-sio, #type-bts… */
   A.pages = {};
-  const PARAMETRES = ["metier", "formation", "type", "classe", "ecole", "epreuve"];
+  const PARAMETRES = ["metier", "formation", "type", "ecole", "epreuve"];
 
   /* Les cinq pôles du site : chaque page appartient à un pôle, et un pôle affiche sa sous-navigation.
      pages : [identifiant de page, icône, libellé]. Un identifiant de page = son adresse (#budget). */
@@ -230,7 +230,6 @@
   const PAGE_POLE = {};
   A.HUBS.forEach(h => h.pages.forEach(p => { PAGE_POLE[p[0]] = h.id; }));
   const PARAM_PAGE = { metier: "metiers", formation: "formations", type: "formations", ecole: "ecoles", epreuve: "passerelles" };
-  const ONGLET = { classe: "classe" };
 
   function sousNav(page) {
     const cible = PARAM_PAGE[page] || page;
@@ -325,7 +324,7 @@
     main.classList.add("entree");
     const zone = A.$("#sous-nav");
     if (zone) zone.innerHTML = sousNav(page);
-    const onglet = PAGE_POLE[PARAM_PAGE[page] || page] || ONGLET[page] || page;
+    const onglet = PAGE_POLE[PARAM_PAGE[page] || page] || page;
     A.$$("[data-nav]").forEach(a => {
       const actif = a.dataset.nav === onglet;
       a.classList.toggle("actif", actif);
