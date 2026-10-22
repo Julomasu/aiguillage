@@ -350,6 +350,9 @@
 
   A.demarrer = function () {
     A.appliquerReglages();
+    // largeur d'une barre de défilement classique : sert à centrer exactement les sections pleine largeur (.plein)
+    const mesurerBarre = () => document.documentElement.style.setProperty("--sbw", Math.max(0, window.innerWidth - document.documentElement.clientWidth) + "px");
+    mesurerBarre(); window.addEventListener("resize", mesurerBarre);
 
     document.addEventListener("click", ev => {
       const plus = ev.target.closest("[data-ouvre-plus]");

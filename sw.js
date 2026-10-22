@@ -1,7 +1,7 @@
 /* Service worker : rend le site installable et utilisable hors ligne.
    Pages et scripts : réseau d'abord (pour recevoir les mises à jour), cache en secours.
    Données (data/) : cache d'abord, rafraîchi en arrière-plan. Fonds de carte et API : jamais mis en cache ici. */
-const CACHE = "aiguillage-v13";
+const CACHE = "aiguillage-v14";
 const ESSENTIEL = [
   "./", "index.html", "manifest.webmanifest", "css/style.css",
   "js/data/formations.js", "js/data/metiers.js", "js/data/contenus.js", "js/data/passerelles.js", "js/data/metiers-acces-1.js", "js/data/metiers-acces-2.js", "js/data/metiers-acces-3.js", "js/data/metiers-acces-4.js", "js/data/metiers-acces-5.js", "js/data/metiers-acces-6.js", "js/data/metiers-plus.js", "js/pages-passerelles.js", "js/core.js", "js/logos.js", "js/i18n.js",

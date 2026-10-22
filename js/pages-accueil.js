@@ -1,29 +1,30 @@
-/* Accueil : une phrase pour comprendre le site, trois étapes, puis les cinq grandes parties. */
+/* Accueil : l'affiche d'ouverture, trois étapes, puis les cinq grandes parties. */
 (function () {
   const ETAPES = [
-    ["🎯", "Découvre ce qui te ressemble", "Le test te propose des métiers et des formations à partir de ce que tu aimes faire.", "#test"],
-    ["🏫", "Compare les formations", "Coût, sélection, débouchés, écoles près de chez toi : tout est au même endroit.", "#formations"],
-    ["🧾", "Prépare tes démarches", "Aides, budget, calendrier Parcoursup : ce qu'il faut faire, et quand.", "#parcours"]
+    ["Découvre ce qui te ressemble", "Le test te propose des métiers et des formations à partir de ce que tu aimes faire.", "#test"],
+    ["Compare les formations", "Coût, sélection, débouchés, écoles près de chez toi : tout est au même endroit.", "#formations"],
+    ["Prépare tes démarches", "Aides, budget, calendrier Parcoursup : ce qu'il faut faire, et quand.", "#parcours"]
   ];
+  const CLAIRS = ["#FFC629"];   // fonds clairs : texte sombre
 
   A.pages.accueil = function (el) {
     const profil = A.etat.profil;
+    const nbEcoles = "1 900+";   // remplacé par le nombre exact dès que l'annuaire est chargé
     el.innerHTML = `
-      <section class="hero">
-        <div class="hero-texte">
-          <p class="surtitre">Orientation après le bac</p>
-          <h1>Choisis tes études <span class="surligne">sans te perdre.</span></h1>
-          <p class="chapo">Métiers, formations, écoles, aides : Aiguillage t'explique les études supérieures sans jargon, avec les chiffres officiels. Gratuit, sans inscription.</p>
-          <div class="actions">
-            <a class="btn btn-signal" href="#test">${profil ? "Refaire le test" : "Faire le test (5 min)"}</a>
-            <a class="btn btn-ligne" href="#metiers">Voir les métiers</a>
-          </div>
+      <section class="plein hero"><div class="cadre">
+        <p class="surtitre">Orientation après le bac</p>
+        <h1>Trouve <em>ta voie.</em></h1>
+        <p class="chapo">Métiers, formations, écoles, aides : tout ce qu'il faut pour choisir tes études, avec les chiffres officiels. Gratuit, sans inscription.</p>
+        <div class="actions">
+          <a class="btn" href="#test">${profil ? "Refaire le test" : "Faire le test · 5 min"}</a>
+          <a class="btn btn-ligne" href="#metiers">Voir les métiers</a>
         </div>
-        <ol class="hero-etapes">${ETAPES.map(([ico, titre, texte, lien], i) => `
-          <li><a href="${lien}"><span class="he-num" aria-hidden="true">${i + 1}</span><span class="he-ico" aria-hidden="true">${ico}</span>
-            <span class="he-corps"><strong>${A.e(titre)}</strong><span>${A.e(texte)}</span></span></a></li>`).join("")}
-        </ol>
-      </section>
+        <div class="hero-chiffres">
+          <div><strong>${A.metiers.length}</strong><span>métiers</span></div>
+          <div><strong>${A.formations.length}</strong><span>formations</span></div>
+          <div><strong id="nb-ecoles">${nbEcoles}</strong><span>écoles</span></div>
+        </div>
+      </div></section>
 
       ${profil ? `
       <section class="bandeau-profil">
@@ -31,19 +32,31 @@
           <p class="surtitre">Ton profil</p>
           <p class="bp-code"><span>${profil.code}</span> ${A.e(A.profils[profil.code[0]].nom)} · ${A.e(A.profils[profil.code[1]].nom)}</p>
         </div>
-        <a class="btn btn-ligne" href="#resultat">Voir mes résultats</a>
+        <a class="btn" href="#resultat">Voir mes résultats</a>
       </section>` : ""}
 
-      <section class="hubs" aria-label="Les cinq grandes parties du site">
-        ${A.HUBS.map(h => `
-        <article class="hub-carte" style="--c:${h.c}">
-          <a class="hub-tete" href="#${h.pages[0][0]}">
-            <span class="hub-ico" aria-hidden="true">${h.emoji}</span>
-            <span class="hub-corps"><strong>${A.e(h.nom)}</strong><span>${A.e(h.id === "metiers" ? h.desc.replace("Des fiches", A.metiers.length + " fiches") : h.desc)}</span></span>
-          </a>
-          ${h.pages.length > 1 ? `<ul class="hub-liens">${h.pages.map(([id, ico, nom]) => `<li><a href="#${id}"><span aria-hidden="true">${ico}</span><span>${A.e(nom)}</span></a></li>`).join("")}</ul>` : ""}
-        </article>`).join("")}
+      <section>
+        <div class="titre-section"><h2>Comment ça marche</h2></div>
+        <ol class="etapes-home">${ETAPES.map(([titre, texte, lien], i) => `
+          <li><a href="${lien}"><span class="num" aria-hidden="true">0${i + 1}</span><span><strong>${A.e(titre)}</strong><p>${A.e(texte)}</p></span></a></li>`).join("")}
+        </ol>
       </section>
+
+      <section class="tuiles" aria-label="Les cinq grandes parties du site">
+        ${A.HUBS.map(h => `
+        <a class="tuile" href="#${h.pages[0][0]}" style="--c:${h.c};--on:${CLAIRS.includes(h.c) ? "#111" : "#fff"}">
+          <span class="fond-chiffre" aria-hidden="true">${h.id === "metiers" ? A.metiers.length : h.pages.length}</span>
+          <div><h2>${A.e(h.nom)}</h2><p>${A.e(h.id === "metiers" ? h.desc.replace("Des fiches", A.metiers.length + " fiches") : h.desc)}</p></div>
+          <div class="bas"><span>${h.pages.length > 1 ? h.pages.length + " rubriques" : "Explorer"}</span><span class="fleche" aria-hidden="true">→</span></div>
+        </a>`).join("")}
+      </section>
+
+      <section class="plein appel"><div class="cadre">
+        <p class="surtitre">5 minutes, pas plus</p>
+        <h2>Et si tu commençais par toi ?</h2>
+        <div class="actions"><a class="btn" href="#test">Faire le test</a></div>
+      </div></section>
     `;
+    A.donnees("ecoles").then(d => { const z = A.$("#nb-ecoles"), n = (d.ecoles || []).length; if (z && n) z.textContent = n.toLocaleString(A.locale); }).catch(() => {});
   };
 })();

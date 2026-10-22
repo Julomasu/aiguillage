@@ -1,6 +1,16 @@
 /* Dictionary additions (English) for strings added after the first translation pass.
    Same format as en-ui.js: French key (digits replaced by {n}), English value. */
 A.EN_UI = Object.assign(A.EN_UI || {}, {
+  /* Premium home (poster-style) */
+  "Gratuit · Sans inscription · Données officielles Parcoursup": "Free · No sign-up · Official Parcoursup data",
+  "Trouve": "Find", "ta voie.": "your path.",
+  "Métiers, formations, écoles, aides : tout ce qu'il faut pour choisir tes études, avec les chiffres officiels. Gratuit, sans inscription.": "Careers, programmes, schools, aid: everything you need to choose your studies, with official figures. Free, no sign-up.",
+  "Faire le test · 5 min": "Take the test · 5 min",
+  "métiers": "careers", "formations": "programmes", "écoles": "schools",
+  "Comment ça marche": "How it works",
+  "{n} rubriques": "{n} sections", "Explorer": "Explore",
+  "5 minutes, pas plus": "5 minutes, no more",
+  "Et si tu commençais par toi ?": "What if you started with you?",
   "Transport (€/mois)": "Transport (€/month)",
   /* Five hubs, sub-navigation, home */
   "Me découvrir": "Discover yourself",
