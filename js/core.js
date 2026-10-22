@@ -265,7 +265,29 @@
   /* ——— Routeur : #accueil, #metiers, #metier-infirmier, #formation-bts-sio, #type-bts… */
   A.pages = {};
   const PARAMETRES = ["metier", "formation", "type", "classe", "ecole", "epreuve"];
-  const ONGLET = { metier: "metiers", formation: "formations", type: "formations", comparer: "carte", classe: "classe", ecole: "ecoles", epreuve: "passerelles" };
+
+  /* Les cinq pôles du site : chaque page appartient à un pôle, et un pôle affiche sa sous-navigation.
+     pages : [identifiant de page, icône, libellé]. Un identifiant de page = son adresse (#budget). */
+  A.HUBS = [
+    { id: "decouvrir", nom: "Me découvrir", emoji: "🎯", c: "#FFC629", desc: "Un test pour trouver les métiers et les pistes qui te ressemblent, et le plan pour voir où mène chaque voie.", pages: [["test", "🎯", "Le test"], ["resultat", "📊", "Mes résultats"], ["plan", "🚇", "Le plan"]] },
+    { id: "metiers", nom: "Métiers", emoji: "💼", c: "#E4572E", desc: "Des fiches complètes : journée type, salaire, qui recrute, comment y entrer, ce qu'il faut savoir.", pages: [["metiers", "💼", "Tous les métiers"]] },
+    { id: "formations", nom: "Formations & écoles", emoji: "🏫", c: "#2F5BEA", desc: "BTS, BUT, prépa, fac, écoles : compare, trouve près de chez toi, et change de voie avec les passerelles.", pages: [["formations", "⚖️", "BTS, BUT, prépa, fac…"], ["ecoles", "🏫", "Annuaire des écoles"], ["carte", "🗺️", "Carte"], ["comparer", "🔀", "Comparer 2 formations"], ["passerelles", "🌉", "Passerelles & tests"]] },
+    { id: "demarches", nom: "Démarches & argent", emoji: "🧾", c: "#1B998B", desc: "Ta situation, ton budget, les aides, le calendrier Parcoursup et les portes ouvertes.", pages: [["parcours", "🧭", "Ta situation"], ["budget", "💶", "Budget"], ["aides", "🧾", "Aides"], ["calendrier", "📅", "Calendrier"], ["jpo", "🚪", "Portes ouvertes"]] },
+    { id: "ressources", nom: "Ressources", emoji: "📚", c: "#7A3FD1", desc: "Réseau LinkedIn, témoignages, jargon expliqué et idées reçues.", pages: [["reseau", "🔗", "LinkedIn & réseau"], ["temoignages", "🗣️", "Témoignages"], ["decodeur", "🔓", "Décodeur"], ["vraifaux", "✅", "Vrai ou faux"]] }
+  ];
+  /* page → pôle, et pages à paramètre (#metier-x…) → page de la sous-navigation */
+  const PAGE_POLE = {};
+  A.HUBS.forEach(h => h.pages.forEach(p => { PAGE_POLE[p[0]] = h.id; }));
+  const PARAM_PAGE = { metier: "metiers", formation: "formations", type: "formations", ecole: "ecoles", epreuve: "passerelles" };
+  const ONGLET = { classe: "classe" };
+
+  function sousNav(page) {
+    const cible = PARAM_PAGE[page] || page;
+    const hub = A.HUBS.find(h => h.id === PAGE_POLE[cible]);
+    if (!hub || hub.pages.length < 2) return "";
+    return `<nav class="sous-nav" aria-label="${A.e(hub.nom)}"><p class="sn-pole">${A.e(hub.nom)}</p><ul>${hub.pages.map(([id, ico, nom]) =>
+      `<li><a href="#${id}"${id === cible ? ' aria-current="page"' : ""}><span aria-hidden="true">${ico}</span><span>${A.e(nom)}</span></a></li>`).join("")}</ul></nav>`;
+  }
 
   A.lireHash = function () {
     const h = (location.hash || "").replace(/^#/, "") || "accueil";
@@ -351,7 +373,9 @@
     rendu(main, param);
     void main.offsetWidth;
     main.classList.add("entree");
-    const onglet = ONGLET[page] || page;
+    const zone = A.$("#sous-nav");
+    if (zone) zone.innerHTML = sousNav(page);
+    const onglet = PAGE_POLE[PARAM_PAGE[page] || page] || ONGLET[page] || page;
     A.$$("[data-nav]").forEach(a => {
       const actif = a.dataset.nav === onglet;
       a.classList.toggle("actif", actif);

@@ -98,7 +98,14 @@ Object.assign(A.EN_DATA, {
     { titre: "APL (CAF)", montant: "Depends on your rent and income", texte: "Housing aid, even in a CROUS residence or a shared flat. Apply as soon as you have your lease.", lienTexte: "Simulate on caf.fr" },
     { titre: "Visale guarantee", montant: "Free", texte: "Action Logement guarantees your rent to the landlord if you have no one to do it for you.", lienTexte: "visale.fr" },
     { titre: "Apprenticeship", montant: "Salary + free training", texte: "Your training is paid for by the company and you earn a salary (a percentage of the minimum wage depending on your age). Only the CVEC levy remains due, and your employer may reimburse it.", lienTexte: "Find a work-study contract" },
-    { titre: "University canteens", montant: "Meals at €1", texte: "Since 4 May 2026, a Crous meal costs €1 for all students, scholarship holders or not (one meal per service).", lienTexte: "etudiant.gouv.fr" }
+    { titre: "University canteens", montant: "Meals at €1", texte: "Since 4 May 2026, a Crous meal costs €1 for all students, scholarship holders or not (one meal per service).", lienTexte: "etudiant.gouv.fr" },
+    { titre: "Crous emergency aid", montant: "In case of hardship", texte: "One-off or yearly help if you face a financial problem. Talk to the Crous social worker.", lienTexte: "etudiant.gouv.fr" },
+    { titre: "Disability-related aid", montant: "Apply early", texte: "Your school's disability officer, exam adjustments, support. An adult disability allowance (AAH) is possible through an MDPH file, sometimes alongside the grant.", lienTexte: "service-public.fr" },
+    { titre: "Working-student status", montant: "Depends on the school", texte: "Attendance exemptions, adapted exams. Ask the administration office at the start of the year.", lienTexte: "etudiant.gouv.fr" },
+    { titre: "Support without family", montant: "Possible priority", texte: "A young-adult contract from child welfare services and priority for grants and housing may apply. Your caseworker or the Crous can help with the file.", lienTexte: "etudiant.gouv.fr" },
+    { titre: "Non-EU student", montant: "Higher fees", texte: "Public tuition is higher for non-EU students (with exceptions). Ask about university fee waivers and Campus France.", lienTexte: "Campus France" },
+    { titre: "Elite athlete status", montant: "Adjustments", texte: "Adapted timetable, tutoring, partner schools. Your club or federation can tell you more.", lienTexte: "sports.gouv.fr" },
+    { titre: "CAF and Crous aid for student parents", montant: "Can be combined", texte: "Family allowances, childcare, Crous aid. Talk to the Crous social worker to put it all together.", lienTexte: "caf.fr" }
   ],
   couts: [
     { f: "Public BTS", c: "€0" },

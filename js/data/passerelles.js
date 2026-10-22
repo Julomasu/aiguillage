@@ -213,5 +213,6 @@ A.TESTS_METIERS = {
   "analyste-financier": ["gmat", "tage-mage"], "consultant-strategie": ["gmat", "tage-mage", "toeic"], auditeur: ["tage-mage", "toeic"],
   "controleur-gestion": ["tage-mage"], marketing: ["tage-mage", "toeic"], commercial: ["tage-2", "toeic"], "product-manager": ["tage-mage", "toeic"],
   "gestion-patrimoine": ["tage-mage"], "risk-manager": ["gmat", "toeic"], rh: ["score-iae-message"], "conseiller-bancaire": ["toeic"],
-  "expert-comptable": [], logisticien: ["toeic"], ingenieur: ["toeic"], "ingenieur-ia": ["toeic", "gre"], "data-scientist": ["toeic", "gre"]
+  "expert-comptable": [], logisticien: ["toeic"], ingenieur: ["toeic"], "ingenieur-ia": ["toeic", "gre"], "data-scientist": ["toeic", "gre"],
+  devops: ["toeic"], "data-analyst": ["toeic"], acheteur: ["toeic"], "ingenieur-energie": ["toeic"], "receptionniste-hotel": ["toeic"]
 };

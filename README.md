@@ -146,9 +146,13 @@ Ajouter un métier : un objet dans `A.metiers` avec `formations: [ids]`. Relier 
 
 Les salaires et certains niveaux d'accès sont des estimations rédigées : à faire relire avant une mise en ligne publique.
 
+## Organisation du site
+
+Cinq pôles, chacun avec sa sous-navigation (définis dans `A.HUBS`, `js/core.js`) : **Me découvrir** (test, résultats, plan), **Métiers**, **Formations & écoles** (familles de formations, annuaire, carte, comparer, passerelles), **Démarches & argent** (ta situation, budget, aides, calendrier, portes ouvertes), **Ressources** (réseau, témoignages, décodeur, vrai ou faux). Le menu « Plus » regroupe les ressources et « Mon espace » (carnet, défis, espace enseignant). Les adresses des pages ne changent pas (`#budget`, `#metier-avocat`…). Les aides ont une source unique (`A.aides`, page « Aides »), dont « Ta situation » extrait celles qui te concernent.
+
 ## Fiches métiers détaillées, passerelles, « ta situation »
 
-- **Fiches métiers** : chaque métier a une section « Qui recrute », « Comment y entrer, concrètement » (avec le poids du réseau), « Ce qu'il faut savoir » et les tests utiles. Données : `js/data/metiers-acces-1.js` à `-4.js` (format décrit en tête du fichier 1). Les employeurs cités sont des repères, jamais une liste exhaustive.
+- **Fiches métiers** : chaque métier a une section « Qui recrute », « Comment y entrer, concrètement » (avec le poids du réseau), « Ce qu'il faut savoir » et les tests utiles. Données : `js/data/metiers-acces-1.js` à `-6.js` (les 38 derniers métiers sont dans `js/data/metiers-plus.js`) (format décrit en tête du fichier 1). Les employeurs cités sont des repères, jamais une liste exhaustive.
 - **Passerelles et tests** (`#passerelles`) : chemins BTS/BUT/licence vers écoles de commerce, d'ingénieurs, Sciences Po, droit, santé, étranger ; fiches Tage Mage, Tage 2, GMAT, GRE, Score IAE-Message, TOEIC, TOEFL/IELTS, CRFPA, ENM, CRPE/CAPES. Données : `js/data/passerelles.js`. Prix, dates et formats sont des repères à confirmer sur le site de chaque organisateur.
 - **Ta situation** (`#parcours`) : parcours à embranchements (revenus, handicap, études payantes, prêt, rester ou partir, Paris…) qui aboutit à un plan d'aides, de financement et de lieu. Il est proposé au début du test (« Tu veux découvrir quel métier est fait pour toi ? ») et à la fin des résultats.
 - **Transport** : le simulateur de budget utilise le pass étudiant de la ville (Paris : forfait Imagine R Étudiant, soit environ 44 € par mois en 9 mensualités).

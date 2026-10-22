@@ -168,7 +168,7 @@
         </section>
 
         <section class="bloc bloc-acces">
-          <h2>Comment y entrer, concrètement</h2>
+          <h2>Décrocher le premier poste</h2>
           <div class="reseau-jauge" role="group" aria-label="Importance du réseau">
             <span class="petit">Poids du réseau</span>
             <strong>${net[0]}</strong>
@@ -180,8 +180,9 @@
         </section>
 
         <section class="bloc bloc-acces">
-          <h2>Ce qu'il faut savoir et maîtriser</h2>
-          <div class="deux-col">
+          <h2>Ce qu'il faut avoir et savoir</h2>
+          <div class="trois-col">
+            <div><h3>Qualités</h3><div class="puces">${m.competences.map(c => `<span class="puce puce-statique">${A.e(c)}</span>`).join("")}</div></div>
             <div><h3>Connaissances</h3><ul class="liste-sav">${d.sav.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
             <div><h3>Outils et certifications</h3><ul class="liste-sav">${d.out.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
           </div>
@@ -234,13 +235,9 @@
           <section class="bloc contre"><h2>Moins fun</h2><ul>${m.moins.map(k => `<li>${A.e(k)}</li>`).join("")}</ul></section>
         </div>
 
-        <section class="bloc">
-          <h2>Les qualités qui aident</h2>
-          <div class="puces">${m.competences.map(c => `<span class="puce puce-statique">${A.e(c)}</span>`).join("")}</div>
-        </section>
 
         <section class="bloc">
-          <h2>Comment y aller</h2>
+          <h2>Les études qui y mènent</h2>
           <ol class="trajet">
             <li class="tr-depart"><span class="tr-gare"></span><span>Ton bac${p ? "" : ""}</span></li>
             ${m.formations.map(fid => {
@@ -294,23 +291,13 @@
 
       <section class="bloc">
         <h2>Le comparateur</h2>
-        <p class="petit">Choisis jusqu'à 3 familles de formations.</p>
+        <p class="petit">Choisis jusqu'à 3 familles de formations. Clique sur le nom d'une famille dans le tableau pour ouvrir sa fiche détaillée.</p>
         <div class="puces" role="group" aria-label="Formations à comparer">
           ${A.types.map(t => `<button type="button" class="puce" data-cmp="${t.id}" aria-pressed="${A.etat.compare.includes(t.id)}">${A.e(t.nom)}</button>`).join("")}
         </div>
         <div class="table-defile" id="comparateur"></div>
       </section>
 
-      <section class="bloc">
-        <h2>Les grandes familles</h2>
-        <div class="grille-types">${A.types.map(t => `
-          <a class="carte-type" href="#type-${t.id}">
-            <strong>${A.e(t.nom)}</strong>
-            <span class="ct-long">${A.e(t.long)}</span>
-            <span class="ct-meta">${A.e(t.duree)} · ${A.e(t.niveau)}</span>
-            <span class="ct-resume">${A.e(t.resume)}</span>
-          </a>`).join("")}</div>
-      </section>
 
       <section class="bloc">
         <h2>Toutes les formations du plan</h2>

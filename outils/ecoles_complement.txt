@@ -349,7 +349,6 @@ Conservatoire national supérieur de musique et de danse de Paris | CNSMDP | cul
 ESEC | ESEC | media | prive | Paris | dossier | Titre RNCP | Cinéma et audiovisuel (réalisation, montage, production) | esec;ecole superieure d etudes cinematographiques
 ESJ Paris | ESJ Paris | media | prive | Paris | dossier, concours | Formation reconnue par la profession (à vérifier) | Journalisme (5 ans) | esj paris;ecole superieure de journalisme de paris
 L'École Multimédia | EM | numerique,art-design | prive | Paris | dossier | Titre RNCP | Design, digital, jeu vidéo, web | ecole multimedia
-Zone01 | Zone01 | numerique | associatif | Rouen | dossier | Pas de diplôme d'État, formation gratuite sur sélection | Développement logiciel (pédagogie par projets, sans cours) | zone01
 Wild Code School | WCS | numerique | prive | Paris, Lyon, Lille, Bordeaux, Toulouse, Nantes | dossier | Titres RNCP | Développement web, data, cybersécurité (formations courtes) | wild code school
 Ironhack | Ironhack | numerique | prive | Paris | dossier | Bootcamp, pas de diplôme d'État | Web, data, cybersécurité (bootcamps) | ironhack
 OpenClassrooms | OC | numerique | prive | En ligne | dossier | Titres RNCP (niveaux 5 à 7) | Parcours diplômants en ligne en alternance (développement, data, marketing) | openclassrooms

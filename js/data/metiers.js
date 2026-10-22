@@ -575,10 +575,12 @@ A.metiers = [
     savais: "On peut y arriver par la géographie, l'architecture, le droit ou les sciences politiques." }
 ];
 
-A.metierParId = Object.fromEntries(A.metiers.map(m => [m.id, m]));
-
-/* Index inverse : formation -> métiers */
-A.metiersDeFormation = {};
-A.metiers.forEach(m => m.formations.forEach(f => {
-  (A.metiersDeFormation[f] = A.metiersDeFormation[f] || []).push(m.id);
-}));
+/* Index : identifiant -> métier, et formation -> métiers (reconstruits après l'ajout des métiers de metiers-plus.js) */
+A.indexerMetiers = function () {
+  A.metierParId = Object.fromEntries(A.metiers.map(m => [m.id, m]));
+  A.metiersDeFormation = {};
+  A.metiers.forEach(m => m.formations.forEach(f => {
+    (A.metiersDeFormation[f] = A.metiersDeFormation[f] || []).push(m.id);
+  }));
+};
+A.indexerMetiers();

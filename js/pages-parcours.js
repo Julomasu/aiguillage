@@ -168,30 +168,19 @@
     const h = A.$("h1", el); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
   }
 
-  /* ——— Aides : [titre, montant, texte, lien] calculées à partir des réponses */
+  /* ——— Aides : on pioche dans le catalogue unique A.aides (page « Aides »), selon les réponses */
   function aides(r) {
     const L = [], f = Array.isArray(r.situation) ? r.situation : [];
-    const alt = r.financer === "alternance";
-    const MES = "https://www.messervices.etudiant.gouv.fr";
-    const bourse = T("Bourse sur critères sociaux (Crous)", "Need-based grant (Crous)");
-    if (r.revenus === "faibles") L.push([bourse, T("Très probable", "Very likely"), T("Elle t'exonère des frais d'inscription et de la CVEC, et se verse sur 10 mois. Le dossier social se fait sur Messervices.etudiant.gouv.fr, dès le 15 janvier (DSE).", "It exempts you from tuition fees and the CVEC levy, and is paid over 10 months. Apply for the social file (DSE) on Messervices.etudiant.gouv.fr from 15 January."), MES]);
-    else if (r.revenus === "moyens") L.push([bourse, T("Possible", "Possible"), T("Les échelons montent jusqu'à des revenus assez élevés si la famille est nombreuse. Fais le dossier : c'est gratuit et ça ne coûte rien d'essayer.", "The grant tiers reach fairly high incomes if the family is large. Apply: it is free, and trying costs nothing."), MES]);
-    else if (r.revenus === "nsp") L.push([bourse, T("À tester", "Worth testing"), T("Simule ton droit sur Messervices.etudiant.gouv.fr avant de te décourager : le calcul prend 5 minutes.", "Check your eligibility on Messervices.etudiant.gouv.fr before giving up: it takes 5 minutes."), MES]);
-    if (r.revenus !== "aises") L.push([T("Aide d'urgence du Crous", "Crous emergency aid"), T("En cas de coup dur", "In case of hardship"), T("Une aide ponctuelle ou annuelle si tu fais face à un problème financier. Parle à l'assistant·e social·e du Crous.", "One-off or yearly help if you face a financial problem. Talk to the Crous social worker."), "https://www.etudiant.gouv.fr/fr/les-aides-d-urgence-du-crous-1304"]);
-    L.push([T("Repas Crous à 1 €", "Crous meals at €1"), T("Pour tout le monde", "For everyone"), T("Un repas par service dans les restaurants universitaires.", "One meal per service in university restaurants."), "https://www.etudiant.gouv.fr/fr/comment-beneficier-du-repas-crous-a-1-euro-3017"]);
-    if (r.statut === "lycee" && r.revenus !== "aises" && (r.rester === "non" || r.rester === "nsp")) L.push([T("Aide à la mobilité Parcoursup", "Parcoursup mobility aid"), T("500 €", "€500"), T("Pour les lycéen·nes boursier·ères qui acceptent une formation hors de leur académie.", "For grant-holding pupils who accept a programme outside their school district (académie)."), "https://www.parcoursup.gouv.fr"]);
-    if (r.rester !== "oui" || r.local === "logement") {
-      L.push([T("APL (CAF)", "APL housing benefit (CAF)"), T("Selon loyer et revenus", "Depends on rent and income"), T("Aide au logement, même en résidence Crous ou colocation. À demander dès que tu as ton bail.", "Housing benefit, even in a Crous residence or flat share. Apply as soon as you have your lease."), "https://www.caf.fr"]);
-      L.push([T("Garantie Visale", "Visale guarantee"), T("Gratuite", "Free"), T("Action Logement se porte garant à ta place si tes parents ne peuvent pas.", "Action Logement acts as your guarantor if your parents cannot."), "https://www.visale.fr"]);
-      L.push([T("Logement Crous", "Crous housing"), T("Loyers modérés", "Moderate rents"), T("Demande dès le DSE : les boursier·ères sont prioritaires.", "Apply with your DSE: grant holders get priority."), "https://trouverunlogement.lescrous.fr"]);
-    }
-    if (alt) L.push([T("Apprentissage", "Apprenticeship"), T("Salaire + études gratuites", "Salary + free tuition"), T("Ta formation est financée par l'entreprise et tu touches un salaire. Seule la CVEC (105 €) reste due : ton employeur peut te la rembourser.", "Your programme is paid by the company and you earn a salary. Only the CVEC levy (€105) remains due: your employer may reimburse it."), "https://www.alternance.emploi.gouv.fr"]);
-    if (f.includes("handicap")) L.push([T("Aides liées au handicap", "Disability-related aid"), T("À demander tôt", "Apply early"), T("Référent handicap de ton établissement, aménagements d'examens, accompagnement. Une AAH est possible sur dossier MDPH, parfois cumulable avec la bourse.", "Your school's disability officer, exam adjustments, support. An adult disability allowance (AAH) is possible through an MDPH file, sometimes alongside the grant."), "https://www.service-public.fr/particuliers/vosdroits/N12230"]);
-    if (f.includes("salarie")) L.push([T("Statut d'étudiant·e salarié·e", "Working-student status"), T("Selon l'établissement", "Depends on the school"), T("Dispense d'assiduité, examens aménagés. Demande-le au secrétariat dès la rentrée.", "Attendance exemptions, adapted exams. Ask the administration office at the start of the year."), "https://www.etudiant.gouv.fr"]);
-    if (f.includes("ase")) L.push([T("Soutien sans famille", "Support without family"), T("Priorité possible", "Possible priority"), T("Un contrat jeune majeur de l'aide sociale à l'enfance et la priorité bourse/logement existent selon ta situation. Ton éducateur·rice ou le Crous t'aident à monter le dossier.", "A young-adult contract from child welfare services and priority for grants and housing may apply. Your caseworker or the Crous can help with the file."), "https://www.etudiant.gouv.fr/fr/les-aides-d-urgence-du-crous-1304"]);
-    if (f.includes("etranger")) L.push([T("Étudiant·e hors Union européenne", "Non-EU student"), T("Frais différenciés", "Higher fees"), T("Les droits d'inscription sont plus élevés dans le public pour les non-européen·nes (sauf exceptions). Renseigne-toi sur les exonérations des universités et sur Campus France.", "Public tuition is higher for non-EU students (with exceptions). Ask about university fee waivers and Campus France."), "https://www.campusfrance.org"]);
-    if (f.includes("sportif")) L.push([T("Statut de sportif·ve de haut niveau", "Elite athlete status"), T("Aménagements", "Adjustments"), T("Emploi du temps adapté, tutorat, accueil dans des établissements partenaires. Ton club ou fédération te renseigne.", "Adapted timetable, tutoring, partner schools. Your club or federation can tell you more."), "https://www.sports.gouv.fr"]);
-    if (f.includes("parent")) L.push([T("Aides CAF et Crous pour étudiant·es parents", "CAF and Crous aid for student parents"), T("À cumuler", "Can be combined"), T("Allocations familiales, mode de garde, aide du Crous. Parle à l'assistant·e social·e du Crous pour tout regrouper.", "Family allowances, childcare, Crous aid. Talk to the Crous social worker to put it all together."), "https://www.caf.fr"]);
+    const add = (id, statut) => { const a = A.aides.find(x => x.id === id); if (a) L.push([a.titre, statut || a.montant, a.texte, a.lien]); };
+    if (r.revenus === "faibles") add("bourse", T("Très probable", "Very likely"));
+    else if (r.revenus === "moyens") add("bourse", T("Possible", "Possible"));
+    else if (r.revenus === "nsp") add("bourse", T("À tester", "Worth testing"));
+    if (r.revenus !== "aises") add("urgence");
+    add("repas");
+    if (r.statut === "lycee" && r.revenus !== "aises" && (r.rester === "non" || r.rester === "nsp")) add("mobilite");
+    if (r.rester !== "oui" || r.local === "logement") { add("apl"); add("visale"); add("crous"); }
+    if (r.financer === "alternance") add("apprentissage");
+    ["handicap", "salarie", "ase", "etranger", "sportif", "parent"].forEach(id => { if (f.includes(id)) add(id); });
     return L;
   }
 

@@ -23,42 +23,6 @@
   };
 
 
-  /* Toutes les fonctions du site, rangées par besoin : chaque porte a son icône pour qu'on comprenne d'un coup d'œil. */
-  const GROUPES = [
-    { id: "trouver", cols: 4, icone: "🧭", titre: "Se trouver", portes: [
-      { id: "test", i: "🎯", c: "#FFC629", nom: "Le test", desc: "18 situations, ton profil, les métiers et formations qui te correspondent." },
-      { id: "parcours", i: "🧭", c: "#17824F", nom: "Ta situation", desc: "Bourse, aides, études payantes, prêt, rester ou partir : ton plan sur mesure." },
-      { id: "plan", i: "🚇", c: "#2F5BEA", nom: "L'arborescence", desc: "Bac, domaines, formations, métiers : vois où mène chaque voie selon ton bac." },
-      { id: "metiers", i: "💼", c: "#E4572E", nom: "Les métiers", desc: "Journée type, salaire, études, et ce qu'on ne te dit pas toujours." }
-    ] },
-    { id: "choisir", cols: 4, icone: "🏫", titre: "Choisir sa formation ou son école", portes: [
-      { id: "formations", i: "⚖️", c: "#1B998B", nom: "BTS, BUT, prépa, fac…", desc: "Coût, sélection, encadrement : compare les formations côte à côte." },
-      { id: "ecoles", i: "🏫", c: "#E85D9E", nom: "Les écoles", desc: "IÉSEG, École Bleue, Epitech… toutes les écoles, même celles hors Parcoursup." },
-      { id: "carte", i: "🗺️", c: "#3BB3E0", nom: "La carte", desc: "Les formations près de chez toi, avec leur vrai taux d'accès sur Parcoursup." },
-      { id: "comparer", i: "🔀", c: "#7A3FD1", nom: "Comparer 2 formations", desc: "Taux d'accès, places, profil des admis, emploi : deux formations précises face à face." }
-    ] },
-    { id: "preparer", cols: 3, icone: "📝", titre: "Préparer son dossier", portes: [
-      { id: "calendrier", i: "📅", c: "#F2A71B", nom: "Le calendrier", desc: "Parcoursup étape par étape" },
-      { id: "jpo", i: "🚪", c: "#E4572E", nom: "Portes ouvertes", desc: "Ton planning et tes rappels agenda" },
-      { id: "budget", i: "💶", c: "#9C6644", nom: "Ton budget", desc: "Loyer de ta ville, bourse, APL : combien il te restera chaque mois." },
-      { id: "aides", i: "🧾", c: "#1B998B", nom: "Budget & aides", desc: "Ce que ça coûte, ce qu'on te doit" },
-      { id: "reseau", i: "🔗", c: "#6BBF59", nom: "LinkedIn & réseau", desc: "Vois ce qu'ont fait les gens avant toi et ose leur écrire." },
-      { id: "decodeur", i: "🔓", c: "#7A3FD1", nom: "Le décodeur", desc: "« Oui-si », ECTS, CVEC, DSE… le jargon expliqué simplement." }
-    ] },
-    { id: "etudiants", cols: 2, icone: "🎓", titre: "Déjà étudiant·e ? Changer de voie", portes: [
-      { id: "passerelles", i: "🌉", c: "#2F5BEA", nom: "Passerelles", desc: "BTS, BUT ou licence vers une école de commerce, d'ingénieurs, Sciences Po, le droit ou l'étranger." },
-      { id: "epreuve-tage-mage", i: "🧮", c: "#E4572E", nom: "Tests d'admission", desc: "Tage Mage, Tage 2, GMAT, IAE-Message, TOEIC : format, prix, dates, conseils." }
-    ] },
-    { id: "plus", cols: 3, icone: "✨", titre: "Aller plus loin", portes: [
-      { id: "assistant", i: "💬", c: "#F6D23B", nom: "Pose ta question", desc: "Un assistant qui répond à partir des fiches et des données officielles." },
-      { id: "defis", i: "🏆", c: "#E85D9E", nom: "Défis de la semaine", desc: "3 défis, 25 km chacun" },
-      { id: "temoignages", i: "🗣️", c: "#2F5BEA", nom: "Témoignages", desc: "Des étudiant·es racontent" },
-      { id: "classe", i: "🧑‍🏫", c: "#1B998B", nom: "Espace enseignant·e", desc: "Lancer le test en classe" },
-      { id: "vraifaux", i: "✅", c: "#17824F", nom: "Vrai ou faux", desc: "12 idées reçues" },
-      { id: "carnet", i: "📓", c: "#9C6644", nom: "Mon carnet", desc: "Km, tampons, favoris" }
-    ] }
-  ];
-
   A.pages.accueil = function (el) {
     const s = A.etat, { n, suivant } = A.niveau();
     const profil = s.profil;
@@ -86,16 +50,16 @@
         <a class="btn btn-ligne" href="#resultat">Voir mes résultats</a>
       </section>` : ""}
 
-      ${GROUPES.map(g => `
-      <section class="groupe-portes" aria-labelledby="gp-${g.id}">
-        <h2 class="gp-titre" id="gp-${g.id}"><span aria-hidden="true">${g.icone}</span>${A.e(g.titre)}</h2>
-        <div class="portes" style="--cols:${g.cols}">
-          ${g.portes.map(f => `<a class="porte" href="#${f.id}" style="--c:${f.c}">
-            <span class="porte-ico" aria-hidden="true">${f.i}</span>
-            <span class="porte-corps"><strong>${A.e(f.nom)}</strong><span>${A.e(f.desc)}</span></span>
-          </a>`).join("")}
-        </div>
-      </section>`).join("")}
+      <section class="hubs" aria-label="Les cinq grandes parties du site">
+        ${A.HUBS.map(h => `
+        <article class="hub-carte" style="--c:${h.c}">
+          <a class="hub-tete" href="#${h.pages[0][0]}">
+            <span class="hub-ico" aria-hidden="true">${h.emoji}</span>
+            <span class="hub-corps"><strong>${A.e(h.nom)}</strong><span>${A.e(h.id === "metiers" ? h.desc.replace("Des fiches", A.metiers.length + " fiches") : h.desc)}</span></span>
+          </a>
+          ${h.pages.length > 1 ? `<ul class="hub-liens">${h.pages.map(([id, ico, nom]) => `<li><a href="#${id}"><span aria-hidden="true">${ico}</span><span>${A.e(nom)}</span></a></li>`).join("")}</ul>` : ""}
+        </article>`).join("")}
+      </section>
 
       <section class="carte-progres">
         <div class="cp-niveau">
@@ -114,13 +78,6 @@
 
       ${A.blocDefis(true)}
 
-      <section class="vf-teaser">
-        <div>
-          <p class="surtitre">Vrai ou faux ?</p>
-          <p class="vf-teaser-q">« ${A.e(A.vraiFaux[0].q)} »</p>
-        </div>
-        <a class="btn btn-ligne" href="#vraifaux">Jouer (12 questions)</a>
-      </section>
     `;
   };
 })();

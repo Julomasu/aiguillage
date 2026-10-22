@@ -47,7 +47,7 @@
   }
 
   A.locale = "en-GB";
-  const FICHIERS_EN = ["en-ui", "en-extra", "en-rules", "en-data-base", "en-data-contenus", "en-data-formations", "en-data-metiers1", "en-data-metiers2", "en-new-ui", "en-data-passerelles", "en-data-acces-1", "en-data-acces-2", "en-data-acces-3", "en-data-acces-4"];
+  const FICHIERS_EN = ["en-ui", "en-extra", "en-rules", "en-data-base", "en-data-contenus", "en-data-formations", "en-data-metiers1", "en-data-metiers2", "en-data-metiers3", "en-new-ui", "en-data-passerelles", "en-data-acces-1", "en-data-acces-2", "en-data-acces-3", "en-data-acces-4", "en-data-acces-5", "en-data-acces-6"];
   A.langueChargee = Promise.all(FICHIERS_EN.map(f => charger("js/i18n/" + f + ".js"))).then(demarrerTraduction).catch(() => {
     // Les fichiers anglais n'ont pas pu être chargés (hors ligne, par exemple) : on reste en français.
     A.lang = "fr"; A.locale = "fr-FR"; document.documentElement.lang = "fr";
@@ -59,7 +59,7 @@
     const parId = (liste, tr) => liste.forEach(o => { const t = tr[o.id]; if (t) Object.assign(o, t); });
     parId(A.lignes, D.lignes || {}); parId(A.specialites, D.specialites || {}); parId(A.series, D.series || {});
     parId(A.bacs, D.bacs || {}); parId(A.types, D.types || {}); parId(A.badges, D.badges || {});
-    A.formations.forEach(f => { const t = (D.formations || {})[f.id]; if (t) Object.assign(f, t); });
+    A.formations.forEach(f => { const t = (D.formations || {})[f.id] || (D.formations_plus || {})[f.id]; if (t) Object.assign(f, t); });
     A.metiers.forEach(m => { const t = (D.metiers || {})[m.id]; if (t) Object.assign(m, t); });
     A.acces.forEach((a, i) => { if (D.acces && D.acces[i]) a.label = D.acces[i]; });
     Object.keys(A.profils).forEach(k => { if (D.profils && D.profils[k]) Object.assign(A.profils[k], D.profils[k]); });

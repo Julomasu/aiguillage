@@ -565,7 +565,7 @@ button.puce:hover { border-color: var(--ink); }
   .nav-haut { display: none; }
   .km-chip { margin-left: auto; }
   .onglets {
-    display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
+    display: grid; grid-template-columns: repeat(6, 1fr); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
     padding: 6px max(8px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px));
     background: var(--surface); border-top: 1px solid var(--rule);
   }
@@ -1022,3 +1022,32 @@ code { font-size: .9em; background: var(--surface-2); padding: 1px 5px; border-r
 .emp-note { margin: 6px 0 0 !important; font-size: .85rem !important; font-style: italic; }
 #budget-villes { margin-top: 24px; }
 #budget-villes .bud-villes { grid-column: auto; }
+
+/* ——— Sous-navigation des pôles */
+.sous-nav-zone:empty { display: none; }
+.sous-nav { max-width: var(--max); margin: 0 auto; padding: 14px 0 0; }
+.sous-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.sous-nav li { flex: none; }
+.sous-nav a { display: inline-flex; gap: 7px; align-items: center; white-space: nowrap; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 700; font-size: .9rem; }
+.sous-nav a:hover { border-color: var(--ink); }
+.sous-nav a[aria-current="page"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.sous-nav .sn-pole { font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.plus-titre { font-size: .72rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 10px 4px 2px; }
+.plus-titre:first-child { margin-top: 2px; }
+
+/* ——— Accueil : les cinq pôles */
+.hubs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.hub-carte { grid-column: span 2; display: grid; align-content: start; gap: 12px; padding: 18px; border-radius: 20px; background: var(--surface); border: 1px solid var(--rule); border-top: 5px solid var(--c); box-shadow: 0 1px 2px rgb(19 26 51 / .06); }
+.hub-carte:nth-child(4), .hub-carte:nth-child(5) { grid-column: span 3; }
+.hub-tete { display: flex; gap: 14px; align-items: flex-start; text-decoration: none; color: var(--ink); }
+.hub-ico { flex: none; width: 52px; height: 52px; display: grid; place-items: center; font-size: 1.7rem; border-radius: 14px; background: color-mix(in srgb, var(--c) 22%, var(--surface)); }
+.hub-corps { display: grid; gap: 4px; }
+.hub-corps strong { font-family: var(--f-titre); font-size: 1.12rem; }
+.hub-corps span { font-size: .93rem; color: var(--muted); line-height: 1.4; }
+.hub-liens { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.hub-liens a { display: inline-flex; gap: 6px; align-items: center; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); text-decoration: none; font-size: .86rem; font-weight: 700; }
+.hub-liens a:hover { border-color: var(--ink); }
+@media (max-width: 900px) { .hubs { grid-template-columns: 1fr 1fr; } .hub-carte, .hub-carte:nth-child(4), .hub-carte:nth-child(5) { grid-column: auto; } }
+@media (max-width: 620px) { .hubs { grid-template-columns: 1fr; } }
+.trois-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) { .trois-col { grid-template-columns: 1fr; } }

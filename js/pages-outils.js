@@ -150,30 +150,32 @@
     el.onclick = null;
   };
 
-  /* ——— Budget & aides */
+  /* ——— Aides : le catalogue unique (la page « Ta situation » en extrait celles qui te concernent) */
   A.pages.aides = function (el) {
-    el.innerHTML = `
-      <section class="tete-page">
-        <p class="surtitre">Budget</p>
-        <h1>Budget & aides</h1>
-        <p class="chapo">L'argent ne doit pas décider de ton orientation. Beaucoup de formations sont gratuites, et il existe des aides que peu de gens demandent.</p>
-      </section>
-      <section class="bloc">
-        <h2>Combien coûte une année ?</h2>
-        <p class="petit">Frais de scolarité indicatifs (2026-2027), hors logement et vie quotidienne.</p>
-        <ul class="couts">${A.couts.map(c => `<li><span class="c-nom">${A.e(c.f)}</span><span class="c-niv" aria-hidden="true">${[1, 2, 3].map(k => `<i class="${k <= c.niv ? "on" : ""}"></i>`).join("")}</span><span class="c-val">${A.e(c.c)}</span></li>`).join("")}</ul>
-      </section>
-      <section class="bloc">
-        <h2>Les aides à connaître</h2>
-        <div class="grille-aides">${A.aides.map(a => `
+    const carte = a => `
           <article class="carte-aide">
             <span class="ca-montant">${A.e(a.montant)}</span>
             <h3>${A.e(a.titre)}</h3>
             <p>${A.e(a.texte)}</p>
             <a class="lien-fleche" href="${a.lien}" target="_blank" rel="noopener">${A.e(a.lienTexte)}</a>
-          </article>`).join("")}</div>
+          </article>`;
+    el.innerHTML = `
+      <section class="tete-page">
+        <p class="surtitre">Argent</p>
+        <h1>Les aides à connaître</h1>
+        <p class="chapo">L'argent ne doit pas décider de ton orientation. Beaucoup de formations sont gratuites, et il existe des aides que peu de gens demandent.</p>
       </section>
-      <a class="bandeau-lien" href="#budget"><strong>Simule ton budget</strong><span>Loyer de ta ville, bourse, APL, job : vois ce qu'il te restera chaque mois.</span></a>
+      <a class="bandeau-lien" href="#parcours"><strong>Quelles aides pour toi ?</strong><span>Réponds à quelques questions : on garde seulement celles qui te concernent, avec le financement et la ville.</span></a>
+      <section class="bloc">
+        <h2>Pour presque tout le monde</h2>
+        <div class="grille-aides">${A.aides.filter(a => a.pour === "tous").map(carte).join("")}</div>
+      </section>
+      <section class="bloc">
+        <h2>Selon ta situation</h2>
+        <div class="grille-aides">${A.aides.filter(a => a.pour !== "tous").map(carte).join("")}</div>
+      </section>
+      <a class="bandeau-lien" href="#budget"><strong>Simule ton budget</strong><span>Loyer et transport de ta ville, bourse, APL, job : vois ce qu'il te restera chaque mois.</span></a>
+      <a class="bandeau-lien" href="#formations"><strong>Combien coûte chaque formation ?</strong><span>Le coût par an figure dans le comparateur de formations.</span></a>
       <aside class="encart encart-savais">
         <strong>Le réflexe à avoir</strong>
         <p>Fais ta demande de bourse (DSE) au printemps de ta terminale, même si tu penses ne pas y avoir droit. Les plafonds sont plus hauts qu'on ne croit, et sans demande, aucune chance de l'obtenir.</p>

@@ -11,12 +11,10 @@
       <span>Aiguillage</span>
     </a>
     <nav class="nav-haut" aria-label="Navigation principale">
-      <a href="#test" data-nav="test">Le test</a>
-      <a href="#plan" data-nav="plan">Le plan</a>
+      <a href="#test" data-nav="decouvrir">Me découvrir</a>
       <a href="#metiers" data-nav="metiers">Métiers</a>
       <a href="#formations" data-nav="formations">Formations</a>
-      <a href="#ecoles" data-nav="ecoles">Écoles</a>
-      <a href="#carte" data-nav="carte">Carte</a>
+      <a href="#parcours" data-nav="demarches">Démarches</a>
       <a href="#assistant" data-nav="assistant">Assistant</a>
       <button type="button" class="nav-plus" data-ouvre-plus aria-expanded="false" aria-controls="plus">Plus</button>
     </nav>
@@ -28,24 +26,16 @@
 
 <div class="plus" id="plus" hidden>
   <nav aria-label="Autres outils">
-    <a href="#carte" data-nav="carte" class="plus-mobile"><span class="plus-ico" aria-hidden="true">🗺️</span><strong>La carte</strong><span>14 000 formations près de chez toi</span></a>
-    <a href="#assistant" data-nav="assistant" class="plus-mobile"><span class="plus-ico" aria-hidden="true">💬</span><strong>L'assistant</strong><span>Pose tes questions</span></a>
-    <a href="#formations" data-nav="formations" class="plus-mobile"><span class="plus-ico" aria-hidden="true">⚖️</span><strong>Les formations</strong><span>Comparateur BTS, BUT, prépa…</span></a>
-    <a href="#ecoles" data-nav="ecoles" class="plus-mobile"><span class="plus-ico" aria-hidden="true">🏫</span><strong>Annuaire des écoles</strong><span>Toutes les écoles, même hors Parcoursup</span></a>
-    <a href="#parcours" data-nav="parcours"><span class="plus-ico" aria-hidden="true">🧭</span><strong>Ta situation</strong><span>Aides, financement, ville : ton plan</span></a>
-    <a href="#passerelles" data-nav="passerelles"><span class="plus-ico" aria-hidden="true">🌉</span><strong>Passerelles & tests</strong><span>Tage Mage, GMAT, admissions parallèles</span></a>
-    <a href="#budget" data-nav="budget"><span class="plus-ico" aria-hidden="true">💶</span><strong>Simulateur de budget</strong><span>Loyer, bourse, reste à vivre</span></a>
-    <a href="#temoignages" data-nav="temoignages"><span class="plus-ico" aria-hidden="true">🗣️</span><strong>Témoignages</strong><span>Des étudiant·es racontent</span></a>
-    <a href="#classe" data-nav="classe"><span class="plus-ico" aria-hidden="true">🧑‍🏫</span><strong>Espace enseignant·e</strong><span>Lancer le test en classe</span></a>
-    <a href="#defis" data-nav="defis"><span class="plus-ico" aria-hidden="true">🏆</span><strong>Défis de la semaine</strong><span>3 défis, 25 km chacun</span></a>
-    <a href="#jpo" data-nav="jpo"><span class="plus-ico" aria-hidden="true">🚪</span><strong>Portes ouvertes</strong><span>Ton planning et tes rappels agenda</span></a>
-    <a href="#reseau" data-nav="reseau"><span class="plus-ico" aria-hidden="true">🔗</span><strong>LinkedIn & réseau</strong><span>Vois ce qu'ont fait les gens avant toi</span></a>
-    <a href="#decodeur" data-nav="decodeur"><span class="plus-ico" aria-hidden="true">🔓</span><strong>Le décodeur</strong><span>Le jargon expliqué</span></a>
-    <a href="#vraifaux" data-nav="vraifaux"><span class="plus-ico" aria-hidden="true">✅</span><strong>Vrai ou faux</strong><span>12 idées reçues</span></a>
-    <a href="#calendrier" data-nav="calendrier"><span class="plus-ico" aria-hidden="true">📅</span><strong>Le calendrier</strong><span>Parcoursup étape par étape</span></a>
-    <a href="#aides" data-nav="aides"><span class="plus-ico" aria-hidden="true">🧾</span><strong>Budget & aides</strong><span>Ce que ça coûte, ce qu'on te doit</span></a>
-    <a href="#resultat" data-nav="resultat"><span class="plus-ico" aria-hidden="true">🎯</span><strong>Mes résultats</strong><span>Ton profil du test</span></a>
+    <p class="plus-titre">Ressources</p>
+    <a href="#reseau" data-nav="ressources"><span class="plus-ico" aria-hidden="true">🔗</span><strong>LinkedIn & réseau</strong><span>Vois ce qu'ont fait les gens avant toi</span></a>
+    <a href="#temoignages" data-nav="ressources"><span class="plus-ico" aria-hidden="true">🗣️</span><strong>Témoignages</strong><span>Des étudiant·es racontent</span></a>
+    <a href="#decodeur" data-nav="ressources"><span class="plus-ico" aria-hidden="true">🔓</span><strong>Le décodeur</strong><span>Le jargon expliqué</span></a>
+    <a href="#vraifaux" data-nav="ressources"><span class="plus-ico" aria-hidden="true">✅</span><strong>Vrai ou faux</strong><span>Les idées reçues</span></a>
+    <p class="plus-titre">Mon espace</p>
     <a href="#carnet" data-nav="carnet"><span class="plus-ico" aria-hidden="true">📓</span><strong>Mon carnet</strong><span>Km, tampons, favoris</span></a>
+    <a href="#defis" data-nav="defis"><span class="plus-ico" aria-hidden="true">🏆</span><strong>Défis de la semaine</strong><span>3 défis, 25 km chacun</span></a>
+    <a href="#classe" data-nav="classe"><span class="plus-ico" aria-hidden="true">🧑‍🏫</span><strong>Espace enseignant·e</strong><span>Lancer le test en classe</span></a>
+    <a href="#assistant" data-nav="assistant" class="plus-mobile"><span class="plus-ico" aria-hidden="true">💬</span><strong>L'assistant</strong><span>Pose tes questions</span></a>
   </nav>
   <div class="reglages" aria-label="Affichage">
     <p class="surtitre">Affichage</p>
@@ -70,6 +60,7 @@
   </div>
 </div>
 
+<div id="sous-nav" class="sous-nav-zone"></div>
 <main id="app" class="app" tabindex="-1"></main>
 
 <footer class="pied">
@@ -79,9 +70,10 @@
 
 <nav class="onglets" aria-label="Navigation rapide">
   <a href="#accueil" data-nav="accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>Accueil</a>
-  <a href="#test" data-nav="test"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m15 9-2 5-4 1 2-5z"/></svg>Test</a>
-  <a href="#plan" data-nav="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 L12 12 L20 6 M12 12 L20 18 M12 12V4"/><circle cx="12" cy="12" r="2.5"/></svg>Plan</a>
+  <a href="#test" data-nav="decouvrir"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m15 9-2 5-4 1 2-5z"/></svg>Découvrir</a>
   <a href="#metiers" data-nav="metiers"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M9 8V5h6v3"/></svg>Métiers</a>
+  <a href="#formations" data-nav="formations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9 12 4l9 5-9 5z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg>Formations</a>
+  <a href="#parcours" data-nav="demarches"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>Démarches</a>
   <button type="button" data-ouvre-plus aria-expanded="false" aria-controls="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/></svg>Plus</button>
 </nav>
 
@@ -89,12 +81,15 @@
 
 <script src="js/data/formations.js"></script>
 <script src="js/data/metiers.js"></script>
+<script src="js/data/metiers-plus.js"></script>
 <script src="js/data/contenus.js"></script>
 <script src="js/data/passerelles.js"></script>
 <script src="js/data/metiers-acces-1.js"></script>
 <script src="js/data/metiers-acces-2.js"></script>
 <script src="js/data/metiers-acces-3.js"></script>
 <script src="js/data/metiers-acces-4.js"></script>
+<script src="js/data/metiers-acces-5.js"></script>
+<script src="js/data/metiers-acces-6.js"></script>
 <script src="js/core.js"></script>
 <script src="js/defis.js"></script>
 <script src="js/i18n.js"></script>
