@@ -1084,16 +1084,16 @@ code { font-size: .9em; background: var(--surface-2); padding: 1px 5px; border-r
 .legende-acces { grid-auto-flow: column; justify-content: start; gap: 8px; margin: 0 0 4px; flex-wrap: wrap; }
 
 /* ——— Logos */
-.logo { position: relative; display: inline-grid; place-items: center; flex: none; width: var(--t, 40px); height: var(--t, 40px); border-radius: 22%; overflow: hidden;
+.logo-pastille { position: relative; display: inline-grid; place-items: center; flex: none; width: var(--t, 40px); height: var(--t, 40px); border-radius: 22%; overflow: hidden;
   background: hsl(var(--h, 220) 60% 90%); color: hsl(var(--h, 220) 45% 26%); vertical-align: middle; }
-.logo b { font-family: var(--f-titre); font-size: calc(var(--t, 40px) * .36); letter-spacing: -.02em; }
-.logo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; padding: 12%; box-sizing: border-box; }
+.logo-pastille b { font-family: var(--f-titre); font-size: calc(var(--t, 40px) * .36); letter-spacing: -.02em; }
+.logo-pastille img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #fff; padding: 12%; box-sizing: border-box; }
 .logo-svg { width: var(--t, 28px); height: var(--t, 28px); flex: none; vertical-align: middle; }
-:root[data-theme="dark"] .logo img { background: #fff; }
+:root[data-theme="dark"] .logo-pastille img { background: #fff; }
 .emp-noms { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .emp-noms li { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--rule); font-size: .85rem; font-weight: 600; color: var(--ink); }
 .ec-carte-logo { display: flex; gap: 14px; align-items: flex-start; }
-.ec-carte-logo > .logo { margin-top: 2px; }
+.ec-carte-logo > .logo-pastille { margin-top: 2px; }
 .ec-tete-logo { display: flex; gap: 16px; align-items: center; }
 .carte-aide .ca-tete { display: flex; align-items: center; gap: 10px; }
 .titre-logo { display: inline-flex; align-items: center; gap: 12px; }

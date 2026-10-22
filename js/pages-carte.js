@@ -253,7 +253,7 @@
       const v = trouverVille(saisie);
       if (!v) return;
       A.etat.ville = v; A.sauver();
-      f.voirPlus = 0; carte.selection = null;
+      f.voirPlus = 0; carte.selection = null; carte.groupe = null;
       recentrer(); maj();
     };
     A.$("#carte-ville").addEventListener("change", ev => choisirVille(ev.target.value));
@@ -335,19 +335,29 @@
     if (meilleur) montrerSelection(meilleur);
   }
 
+  /* Plusieurs formations d'un même établissement partagent le même point sur la carte (ex. le PGE et le bachelor d'une école) :
+     un clic les sélectionne toutes, pour qu'aucune ne reste cachée sous l'autre. */
+  const memeLieu = r => carte.toutes.filter(x => x.lat === r.lat && x.lon === r.lon);
+
   function montrerSelection(meilleur) {
+    const groupe = memeLieu(meilleur);
     carte.selection = meilleur.id;
+    carte.groupe = new Set(groupe.map(x => x.id));
     majPlateau();
     const zone = A.$("#carte-liste");
-    let carteEl = A.$("#cf-" + meilleur.id);
-    if (!carteEl) {
-      // Formation hors de la liste affichée : on la montre en tête
-      zone.insertAdjacentHTML("afterbegin", carteFormation(meilleur));
-      carteEl = A.$("#cf-" + meilleur.id);
-    }
     A.$$(".cf-sel", zone).forEach(n => n.classList.remove("cf-sel"));
-    carteEl.classList.add("cf-sel");
-    carteEl.scrollIntoView({ block: "nearest", behavior: document.documentElement.classList.contains("calme") ? "auto" : "smooth" });
+    let premier = null;
+    groupe.slice().reverse().forEach(r => {
+      let el = A.$("#cf-" + r.id);
+      if (!el) {
+        // Formation hors de la liste affichée : on la montre en tête
+        zone.insertAdjacentHTML("afterbegin", carteFormation(r));
+        el = A.$("#cf-" + r.id);
+      }
+      el.classList.add("cf-sel");
+      premier = el;
+    });
+    if (premier) premier.scrollIntoView({ block: "nearest", behavior: document.documentElement.classList.contains("calme") ? "auto" : "smooth" });
     dessiner();
   }
 
@@ -479,17 +489,23 @@
     const proches = new Set((carte.proches || []).map(r => r.id)), v = A.etat.ville;
     return { type: "FeatureCollection", features: carte.toutes.filter(r => r.lat != null).map(r => ({
       type: "Feature", geometry: { type: "Point", coordinates: [r.lon, r.lat] },
-      properties: { id: r.id, c: r.famille.couleur, p: !v || proches.has(r.id) ? 1 : 0, s: carte.selection === r.id ? 1 : 0 }
+      properties: { id: r.id, c: r.famille.couleur, p: !v || proches.has(r.id) ? 1 : 0, s: carte.groupe ? (carte.groupe.has(r.id) ? 1 : 0) : (carte.selection === r.id ? 1 : 0) }
     })) };
   }
 
-  /* Carrés d'environ 140 m de côté autour de chaque formation, extrudés en hauteur selon les places (plafonnées) */
+  /* Carrés d'environ 140 m de côté autour de chaque formation, extrudés en hauteur selon les places (plafonnées).
+     Les formations qui partagent le même point (ex. PGE et bachelor d'une école) sont posées côte à côte pour qu'aucune ne cache l'autre. */
   function geojsonColonnes() {
-    const proches = new Set((carte.proches || []).map(r => r.id)), v = A.etat.ville, demi = 70;
+    const proches = new Set((carte.proches || []).map(r => r.id)), v = A.etat.ville, demi = 70, pas = 160;
+    const rang = new Map(), taille = new Map();
+    carte.toutes.forEach(r => { if (r.lat != null) { const k = r.lat + "," + r.lon; taille.set(k, (taille.get(k) || 0) + 1); } });
     return { type: "FeatureCollection", features: carte.toutes.filter(r => r.lat != null).map(r => {
+      const k = r.lat + "," + r.lon, i = rang.get(k) || 0; rang.set(k, i + 1);
+      const decal = (i - (taille.get(k) - 1) / 2) * pas;
       const dLat = demi / 110570, dLon = demi / (111320 * Math.cos(r.lat * Math.PI / 180)), h = Math.max(60, Math.min(r.places || 15, 400) * 4);
+      const lon = r.lon + decal / (111320 * Math.cos(r.lat * Math.PI / 180));
       return { type: "Feature", properties: { id: r.id, c: r.famille.couleur, h, p: !v || proches.has(r.id) ? 1 : 0 },
-        geometry: { type: "Polygon", coordinates: [[[r.lon - dLon, r.lat - dLat], [r.lon + dLon, r.lat - dLat], [r.lon + dLon, r.lat + dLat], [r.lon - dLon, r.lat + dLat], [r.lon - dLon, r.lat - dLat]]] } };
+        geometry: { type: "Polygon", coordinates: [[[lon - dLon, r.lat - dLat], [lon + dLon, r.lat - dLat], [lon + dLon, r.lat + dLat], [lon - dLon, r.lat + dLat], [lon - dLon, r.lat - dLat]]] } };
     }) };
   }
 

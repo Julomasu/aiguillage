@@ -20,7 +20,7 @@ Audencia | Audencia | commerce | associatif | Nantes, Paris | psup, concours | D
 Grenoble École de Management | GEM | commerce | consulaire | Grenoble | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | grenoble ecole de management;grenoble em;gem
 TBS Education | TBS | commerce | consulaire | Toulouse, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | toulouse business school;tbs education
 Rennes School of Business | RSB | commerce | consulaire | Rennes, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | rennes school of business;esc rennes
-Montpellier Business School | MBS | commerce | consulaire | Montpellier, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | montpellier business school
+Montpellier Business School | MBS | commerce | consulaire | Montpellier, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | montpellier business school;mbs
 Burgundy School of Business | BSB | commerce | consulaire | Dijon, Lyon, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | burgundy school of business;bsb
 EM Normandie | EM Normandie | commerce | consulaire | Le Havre, Caen, Paris | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | em normandie
 EM Strasbourg Business School | EM Strasbourg | commerce | public | Strasbourg | psup, concours | Diplôme visé, grade de master | Programme post-bac (5 ans) | em strasbourg

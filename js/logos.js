@@ -66,7 +66,7 @@
     const img = domaine && logosActifs()
       ? `<img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(domaine)}&sz=128" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="${t}" height="${t}">`
       : "";
-    return `<span class="logo" style="--t:${t}px;--h:${teinte(nom)}" aria-hidden="true"><b>${A.e(!domaine && emoji ? emoji : initiales(nom))}</b>${img}</span>`;
+    return `<span class="logo-pastille" style="--t:${t}px;--h:${teinte(nom)}" aria-hidden="true"><b>${A.e(!domaine && emoji ? emoji : initiales(nom))}</b>${img}</span>`;
   };
 
   const EMOJI_CAT = { commerce: "💼", ingenieur: "⚙️", numerique: "💻", "art-design": "🎨", media: "🎬", "sciences-po": "🏛️", universite: "🎓", sante: "⚕️", "social-sport": "🤝",
@@ -95,11 +95,11 @@
   /* Si une image ne charge pas (hors ligne, site bloqué), on la retire : les initiales restent */
   document.addEventListener("error", ev => {
     const im = ev.target;
-    if (im && im.tagName === "IMG" && im.closest(".logo")) im.remove();
+    if (im && im.tagName === "IMG" && im.closest(".logo-pastille")) im.remove();
   }, true);
   /* Les favicons très petits ou le globe par défaut de Google ne valent pas mieux que les initiales */
   document.addEventListener("load", ev => {
     const im = ev.target;
-    if (im && im.tagName === "IMG" && im.closest(".logo") && im.naturalWidth && im.naturalWidth < 24) im.remove();
+    if (im && im.tagName === "IMG" && im.closest(".logo-pastille") && im.naturalWidth && im.naturalWidth < 24) im.remove();
   }, true);
 })();
