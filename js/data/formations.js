@@ -112,7 +112,7 @@ A.types = [
   {
     id: "ecole-inge", nom: "École d'ingé post-bac", long: "École d'ingénieurs en 5 ans",
     duree: "5 ans", niveau: "Bac+5 (titre d'ingénieur)", lieu: "École publique ou privée",
-    cout: "≈ 600 €/an dans le public, 6 000 à 10 000 €/an dans le privé", coutNiv: 2, selection: "Dossier, parfois concours (Geipi Polytech, Avenir, Puissance Alpha…)", selNiv: 2,
+    cout: "≈ 630 €/an dans le public (2 620 € dans les Écoles centrales), 6 000 à 10 000 €/an dans le privé", coutNiv: 2, selection: "Dossier, parfois concours (Geipi Polytech, Avenir, Puissance Alpha…)", selNiv: 2,
     encadrement: 3, pratique: 2, alternance: true,
     resume: "Prépa intégrée (2 ans) puis cycle ingénieur (3 ans), sans concours au milieu.",
     pourQui: "Tu aimes les sciences, tu veux devenir ingénieur·e sans passer par une prépa classique.",

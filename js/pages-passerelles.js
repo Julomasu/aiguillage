@@ -2,7 +2,7 @@
 (function () {
   let de = null, vers = null, ouvert = null;
 
-  const chip = (g, o, actif) => `<button type="button" class="puce puce-dom" data-${g}="${o.id}" aria-pressed="${actif}">${o.emoji} ${A.e(o.nom)}</button>`;
+  const chip = (g, o, actif) => `<button type="button" class="puce puce-dom" data-${g}="${o.id}" aria-pressed="${actif}"><span aria-hidden="true">${o.emoji}</span> <span>${A.e(o.nom)}</span></button>`;
 
   function carteTest(t) {
     return `
@@ -34,7 +34,7 @@
       <article class="voie">
         <header>
           <span class="voie-ico" aria-hidden="true">${objectif.emoji}</span>
-          <div><h3>${A.e(v.nom)}</h3><p class="voie-entree">Tu entres : ${A.e(v.entree)}</p></div>
+          <div><h3>${A.e(v.nom)}</h3><p class="voie-entree"><span>Tu entres :</span> <span>${A.e(v.entree)}</span></p></div>
         </header>
         <p>${A.e(v.resume)}</p>
         <ul class="voie-etapes">${v.comment.map(c => `<li>${A.e(c)}</li>`).join("")}</ul>
@@ -43,7 +43,7 @@
           <dt>Coût</dt><dd>${A.e(v.cout)}</dd>
           <dt>À vérifier</dt><dd>${A.e(v.verifier)}</dd>
         </dl>
-        ${tests.length ? `<p class="tests-liens"><span class="petit">Tests à passer :</span> ${tests.map(t => `<a class="puce puce-lien" href="#epreuve-${t.id}">${t.emoji} ${A.e(t.nom)}</a>`).join(" ")}</p>` : ""}
+        ${tests.length ? `<p class="tests-liens"><span class="petit">Tests à passer :</span> ${tests.map(t => `<a class="puce puce-lien" href="#epreuve-${t.id}"><span aria-hidden="true">${t.emoji}</span> <span>${A.e(t.nom)}</span></a>`).join(" ")}</p>` : ""}
       </article>`;
   }
 

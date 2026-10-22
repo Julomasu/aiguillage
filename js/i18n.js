@@ -47,7 +47,7 @@
   }
 
   A.locale = "en-GB";
-  const FICHIERS_EN = ["en-ui", "en-extra", "en-rules", "en-data-base", "en-data-contenus", "en-data-formations", "en-data-metiers1", "en-data-metiers2"];
+  const FICHIERS_EN = ["en-ui", "en-extra", "en-rules", "en-data-base", "en-data-contenus", "en-data-formations", "en-data-metiers1", "en-data-metiers2", "en-new-ui", "en-data-passerelles", "en-data-acces-1", "en-data-acces-2", "en-data-acces-3", "en-data-acces-4"];
   A.langueChargee = Promise.all(FICHIERS_EN.map(f => charger("js/i18n/" + f + ".js"))).then(demarrerTraduction).catch(() => {
     // Les fichiers anglais n'ont pas pu être chargés (hors ligne, par exemple) : on reste en français.
     A.lang = "fr"; A.locale = "fr-FR"; document.documentElement.lang = "fr";
@@ -67,6 +67,21 @@
     const parIndex = (liste, tr) => liste.forEach((o, i) => { if (tr && tr[i]) Object.assign(o, tr[i]); });
     parIndex(A.questions, D.questions); parIndex(A.reponses, D.reponses); parIndex(A.lexique, D.lexique); parIndex(A.vraiFaux, D.vraiFaux);
     parId(A.chiffres.bourses, D.bourses || {}); parIndex(A.calendrier, D.calendrier); parIndex(A.checklist, D.checklist); parIndex(A.aides, D.aides); parIndex(A.couts, D.couts);
+    // Employeurs, accès concret, réseau et savoirs par métier (null = on garde le texte d'origine)
+    const AC = A.METIERS_ACCES || {};
+    Object.keys(D.acces || {}).forEach(id => {
+      const o = AC[id], t = D.acces[id];
+      if (!o) return;
+      if (t.emp) o.emp = o.emp.map((e, i) => { const x = t.emp[i]; return x ? [x[0] || e[0], x[1] || e[1], x[2] || e[2]] : e; });
+      ["acces", "sav", "out"].forEach(k => { if (t[k]) o[k] = o[k].map((v, i) => t[k][i] == null ? v : t[k][i]); });
+      if (t.net) o.net = [o.net[0], t.net];
+      if (t.evo) o.evo = t.evo;
+    });
+    // Passerelles et tests d'admission
+    (A.TESTS || []).forEach(x => { if ((D.tests || {})[x.id]) Object.assign(x, D.tests[x.id]); });
+    (A.VOIES || []).forEach(x => { if ((D.voies || {})[x.id]) Object.assign(x, D.voies[x.id]); });
+    (A.PASS_DE || []).forEach(x => { if ((D.pass_de || {})[x.id]) x.nom = D.pass_de[x.id]; });
+    (A.PASS_VERS || []).forEach(x => { if ((D.pass_vers || {})[x.id]) x.nom = D.pass_vers[x.id]; });
     // Mêmes liens d'identifiants : les index construits au chargement pointent vers les mêmes objets, rien à reconstruire.
   }
 

@@ -1019,3 +1019,6 @@ code { font-size: .9em; background: var(--surface-2); padding: 1px 5px; border-r
 .arbre-suite { margin: 4px 0 0; }
 .bloc-parcours { text-align: center; }
 .bloc .puces + h2 { margin-top: 22px; }
+.emp-note { margin: 6px 0 0 !important; font-size: .85rem !important; font-style: italic; }
+#budget-villes { margin-top: 24px; }
+#budget-villes .bud-villes { grid-column: auto; }

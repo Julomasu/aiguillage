@@ -67,7 +67,7 @@ Object.assign(A.EN_DATA, {
       apres: "MMOPK programs, or continuing in your minor / major licence if you are not admitted.",
       bonASavoir: "With an L.AS you follow a licence (law, psychology, biology…) with a health option: it is a real built-in plan B." },
     "ecole-inge": { nom: "Engineering school (post-bac)", long: "Five-year engineering school", duree: "5 years", niveau: "Bac+5 (engineering degree)", lieu: "Public or private school",
-      cout: "≈ €600/year in public schools, €6,000 to €10,000/year in private ones", selection: "File, sometimes an exam (Geipi Polytech, Avenir, Puissance Alpha…)",
+      cout: "≈ €630/year in public schools (€2,620 at the Écoles centrales), €6,000 to €10,000/year in private ones", selection: "File, sometimes an exam (Geipi Polytech, Avenir, Puissance Alpha…)",
       resume: "Integrated prépa (2 years) then engineering cycle (3 years), with no exam in the middle.",
       pourQui: "You like science and want to become an engineer without going through a classic prépa.",
       apres: "Engineer jobs, doctorate, double degree abroad.",

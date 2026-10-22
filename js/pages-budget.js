@@ -5,9 +5,9 @@
     { id: "univ", nom: "Université (licence, BUT, PASS)", frais: () => C.droitsLicence + C.cvec, exonere: true },
     { id: "cpge", nom: "Prépa publique", frais: () => C.droitsLicence + C.cvec, exonere: true },
     { id: "bts", nom: "BTS public", frais: () => 0, exonere: true },
-    { id: "inge", nom: "École d'ingé publique", frais: () => 600 + C.cvec, exonere: true, approx: true },
+    { id: "inge", nom: "École d'ingé publique", frais: () => 630 + C.cvec, exonere: true, approx: true },
     { id: "prive", nom: "École privée", frais: () => 8000, exonere: false, approx: true },
-    { id: "alternance", nom: "En alternance", frais: () => 0, exonere: true }
+    { id: "alternance", nom: "En alternance", frais: () => C.cvec, exonere: true }
   ];
   const LOGEMENTS = [
     { id: "parents", nom: "Chez mes parents" },
@@ -17,11 +17,28 @@
   ];
 
   const defaut = () => ({ logement: "studio", surface: 18, loyerCrous: "", formation: "univ", fraisPrive: 8000, echelon: "aucune",
-    apl: "", famille: 0, jobHeures: 0, salaireApprenti: 800, courses: 150, repas: 15, transport: 30, tel: 15, loisirs: 50 });
+    apl: "", famille: 0, jobHeures: 0, salaireApprenti: 800, courses: 150, repas: 15, transport: 0, transportManuel: false, tel: 15, loisirs: 50 });
 
   function etat() {
     if (!A.etat.budget) A.etat.budget = defaut();
     return A.etat.budget;
+  }
+
+  /* Pass de transport étudiant par ville, en € par mois (sources : sites des réseaux, 2026-2027).
+     Paris / Île-de-France : forfait Imagine R Étudiant 393,30 €/an (Île-de-France Mobilités), souvent payé en 9 mensualités ≈ 44 €.
+     Marseille : Pass annuel étudiant RTM 220 €/an. Bordeaux : Pass Jeune annuel TBM 256,80 €/an. Lyon : abonnement mensuel étudiant TCL 26 € (rentrée 2026).
+     Ailleurs : ordre de grandeur (20 à 30 € par mois), à vérifier sur le site du réseau local. */
+  const T = (fr, en) => A.lang === "en" ? en : fr;
+  const IDF = ["75", "77", "78", "91", "92", "93", "94", "95"];
+  function transportVille() {
+    const v = A.etat.ville;
+    if (!v) return { mois: 30, info: T("Valeur de départ : choisis ta ville pour voir le prix du pass étudiant.", "Starting value: choose your city to see the student pass price.") };
+    const n = A.sansAccents(v.nom);
+    if (IDF.includes(v.dep)) return { mois: 44, info: T("Île-de-France : le forfait Imagine R Étudiant coûte 393,30 € par an (payable en 9 mensualités, soit ≈ 44 € par mois ; ≈ 33 € lissé sur 12 mois). Sans ce forfait, un Navigo mensuel dépasse 90 €.", "Île-de-France: the Imagine R Student pass costs €393.30 a year (payable in 9 instalments, i.e. ≈ €44 a month; ≈ €33 spread over 12 months). Without it, a monthly Navigo exceeds €90.") };
+    if (n === "lyon") return { mois: 26, info: T("Lyon : abonnement mensuel étudiant TCL à 26 € (tarif rentrée 2026).", "Lyon: TCL monthly student pass at €26 (autumn 2026 fare).") };
+    if (n === "marseille") return { mois: 18, info: T("Marseille : Pass annuel étudiant RTM à 220 € par an (≈ 18 € par mois).", "Marseille: RTM annual student pass at €220 a year (≈ €18 a month).") };
+    if (n === "bordeaux") return { mois: 21, info: T("Bordeaux : Pass Jeune annuel TBM à 256,80 € par an (≈ 21 € par mois).", "Bordeaux: TBM annual Youth Pass at €256.80 a year (≈ €21 a month).") };
+    return { mois: 25, info: T("Estimation (20 à 30 € par mois selon les réseaux). Vérifie le tarif étudiant sur le site du réseau de ta ville.", "Estimate (€20 to €30 a month depending on the network). Check the student fare on your city network's site.") };
   }
 
   function loyerVille(loyers) {
@@ -46,7 +63,7 @@
       { id: "loyer", nom: "Logement", v: loyer, info: loyerInfo },
       { id: "courses", nom: "Courses", v: Number(b.courses) || 0 },
       { id: "repas", nom: "Repas Crous", v: (Number(b.repas) || 0) * C.repasCrous, info: `${b.repas} repas à 1 €` },
-      { id: "transport", nom: "Transport", v: Number(b.transport) || 0 },
+      { id: "transport", nom: "Transport", v: b.transportManuel ? Number(b.transport) || 0 : transportVille().mois, info: b.transportManuel ? "" : T("pass étudiant de ta ville", "your city's student pass") },
       { id: "tel", nom: "Téléphone, internet", v: Number(b.tel) || 0 },
       { id: "loisirs", nom: "Loisirs, sorties", v: Number(b.loisirs) || 0 },
       { id: "frais", nom: "Frais d'inscription", v: Math.round(fraisAn / 12), info: fraisAn ? `${A.euros(fraisAn)} par an, lissés sur 12 mois` : (boursier ? "exonéré·e grâce à la bourse" : "gratuit") }
@@ -93,7 +110,8 @@
         <h1>Ton budget étudiant</h1>
         <p class="chapo">Combien il te restera chaque mois, selon la ville, le logement et ta bourse. Les loyers viennent de la carte des loyers officielle, les bourses du barème 2026-2027. Toutes les aides sont détaillées dans <a href="#aides">Budget & aides</a>.</p>
       </section>
-      <div class="budget-zone" id="budget-zone"><p class="petit">Chargement des loyers…</p></div>`;
+      <div class="budget-zone" id="budget-zone"><p class="petit">Chargement des loyers…</p></div>
+      <div id="budget-villes"></div>`;
 
     Promise.all([A.donnees("loyers"), A.donnees("villes")]).then(([loyers, villes]) => {
       if (A.lireHash().page !== "budget") return;
@@ -132,7 +150,7 @@
               <div class="champs-2">
                 <label class="champ"><span>Courses (€)</span><input id="bud-courses" type="number" min="0" value="${b.courses}"></label>
                 <label class="champ"><span>Repas Crous / mois</span><input id="bud-repas" type="number" min="0" max="60" value="${b.repas}"></label>
-                <label class="champ"><span>Transport (€)</span><input id="bud-transport" type="number" min="0" value="${b.transport}"></label>
+                <label class="champ"><span>Transport (€/mois)</span><input id="bud-transport" type="number" min="0" value="${b.transportManuel ? b.transport : r.depenses.find(x => x.id === "transport").v}"><small>${A.e(transportVille().info)}</small></label>
                 <label class="champ"><span>Téléphone, internet (€)</span><input id="bud-tel" type="number" min="0" value="${b.tel}"></label>
                 <label class="champ"><span>Loisirs (€)</span><input id="bud-loisirs" type="number" min="0" value="${b.loisirs}"></label>
               </div>
@@ -152,7 +170,8 @@
             </div>
             <ul class="bud-conseils">${conseils(b, r, m2).map(c => `<li>${A.e(c)}</li>`).join("")}</ul>
           </section>
-          ${comparatifVilles(L, villes.lignes)}`;
+          `;
+        A.$("#budget-villes").innerHTML = comparatifVilles(L, villes.lignes);
       };
 
       const majDepuis = id => {
@@ -161,6 +180,7 @@
         if (!cles[id]) return false;
         const cle = cles[id];
         b[cle] = ["loyerCrous", "apl", "formation", "echelon"].includes(cle) ? val : Number(val) || 0;
+        if (cle === "transport") b.transportManuel = true;
         return true;
       };
 

@@ -163,7 +163,7 @@
     return `
         <section class="bloc bloc-acces">
           <h2>Qui recrute</h2>
-          <div class="emp-groupes">${d.emp.map(([t, l]) => `<div class="emp-groupe"><h3>${A.e(t)}</h3><p>${A.e(l)}</p></div>`).join("")}</div>
+          <div class="emp-groupes">${d.emp.map(([t, l, r]) => `<div class="emp-groupe"><h3>${A.e(t)}</h3><p>${A.e(l)}</p>${r ? `<p class="emp-note">${A.e(r)}</p>` : ""}</div>`).join("")}</div>
           <p class="petit">Liste indicative et non exhaustive. Vérifie les offres actuelles sur les sites carrière des entreprises.</p>
         </section>
 
@@ -185,7 +185,7 @@
             <div><h3>Connaissances</h3><ul class="liste-sav">${d.sav.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
             <div><h3>Outils et certifications</h3><ul class="liste-sav">${d.out.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
           </div>
-          ${tst.length ? `<p class="tests-liens"><span class="petit">Tests et concours utiles :</span> ${tst.map(t => `<a class="puce puce-lien" href="#epreuve-${t.id}">${t.emoji} ${A.e(t.nom)}</a>`).join(" ")}</p>` : ""}
+          ${tst.length ? `<p class="tests-liens"><span class="petit">Tests et concours utiles :</span> ${tst.map(t => `<a class="puce puce-lien" href="#epreuve-${t.id}"><span aria-hidden="true">${t.emoji}</span> <span>${A.e(t.nom)}</span></a>`).join(" ")}</p>` : ""}
           ${d.evo ? `<p class="evo"><strong>Évolution :</strong> ${A.e(d.evo)}</p>` : ""}
         </section>`;
   }

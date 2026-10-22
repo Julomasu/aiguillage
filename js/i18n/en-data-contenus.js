@@ -93,21 +93,21 @@ Object.assign(A.EN_DATA, {
   ],
   aides: [
     { titre: "Means-tested scholarship", montant: "Levels 0 bis to 7, over 10 months", texte: "Paid by the CROUS according to your family's income. It also exempts you from registration fees and the CVEC.", lienTexte: "Official simulator" },
-    { titre: "Parcoursup mobility aid", montant: "€500", texte: "For scholarship-holder students who accept a program outside their académie. To request on Parcoursup.", lienTexte: "Parcoursup" },
+    { titre: "Parcoursup mobility aid", montant: "€500", texte: "For scholarship-holder students who accept a program outside their académie. A €1,500 supplement exists for scholarship-holding vocational-bac graduates from Île-de-France who leave the region. Apply after your admission, on the Crous portal.", lienTexte: "Parcoursup" },
     { titre: "CROUS housing", montant: "Moderate rents", texte: "Rooms and studios in university residences, given first to scholarship holders. Apply through the DSE.", lienTexte: "Find housing" },
     { titre: "APL (CAF)", montant: "Depends on your rent and income", texte: "Housing aid, even in a CROUS residence or a shared flat. Apply as soon as you have your lease.", lienTexte: "Simulate on caf.fr" },
     { titre: "Visale guarantee", montant: "Free", texte: "Action Logement guarantees your rent to the landlord if you have no one to do it for you.", lienTexte: "visale.fr" },
-    { titre: "Apprenticeship", montant: "Salary + free training", texte: "Your training is paid for and you earn a salary. Apprentices can also get help with a driving licence.", lienTexte: "Find a work-study contract" },
+    { titre: "Apprenticeship", montant: "Salary + free training", texte: "Your training is paid for by the company and you earn a salary (a percentage of the minimum wage depending on your age). Only the CVEC levy remains due, and your employer may reimburse it.", lienTexte: "Find a work-study contract" },
     { titre: "University canteens", montant: "Meals at €1", texte: "Since 4 May 2026, a Crous meal costs €1 for all students, scholarship holders or not (one meal per service).", lienTexte: "etudiant.gouv.fr" }
   ],
   couts: [
     { f: "Public BTS", c: "€0" },
     { f: "Public prépa", c: "€0 tuition (+ university registration ≈ €178 and CVEC, €0 if on scholarship)" },
     { f: "Licence / BUT", c: "≈ €178 + CVEC €105 (€0 if on scholarship)" },
-    { f: "Public engineering school", c: "≈ €600" },
+    { f: "Public engineering school", c: "≈ €630 (€2,620 at the Écoles centrales)" },
     { f: "Private engineering school", c: "€6,000 to €10,000" },
     { f: "Business school", c: "€7,000 to €15,000" },
-    { f: "As an apprentice", c: "€0 and you are paid" }
+    { f: "As an apprentice", c: "Free training and you are paid (only the €105 CVEC levy is due)" }
   ],
   badges: {
     depart: { nom: "First departure", desc: "Open Aiguillage for the first time" },

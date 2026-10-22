@@ -126,11 +126,11 @@ A.checklist = [
 
 A.aides = [
   { titre: "Bourse sur critères sociaux", montant: "Échelons 0 bis à 7, sur 10 mois", texte: "Versée par le CROUS selon les revenus de ta famille. Elle t'exonère aussi des frais d'inscription et de la CVEC.", lien: "https://www.messervices.etudiant.gouv.fr", lienTexte: "Simulateur officiel" },
-  { titre: "Aide à la mobilité Parcoursup", montant: "500 €", texte: "Pour les lycéen·nes boursier·es qui acceptent une formation hors de leur académie. À demander sur Parcoursup.", lien: "https://www.parcoursup.gouv.fr", lienTexte: "Parcoursup" },
+  { titre: "Aide à la mobilité Parcoursup", montant: "500 €", texte: "Pour les lycéen·nes boursier·es qui acceptent une formation hors de leur académie. Un complément de 1 500 € existe pour les bachelier·ères pro boursier·es d'Île-de-France qui partent hors de la région. À demander après ton admission, sur le portail du Crous.", lien: "https://www.parcoursup.gouv.fr", lienTexte: "Parcoursup" },
   { titre: "Logement CROUS", montant: "Loyers modérés", texte: "Chambres et studios en résidence universitaire, attribués en priorité aux boursier·es. Demande via le DSE.", lien: "https://trouverunlogement.lescrous.fr", lienTexte: "Trouver un logement" },
   { titre: "APL (CAF)", montant: "Selon ton loyer et tes revenus", texte: "Aide au logement, même en résidence CROUS ou en colocation. Fais la demande dès que tu as ton bail.", lien: "https://www.caf.fr", lienTexte: "Simuler sur caf.fr" },
   { titre: "Garantie Visale", montant: "Gratuite", texte: "Action Logement se porte garant pour toi auprès du propriétaire si tu n'as personne pour le faire.", lien: "https://www.visale.fr", lienTexte: "visale.fr" },
-  { titre: "Apprentissage", montant: "Salaire + formation gratuite", texte: "Ta formation est payée et tu touches un salaire. Les apprenti·es peuvent aussi obtenir une aide au permis de conduire.", lien: "https://www.alternance.emploi.gouv.fr", lienTexte: "Trouver une alternance" },
+  { titre: "Apprentissage", montant: "Salaire + formation gratuite", texte: "Ta formation est payée par l'entreprise et tu touches un salaire (un pourcentage du Smic selon ton âge). Seule la CVEC reste due, et ton employeur peut te la rembourser.", lien: "https://www.alternance.emploi.gouv.fr", lienTexte: "Trouver une alternance" },
   { titre: "Restos U", montant: "Repas à 1 €", texte: "Depuis le 4 mai 2026, le repas Crous est à 1 € pour tous les étudiant·es, boursier·es ou non (un repas par service).", lien: "https://www.etudiant.gouv.fr/fr/comment-beneficier-du-repas-crous-1-eu-3123", lienTexte: "etudiant.gouv.fr" }
 ];
 
@@ -139,10 +139,10 @@ A.couts = [
   { f: "BTS public", c: "0 €", niv: 0 },
   { f: "Prépa publique", c: "0 € de scolarité (+ inscription fac ≈ 178 € et CVEC, 0 € si boursier·e)", niv: 0 },
   { f: "Licence / BUT", c: "≈ 178 € + CVEC 105 € (0 € si boursier·e)", niv: 1 },
-  { f: "École d'ingé publique", c: "≈ 600 €", niv: 1 },
+  { f: "École d'ingé publique", c: "≈ 630 € (2 620 € dans les Écoles centrales)", niv: 1 },
   { f: "École d'ingé privée", c: "6 000 à 10 000 €", niv: 3 },
   { f: "École de commerce", c: "7 000 à 15 000 €", niv: 3 },
-  { f: "En apprentissage", c: "0 € et tu es payé·e", niv: 0 }
+  { f: "En apprentissage", c: "Formation gratuite et tu es payé·e (seule la CVEC de 105 € est due)", niv: 0 }
 ];
 
 A.badges = [
