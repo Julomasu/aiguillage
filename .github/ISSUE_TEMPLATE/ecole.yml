@@ -1,0 +1,41 @@
+name: École manquante ou erreur
+description: Signale une école absente de l'annuaire, ou une information fausse. On vérifie puis on l'ajoute.
+title: "École manquante : "
+labels: ["ecole"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Une école ajoutée aide tous les lycéen·nes. Donne des liens vers des sources officielles (site de l'école, France compétences, Parcoursup, ministère).
+  - type: input
+    id: nom
+    attributes:
+      label: Nom de l'école
+    validations:
+      required: true
+  - type: input
+    id: villes
+    attributes:
+      label: Ville(s) des campus
+    validations:
+      required: true
+  - type: dropdown
+    id: acces
+    attributes:
+      label: Comment y entre-t-on ?
+      options: [Parcoursup, Concours, Dossier et entretien (hors Parcoursup), Je ne sais pas]
+    validations:
+      required: true
+  - type: input
+    id: site
+    attributes:
+      label: Site officiel
+  - type: input
+    id: reconnaissance
+    attributes:
+      label: Reconnaissance du diplôme (visa, grade, titre RNCP et son numéro, CTI)
+      description: Si tu ne sais pas, laisse vide.
+  - type: textarea
+    id: details
+    attributes:
+      label: Formations, précisions, ou ce qui est faux sur la fiche existante

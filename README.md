@@ -2,6 +2,17 @@
 
 Site d'orientation pour lycéen·nes : comprendre les études supérieures sans jargon, selon son bac et son profil, à partir des données officielles.
 
+## Créer le compte et le dépôt GitHub (une fois, 10 minutes)
+
+1. **Compte** : va sur github.com → *Sign up*. E-mail, mot de passe, nom d'utilisateur (il apparaîtra dans l'adresse du site : `https://<utilisateur>.github.io/aiguillage/`), puis le code reçu par e-mail. Choisis l'offre **Free** : tout ce dont on a besoin est gratuit. Active ensuite l'authentification à deux facteurs (*Settings → Password and authentication*).
+2. **Dépôt** : bouton **+** en haut à droite → *New repository*. Nom : `aiguillage`. Visibilité : **Public** (GitHub Pages est gratuit pour les dépôts publics). Ne coche ni README ni .gitignore, puis *Create repository*.
+3. **Donner accès à Claude** : ouvre claude.ai/connect-github, connecte ton compte, puis installe l'application GitHub de Claude sur le dépôt `aiguillage` (*Only select repositories*).
+4. **Pousser le code** : donne le nom `utilisateur/aiguillage` à Claude, qui rattache le dépôt à la session et envoie le code. Sans Claude : `git remote add origin https://github.com/utilisateur/aiguillage.git && git push -u origin main`.
+5. **Publier le site** : *Settings → Pages → Build and deployment → Source : GitHub Actions*. Après la première exécution du workflow, le site est en ligne.
+6. **Témoignages et écoles manquantes** : renseigne `depotGithub: "utilisateur/aiguillage"` dans `js/config.js`, puis crée dans *Issues → Labels* les étiquettes `approuvé` (modération des témoignages) et `ecole`.
+
+Ne mets jamais de clé API ni de mot de passe dans le dépôt : il est public.
+
 ## Mettre en ligne gratuitement (0 € pour toi et les utilisateurs)
 
 Le site est 100 % statique : il tourne sur **GitHub Pages**, gratuit.
@@ -42,7 +53,8 @@ Le site doit être servi en HTTP (pas en ouvrant `index.html` à la main), car i
 | Le plan | `#plan` | Arborescence Bac → ligne (domaine) → gare (formation) → métier, accès selon le bac, part réelle des bacs pro/techno admis |
 | Métiers | `#metiers`, `#metier-<id>` | 76 fiches détaillées (dont finance : M&A, private equity, trader, actuaire…) + recherche dans les 14 325 intitulés officiels du ROME |
 | Formations | `#formations`, `#type-<id>`, `#formation-<id>` | Comparateur de 13 familles, 66 formations, chiffres Parcoursup réels sur chaque fiche |
-| Carte | `#carte` | Les 14 252 formations Parcoursup 2025 sur une vraie carte (OpenFreeMap / OpenStreetMap) : rayon autour de sa ville, taux d'accès, places, profil des admis, % boursiers. Repli sur une carte simplifiée avec noms de villes si le fond est injoignable |
+| Carte | `#carte` | Les 14 252 formations Parcoursup 2025 sur une vraie carte (OpenFreeMap / OpenStreetMap) : rayon autour de sa ville, taux d'accès, places, profil des admis, % boursiers. Deux fonds : **Clair** (style « bright ») et **3D** (vue inclinée, bâtiments en volume, tours dont la hauteur suit le nombre de places). Bouton **Hors Parcoursup** : affiche aussi les écoles qui recrutent en direct. Repli sur une carte simplifiée si le fond est injoignable |
+| Écoles | `#ecoles`, `#ecole-<id>` | Annuaire de ~1 900 établissements : tout Parcoursup (campus regroupés, lycées à prépa / DN MADE compris), les écoles d'ingénieurs accréditées CTI, et ~270 écoles **hors Parcoursup** (École Bleue, Epitech, grandes écoles en 5 ans…). Recherche par nom, sigle, ville ; filtres domaine / statut / distance ; fiche avec accès, campus, reconnaissance du diplôme (à vérifier), formations Parcoursup |
 | Réseau | `#reseau` | Tuto LinkedIn en 6 étapes, missions « vois ce qu'ont fait les gens avant toi » (outil Anciens élèves), générateur de premier message, sécurité, outils publics gratuits |
 | Budget | `#budget` | Reste à vivre : loyers officiels de 217 villes, barème des bourses 2026-2027, APL, job, alternance |
 | Assistant | `#assistant` | Chat qui répond à partir des fiches, du profil et des données Parcoursup : mode guidé gratuit, ou Claude quand il est disponible |
@@ -73,6 +85,15 @@ Le bouton **FR / EN** du bandeau change la langue (choix mémorisé ; sans choix
 2. Créer l'étiquette `approuvé` dans le dépôt. `.github/workflows/temoignages.yml` publie le témoignage dans `data/temoignages.json` quand quelqu'un d'autorisé pose cette étiquette sur le ticket : c'est la modération.
 3. Voir `outils/temoignage.py` pour la conversion d'un ticket en entrée du fichier.
 
+## Annuaire des écoles : d'où viennent les données
+
+`python3 outils/ecoles.py` fabrique `data/ecoles.json` en fusionnant :
+1. **Parcoursup** (`data/parcoursup.json`) : tous les établissements, campus regroupés. Un établissement trouvé là est « Parcoursup », les autres sont « hors Parcoursup ».
+2. **Liste CTI** des écoles d'ingénieurs accréditées (`outils/sources/cti-2025-12.json`, extraite de l'arrêté du 11 décembre 2025 sur Légifrance avec `outils/cti_legifrance.py`).
+3. **`outils/ecoles_complement.txt`** : liste écrite à la main (sigle, reconnaissance, formations, alias pour retrouver l'école dans Parcoursup). C'est ici qu'on ajoute une école : une ligne, le format est décrit en tête de fichier.
+
+Aucune liste ouverte n'est exhaustive pour le privé hors Parcoursup (le répertoire de l'Onisep, par exemple, bloque les téléchargements automatiques). L'annuaire le dit sur chaque page, et un bouton envoie un signalement (formulaire `.github/ISSUE_TEMPLATE/ecole.yml`). Les informations de reconnaissance (visa, grade, RNCP) sont indicatives : à vérifier sur France compétences.
+
 ## Données officielles
 
 | Fichier | Source | Licence |
@@ -80,6 +101,7 @@ Le bouton **FR / EN** du bandeau change la langue (choix mémorisé ; sans choix
 | `data/parcoursup.json`, `villes.json`, `parcoursup-stats.json` | Parcoursup session 2025, jeu `fr-esr-parcoursup` (MESR) | Licence Ouverte |
 | `data/rome.json` | ROME 4.0, arborescence principale (France Travail), octobre 2026 | Licence Ouverte |
 | `data/loyers.json` | Carte des loyers 2025, appartements 1-2 pièces (ANIL / DHUP) — extrait de 217 villes étudiantes | Licence Ouverte |
+| `data/ecoles.json` | Parcoursup 2025 + liste CTI (Légifrance, arrêté du 11 décembre 2025) + complément rédigé à la main (`outils/ecoles_complement.txt`) | Licence Ouverte pour les données publiques |
 | `data/france.json` | Contours des départements (france-geojson, d'après IGN) | Licence Ouverte |
 | `js/data/contenus.js` → `A.chiffres` | Barème des bourses 2026-2027, droits d'inscription, CVEC, SMIC, plafonds APL (service-public.gouv.fr, caf.fr, info.gouv.fr) | — |
 

@@ -16,6 +16,7 @@ jobs:
           python-version: "3.12"
       - run: pip install openpyxl
       - run: python3 outils/importer.py --telecharger
+      - run: python3 outils/ecoles.py
       - name: Enregistrer si les données ont changé
         run: |
           git config user.name "aiguillage-bot"

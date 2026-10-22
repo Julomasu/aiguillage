@@ -71,6 +71,13 @@
     [/^(?:Autres|Santé|Licence|Prépa|BTS|BUT|École d'ingé|École de commerce)(?:, (?:Autres|Santé|Licence|Prépa|BTS|BUT|École d'ingé|École de commerce))+$/, m => m.split(", ").map(j => JETONS[cle(j)] || j).join(", ")],
     [/^(\d+) à (\d+) ans$/, "$1 to $2 years"],
     [/^Salaire net médian : (.+)$/, "Median net salary: $1"],
+    // — Annuaire des écoles
+    [/^Près de chez toi \((.+)\)$/, "Near you ($1)"],
+    [/^établissements? à moins de (\d+) km de (.+)$/, (m, r, v) => (/^établissements/.test(m) ? "institutions" : "institution") + " within " + r + " km of " + v],
+    [/^(?:taux d'accès (\d+) % · )?(\d+) places?$/, (m, t, n) => (t ? "access rate " + t + "% · " : "") + n + " place" + (Number(n) === 1 ? "" : "s")],
+    [/^(\d+) autres? formations? sur la carte\.$/, (m, n) => n + " other program" + (Number(n) === 1 ? "" : "s") + " on the map."],
+    [/^Voies : (.+)\. Source : liste CTI \(Légifrance\)\.$/, (m, v) => "Routes: " + v.replace("formation initiale", "initial training").replace("apprentissage", "work-study").replace("formation continue", "continuing education") + ". Source: CTI list (Légifrance)."],
+    [/^(.+) · hors Parcoursup$/, "$1 · outside Parcoursup"],
     // — Assistant guidé : lignes de liste
     [/^: (.*)$/, (m, r) => ": " + A.traduire(r)],
   ];

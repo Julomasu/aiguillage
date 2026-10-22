@@ -4,14 +4,14 @@
   const proj = (lat, lon) => [lon * KX, -lat];
   const BORNES = { x0: -5.3 * KX, x1: 9.7 * KX, y0: -51.2, y1: -41.3 };
 
-  const f = { texte: "", rayon: 30, familles: new Set(A.FAMILLES.map(x => x.id)), publicSeul: false, bacPro: false, formation: null, voirPlus: 0 };
+  const f = { texte: "", rayon: 30, familles: new Set(A.FAMILLES.map(x => x.id)), publicSeul: false, bacPro: false, formation: null, ecole: null, horsPsup: false, voirPlus: 0 };
   let carte = null; // état du canvas (vue, données)
 
   A.carteDemande = null; // posé par une fiche formation : { formation: id }
 
   A.pages.carte = function (el) {
     if (carte && carte.vecteur) { carte.vecteur.remove(); carte.vecteur = null; }
-    if (A.carteDemande) { f.formation = A.carteDemande.formation; f.texte = ""; A.carteDemande = null; }
+    if (A.carteDemande) { f.formation = A.carteDemande.formation || null; f.ecole = A.carteDemande.ecole ? { nom: A.carteDemande.ecole, ids: new Set(A.carteDemande.ids || []) } : null; f.texte = ""; A.carteDemande = null; }
     const p = A.etat.profil;
     el.innerHTML = `
       <section class="tete-page">
@@ -31,6 +31,7 @@
           <input id="carte-texte" type="search" autocomplete="off" placeholder="Ex. informatique, droit, design" value="${A.e(f.texte)}">
         </label>
       </div>
+      ${f.ecole ? `<p class="filtre-actif">École : <strong>${A.e(f.ecole.nom)}</strong> <button type="button" class="btn-texte" data-retirer-ecole>retirer ce filtre</button></p>` : ""}
       ${f.formation ? `<p class="filtre-actif">Formation : <strong>${A.e(A.formationParId[f.formation].nom)}</strong> <button type="button" class="btn-texte" data-retirer-formation>retirer ce filtre</button></p>` : ""}
       <div class="puces" role="group" aria-label="Types de formation">
         ${A.FAMILLES.map(x => `<button type="button" class="puce puce-famille" data-famille="${x.id}" aria-pressed="${f.familles.has(x.id)}" style="--c:${x.couleur}"><i></i>${A.e(x.nom)}</button>`).join("")}
@@ -42,6 +43,11 @@
       <div class="carte-zone">
         <div class="carte-boite">
           <div id="carte-vecteur" class="carte-vecteur" hidden></div>
+          <div class="carte-style" id="carte-style" role="group" aria-label="Style de carte" hidden>
+            <button type="button" data-style="clair" aria-pressed="true">Clair</button>
+            <button type="button" data-style="3d" aria-pressed="false">3D</button>
+            <button type="button" data-hors-psup aria-pressed="${f.horsPsup}" title="Écoles qui recrutent hors Parcoursup">Hors Parcoursup</button>
+          </div>
           <canvas id="carte-canvas" aria-label="Carte de France des formations. La liste à côté contient les mêmes informations."></canvas>
           <div class="carte-zoom">
             <button type="button" data-zoom="1.6" aria-label="Zoomer">+</button>
@@ -97,6 +103,7 @@
       if (f.publicSeul && !r.public) return false;
       if (f.bacPro && !(r.pro > 0)) return false;
       if (matcher && !A.correspond(r, matcher)) return false;
+      if (f.ecole && !f.ecole.ids.has(r.id)) return false;
       if (q && !A.sansAccents(r.intitule + " " + r.etab + " " + r.fili).includes(q)) return false;
       return true;
     });
@@ -268,6 +275,8 @@
         A.$$("[data-famille]").forEach(x => x.setAttribute("aria-pressed", String(f.familles.has(x.dataset.famille))));
       } else if ("public" in b.dataset) { f.publicSeul = !f.publicSeul; b.setAttribute("aria-pressed", String(f.publicSeul)); }
       else if ("bacpro" in b.dataset) { f.bacPro = !f.bacPro; b.setAttribute("aria-pressed", String(f.bacPro)); }
+      else if (b.dataset.style) changerStyle(b.dataset.style);
+      else if ("horsPsup" in b.dataset) basculerEcolesHors(b);
       else if (b.dataset.cmpForm) {
         const id = Number(b.dataset.cmpForm), dedans = A.basculerComparaison(id);
         A.$$(`[data-cmp-form="${id}"]`).forEach(x => { x.setAttribute("aria-pressed", String(dedans)); x.textContent = dedans ? "Dans la comparaison ✓" : "Comparer"; });
@@ -275,6 +284,7 @@
       }
       else if ("viderComparaison" in b.dataset) { A.etat.compareF = []; A.sauver(); A.$$("[data-cmp-form]").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "Comparer"; }); majPlateau(); return; }
       else if ("retirerFormation" in b.dataset) { f.formation = null; A.pages.carte(el); return; }
+      else if ("retirerEcole" in b.dataset) { f.ecole = null; A.pages.carte(el); return; }
       else if ("voirPlus" in b.dataset) { f.voirPlus += 30; }
       else if (b.dataset.villeRapide) { A.$("#carte-ville").value = b.dataset.villeRapide; choisirVille(b.dataset.villeRapide); return; }
       else if (b.dataset.zoom) { carte.vue.k *= Number(b.dataset.zoom); dessiner(); return; }
@@ -343,7 +353,10 @@
 
   /* ——— Vraie carte : MapLibre (embarqué dans js/vendor) + fond OpenFreeMap, gratuit et sans clé.
      Si le fond ne charge pas (hors ligne, aperçu claude.ai), on garde la carte simplifiée. */
-  const STYLE = "https://tiles.openfreemap.org/styles/liberty";
+  /* Deux fonds OpenFreeMap : « bright » (clair, lisible) et « liberty » (bâtiments en volume, pour la vue 3D inclinée). */
+  const STYLES = { clair: "https://tiles.openfreemap.org/styles/bright", "3d": "https://tiles.openfreemap.org/styles/liberty" };
+  const styleCarte = () => (A.etat.reglages && A.etat.reglages.carte === "3d") ? "3d" : "clair";
+  const VUE_3D = { pitch: 58, bearing: -18 };
   let promesseMapLibre = null;
 
   function chargerMapLibre() {
@@ -373,14 +386,16 @@
       const boite = A.$("#carte-vecteur");
       if (!boite) return ko();
       boite.hidden = false;
-      const map = new maplibregl.Map({ container: boite, style: STYLE, center: [2.4, 46.6], zoom: 4.6, attributionControl: { compact: true }, cooperativeGestures: false });
+      const mode = styleCarte();
+      const map = new maplibregl.Map({ container: boite, style: STYLES[mode], center: [2.4, 46.6], zoom: 4.6, pitch: mode === "3d" ? VUE_3D.pitch : 0, bearing: mode === "3d" ? VUE_3D.bearing : 0,
+        maxPitch: 75, attributionControl: { compact: true }, cooperativeGestures: false });
       const abandon = setTimeout(() => { map.remove(); ko(); }, 7000);
       map.on("error", () => { if (!map.loaded()) { clearTimeout(abandon); try { map.remove(); } catch (e) { /* déjà retirée */ } ko(); } });
       map.on("load", () => { clearTimeout(abandon); ok(map); });
     })).then(map => {
       if (!carte || A.lireHash().page !== "carte") { map.remove(); return; }
       carte.vecteur = map;
-      map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+      map.addControl(new maplibregl.NavigationControl({ showCompass: styleCarte() === "3d", visualizePitch: true }), "top-right");
       map.addSource("formations", { type: "geojson", data: geojsonFormations() });
       map.addSource("rayon", { type: "geojson", data: geojsonRayon() });
       map.addLayer({ id: "rayon-fond", type: "fill", source: "rayon", filter: ["==", "$type", "Polygon"], paint: { "fill-color": "#FFC629", "fill-opacity": 0.08 } });
@@ -392,7 +407,19 @@
         "circle-stroke-color": "#ffffff", "circle-stroke-width": ["case", ["==", ["get", "s"], 1], 4, 0.6],
         "circle-stroke-opacity": ["case", ["==", ["get", "p"], 1], 1, 0.2]
       } });
+      if (styleCarte() === "3d") {
+        // Colonnes : chaque formation devient une tour dont la hauteur suit le nombre de places (visibles en zoomant sur une ville)
+        map.addSource("colonnes", { type: "geojson", data: geojsonColonnes() });
+        map.addLayer({ id: "colonnes", type: "fill-extrusion", source: "colonnes", minzoom: 8, filter: ["==", ["get", "p"], 1], paint: {
+          "fill-extrusion-color": ["get", "c"], "fill-extrusion-height": ["get", "h"], "fill-extrusion-base": 0, "fill-extrusion-opacity": 0.88
+        } }, "formations");
+        map.on("click", "colonnes", ev => {
+          const r = carte.toutes.find(x => x.id === ev.features[0].properties.id);
+          if (r) montrerSelection(r);
+        });
+      }
       map.addLayer({ id: "maison", type: "circle", source: "rayon", filter: ["==", "$type", "Point"], paint: { "circle-color": "#FFC629", "circle-radius": 8, "circle-stroke-color": "#131A33", "circle-stroke-width": 3 } });
+      if (f.horsPsup) ajouterEcolesHors(map);
       map.on("click", "formations", ev => {
         const id = ev.features[0].properties.id;
         const r = carte.toutes.find(x => x.id === id);
@@ -402,14 +429,50 @@
       map.on("mouseleave", "formations", () => { map.getCanvas().style.cursor = ""; });
       A.$("#carte-canvas").hidden = true;
       A.$(".carte-zoom").hidden = true;
+      majBoutonsStyle(true);
       modeCarte("");
       recentrerVecteur();
     }).catch(() => {
       A.vraieCarteImpossible = true;
+      majBoutonsStyle(false);
       const boite = A.$("#carte-vecteur");
       if (boite) boite.hidden = true;
       modeCarte("Carte simplifiée : le fond de carte n'est pas joignable ici.");
     });
+  }
+
+  /* Écoles hors Parcoursup : points sombres cerclés de jaune, avec une fenêtre vers la fiche de l'école */
+  function ecolesHorsPsup() {
+    return A.donnees("ecoles").then(d => ({ type: "FeatureCollection", features: d.ecoles.filter(o => !o.ps).flatMap(o => o.v.filter(c => c[2] != null).map(c => ({
+      type: "Feature", geometry: { type: "Point", coordinates: [c[3], c[2]] }, properties: { id: o.id, n: o.n, v: c[0] }
+    }))) }));
+  }
+
+  function ajouterEcolesHors(map) {
+    ecolesHorsPsup().then(data => {
+      if (carte.vecteur !== map || map.getSource("ecoles")) return;
+      map.addSource("ecoles", { type: "geojson", data });
+      map.addLayer({ id: "ecoles", type: "circle", source: "ecoles", paint: {
+        "circle-color": "#131A33", "circle-stroke-color": "#FFC629", "circle-stroke-width": 2.5,
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3, 8, 5, 12, 8, 15, 11]
+      } }, "maison");
+      map.on("click", "ecoles", ev => {
+        const p = ev.features[0].properties;
+        new maplibregl.Popup({ closeButton: true, offset: 10 }).setLngLat(ev.lngLat)
+          .setHTML(`<strong>${A.e(p.n)}</strong><br><span>${A.e(p.v)} · hors Parcoursup</span><br><a href="#ecole-${A.e(p.id)}">Voir la fiche</a>`).addTo(map);
+      });
+      map.on("mouseenter", "ecoles", () => { map.getCanvas().style.cursor = "pointer"; });
+      map.on("mouseleave", "ecoles", () => { map.getCanvas().style.cursor = ""; });
+    }).catch(() => { /* annuaire indisponible : la carte reste utilisable */ });
+  }
+
+  function basculerEcolesHors(b) {
+    f.horsPsup = !f.horsPsup;
+    b.setAttribute("aria-pressed", String(f.horsPsup));
+    const map = carte && carte.vecteur;
+    if (!map) return;
+    if (f.horsPsup) ajouterEcolesHors(map);
+    else if (map.getLayer("ecoles")) { map.removeLayer("ecoles"); map.removeSource("ecoles"); }
   }
 
   function geojsonFormations() {
@@ -418,6 +481,36 @@
       type: "Feature", geometry: { type: "Point", coordinates: [r.lon, r.lat] },
       properties: { id: r.id, c: r.famille.couleur, p: !v || proches.has(r.id) ? 1 : 0, s: carte.selection === r.id ? 1 : 0 }
     })) };
+  }
+
+  /* Carrés d'environ 140 m de côté autour de chaque formation, extrudés en hauteur selon les places (plafonnées) */
+  function geojsonColonnes() {
+    const proches = new Set((carte.proches || []).map(r => r.id)), v = A.etat.ville, demi = 70;
+    return { type: "FeatureCollection", features: carte.toutes.filter(r => r.lat != null).map(r => {
+      const dLat = demi / 110570, dLon = demi / (111320 * Math.cos(r.lat * Math.PI / 180)), h = Math.max(60, Math.min(r.places || 15, 400) * 4);
+      return { type: "Feature", properties: { id: r.id, c: r.famille.couleur, h, p: !v || proches.has(r.id) ? 1 : 0 },
+        geometry: { type: "Polygon", coordinates: [[[r.lon - dLon, r.lat - dLat], [r.lon + dLon, r.lat - dLat], [r.lon + dLon, r.lat + dLat], [r.lon - dLon, r.lat + dLat], [r.lon - dLon, r.lat - dLat]]] } };
+    }) };
+  }
+
+  function majBoutonsStyle(visible) {
+    const z = A.$("#carte-style");
+    if (!z) return;
+    z.hidden = !visible;
+    const m = styleCarte();
+    z.querySelectorAll("[data-style]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.style === m)));
+  }
+
+  function changerStyle(mode) {
+    if (styleCarte() === mode || !carte || !carte.vecteur) return;
+    A.etat.reglages = A.etat.reglages || {};
+    A.etat.reglages.carte = mode;
+    A.sauver();
+    carte.vecteur.remove(); carte.vecteur = null;
+    A.$("#carte-vecteur").hidden = true;
+    majBoutonsStyle(false);
+    modeCarte(A.lang === "en" ? "Loading the map…" : "Chargement de la carte…");
+    essayerVraieCarte();
   }
 
   function geojsonRayon() {
@@ -437,14 +530,17 @@
   function majVecteur() {
     const map = carte.vecteur;
     map.getSource("formations").setData(geojsonFormations());
+    if (map.getSource("colonnes")) map.getSource("colonnes").setData(geojsonColonnes());
     map.getSource("rayon").setData(geojsonRayon());
   }
+
+  const vue3d = () => styleCarte() === "3d" ? VUE_3D : { pitch: 0, bearing: 0 };
 
   function recentrerVecteur() {
     const map = carte.vecteur, v = A.etat.ville;
     if (v && v.lat != null) {
       const dLat = f.rayon / 110.57, dLon = f.rayon / (111.32 * Math.cos(v.lat * Math.PI / 180));
-      map.fitBounds([[v.lon - dLon, v.lat - dLat], [v.lon + dLon, v.lat + dLat]], { padding: 24, duration: document.documentElement.classList.contains("calme") ? 0 : 600 });
-    } else map.fitBounds([[-5.2, 41.3], [9.6, 51.1]], { padding: 12, duration: 0 });
+      map.fitBounds([[v.lon - dLon, v.lat - dLat], [v.lon + dLon, v.lat + dLat]], { padding: 24, duration: document.documentElement.classList.contains("calme") ? 0 : 600, ...vue3d() });
+    } else map.fitBounds([[-5.2, 41.3], [9.6, 51.1]], { padding: 12, duration: 0, ...vue3d() });
   }
 })();

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node serveur/serveur.mjs",
-    "donnees": "python3 outils/importer.py --telecharger",
+    "donnees": "python3 outils/importer.py --telecharger && python3 outils/ecoles.py",
     "apercu": "python3 outils/apercu.py"
   },
   "dependencies": {

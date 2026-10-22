@@ -110,11 +110,36 @@ Rules:
         ` | Bourses 2026-2027 (annuel) : ${A.chiffres.bourses.slice(1).map(b => b.nom + " " + b.annuel + " €").join(", ")}. Droits d'inscription licence 2026-2027 : ${A.chiffres.droitsLicence} €, CVEC ${A.chiffres.cvec} € (0 € pour les boursier·es). Le site a un simulateur de budget : [simulateur](#budget).`);
     }
 
+    const ecoles = await ecolesCitees(question);
+    if (ecoles.length) lignes.push("ÉCOLES CITÉES (annuaire du site, à vérifier sur le site de l'école) :\n" + ecoles.map(o => `- #ecole-${o.id} ${resumeEcole(o)}`).join("\n"));
     const villeCitee = await villeDansQuestion(question);
     if (villeCitee) lignes.push(villeCitee);
     lignes.push("PAGES UTILES DU SITE : [le test](#test), [le plan](#plan), [la carte des formations](#carte), [le simulateur de budget](#budget), [le décodeur du jargon](#decodeur), [le calendrier](#calendrier).");
     return lignes.join("\n\n");
   }
+
+  /* Écoles citées dans la question (annuaire data/ecoles.json) : par sigle ou par nom */
+  async function ecolesCitees(question) {
+    try {
+      const d = await A.donnees("ecoles");
+      const q = " " + A.sansAccents(question).replace(/[^a-z0-9]+/g, " ") + " ";
+      const trouvees = d.ecoles.filter(o => {
+        const nom = A.sansAccents(o.n).replace(/[^a-z0-9]+/g, " ").trim();
+        const sigle = A.sansAccents(o.s || "").replace(/[^a-z0-9]+/g, " ").trim();
+        const alias = (o.al || []).filter(a => a.length > 5);
+        return (sigle.length >= 3 && q.includes(" " + sigle + " ")) || (nom.length >= 5 && q.includes(" " + nom + " ")) || alias.some(a => q.includes(" " + a + " "));
+      });
+      return trouvees.slice(0, 4);
+    } catch (e) { return []; }
+  }
+
+  const resumeEcole = o => [
+    `${o.n}${o.s ? " (" + o.s + ")" : ""}`,
+    o.ps ? T(`dans Parcoursup (${o.pn} formations)`, `on Parcoursup (${o.pn} programs)`) : T("hors Parcoursup : candidature directe auprès de l'école", "outside Parcoursup: direct application to the school"),
+    o.v.map(v => v[0]).slice(0, 6).join(", "),
+    (o.r || []).slice(0, 2).join(" ; "),
+    (o.f || []).slice(0, 3).join(" ; ")
+  ].filter(Boolean).join(" · ");
 
   /* Si la question cite une ville, on joint les formations Parcoursup proches correspondant aux mots-clés */
   async function villeDansQuestion(question) {
@@ -182,6 +207,11 @@ Rules:
     if (forms.length) blocs.push(T("**Formations à regarder** :\n", "**Programs to look at**:\n") + forms.map(({ f }) =>
       `- [${f.nom}](#formation-${f.id}): ${f.desc}`).join("\n"));
 
+    const ecoles = await ecolesCitees(question);
+    if (ecoles.length) {
+      blocs.unshift(T("**Écoles citées** :\n", "**Schools mentioned**:\n") + ecoles.map(o => `- [${o.n}](#ecole-${o.id}) : ${resumeEcole(o).replace(o.n + (o.s ? " (" + o.s + ")" : "") + " · ", "")}`).join("\n") +
+        T("\n\nVérifie toujours les frais et la reconnaissance du diplôme sur le site de l'école.", "\n\nAlways check fees and degree recognition on the school's website."));
+    }
     const ville = await villeDansQuestion(question);
     if (ville) {
       const lignes = ville.split("\n").filter(l => l.startsWith("- ")).slice(0, 6);

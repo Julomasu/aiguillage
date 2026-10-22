@@ -75,6 +75,11 @@
           <strong>La carte</strong>
           <span>Les formations près de chez toi, avec leur vrai taux d'accès sur Parcoursup.</span>
         </a>
+        <a class="porte" href="#ecoles" style="--c:#E85D9E">
+          <span class="porte-num">Annuaire</span>
+          <strong>Les écoles</strong>
+          <span>IÉSEG, École Bleue, Epitech… toutes les écoles, même celles hors Parcoursup.</span>
+        </a>
         <a class="porte" href="#assistant" style="--c:#F6D23B">
           <span class="porte-num">Assistant</span>
           <strong>Pose ta question</strong>

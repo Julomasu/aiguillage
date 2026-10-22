@@ -1,0 +1,327 @@
+# Écoles à ajouter ou à enrichir (hors Parcoursup compris). Un établissement par ligne, champs séparés par « | » :
+#   nom | sigle | catégories | statut | villes | accès | reconnaissance | formations | alias (pour fusionner avec Parcoursup / CTI)
+# catégories : commerce, ingenieur, numerique, art-design, media, sciences-po, universite, sante, social-sport, hotellerie, architecture, aero-maritime, service-public, droit, agro, culture
+# statut     : public, prive, consulaire, associatif (privé d'intérêt général)
+# accès      : psup (Parcoursup), concours, dossier, apprentissage
+# formations : « Intitulé (durée, niveau) » séparés par « ; »  — seulement quand c'est certain
+# alias      : textes (sans accents ni majuscules) qui permettent de retrouver l'école dans Parcoursup ou dans la liste CTI
+# Les lignes commençant par # sont ignorées. Toute information doit pouvoir être vérifiée sur le site de l'école, sur France compétences (RNCP) ou sur les listes du ministère.
+
+## Écoles de commerce et de management
+HEC Paris | HEC | commerce | consulaire | Jouy-en-Josas, Paris | concours, dossier | Diplôme visé, grade de master (PGE) ; AACSB, EQUIS, AMBA | Programme Grande École (3 ans après la prépa, Bac+5) | hec paris;hec school
+ESSEC Business School | ESSEC | commerce | associatif | Cergy, Paris | psup, concours, dossier | Diplôme visé, grade de master (PGE) | Global BBA (4 ans post-bac, Bac+4) ; Programme Grande École (après la prépa, Bac+5) | essec
+ESCP Business School | ESCP | commerce | consulaire | Paris | concours, dossier | Diplôme visé, grade de master (PGE) | Programme Grande École (après la prépa, Bac+5) ; Bachelor in Management (3 ans) | escp
+emlyon business school | emlyon | commerce | consulaire | Écully, Paris, Saint-Étienne | concours, dossier, psup | Diplôme visé, grade de master (PGE) | Programme Grande École (après la prépa, Bac+5) ; Bachelor (BBA) | emlyon;em lyon
+EDHEC Business School | EDHEC | commerce | associatif | Lille, Nice, Paris | psup, concours | Diplôme visé, grade de master (PGE) | BBA (4 ans post-bac, Bac+4) ; Programme Grande École | edhec
+SKEMA Business School | SKEMA | commerce | associatif | Sophia Antipolis, Lille, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Programme Grande École (après la prépa, Bac+5) ; Bachelor | skema
+KEDGE Business School | KEDGE | commerce | consulaire | Bordeaux, Marseille, Toulon, Paris | psup, concours | Diplôme visé, grade de master (PGE) | BBA et programmes post-bac (4 à 5 ans) | kedge
+NEOMA Business School | NEOMA | commerce | consulaire | Reims, Rouen, Paris | psup, concours | Diplôme visé, grade de master (PGE) | BBA (4 ans) ; Programme Grande École | neoma
+Audencia | Audencia | commerce | associatif | Nantes, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor (3 ans) ; Programme Grande École | audencia
+Grenoble École de Management | GEM | commerce | consulaire | Grenoble | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | grenoble ecole de management;grenoble em;gem
+TBS Education | TBS | commerce | consulaire | Toulouse, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | toulouse business school;tbs education
+Rennes School of Business | RSB | commerce | consulaire | Rennes, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | rennes school of business;esc rennes
+Montpellier Business School | MBS | commerce | consulaire | Montpellier, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | montpellier business school
+Burgundy School of Business | BSB | commerce | consulaire | Dijon, Lyon, Paris | psup, concours | Diplôme visé, grade de master (PGE) | Bachelor ; Programme Grande École | burgundy school of business;bsb
+EM Normandie | EM Normandie | commerce | consulaire | Le Havre, Caen, Paris | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | em normandie
+EM Strasbourg Business School | EM Strasbourg | commerce | public | Strasbourg | psup, concours | Diplôme visé, grade de master | Programme post-bac (5 ans) | em strasbourg
+Excelia Business School | Excelia | commerce | consulaire | La Rochelle, Tours, Orléans, Paris | psup, concours | Diplôme visé, grade de master | Programme Grande École post-bac (5 ans) | excelia;sup de co la rochelle
+ESSCA School of Management | ESSCA | commerce | associatif | Angers, Aix-en-Provence, Bordeaux, Lyon, Paris, Strasbourg | psup, concours | Diplôme visé, grade de master | Programme Grande École post-bac (5 ans, concours Accès) | essca
+IÉSEG School of Management | IÉSEG | commerce | associatif | Lille, Paris | psup, concours | Diplôme visé, grade de master | Programme Grande École post-bac (5 ans, Bac+5) ; Bachelor (3 ans) | ieseg
+ICN Business School | ICN | commerce | consulaire | Nancy, Metz, Paris | psup, concours | Diplôme visé, grade de master | Programme Grande École | icn
+ESCE International Business School | ESCE | commerce | prive | Paris, Lyon | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | esce
+EDC Paris Business School | EDC | commerce | prive | Paris-La Défense | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | edc paris
+ESDES Business School | ESDES | commerce | associatif | Lyon, Annecy | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans (concours Accès) | esdes
+EMLV École de Management Léonard de Vinci | EMLV | commerce | prive | Paris-La Défense | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | emlv;leonard de vinci
+PSB Paris School of Business | PSB | commerce | consulaire | Paris | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | paris school of business;psb
+INSEEC Grande École | INSEEC | commerce | prive | Paris, Lyon, Bordeaux | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | inseec
+IPAG Business School | IPAG | commerce | prive | Paris, Nice | psup, concours | Diplôme visé, grade de master | Programme post-bac en 5 ans | ipag
+ISC Paris | ISC | commerce | prive | Paris | psup | Diplôme visé | Programme post-bac | isc paris
+IDRAC Business School | IDRAC | commerce | prive | Lyon, Paris, Grenoble, Nice, Toulouse, Nantes | psup, concours | Diplôme visé | Bachelor (3 ans) ; Programme Grande École | idrac
+ESG Management School | ESG | commerce | prive | Paris | psup, dossier | Titre RNCP | Bachelor ; Mastère | esg management school;esg
+Institut Mines-Télécom Business School | IMT-BS | commerce | public | Évry-Courcouronnes | concours, dossier | Diplôme visé, grade de master | Programme Grande École | imt business school;telecom ecole de management
+Clermont School of Business | CSB | commerce | consulaire | Clermont-Ferrand | psup, concours | Diplôme visé | Bachelor ; Programme Grande École | clermont school of business;audencia clermont;esc clermont
+Brest Business School | BBS | commerce | consulaire | Brest | psup | Diplôme visé | Programme post-bac | brest business school
+ISG International Business School | ISG | commerce | prive | Paris | psup | Titre RNCP | Bachelor ; Mastère | isg
+
+## IAE et écoles universitaires de management
+IAE Paris - Sorbonne Business School | IAE Paris | commerce | public | Paris | dossier | Grade de master | Master et licence en management | iae paris
+IAE Lyon School of Management | iaelyon | commerce | public | Lyon, Bourg-en-Bresse | dossier | Grade de master | Licence et master en management | iae lyon;iaelyon
+Toulouse School of Management | TSM | commerce | public | Toulouse | dossier | Grade de master | Licence et master en management | toulouse school of management
+IAE Aix-Marseille | IAE Aix | commerce | public | Aix-en-Provence, Marseille | dossier | Grade de master | Licence et master en management | iae aix
+IAE Bordeaux | IAE Bordeaux | commerce | public | Bordeaux | dossier | Grade de master | Licence et master en management | iae bordeaux
+IAE Lille University School of Management | IAE Lille | commerce | public | Lille, Roubaix | dossier | Grade de master | Licence et master en management | iae lille
+IAE Nantes Économie & Management | IAE Nantes | commerce | public | Nantes | dossier | Grade de master | Licence et master en management | iae nantes
+IGR-IAE Rennes | IGR | commerce | public | Rennes | dossier | Grade de master | Licence et master en management | igr;iae rennes
+Grenoble IAE | IAE Grenoble | commerce | public | Grenoble, Valence | dossier | Grade de master | Licence et master en management | grenoble iae
+Montpellier Management | IAE Montpellier | commerce | public | Montpellier | dossier | Grade de master | Licence et master en management | montpellier management;iae montpellier
+IAE Nancy School of Management | IAE Nancy | commerce | public | Nancy | dossier | Grade de master | Licence et master en management | iae nancy
+IAE Nice | IAE Nice | commerce | public | Nice | dossier | Grade de master | Licence et master en management | iae nice
+IAE Strasbourg (EM Strasbourg) | IAE Strasbourg | commerce | public | Strasbourg | dossier | Grade de master | Licence et master en management | iae strasbourg
+IAE Rouen Normandie | IAE Rouen | commerce | public | Rouen | dossier | Grade de master | Licence et master en management | iae rouen
+IAE Caen | IAE Caen | commerce | public | Caen | dossier | Grade de master | Licence et master en management | iae caen
+IAE Dijon | IAE Dijon | commerce | public | Dijon | dossier | Grade de master | Licence et master en management | iae dijon
+IAE Poitiers | IAE Poitiers | commerce | public | Poitiers | dossier | Grade de master | Licence et master en management | iae poitiers
+IAE Tours Val de Loire | IAE Tours | commerce | public | Tours | dossier | Grade de master | Licence et master en management | iae tours
+IAE Angers | IAE Angers | commerce | public | Angers | dossier | Grade de master | Licence et master en management | iae angers
+IAE Clermont Auvergne | IAE Clermont | commerce | public | Clermont-Ferrand | dossier | Grade de master | Licence et master en management | iae clermont
+IAE Saint-Étienne | IAE Saint-Étienne | commerce | public | Saint-Étienne | dossier | Grade de master | Licence et master en management | iae saint etienne
+IAE Savoie Mont Blanc | IAE Savoie | commerce | public | Chambéry, Annecy | dossier | Grade de master | Licence et master en management | iae savoie
+IAE Limoges | IAE Limoges | commerce | public | Limoges | dossier | Grade de master | Licence et master en management | iae limoges
+IAE Orléans | IAE Orléans | commerce | public | Orléans | dossier | Grade de master | Licence et master en management | iae orleans
+IAE Metz | IAE Metz | commerce | public | Metz | dossier | Grade de master | Licence et master en management | iae metz
+IAE Amiens | IAE Amiens | commerce | public | Amiens | dossier | Grade de master | Licence et master en management | iae amiens
+IAE Valenciennes | IAE Valenciennes | commerce | public | Valenciennes | dossier | Grade de master | Licence et master en management | iae valenciennes
+IAE Reims-Troyes | IAE Reims | commerce | public | Reims, Troyes | dossier | Grade de master | Licence et master en management | iae reims
+IAE Pau-Bayonne | IAE Pau | commerce | public | Pau, Bayonne | dossier | Grade de master | Licence et master en management | iae pau
+IAE La Rochelle | IAE La Rochelle | commerce | public | La Rochelle | dossier | Grade de master | Licence et master en management | iae la rochelle
+IAE Perpignan | IAE Perpignan | commerce | public | Perpignan | dossier | Grade de master | Licence et master en management | iae perpignan
+IAE Toulon | IAE Toulon | commerce | public | Toulon | dossier | Grade de master | Licence et master en management | iae toulon
+IAE Bretagne Sud | IAE Bretagne Sud | commerce | public | Vannes, Lorient | dossier | Grade de master | Licence et master en management | iae bretagne sud
+IAE Bretagne INP (Brest) | IAE Brest | commerce | public | Brest | dossier | Grade de master | Licence et master en management | iae brest
+IAE Paris-Est | IAE Paris-Est | commerce | public | Créteil, Marne-la-Vallée | dossier | Grade de master | Licence et master en management | iae paris est
+IAE Évry Paris-Saclay | IAE Évry | commerce | public | Évry-Courcouronnes | dossier | Grade de master | Licence et master en management | iae evry
+ISM-IAE Versailles | ISM-IAE | commerce | public | Guyancourt | dossier | Grade de master | Licence et master en management | ism iae
+IAE de Corse | IAE Corse | commerce | public | Corte | dossier | Grade de master | Licence et master en management | iae corse
+IAE Réunion | IAE Réunion | commerce | public | Saint-Denis | dossier | Grade de master | Licence et master en management | iae reunion
+
+## Sciences Po et IEP
+Sciences Po Paris | Sciences Po | sciences-po | public | Paris, Dijon, Le Havre, Menton, Nancy, Poitiers, Reims | dossier, concours | Grade de master | Collège universitaire (3 ans, grade de licence) puis master | sciences po paris;sciences po campus;institut d etudes politiques de paris
+Sciences Po Aix | IEP Aix | sciences-po | public | Aix-en-Provence | concours, psup | Grade de master | Cursus en 5 ans | sciences po aix;iep d aix
+Sciences Po Bordeaux | IEP Bordeaux | sciences-po | public | Pessac | concours, psup | Grade de master | Cursus en 5 ans | sciences po bordeaux;iep de bordeaux
+Sciences Po Grenoble - UGA | IEP Grenoble | sciences-po | public | Grenoble | concours, psup | Grade de master | Cursus en 5 ans | sciences po grenoble;iep de grenoble
+Sciences Po Lille | IEP Lille | sciences-po | public | Lille | concours, psup | Grade de master | Cursus en 5 ans | sciences po lille;iep de lille
+Sciences Po Lyon | IEP Lyon | sciences-po | public | Lyon, Saint-Étienne | concours, psup | Grade de master | Cursus en 5 ans | sciences po lyon;iep de lyon
+Sciences Po Rennes | IEP Rennes | sciences-po | public | Rennes | concours, psup | Grade de master | Cursus en 5 ans | sciences po rennes;iep de rennes
+Sciences Po Saint-Germain-en-Laye | IEP Saint-Germain | sciences-po | public | Saint-Germain-en-Laye | concours, psup | Grade de master | Cursus en 5 ans | sciences po saint germain;iep de saint germain
+Sciences Po Strasbourg | IEP Strasbourg | sciences-po | public | Strasbourg | concours, psup | Grade de master | Cursus en 5 ans | sciences po strasbourg;iep de strasbourg
+Sciences Po Toulouse | IEP Toulouse | sciences-po | public | Toulouse | concours, psup | Grade de master | Cursus en 5 ans | sciences po toulouse;iep de toulouse
+IEP de Fontainebleau (UPEC) | IEP Fontainebleau | sciences-po | public | Fontainebleau | concours, psup | Grade de master | Cursus en 5 ans | iep de fontainebleau;sciences po fontainebleau
+
+## Écoles d'ingénieurs (noms usuels ; la liste officielle CTI complète est fusionnée par l'import)
+École polytechnique | X | ingenieur | public | Palaiseau | concours | Diplôme d'ingénieur (CTI), grade de master | Cycle ingénieur polytechnicien (après la prépa) ; Bachelor (3 ans) | ecole polytechnique
+CentraleSupélec | CentraleSupélec | ingenieur | public | Gif-sur-Yvette, Metz, Rennes | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur (après la prépa) | centralesupelec
+Mines Paris - PSL | Mines Paris | ingenieur | public | Paris | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur civil (après la prépa) | mines paris;mines de paris;ecole nationale superieure des mines de paris
+École des Ponts ParisTech | Ponts | ingenieur | public | Champs-sur-Marne | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur (après la prépa) | ponts et chaussees;ecole des ponts;ecole nationale des ponts et chaussees
+Télécom Paris | Télécom Paris | ingenieur | public | Palaiseau | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | telecom paris
+ENSTA Paris | ENSTA | ingenieur | public | Palaiseau | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | ensta
+ENSAE Paris | ENSAE | ingenieur | public | Palaiseau | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur (statistique, data, économie) | ensae;ecole nationale de la statistique et de l administration economique
+Arts et Métiers | Arts et Métiers | ingenieur | public | Paris, Aix-en-Provence, Angers, Bordeaux, Châlons-en-Champagne, Cluny, Lille, Metz | psup, concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur (5 ans post-bac ou après la prépa) | arts et metiers;ensam;ecole nationale superieure d arts et metiers
+INSA Lyon | INSA Lyon | ingenieur | public | Villeurbanne | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa lyon;institut national des sciences appliquees de lyon
+INSA Toulouse | INSA Toulouse | ingenieur | public | Toulouse | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa toulouse;institut national des sciences appliquees de toulouse
+INSA Rennes | INSA Rennes | ingenieur | public | Rennes | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa rennes;institut national des sciences appliquees de rennes
+INSA Rouen Normandie | INSA Rouen | ingenieur | public | Saint-Étienne-du-Rouvray | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa rouen;institut national des sciences appliquees de rouen
+INSA Hauts-de-France | INSA HdF | ingenieur | public | Valenciennes | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa hauts de france
+INSA Centre Val de Loire | INSA CVL | ingenieur | public | Bourges, Blois | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | insa centre val de loire
+INSA Strasbourg | INSA Strasbourg | ingenieur,architecture | public | Strasbourg | psup | Diplôme d'ingénieur (CTI) ; diplôme d'État d'architecte | Cycle ingénieur post-bac ; architecture | insa strasbourg;institut national des sciences appliquees de strasbourg
+Réseau Polytech | Polytech | ingenieur | public | Lille, Lyon, Marseille, Montpellier, Nantes, Nice Sophia, Orléans, Paris-Saclay, Grenoble, Clermont-Ferrand, Annecy-Chambéry, Angers, Tours, Saint-Étienne | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans, concours Geipi Polytech) | polytech
+UTC Compiègne | UTC | ingenieur | public | Compiègne | psup | Diplôme d'ingénieur (CTI) | Tronc commun post-bac puis cycle ingénieur | universite de technologie de compiegne;utc
+UTT Troyes | UTT | ingenieur | public | Troyes | psup | Diplôme d'ingénieur (CTI) | Tronc commun post-bac puis cycle ingénieur | universite de technologie de troyes;utt
+UTBM Belfort-Montbéliard | UTBM | ingenieur | public | Belfort, Montbéliard, Sevenans | psup | Diplôme d'ingénieur (CTI) | Tronc commun post-bac puis cycle ingénieur | universite de technologie de belfort;utbm
+ISAE-SUPAERO | ISAE-SUPAERO | ingenieur,aero-maritime | public | Toulouse | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur (après la prépa) | isae supaero;supaero
+ISAE-ENSMA | ISAE-ENSMA | ingenieur,aero-maritime | public | Poitiers | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | ensma;ecole nationale superieure de mecanique et d aerotechnique de poitiers
+ENAC | ENAC | ingenieur,aero-maritime | public | Toulouse, Montpellier, Muret, Saint-Yan | concours | Diplôme d'ingénieur (CTI) ; formations de pilote de ligne et de contrôleur aérien | Ingénieur ; pilote de ligne (ENAC) ; contrôleur aérien (IESSA) | enac;ecole nationale de l aviation civile
+Efrei Paris | Efrei | ingenieur,numerique | prive | Villejuif, Bordeaux | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | efrei
+EPITA | EPITA | ingenieur,numerique | prive | Le Kremlin-Bicêtre, Lyon, Rennes, Toulouse, Strasbourg, Lille | psup, concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | epita
+ESIEA | ESIEA | ingenieur,numerique | associatif | Ivry-sur-Seine, Laval | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | esiea
+ESILV | ESILV | ingenieur,numerique | prive | Courbevoie, Nantes | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | esilv
+ESME | ESME | ingenieur,numerique | prive | Ivry-sur-Seine, Lille, Bordeaux, Lyon | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | esme
+ECE Paris | ECE | ingenieur,numerique | prive | Paris, Lyon, Bordeaux, Rennes | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | ece paris;ecole centrale d electronique
+IPSA | IPSA | ingenieur,aero-maritime | prive | Ivry-sur-Seine, Toulouse | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur aéronautique et spatial post-bac (5 ans) | ipsa
+ISEP | ISEP | ingenieur,numerique | associatif | Issy-les-Moulineaux, Paris | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | isep
+CPE Lyon | CPE | ingenieur | associatif | Villeurbanne | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | cpe lyon
+CESI École d'ingénieurs | CESI | ingenieur | associatif | Nanterre, Lyon, Bordeaux, Toulouse, Nantes, Lille, Rouen, Strasbourg | psup, apprentissage | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac et apprentissage | cesi
+Icam | Icam | ingenieur | associatif | Lille, Paris-Sénart, Nantes, Toulouse, Vendée, Strasbourg | psup, apprentissage | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac et apprentissage | icam
+ESTACA | ESTACA | ingenieur,aero-maritime | prive | Paris-Saclay, Laval, Bordeaux | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur transports post-bac (5 ans) | estaca
+ESTP Paris | ESTP | ingenieur,architecture | prive | Cachan, Dijon, Troyes, Bordeaux, Lyon, Montpellier | psup, concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur construction post-bac (5 ans) | estp
+ESIEE Paris | ESIEE | ingenieur,numerique | consulaire | Noisy-le-Grand | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | esiee
+Yncréa (HEI, ISA, ISEN) | Yncréa | ingenieur | associatif | Lille, Toulon, Brest, Nantes, Rennes, Caen, Bordeaux, Montpellier, Toulouse | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | hei;isa lille;isen;yncrea
+Grenoble INP - Ensimag | Ensimag | ingenieur,numerique | public | Grenoble | concours, psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur informatique et maths appliquées | ensimag
+Centrale Nantes | Centrale Nantes | ingenieur | public | Nantes | psup, concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | centrale nantes;ecole centrale de nantes
+Centrale Lyon | Centrale Lyon | ingenieur | public | Écully | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | centrale lyon;ecole centrale de lyon
+Centrale Lille | Centrale Lille | ingenieur | public | Villeneuve-d'Ascq | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | centrale lille;ecole centrale de lille
+Centrale Méditerranée | Centrale Méditerranée | ingenieur | public | Marseille, Nice | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | centrale mediterranee;centrale marseille;ecole centrale de marseille
+IMT Atlantique | IMT Atlantique | ingenieur,numerique | public | Brest, Nantes, Rennes | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | imt atlantique
+IMT Nord Europe | IMT Nord Europe | ingenieur | public | Villeneuve-d'Ascq, Douai | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | imt nord europe
+Mines Saint-Étienne | Mines St-Étienne | ingenieur | public | Saint-Étienne, Gardanne | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | mines saint etienne
+Mines Nancy | Mines Nancy | ingenieur | public | Nancy | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | mines nancy
+IMT Mines Albi | Mines Albi | ingenieur | public | Albi | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur | mines albi
+IMT Mines Alès | Mines Alès | ingenieur | public | Alès | concours, psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur | mines ales
+ESPCI Paris - PSL | ESPCI | ingenieur | public | Paris | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur physique et chimie | espci
+Chimie ParisTech - PSL | Chimie ParisTech | ingenieur | public | Paris | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur chimie | chimie paristech
+AgroParisTech | AgroParisTech | ingenieur,agro | public | Palaiseau, Nancy, Montpellier | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur agronome | agroparistech
+Institut Agro | Institut Agro | ingenieur,agro | public | Rennes, Angers, Montpellier, Dijon | concours, psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur agronome | institut agro;agrocampus;supagro
+Bordeaux Sciences Agro | Bordeaux Sciences Agro | ingenieur,agro | public | Gradignan | concours | Diplôme d'ingénieur (CTI) | Cycle ingénieur agronome | bordeaux sciences agro
+UniLaSalle | UniLaSalle | ingenieur,agro | associatif | Beauvais, Rouen, Rennes | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | unilasalle
+Junia (HEI, ISEN, ISA) | Junia | ingenieur | associatif | Lille | psup | Diplôme d'ingénieur (CTI) | Cycle ingénieur post-bac (5 ans) | junia
+
+## Numérique, informatique, cybersécurité, jeu vidéo
+Epitech | Epitech | numerique | prive | Paris, Lyon, Lille, Nantes, Toulouse, Marseille, Bordeaux, Strasbourg, Rennes, Nice | dossier, psup | Titre RNCP niveau 7 (Expert en technologies de l'information) | Programme en 5 ans post-bac | epitech
+EPSI | EPSI | numerique | prive | Paris, Nantes, Bordeaux, Lille, Lyon, Montpellier, Arras, Grenoble | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | epsi
+ESGI | ESGI | numerique | prive | Paris, Lyon, Bordeaux, Aix-en-Provence | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | esgi
+HETIC | HETIC | numerique | prive | Montreuil | dossier | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | hetic
+IIM Digital School | IIM | numerique | prive | Courbevoie, Nantes, Montpellier | dossier | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | iim
+Sup de Vinci | Sup de Vinci | numerique | prive | Courbevoie, Nantes, Rennes, Bordeaux | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | sup de vinci
+Ynov Campus | Ynov | numerique | prive | Aix-en-Provence, Bordeaux, Lyon, Nantes, Toulouse, Lille, Paris, Rennes, Sophia Antipolis, Montpellier | dossier | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | ynov
+Guardia Cybersecurity School | Guardia | numerique | prive | Lyon, Paris | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère | guardia
+École 42 | 42 | numerique | associatif | Paris, Angoulême, Le Havre, Mulhouse, Nice, Perpignan, Lyon | concours | Formation gratuite, sans diplôme d'État | Cursus en 3 à 5 ans, sans frais (admission après un test et la « piscine ») | 42 paris;ecole 42
+Simplon | Simplon | numerique | associatif | Partout en France | dossier | Formations gratuites, certifications RNCP | Formations courtes aux métiers du numérique | simplon
+Web@cadémie by Epitech | Web@cadémie | numerique | associatif | Paris, Lyon, Lille, Marseille, Nantes, Toulouse | dossier | Formation gratuite | Formation de développeur web (2 ans) | web academie
+Zone01 | Zone01 | numerique | associatif | Rouen, Caen, Rennes | concours | Formation gratuite | Cursus de développeur, sans frais | zone01
+Holberton School | Holberton | numerique | prive | Paris, Lyon, Toulouse, Bordeaux, Lille | dossier | Titre RNCP | Cursus de développeur en 2 à 3 ans | holberton
+Supinfo | Supinfo | numerique | prive | Paris, Lyon, Lille, Marseille, Bordeaux, Nantes, Toulouse | dossier, apprentissage | Titres RNCP | Bachelor ; Mastère | supinfo
+Web School Factory | WSF | numerique | prive | Paris | dossier, apprentissage | Titres RNCP | Bachelor ; Mastère | web school factory
+Digital Campus | Digital Campus | numerique | prive | Paris, Lyon, Bordeaux, Nantes, Toulouse, Lille, Aix-en-Provence | dossier, apprentissage | Titres RNCP | Bachelor ; Mastère | digital campus
+Le Wagon | Le Wagon | numerique | prive | Paris, Lyon, Bordeaux, Lille, Marseille, Montpellier, Nantes | dossier | Formation courte (bootcamp) | Bootcamp développeur web (9 semaines) | le wagon
+Cnam-ENJMIN | ENJMIN | numerique,art-design | public | Angoulême | dossier | Master (Cnam) | Master jeux et médias interactifs numériques (2 ans) | enjmin
+RUBIKA | RUBIKA | art-design,numerique | prive | Valenciennes | psup, dossier | Diplômes visés selon les cursus | Animation, jeu vidéo, design (5 ans : Bachelor 3 + Master 2) | rubika;supinfocom;supinfogame
+ISART Digital | ISART | art-design,numerique | prive | Paris, Montpellier, Nice | dossier | Titres RNCP | Jeu vidéo, animation 3D, VFX (5 ans) | isart
+ARTFX | ARTFX | art-design,numerique | prive | Montpellier, Lille, Enghien-les-Bains, Bordeaux, Paris | dossier | Titre RNCP « Réalisateur numérique » niveau 7 | Effets visuels, animation, jeu vidéo (5 ans) | artfx
+Brassart | Brassart | art-design,numerique | prive | Tours, Paris, Nantes, Lyon, Rennes, Bordeaux, Toulouse | dossier | Titres RNCP niveaux 5, 6 et 7 | Design graphique, animation 3D, jeu vidéo (3 à 5 ans) | brassart
+e-artsup | e-artsup | art-design,numerique | prive | Paris, Lyon, Lille, Bordeaux, Nantes, Toulouse, Montpellier | dossier | Titres RNCP | Design, motion, jeu vidéo (3 à 5 ans) | e artsup;e-artsup
+New3dge | New3dge | art-design,numerique | prive | Paris | dossier | Titres RNCP | Animation 3D, VFX, jeu vidéo | new3dge
+
+## Art, design, mode, architecture d'intérieur
+L'École Bleue | École Bleue | art-design | prive | Paris | dossier | Titre RNCP « Designer global » (niveau 7, RNCP41355) | Classe préparatoire (1 an) ; Design global (5 ans) ; Scénographie (4 ans) | ecole bleue
+Penninghen (ESAG) | Penninghen | art-design | prive | Paris | dossier | Titres RNCP ; diplômes d'école | Architecture intérieure, direction artistique, design graphique | penninghen
+Strate École de design | Strate | art-design | prive | Sèvres, Lyon, Bordeaux | dossier | Diplôme visé, grade de master (certains cursus) | Bachelor design (3 ans) ; Master (2 ans) | strate
+École Camondo | Camondo | art-design | prive | Paris, Toulon | dossier | Diplôme visé, grade de master (architecte d'intérieur) | Architecture intérieure et design (5 ans) | camondo
+Créapole | Créapole | art-design | prive | Paris | dossier | Titres RNCP | Design, direction artistique (3 à 5 ans) | creapole
+LISAA | LISAA | art-design | prive | Paris, Rennes, Nantes, Bordeaux, Toulouse, Strasbourg | dossier | Titres RNCP | Architecture d'intérieur, design graphique, mode, jeu vidéo, animation | lisaa
+Les Écoles de Condé | Condé | art-design | prive | Paris, Lyon, Bordeaux, Nancy, Nice, Marseille | dossier | Titres RNCP, diplômes d'école | Design, architecture d'intérieur, photographie, mode | conde
+ECV Creative School | ECV | art-design | prive | Paris, Bordeaux, Lille, Nantes, Aix-en-Provence, Lyon | dossier | Titres RNCP | Design, motion design, communication visuelle | ecv
+Bellecour École | Bellecour | art-design | prive | Lyon, Annecy | dossier | Titres RNCP | Architecture d'intérieur, design, animation | bellecour
+École Émile Cohl | Émile Cohl | art-design | prive | Lyon, Angoulême | concours | Diplôme d'école, titre RNCP | Dessin, illustration, BD, animation (3 à 5 ans) | emile cohl
+École Pivaut | Pivaut | art-design | prive | Nantes, Rennes | dossier | Titres RNCP | Design graphique, architecture d'intérieur | pivaut
+École Intuit Lab | Intuit Lab | art-design | prive | Paris, Aix-en-Provence | dossier | Titres RNCP | Design, communication visuelle | intuit lab
+Atelier de Sèvres | Atelier de Sèvres | art-design | prive | Paris | dossier | Prépa artistique privée | Classe préparatoire aux écoles d'art et de design | atelier de sevres
+Atelier Chardon Savard | Chardon Savard | art-design | prive | Paris, Nantes | dossier | Titres RNCP | Prépa et cursus en art, design, mode | chardon savard
+Prép'art | Prép'art | art-design | prive | Paris, Toulouse, Bordeaux, Nantes | dossier | Prépa artistique privée | Classes préparatoires aux écoles d'art | prep art
+Autograf | Autograf | art-design | prive | Paris | dossier | Prépa artistique privée | Préparation aux concours des écoles d'art | autograf
+ESMOD | ESMOD | art-design | prive | Paris, Lyon, Rennes, Bordeaux, Roubaix | dossier | Titres RNCP, diplômes d'école | Stylisme, modélisme, commerce de la mode (3 à 5 ans) | esmod
+Institut Français de la Mode | IFM | art-design | prive | Paris | dossier | Diplôme visé, grade de master (certains cursus) | Bachelor et mastères mode et luxe | institut francais de la mode;ifm
+Studio Berçot | Studio Berçot | art-design | prive | Paris | dossier | Diplôme d'école | Stylisme (3 ans) | studio bercot
+ESMA | ESMA | art-design,numerique | prive | Montpellier, Toulouse, Nantes, Lyon, Rennes, Bordeaux | dossier | Titres RNCP | Animation 3D, VFX, jeu vidéo | esma
+ETPA | ETPA | art-design,media | prive | Toulouse, Rennes, Bordeaux, Montpellier | dossier | Titres RNCP | Photographie, communication, design | etpa
+EFET Photographie | EFET | art-design,media | prive | Paris | dossier | Titres RNCP | Photographie (3 ans) | efet
+Spéos | Spéos | art-design,media | prive | Paris | dossier | Titres RNCP | Photographie, image | speos
+MoPA | MoPA | art-design,numerique | prive | Arles | dossier | Titres RNCP | Animation 3D, 2D (3 à 5 ans) | mopa
+École Georges Méliès | Méliès | art-design,media | prive | Orly, Paris | dossier | Titres RNCP | Animation, cinéma, jeu vidéo | georges melies
+L'École de design Nantes Atlantique | École de design Nantes | art-design | consulaire | Nantes | dossier | Diplôme visé, grade de master (certains cursus) | Bachelor (3 ans) ; Master (2 ans) | ecole de design nantes
+GOBELINS, l'école de l'image | Gobelins | art-design,media | consulaire | Paris, Annecy | concours, dossier | Diplômes visés (certains cursus) ; titres RNCP | Bachelor (3 ans) ; Mastère (2 ans) en design, animation, photo, vidéo | gobelins
+Beaux-Arts de Paris | ENSBA | art-design | public | Paris | concours | Diplôme national supérieur d'expression plastique (grade de master) | Cursus en 5 ans | beaux arts de paris;ensba
+École nationale supérieure des Arts Décoratifs | ENSAD | art-design | public | Paris | concours | Diplôme (grade de master) | Cursus en 5 ans | arts decoratifs;ensad paris
+ENSCI - Les Ateliers | ENSCI | art-design | public | Paris | concours | Diplôme (grade de master) | Création industrielle (cursus à partir de Bac+3) | ensci
+Villa Arson | Villa Arson | art-design | public | Nice | concours | DNA et DNSEP (grades de licence et de master) | Art (3 + 2 ans) | villa arson
+ENSP Arles | ENSP | art-design,media | public | Arles | concours | Diplôme (grade de master) | Photographie (3 + 2 ans) | ensp arles;photographie arles
+Le Fresnoy | Fresnoy | art-design,media | public | Tourcoing | dossier | Studio national des arts contemporains | Post-diplôme (2 ans) | fresnoy
+École du Louvre | École du Louvre | culture | public | Paris | concours | Diplôme de premier cycle, master | Histoire de l'art et patrimoine (après le bac) | ecole du louvre
+
+## Communication, journalisme, audiovisuel, cinéma
+CELSA - Sorbonne Université | CELSA | media | public | Neuilly-sur-Seine | concours | Diplômes nationaux, grades de licence et de master | Licence 3, master (communication, journalisme) | celsa
+CFJ Centre de formation des journalistes | CFJ | media | associatif | Paris | concours | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) | cfj;centre de formation des journalistes
+ESJ Lille | ESJ Lille | media | associatif | Lille | concours | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) ; Académie ESJ (post-bac) | esj lille;ecole superieure de journalisme de lille
+IPJ Dauphine-PSL | IPJ | media | public | Paris | concours | Grade de master, cursus reconnu (CPNEJ) | Master (2 ans) | ipj;institut pratique du journalisme
+École de journalisme de Sciences Po | EJSP | media | public | Paris | dossier | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) | ecole de journalisme de sciences po
+IJBA Bordeaux | IJBA | media | public | Bordeaux | concours | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) | ijba;institut de journalisme bordeaux
+EPJT Tours | EPJT | media | public | Tours | concours | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) | epjt;ecole publique de journalisme de tours
+EJT Toulouse | EJT | media | associatif | Toulouse | concours | Cursus reconnu par la profession (CPNEJ) | Cursus de 3 ans | ejt;ecole de journalisme de toulouse
+École de journalisme de Grenoble | EJDG | media | public | Grenoble | concours | Cursus reconnu par la profession (CPNEJ) | Master (2 ans) | ejdg;ecole de journalisme de grenoble
+École W | École W | media | prive | Paris | dossier | Diplôme d'école | Cursus post-bac aux métiers des contenus et des médias | ecole w
+EFAP | EFAP | media | prive | Paris, Lille, Lyon, Bordeaux, Toulouse, Nice | concours, dossier | Titre RNCP niveau 7 | Programme en 5 ans | efap
+ISCOM | ISCOM | media | prive | Paris, Lille, Lyon, Montpellier, Nantes, Rouen, Strasbourg, Toulouse, Bordeaux | dossier, psup, apprentissage | BTS ; titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; MBA (2 ans) | iscom
+ISCPA | ISCPA | media | prive | Paris, Lyon, Toulouse | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Journalisme, communication, production (bachelor + mastère) | iscpa
+ECS European Communication School | ECS | media | prive | Paris, Lyon, Toulouse, Marseille | dossier, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère (2 ans) | european communication school;ecs
+Sup de Pub | Sup de Pub | media | prive | Paris, Lyon, Bordeaux | concours, apprentissage | Titres RNCP niveaux 6 et 7 | Bachelor (3 ans) ; Mastère (2 ans) | sup de pub
+Narratiiv (ex-IICP) | Narratiiv | media | prive | Paris | dossier, psup, apprentissage | BTS ; titres RNCP | Bachelor ; Mastère (communication, journalisme) | narratiiv;iicp
+Audencia SciencesCom | SciencesCom | media | associatif | Nantes | psup, concours | Bachelor grade de licence ; master visé | Bachelor (3 ans) ; Master (2 ans) | sciencescom
+La Fémis | La Fémis | media | public | Paris | concours | Diplôme (grade de master) | Cursus en 4 ans (réalisation, scénario, image, son, montage, production…) | femis
+ENS Louis-Lumière | Louis-Lumière | media | public | Saint-Denis | concours | Diplômes (grade de master) | Cinéma, photographie, son (3 ans après le Bac+2) | louis lumiere
+INA Campus | INA | media | public | Bry-sur-Marne | dossier | BTS, licence pro, masters | Métiers du son, de l'image, du média | ina campus;ina sup
+3iS | 3iS | media | prive | Élancourt, Bordeaux, Lyon, Nantes, Paris | dossier, psup | Titres RNCP niveaux 6 et 7 | Cinéma, son, spectacle vivant, jeu vidéo | 3is
+CinéFabrique | CinéFabrique | media | associatif | Lyon, Marseille | concours | Diplôme d'établissement, licence pro ; titres RNCP niveau 6 | Cursus de 3 ans, gratuit | cinefabrique
+CLCF Conservatoire libre du cinéma français | CLCF | media | prive | Paris | dossier | Titres RNCP niveaux 6 et 7 | Réalisation, montage, scénario (3 ans + mastères) | clcf
+EICAR | EICAR | media | prive | Paris, Lyon | dossier, psup | BTS Audiovisuel ; titres RNCP | Bachelor (3 ans) ; Mastère | eicar
+ESRA | ESRA | media | prive | Paris, Nice, Rennes | psup, concours | Diplômes visés (3 ans) ; cursus visé Bac+5 | Cinéma, audiovisuel (3 à 5 ans) | esra
+Cours Florent | Cours Florent | culture | prive | Paris, Bordeaux, Lyon, Marseille, Montpellier, Nantes | dossier | Diplôme d'école | Cours de théâtre ; cursus post-bac | cours florent
+CNSAD Conservatoire national supérieur d'art dramatique | CNSAD | culture | public | Paris | concours | Diplôme (grade de master) | Art dramatique | conservatoire national superieur d art dramatique;cnsad
+CNSMD de Paris | CNSMDP | culture | public | Paris | concours | Diplômes (grades de licence et de master) | Musique, danse | cnsmd paris;conservatoire national superieur de musique et de danse de paris
+CNSMD de Lyon | CNSMDL | culture | public | Lyon | concours | Diplômes (grades de licence et de master) | Musique, danse | cnsmd lyon
+
+## Santé, vétérinaire, paramédical
+École nationale vétérinaire d'Alfort | EnvA | sante | public | Maisons-Alfort | concours, psup | Diplôme d'État de docteur vétérinaire | Études vétérinaires (6 ans) | ecole nationale veterinaire d alfort;enva
+VetAgro Sup | VetAgro Sup | sante,agro | public | Marcy-l'Étoile | concours, psup | Diplôme d'État de docteur vétérinaire ; ingénieur | Études vétérinaires (6 ans) | vetagro sup
+Oniris VetAgroBio | Oniris | sante,agro | public | Nantes | concours, psup | Diplôme d'État de docteur vétérinaire ; ingénieur | Études vétérinaires (6 ans) | oniris
+École nationale vétérinaire de Toulouse | ENVT | sante | public | Toulouse | concours, psup | Diplôme d'État de docteur vétérinaire | Études vétérinaires (6 ans) | ecole nationale veterinaire de toulouse;envt
+UniLaSalle - École vétérinaire | UniLaSalle Vétérinaire | sante | prive | Rouen | dossier | Diplôme d'État de docteur vétérinaire | Études vétérinaires (6 ans), établissement privé | unilasalle rouen
+
+## Hôtellerie, restauration, tourisme
+Institut Paul Bocuse | Paul Bocuse | hotellerie | prive | Écully | dossier, concours | Diplômes d'établissement, titres RNCP ; bachelor et master | Bachelor (3 ans) ; Master (2 ans) | paul bocuse
+Ferrandi Paris | Ferrandi | hotellerie | consulaire | Paris, Saint-Gratien, Bordeaux, Rennes | dossier, psup | Titres RNCP ; bachelor | Bachelor arts culinaires et management (3 ans) ; CAP, BTS | ferrandi
+Vatel | Vatel | hotellerie | prive | Nîmes, Bordeaux, Lyon, Paris, Marseille | dossier | Titres RNCP | Bachelor en hôtellerie internationale (3 ans) | vatel
+Le Cordon Bleu Paris | Cordon Bleu | hotellerie | prive | Paris | dossier | Diplômes d'école | Cuisine, pâtisserie, management | cordon bleu
+École Ducasse | Ducasse | hotellerie | prive | Meudon, Paris | dossier | Diplômes d'école | Cuisine, pâtisserie | ducasse
+ESTHUA Tourisme & Culture | ESTHUA | hotellerie | public | Angers | dossier | Grade de licence et master | Licence, master tourisme (université d'Angers) | esthua
+Institut de management hôtelier international (IMHI) | IMHI | hotellerie | public | Cergy | dossier | Grade de master | Master management hôtelier (ESSEC-CY) | imhi
+
+## Défense, sécurité, service public
+Académie militaire de Saint-Cyr Coëtquidan | Saint-Cyr | service-public | public | Guer | concours | Grade de master | Officier de l'armée de terre (rémunéré) | saint cyr;coetquidan
+École navale | École navale | service-public | public | Brest | concours | Diplôme d'ingénieur (CTI) ; grade de master | Officier de marine (rémunéré) | ecole navale;bcrm brest ecole navale
+École de l'air et de l'espace | EAE | service-public,aero-maritime | public | Salon-de-Provence | concours | Grade de master | Officier de l'armée de l'air et de l'espace (rémunéré) | ecole de l air;ecole de l air et de l espace
+École nationale supérieure des officiers de sapeurs-pompiers | ENSOSP | service-public | public | Aix-en-Provence | concours | Formation d'officier | Officiers de sapeurs-pompiers professionnels | ensosp
+École nationale supérieure de la police | ENSP | service-public | public | Cannes-Écluse | concours | Formation d'officier et de commissaire de police | Officiers et commissaires de police (rémunérés) | ecole nationale superieure de la police
+Écoles nationales de police (gardiens de la paix) | ENP | service-public | public | Montbéliard, Nîmes, Oissel, Reims, Sens, Toulouse, Vierzon, Châteauroux, Roubaix | concours | Formation rémunérée | Gardien de la paix (1 an en école) | ecole nationale de police
+École des officiers de la gendarmerie nationale | EOGN | service-public | public | Melun | concours | Formation d'officier | Officier de gendarmerie (rémunéré) | eogn
+Institut national du service public | INSP | service-public | public | Strasbourg, Paris | concours | Formation rémunérée des cadres de l'État | Formation de 24 mois | institut national du service public;insp;ena
+École nationale de la magistrature | ENM | droit,service-public | public | Bordeaux, Paris | concours | Formation d'auditeur de justice (rémunéré) | Formation de magistrat | ecole nationale de la magistrature;enm
+École nationale d'administration pénitentiaire | ENAP | service-public | public | Agen | concours | Formation rémunérée | Surveillants, directeurs, conseillers d'insertion | enap
+École nationale de protection judiciaire de la jeunesse | ENPJJ | service-public,social-sport | public | Roubaix | concours | Formation rémunérée | Éducateurs et directeurs de la PJJ | enpjj
+Instituts régionaux d'administration | IRA | service-public | public | Bastia, Lille, Lyon, Metz, Nantes | concours | Formation rémunérée | Attaché d'administration de l'État | instituts regionaux d administration;ira
+École nationale des finances publiques | ENFiP | service-public | public | Noisy-le-Grand, Clermont-Ferrand, Lyon, Toulouse | concours | Formation rémunérée | Inspecteurs, contrôleurs des finances publiques | enfip
+École nationale des douanes | END | service-public | public | Tourcoing, La Rochelle | concours | Formation rémunérée | Inspecteurs, contrôleurs des douanes | ecole nationale des douanes
+Institut national des études territoriales | INET | service-public | public | Strasbourg | concours | Formation rémunérée | Cadres de direction des collectivités | inet
+Institut national des formations notariales | INFN | droit | prive | Paris, Lyon, Bordeaux, Lille, Marseille, Rennes, Strasbourg, Toulouse | dossier, apprentissage | BTS, diplômes de notariat | BTS Collaborateur juriste notarial (2 ans) ; diplôme de notaire | infn;institut national des formations notariales
+
+## Architecture, aéronautique, maritime
+École spéciale d'architecture | ESA | architecture | prive | Paris | dossier | Diplôme d'État d'architecte (habilitée par le ministère de la Culture) | Architecture (5 ans) | ecole speciale d architecture
+École nationale supérieure maritime | ENSM | aero-maritime | public | Le Havre, Marseille, Nantes, Saint-Malo | concours, psup | Diplôme d'ingénieur (CTI) ; brevets d'officier | Officier de la marine marchande, ingénieur | ecole nationale superieure maritime;ensm
+
+## Social et sport
+CREPS (centres de ressources, d'expertise et de performance sportive) | CREPS | social-sport | public | Voiron, Vichy, Poitiers, Strasbourg, Toulouse et autres | dossier | Diplômes Jeunesse et Sports (BPJEPS, DEJEPS) | Formations aux métiers du sport (1 à 3 ans) | creps
+INSEP | INSEP | social-sport | public | Paris | dossier | Établissement du sport de haut niveau | Sport de haut niveau et formation | insep
+
+## Lycées d'art et de métiers d'art (DN MADE, DSAA, DMA) célèbres
+École Boulle | Boulle | art-design | public | Paris | psup | DN MADE, DSAA (diplômes nationaux) | DN MADE (3 ans, grade de licence) ; DSAA (2 ans) ; DMA | esaa boulle;ecole boulle
+École Estienne | Estienne | art-design | public | Paris | psup | DN MADE, DSAA (diplômes nationaux) | DN MADE (3 ans, grade de licence) ; DSAA (2 ans) | lycee estienne;ecole estienne
+ESAA Duperré | Duperré | art-design | public | Paris | psup | DN MADE, DSAA (diplômes nationaux) | DN MADE (3 ans, grade de licence) ; DSAA (2 ans) | duperre
+ENSAAMA Olivier de Serres | Olivier de Serres | art-design | public | Paris | psup | DN MADE, DSAA (diplômes nationaux) | DN MADE (3 ans, grade de licence) ; DSAA (2 ans) | olivier de serres;ensaama
+
+## Grandes écoles, normaliens, établissements publics hors Parcoursup
+ENS Paris (Ulm) | ENS Ulm | universite | public | Paris | concours | Diplôme de l'ENS (grade de master) | Normalien (après la prépa) ; Parcours après la licence | ecole normale superieure paris;ens ulm;ens psl
+ENS de Lyon | ENS Lyon | universite | public | Lyon | concours | Diplôme de l'ENS (grade de master) | Normalien (après la prépa) | ens de lyon;ens lyon
+ENS Paris-Saclay | ENS Paris-Saclay | universite | public | Gif-sur-Yvette | concours | Diplôme de l'ENS (grade de master) | Normalien (après la prépa) | ens paris saclay;ecole normale superieure paris saclay
+ENS Rennes | ENS Rennes | universite | public | Bruz | concours | Diplôme de l'ENS (grade de master) | Normalien (après la prépa) | ens rennes;ecole normale superieure de rennes
+École nationale des chartes | Chartes | universite | public | Paris | concours | Diplôme d'archiviste paléographe (grade de master) | Archiviste paléographe (après la prépa) | ecole nationale des chartes
+INALCO | INALCO | universite | public | Paris | psup | Licence, master | Langues et civilisations du monde | inalco;langues o
+Cnam | Cnam | universite | public | Paris et centres en région | dossier, apprentissage | Diplômes nationaux (licence, master), titres d'ingénieur | Formations en cours du soir et en alternance | conservatoire national des arts et metiers;cnam
+Institut polytechnique de Paris | IP Paris | universite,ingenieur | public | Palaiseau | concours | Diplômes de ses écoles (Polytechnique, ENSTA, Télécom, ENSAE…) | Regroupement d'écoles d'ingénieurs | institut polytechnique de paris
+Université Paris-Dauphine - PSL | Dauphine | universite | public | Paris | psup | Grade de licence et de master | Licence (économie, gestion, maths-informatique) ; master | dauphine
+Collège des Ingénieurs | Collège des Ingénieurs | ingenieur | prive | Paris | dossier | Diplôme d'école | Formation complémentaire d'ingénieur (programme international) | college des ingenieurs
+
+## Écoles de commerce et de gestion complémentaires
+ESLSCA Business School | ESLSCA | commerce | prive | Paris | dossier | Titres RNCP ; grade de licence (certains cursus) | Bachelor ; Programme Grande École | eslsca
+EBS Paris | EBS | commerce | prive | Paris | dossier | Titres RNCP | Bachelor ; Mastère | ebs paris;european business school
+Y Schools (ESC Troyes) | Y Schools | commerce | consulaire | Troyes | dossier, concours | Diplôme visé | Bachelor ; Programme Grande École | y schools;esc troyes;groupe esc troyes
+ESAM Business School | ESAM | commerce | prive | Paris | dossier | Titres RNCP | Bachelor ; Mastère | esam
+EGC Business School | EGC | commerce | consulaire | Lille, Nantes, Toulouse, Paris | dossier | Titres RNCP | Bachelor ; Mastère | egc
+Institut Supérieur de Gestion de Grenoble | ISG | commerce | prive | Paris | dossier | Titres RNCP | Bachelor ; Mastère | isg grenoble
+
+## Métiers d'art, artisanat, mode, luxe
+Les Compagnons du Devoir | Compagnons | autre | associatif | Partout en France | dossier, apprentissage | Diplômes de l'apprentissage (CAP à Bac+5) | Formation par l'alternance et le Tour de France | compagnons du devoir
+BJOP École de bijouterie-joaillerie | BJOP | art-design | prive | Paris | dossier | Titres RNCP, CAP | CAP, titres de bijoutier-joaillier (1 à 3 ans) | bjop
+École de la Chambre syndicale de la couture parisienne | Chambre syndicale de la couture | art-design | prive | Paris | dossier | Diplôme d'école | Formation à la haute couture | chambre syndicale de la couture
+École nationale supérieure de la nature et du paysage | ENSNP | agro,architecture | public | Blois | concours, psup | Diplôme de paysagiste (grade de master) | Paysage (3 + 2 ans) | ecole nationale superieure de la nature et du paysage;ensnp
+École nationale supérieure de paysage | ENSP Versailles | agro,architecture | public | Versailles, Marseille | concours | Diplôme de paysagiste concepteur (grade de master) | Paysage (5 ans) | ecole nationale superieure de paysage;ensp versailles
+
+## Santé, paramédical et ostéopathie (écoles privées)
+École supérieure d'ostéopathie (ESO) | ESO | sante | prive | Paris | dossier | Établissement agréé | Ostéopathie (5 ans) | eso paris
+Institut supérieur d'ostéopathie (ISO) | ISO | sante | prive | Lyon, Rennes, Strasbourg, Toulouse, Aix-en-Provence | dossier | Établissement agréé | Ostéopathie (5 ans) | iso osteopathie;institut superieur d osteopathie

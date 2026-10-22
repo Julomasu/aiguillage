@@ -1,0 +1,5748 @@
+[
+{
+"noms": [
+"Institut national polytechnique Clermont Auvergne",
+"École d'ingénieurs SIGMA Clermont"
+],
+"cp": "63178",
+"ville": "Aubière",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "CLERMONT-FERRAND",
+"titres": [
+"chimie",
+"mécanique",
+"mécanique et génie industriel"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national polytechnique Clermont Auvergne",
+"École polytechnique universitaire"
+],
+"cp": "63178",
+"ville": "Aubière",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "CLERMONT-FERRAND",
+"titres": [
+"génie biologique",
+"génie civil",
+"génie industriel",
+"génie physique",
+"génie électrique",
+"mathématiques appliquées"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Montluçon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national polytechnique Clermont Auvergne",
+"Institut supérieur d'informatique, de modélisation et de leurs applications (ex-Institut d'informatique d'Auvergne)"
+],
+"cp": "63178",
+"ville": "Aubière",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "CLERMONT-FERRAND",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national d'enseignement supérieur et de recherche en alimentation, santé animale, sciences agronomiques et de l'environnement (Vet Agro Sup)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "CLERMONT-FERRAND",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble"
+],
+"cp": "38031",
+"ville": "Grenoble",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"génie énergétique et industriel"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École nationale supérieure de l'énergie, l'eau et l'environnement"
+],
+"cp": "38031",
+"ville": "Grenoble",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste",
+"énergie électrique et énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École nationale supérieure de génie industriel"
+],
+"cp": "38031",
+"ville": "Grenoble",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École nationale supérieure d'informatique et de mathématiques appliquées"
+],
+"cp": "38402",
+"ville": "Saint-Martin-D'Hères",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École nationale supérieure de physique, électronique, matériaux"
+],
+"cp": "38016",
+"ville": "Grenoble",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste",
+"micro et nanotechnologies pour les systèmes intégrés",
+"microélectronique et télécommunications"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École nationale supérieure en systèmes avancés et réseaux"
+],
+"cp": "26902",
+"ville": "Valence",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École internationale du papier, de la communication imprimée et des biomatériaux"
+],
+"cp": "38402",
+"ville": "Saint-Martin-D'Hères",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Grenoble",
+"École polytechnique universitaire"
+],
+"cp": "38400",
+"ville": "Saint-Martin-D'Hères",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"gestion des risques",
+"géotechnique et génie civil",
+"informatique",
+"informatique et électronique",
+"matériaux",
+"technologies de l'information pour la santé"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Chambéry",
+"École polytechnique universitaire de Savoie"
+],
+"cp": "74944",
+"ville": "Annecy-Le-Vieux",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "GRENOBLE",
+"titres": [
+"bâtiment",
+"informatique",
+"mécanique",
+"mécanique-matériaux",
+"mécanique-productique",
+"systèmes numériques - instrumentation",
+"écologie industrielle"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites d'Annecy et de Chambéry",
+"site de Chambéry",
+"site d'Annecy"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École centrale de Lyon"
+],
+"cp": "69134",
+"ville": "Ecully",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École centrale de Lyon",
+"École nationale d'ingénieurs de Saint-Étienne"
+],
+"cp": "42023",
+"ville": "Saint-Étienne",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"génie civil",
+"génie mécanique",
+"génie physique"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées de Lyon"
+],
+"cp": "69621",
+"ville": "Villeurbanne",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"biotechnologies et bioinformatique",
+"génie civil et génie urbain",
+"génie industriel",
+"génie mécanique",
+"génie électrique",
+"génie énergétique et génie de l'environnement",
+"informatique",
+"matériaux",
+"télécommunications"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Villeurbanne et d'Oyonnax",
+"site de Villeurbanne"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université Jean Monnet",
+"Télécom Saint-Étienne"
+],
+"cp": "42000",
+"ville": "Saint-Étienne",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"informatique et électronique",
+"photonique et informatique industrielle"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Lyon-I",
+"École polytechnique universitaire"
+],
+"cp": "69622",
+"ville": "Villeurbanne",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"génie biomédical",
+"génie industriel",
+"informatique",
+"mathématiques appliquées",
+"matériaux",
+"mécanique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Roanne"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale des travaux publics de l'État"
+],
+"cp": "69518",
+"ville": "Vaulx-En-Velin",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"École nationale supérieure des mines de Saint-Étienne"
+],
+"cp": "62362",
+"ville": "-",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"génie industriel",
+"génie nucléaire",
+"généraliste",
+"microélectronique et informatique",
+"systèmes électroniques embarqués",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Saint-Étienne et de Gardanne",
+"site de Gardanne"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national d'enseignement supérieur et de recherche en alimentation, santé animale, sciences agronomiques et de l'environnement (Vet Agro Sup)"
+],
+"cp": "69280",
+"ville": "Marcy-L'Etoile",
+"statut": "Public",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure de chimie, physique, électronique de Lyon"
+],
+"cp": "69616",
+"ville": "Villeurbanne",
+"statut": "Privé",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"biotechnologies et génie des procédés biologiques",
+"chimie et génie des procédés",
+"génie des procédés",
+"génie physique et microélectronique",
+"informatique et cybersécurité",
+"informatique et réseaux",
+"électronique et informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ECAM LaSalle"
+],
+"cp": "69321",
+"ville": "Lyon",
+"statut": "Privé",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"génie industriel et mécanique",
+"généraliste",
+"mécanique et génie électrique",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut catholique de Lyon",
+"Ecole supérieure de biologie-biochimie-biotechnologies"
+],
+"cp": "69002",
+"ville": "Lyon",
+"statut": "Privé",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"biotechnologie"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut textile et chimique de Lyon"
+],
+"cp": "69134",
+"ville": "Ecully",
+"statut": "Privé",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur d'agriculture Rhône-Alpes"
+],
+"cp": "69007",
+"ville": "Lyon",
+"statut": "Privé",
+"region": "AUVERGNE-RHÔNE-ALPES",
+"academie": "LYON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site d'Avignon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de mécanique et des microtechniques"
+],
+"cp": "25030",
+"ville": "Besançon",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "BESANÇON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "BESANÇON",
+"titres": [
+"microtechniques",
+"mécanique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de technologie de Belfort-Montbéliard"
+],
+"cp": "90010",
+"ville": "Belfort",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "BESANÇON",
+"titres": [
+"génie industriel"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "BESANÇON",
+"titres": [
+"génie électrique",
+"informatique",
+"logistique industrielle",
+"mécanique et ergonomie",
+"mécanique et transports",
+"mécanique",
+"énergie et génie électrique",
+"énergie"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Marie et Louis Pasteur",
+"Institut supérieur d'ingénieurs de Franche-Comté"
+],
+"cp": "25000",
+"ville": "Besançon",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "BESANÇON",
+"titres": [
+"génie biomédical"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Bourgogne Europe",
+"École polytechnique universitaire de Bourgogne"
+],
+"cp": "21078",
+"ville": "Dijon",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "DIJON",
+"titres": [
+"matériaux"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "DIJON",
+"titres": [
+"informatique et réseaux",
+"informatique et électronique",
+"robotique",
+"électronique et systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site du Creusot"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université Bourgogne Europe",
+"Institut supérieur de l'automobile et des transports de Nevers"
+],
+"cp": "58027",
+"ville": "Nevers",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "DIJON",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "DIJON",
+"titres": [
+"génie industriel",
+"génie mécanique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site d'Auxerre"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement (Institut Agro)",
+"École nationale supérieure des sciences agronomiques, de l'alimentation et de l'environnement (Institut Agro Dijon)"
+],
+"cp": "21079",
+"ville": "Dijon",
+"statut": "Public",
+"region": "BOURGOGNE-FRANCHE-COMTÉ",
+"academie": "DIJON",
+"titres": [
+"agroalimentaire",
+"agronomie"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Bretagne INP",
+"École nationale d'ingénieurs de Brest"
+],
+"cp": "29238",
+"ville": "Brest",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Bretagne INP",
+"École supérieure d'ingénieurs en agroalimentaire de Bretagne atlantique"
+],
+"cp": "29280",
+"ville": "Plouzané",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"agroalimentaire",
+"microbiologie et sécurité sanitaire"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Quimper"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de chimie de Rennes"
+],
+"cp": "35708",
+"ville": "Rennes",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées de Rennes"
+],
+"cp": "35708",
+"ville": "Rennes",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"électronique et informatique industrielle"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"génie civil et urbain",
+"génie mécanique et automatique",
+"génie physique et matériaux",
+"informatique",
+"mathématiques appliquées",
+"électronique",
+"électronique et télécommunications"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Rennes",
+"École nationale supérieure des sciences appliquées et de technologie de Lannion"
+],
+"cp": "22300",
+"ville": "Lannion",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"informatique",
+"informatique et technologies de l'information",
+"photonique",
+"photonique et électronique",
+"systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Rennes",
+"École supérieure d'ingénieurs de Rennes"
+],
+"cp": "35042",
+"ville": "Rennes",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"informatique"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\ L'Université de Rennes a été créée par le décret n° 2022-1474 du 24 novembre 2022 à compter du 1er janvier 2023. Elle se substitue à l'université Rennes-I."
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"matériaux",
+"systèmes numériques et réseaux",
+"technologies de l'information pour la santé"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Rennes et de Saint-Brieuc"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Bretagne-Sud",
+"École nationale supérieure d'ingénieurs de Bretagne-Sud"
+],
+"cp": "56321",
+"ville": "Lorient",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"génie civil",
+"génie industriel",
+"génie énergétique et génie électrique",
+"informatique et cybersécurité",
+"mécatronique",
+"sécurité des systèmes d'information et cybersécurité"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Vannes"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement (Institut Agro)",
+"École nationale supérieure des sciences agronomiques, agroalimentaires, horticoles et du paysage (Institut Agro Rennes-Angers)"
+],
+"cp": "35042",
+"ville": "Rennes",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"agroalimentaire",
+"agronomie",
+"horticulture",
+"paysage"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site d'Angers"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École navale",
+"BCRM BREST"
+],
+"cp": "29160",
+"ville": "Lanvéoc",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "RENNES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"Ecole nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire"
+],
+"cp": "29238",
+"ville": "Brest",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "Académie militaire de Saint-Cyr Coëtquidan<br>École spéciale militaire de Saint-Cyr<br>Camp de Coëtquidan<br>56381 Guer",
+"titres": [
+"génie industriel",
+"généraliste",
+"informatique",
+"réseaux et télécommunications"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Nantes, Brest et Cesson-Sévigné",
+"site de Nantes",
+"site de Brest",
+"site de Cesson-Sévigné"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Groupe des écoles nationales d'économie et statistique",
+"École nationale de la statistique et de l'analyse de l'information"
+],
+"cp": "35170",
+"ville": "Bruz",
+"statut": "Public",
+"region": "BRETAGNE",
+"academie": "Académie militaire de Saint-Cyr Coëtquidan<br>École spéciale militaire de Saint-Cyr<br>Camp de Coëtquidan<br>56381 Guer",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Ecam Louis de Broglie"
+],
+"cp": "35091",
+"ville": "Rennes",
+"statut": "Privé",
+"region": "BRETAGNE",
+"academie": "Académie militaire de Saint-Cyr Coëtquidan<br>École spéciale militaire de Saint-Cyr<br>Camp de Coëtquidan<br>56381 Guer",
+"titres": [
+"génie industriel",
+"généraliste",
+"systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Cherbourg-en-Cotentin"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Yncréa Ouest",
+"Institut supérieur de l'électronique et du numérique"
+],
+"cp": "29228",
+"ville": "Brest",
+"statut": "Privé",
+"region": "BRETAGNE",
+"academie": "Académie militaire de Saint-Cyr Coëtquidan<br>École spéciale militaire de Saint-Cyr<br>Camp de Coëtquidan<br>56381 Guer",
+"titres": [
+"agronomie et systèmes numériques",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Brest",
+"site de Nantes",
+"site de Brest",
+"site de Caen"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées Centre Val de Loire"
+],
+"cp": "18022",
+"ville": "Bourges",
+"statut": "Public",
+"region": "CENTRE-VAL-DE-LOIRE",
+"academie": "ORLÉANS-TOURS",
+"titres": [
+"gestion des risques",
+"génie industriel",
+"sécurité informatique",
+"énergie, risques et environnement"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Blois"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université d'Orléans",
+"École polytechnique universitaire"
+],
+"cp": "45072",
+"ville": "Orléans",
+"statut": "Public",
+"region": "CENTRE-VAL-DE-LOIRE",
+"academie": "ORLÉANS-TOURS",
+"titres": [
+"génie civil et environnement",
+"génie industriel",
+"génie mécanique et production",
+"génie physique et systèmes embarqués",
+"matériaux et mécatronique",
+"système d'information pour le bâtiment",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Chartres"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Tours",
+"École polytechnique universitaire"
+],
+"cp": "37200",
+"ville": "Tours",
+"statut": "Public",
+"region": "CENTRE-VAL-DE-LOIRE",
+"academie": "ORLÉANS-TOURS",
+"titres": [
+"génie de l'aménagement et de l'environnement",
+"informatique",
+"informatique industrielle",
+"mécanique et génie mécanique",
+"électronique et génie électrique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Corse",
+"École d'ingénieurs Paoli Tech"
+],
+"cp": "20250",
+"ville": "Corte",
+"statut": "Public",
+"region": "de CORSE",
+"academie": "ORLÉANS-TOURS",
+"titres": [
+"agronomie",
+"énergétique"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Aflokkat",
+"Centre professionnel A Stella"
+],
+"cp": "20167",
+"ville": "Sarrola-Carcopino",
+"statut": "Privé",
+"region": "de CORSE",
+"academie": "ORLÉANS-TOURS",
+"titres": [
+"robotique et informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale d'ingénieurs de Metz"
+],
+"cp": "57078",
+"ville": "Metz",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste",
+"mécanique et production"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École européenne d'ingénieurs en génie des matériaux"
+],
+"cp": "54010",
+"ville": "Nancy",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure des mines de Nancy"
+],
+"cp": "54042",
+"ville": "Nancy",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"génie industriel et matériaux",
+"génie mécanique",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Saint-Dié-des-Vosges"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure d'agronomie et des industries alimentaires"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"agronomie",
+"industries alimentaires",
+"production agroalimentaire"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure d'électricité et de mécanique"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste",
+"systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure de géologie"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure en génie des systèmes et de l'innovation"
+],
+"cp": "54010",
+"ville": "Nancy",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure des industries chimiques"
+],
+"cp": "54001",
+"ville": "Nancy",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"génie chimique",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École nationale supérieure des technologies et industries du bois"
+],
+"cp": "88051",
+"ville": "Épinal",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"Télécom Nancy"
+],
+"cp": "54602",
+"ville": "Villers-Lès-Nancy",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"cybersécurité",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lorraine",
+"École polytechnique de l'université de Lorraine"
+],
+"cp": "54519",
+"ville": "Vandoeuvre",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"génie industriel et gestion des risques",
+"systèmes et technologies de l'information",
+"énergétique et mécanique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure d'ingénieurs des travaux de la construction de Metz"
+],
+"cp": "57070",
+"ville": "Metz",
+"statut": "Privé",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut en innovation logistique"
+],
+"cp": "57070",
+"ville": "Metz",
+"statut": "Privé",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure du soudage et de ses applications"
+],
+"cp": "57970",
+"ville": "Yutz",
+"statut": "Privé",
+"region": "GRAND EST",
+"academie": "NANCY-METZ",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": true
+},
+{
+"noms": [
+"Université de Reims",
+"École nationale supérieure d'ingénieurs de Reims"
+],
+"cp": "51100",
+"ville": "Reims",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "REIMS",
+"titres": [
+"emballage et conditionnement",
+"génie urbain et environnement",
+"énergétique"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Reims",
+"École d'ingénieurs en sciences industrielles et numérique"
+],
+"cp": "08000",
+"ville": "Charleville-Mézières",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "REIMS",
+"titres": [
+"automatique et génie électrique",
+"matériaux et mécanique",
+"mécanique et génie industriel"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site de Reims"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de technologie de Troyes"
+],
+"cp": "10004",
+"ville": "Troyes",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "REIMS",
+"titres": [
+"automatique et informatique industrielle, en convention avec l'université de Reims",
+"génie industriel",
+"génie mécanique",
+"informatique et systèmes d'information",
+"matériaux",
+"matériaux et mécanique",
+"réseaux et télécommunications",
+"systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Nogent et de Troyes",
+"sites de Troyes et de Reims"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées de Strasbourg"
+],
+"cp": "67084",
+"ville": "Strasbourg",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"génie civil",
+"génie mécanique",
+"génie électrique",
+"génie énergétique",
+"mécanique",
+"mécatronique",
+"plasturgie",
+"topographie"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Mulhouse",
+"École nationale supérieure de chimie de Mulhouse"
+],
+"cp": "68093",
+"ville": "Mulhouse",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Mulhouse",
+"École nationale supérieure d'ingénieurs Sud-Alsace"
+],
+"cp": "68093",
+"ville": "Mulhouse",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"automatique et systèmes embarqués",
+"génie industriel",
+"informatique et réseaux",
+"mécanique",
+"textile et fibres"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Strasbourg"
+],
+"cp": "67081",
+"ville": "Strasbourg",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"chimie-biotechnologies"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Strasbourg",
+"École et observatoire des sciences de la Terre"
+],
+"cp": "67084",
+"ville": "Strasbourg",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Strasbourg",
+"École européenne de chimie, polymères et matériaux de Strasbourg"
+],
+"cp": "67087",
+"ville": "Strasbourg",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste",
+"écologie industrielle des matériaux polymères"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Strasbourg",
+"Télécom physique Strasbourg"
+],
+"cp": "67412",
+"ville": "Illkirch",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste",
+"informatique et réseaux",
+"technologies de l'information pour la santé",
+"électronique et systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Strasbourg",
+"École supérieure de biotechnologie de Strasbourg"
+],
+"cp": "67412",
+"ville": "Illkirch",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale du génie de l'eau et de l'environnement de Strasbourg"
+],
+"cp": "67070",
+"ville": "Strasbourg",
+"statut": "Public",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ICAM, Institut catholique d'arts et métiers"
+],
+"cp": "67012",
+"ville": "Strasbourg",
+"statut": "Privé",
+"region": "GRAND EST",
+"academie": "STRASBOURG",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université des Antilles",
+"UFR sciences exactes et naturelles - Campus de Fouillole - BP 250"
+],
+"cp": "97157",
+"ville": "Pointe-À-Pitre",
+"statut": "Public",
+"region": "de la GUADELOUPE",
+"academie": "STRASBOURG",
+"titres": [
+"environnement et matériaux",
+"énergétique"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de technologie de Compiègne"
+],
+"cp": "60203",
+"ville": "Compiègne",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "AMIENS",
+"titres": [
+"génie biologique",
+"génie des procédés",
+"génie urbain",
+"informatique",
+"mécanique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université d'Amiens",
+"École d'ingénieurs Jules Verne"
+],
+"cp": "80026",
+"ville": "Amiens",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "AMIENS",
+"titres": [
+"cybersécurité",
+"génie énergétique et environnement",
+"logistique",
+"technologies de l'information pour la santé"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [
+"site de Saint-Quentin",
+"site d'Amiens"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure de chimie organique et minérale"
+],
+"cp": "60200",
+"ville": "Compiègne",
+"statut": "Privé",
+"region": "HAUTS-DE-FRANCE",
+"academie": "AMIENS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique UniLaSalle"
+],
+"cp": "60026",
+"ville": "Beauvais",
+"statut": "Privé",
+"region": "HAUTS-DE-FRANCE",
+"academie": "AMIENS",
+"titres": [
+"agroalimentation et santé",
+"agronomie et agro-industries",
+"génie de l'environnement",
+"géosciences et environnement",
+"systèmes numériques et énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Beauvais",
+"site de Beauvais",
+"site de Bruz",
+"site d'Amiens"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École d'ingénieurs des sciences aérospatiales"
+],
+"cp": "02100",
+"ville": "Saint-Quentin",
+"statut": "Privé",
+"region": "HAUTS-DE-FRANCE",
+"academie": "AMIENS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centrale Lille Institut",
+"École centrale de Lille"
+],
+"cp": "59651",
+"ville": "Villeneuve D'Ascq",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centrale Lille Institut",
+"ITEEM"
+],
+"cp": "59650",
+"ville": "Villeneuve-D'Ascq",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centrale Lille Institut",
+"IG2I"
+],
+"cp": "62300",
+"ville": "Lens",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centrale Lille Institut",
+"Ecole nationale supérieure de chimie de Lille"
+],
+"cp": "59652",
+"ville": "Villeneuve-D'Ascq",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure des arts et industries textiles"
+],
+"cp": "59056",
+"ville": "Roubaix",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées Hauts-de-France"
+],
+"cp": "59313",
+"ville": "Valenciennes",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"génie industriel"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"génie civil et bâtiment",
+"génie mécanique",
+"génie électrique et informatique industrielle",
+"informatique et cybersécurité",
+"informatique industrielle et automatique",
+"informatique",
+"multimédia",
+"mécanique et énergétique",
+"mécatronique",
+"systèmes embarqués et télécommunications"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Lille",
+"École polytechnique universitaire"
+],
+"cp": "59655",
+"ville": "Villeneuve-D'Ascq",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"informatique et mathématiques appliquées"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Le décret no 2017-1329 du 11 septembre 2017 porte création de l'université de Lille par fusion des trois universités de Lille."
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"cybersécurité et systèmes embarqués",
+"génie biologique et agroalimentaire",
+"génie civil",
+"génie industriel",
+"génie électrique et mécatronique",
+"géomatique et génie urbain",
+"instrumentation",
+"matériaux",
+"mécanique",
+"systèmes embarqués et génie électrique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université du Littoral",
+"École d'ingénieurs du Littoral Côte d'Opale"
+],
+"cp": "62228",
+"ville": "Calais",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"agroalimentaire",
+"génie industriel",
+"génie énergétique et environnement",
+"informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Longuenesse",
+"site de Dunkerque",
+"site de Boulogne-sur-Mer"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université d'Artois",
+"École d'ingénieurs Artois"
+],
+"cp": "62400",
+"ville": "Béthune",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"génie électrique"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"École nationale supérieure Mines-Télécom Lille Douai"
+],
+"cp": "59653",
+"ville": "Villeneuve D'Ascq",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"génie civil et systèmes ferroviaires",
+"génie industriel",
+"génie énergétique",
+"généraliste",
+"plasturgie et matériaux composites",
+"systèmes ferroviaires",
+"télécommunications et informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Villeneuve d'Ascq et de Douai",
+"site de Villeneuve d'Ascq",
+"site de Valenciennes",
+"site de Douai",
+"site de Valenciennes",
+"site de Douai",
+"site d'Alençon",
+"site de Douai",
+"site de Dunkerque"
+],
+"specialisation": false
+},
+{
+"noms": [
+"JUNIA - École des hautes études d'ingénieur"
+],
+"cp": "59014",
+"ville": "Lille",
+"statut": "Privé",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Lille et de Châteauroux"
+],
+"specialisation": false
+},
+{
+"noms": [
+"JUNIA - Institut supérieur de l'électronique et du numérique"
+],
+"cp": "59046",
+"ville": "Lille",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Bordeaux et de Lille",
+"site de Bordeaux"
+],
+"specialisation": false
+},
+{
+"noms": [
+"JUNIA - Institut supérieur d'agriculture"
+],
+"cp": "59014",
+"ville": "Lille",
+"statut": "Public",
+"region": "HAUTS-DE-FRANCE",
+"academie": "LILLE",
+"titres": [
+"généraliste",
+"paysage"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur de mécanique de Paris"
+],
+"cp": "93407",
+"ville": "Saint-Ouen",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"génie industriel",
+"génie industriel pour l'aéronautique et l'espace",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Paris-XII",
+"École publique d'ingénieurs de la santé et du numérique (EPISEN)"
+],
+"cp": "94010",
+"ville": "Créteil",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"génie biomédical et santé",
+"informatique et santé",
+"systèmes d'information"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Paris-XIII - Institut scientifique et polytechnique dit « Institut Galilée »"
+],
+"cp": "93430",
+"ville": "Villetaneuse",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"informatique",
+"instrumentation",
+"mathématiques appliquées",
+"télécommunications et réseaux",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Gustave Eiffel",
+"École supérieure d'ingénieurs de Paris-Est (ESIPE)"
+],
+"cp": "77454",
+"ville": "Marne-La-Vallée",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"informatique"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"L'Université Gustave Eiffel a été créée par le décret n° 2019-1360 du 13 décembre 2019.,"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"mécanique"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"."
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"génie civil",
+"multimédia et technologies de l'information",
+"production et gestion des risques",
+"électronique et informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale des sciences géographiques"
+],
+"cp": "77455",
+"ville": "Marne-La-Vallée",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ESIEE Paris"
+],
+"cp": null,
+"ville": null,
+"statut": "Consulaire",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"multimédia et technologies de l'information"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale des ponts et chaussées"
+],
+"cp": "77455",
+"ville": "Marne-La-Vallée",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"EFREI Paris"
+],
+"cp": "94815",
+"ville": "Villejuif",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Bordeaux"
+],
+"specialisation": false
+},
+{
+"noms": [
+"EPF"
+],
+"cp": "94230",
+"ville": "Cachan",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste",
+"systèmes d'information"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Cachan et de Montpellier",
+"site de Saint-Nazaire",
+"sites de Cachan, de Montpellier et de Troyes"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure d'ingénieurs des travaux de la construction de Paris"
+],
+"cp": "94110",
+"ville": "Arcueil",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- Arcueil",
+"\\- Égletons pour les deux premières années du cycle ingénieur"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École spéciale de mécanique et d'électricité"
+],
+"cp": "94200",
+"ville": "Ivry-Sur-Seine",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites d'Ivry-sur-Seine et de Lille",
+"site de Lyon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École pour l'informatique et les techniques avancées"
+],
+"cp": "94270",
+"ville": "Le Kremlin-Bicêtre",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Kremlin-Bicêtre/Villejuif",
+"sites de Kremlin-Bicêtre/Villejuif et Lyon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique des sciences avancées"
+],
+"cp": "94200",
+"ville": "Ivry-Sur-Seine",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Lyon",
+"site d'Ivry-sur-Seine"
+],
+"specialisation": false
+},
+{
+"noms": [
+"ESTP - Grande école d'ingénieurs de la construction"
+],
+"cp": "94234",
+"ville": "Cachan",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"bâtiment",
+"génie mécanique et électrique",
+"généraliste",
+"topographie",
+"travaux publics",
+"énergétique de la construction"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Cachan",
+"site d'Aix-en-Provence",
+"site de Cachan",
+"site d'Orléans",
+"sites de Cachan et de Dijon",
+"sites de Cachan et de Troyes"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur des biotechnologies de Paris"
+],
+"cp": "94800",
+"ville": "Villejuif",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Villejuif"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre des hautes études de la construction"
+],
+"cp": "94110",
+"ville": "Arcueil",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "CRÉTEIL",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": true
+},
+{
+"noms": [
+"Conservatoire national des arts et métiers"
+],
+"cp": "75141",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"agroalimentaire",
+"chimie",
+"gestion des risques",
+"génie biologique",
+"génie nucléaire",
+"instrumentation"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Formations \"hors temps de travail\" également accréditées sur les sites étrangers suivants :"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur les sites de Beyrouth, Baakline, Baalbek, Bikfaya, Nahr Ibrahim, Tripoli (Liban), d'Abidjan (Côte d'Ivoire) et de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"bâtiment et travaux publics"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur les sites de Beyrouth (Liban), d'Abidjan (Côte d'Ivoire) et de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"énergétique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur les sites de Beyrouth, Baakline, Baalbek, Bikfaya, Nahr Ibrahim, Tripoli (Liban), d'Abidjan (Côte d'Ivoire) et de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"informatique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur le site de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"matériaux"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur les sites de Beyrouth, Bikfaya, Nahr Ibrahim (Liban), d'Abidjan (Côte d'Ivoire) et de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"mécanique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur les sites de Beyrouth (Liban), d'Abidjan (Côte d'Ivoire) et de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie électrique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur le site de Beyrouth (Liban)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"systèmes électroniques"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur le site de Beyrouth (Liban)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie des procédés"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur le site de Casablanca (Maroc)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"automatique et robotique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- sur le site de Beyrouth (Liban)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"télécommunications et réseaux"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"topographie et génie de l'aménagement"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Formations partenariales"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional d'Ile-de-France (cf. annexe)",
+"\\- site de Paris"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"automatique et robotique",
+"aéronautique et espace",
+"génie industriel",
+"génie nucléaire, en convention avec le CESI",
+"génie électrique",
+"informatique et systèmes d'information",
+"instrumentation",
+"matériaux",
+"mécanique",
+"mécatronique",
+"production et systèmes numériques",
+"systèmes électroniques"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site de Saint-Denis",
+"site de Mantes-la-Jolie"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional de Bourgogne-Franche-Comté (cf. annexe)",
+"\\- site de Chalon-sur-Saône"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"science de la donnée et intelligence artificielle"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional des Hauts-de-France (cf. annexe)",
+"\\- site d'Amiens"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"automatique et robotique",
+"bâtiment et travaux publics",
+"gestion des risques",
+"génie électrique",
+"informatique",
+"mécanique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"sites d'Amiens et de Beauvais",
+"site de Beauvais",
+"site de Beauvais",
+"site d'Amiens",
+"site de Beauvais",
+"site d'Amiens",
+"site de Beauvais"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional de Nouvelle-Aquitaine (cf. annexe)",
+"\\- site de Limoges"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"bâtiment et travaux publics, en convention avec l'université de Limoges",
+"génie industriel",
+"informatique et multimédia",
+"matériaux, emballage et conditionnement",
+"mécatronique, en convention avec l'université de Poitiers",
+"science de la donnée et intelligence artificielle"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site de Châtellerault",
+"site d'Angoulême",
+"site de Poitiers",
+"site de Niort"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional Grand Est (cf. annexe)",
+"\\- site de Reims"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"bâtiment et travaux publics",
+"bâtiment et travaux publics, en convention avec l'université de Reims",
+"environnement et production",
+"gestion des risques",
+"informatique et cybersécurité",
+"informatique et systèmes d'information",
+"informatique et systèmes d'information, en convention avec l'université de Reims",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site d'Eckbolsheim",
+"site de Nancy",
+"site de Metz",
+"site de Saint-Dié-des-Vosges"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional de Provence-Alpes-Côte- d'Azur (cf. annexe)",
+"\\- site d'Avignon"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie industriel",
+"informatique et multimédia, en convention avec l'université de Toulon"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [
+"site de Toulon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional de Normandie (cf. annexe)",
+"\\- site de Vernon"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie industriel",
+"génie électrique",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Centre régional des Pays de la Loire (cf. annexe)",
+"\\- site de La Roche-sur-Yon"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie électrique",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure d'arts et métiers"
+],
+"cp": "75013",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche d'Angers"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche de Paris"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche de Paris"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie industriel",
+"génie énergétique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche d'Aix-en-Provence"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie électrique",
+"mécanique",
+"travaux publics"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche de Bordeaux-Talence"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie industriel et production",
+"génie mécanique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche de Châlons-en-Champagne"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"mécanique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre d'enseignement et de recherche de Metz"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"environnement et gestion des risques",
+"généraliste",
+"mécanique et mécatronique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Chambéry",
+"site de Saint-Etienne",
+"site de Rabat (Maroc)"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de chimie de Paris"
+],
+"cp": "75231",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Sorbonne Université",
+"École polytechnique universitaire"
+],
+"cp": "75252",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"agroalimentaire",
+"génie mécanique",
+"mathématiques appliquées et informatique",
+"matériaux",
+"robotique",
+"sciences de la Terre",
+"électronique et informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Paris Cité",
+"École d'ingénieurs Denis Diderot"
+],
+"cp": "75205",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"bio-informatique",
+"génie biologique",
+"génie biomédical",
+"génie physique",
+"matériaux et nanotechnologies",
+"systèmes informatiques embarqués"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure des mines de Paris"
+],
+"cp": "75272",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"énergétique, en convention avec le Conservatoire national des arts et métiers"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École des ingénieurs de la Ville de Paris"
+],
+"cp": "75019",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"génie urbain"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure de physique et de chimie industrielles de la Ville de Paris"
+],
+"cp": "75231",
+"ville": "Paris",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École centrale d'électronique"
+],
+"cp": "75015",
+"ville": "Paris",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Bordeaux"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure d'informatique, électronique, automatique"
+],
+"cp": "75005",
+"ville": "Paris",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur d'électronique de Paris"
+],
+"cp": "75006",
+"ville": "Paris",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ICAM, Institut catholique d'arts et métiers"
+],
+"cp": "75009",
+"ville": "Paris",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centres de Lille, Nantes, Grand Paris Sud et Toulouse (voir annexe)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Strasbourg-Europe (voir annexe)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Grand Paris Sud"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Lille"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de La Roche-sur-Yon (voir annexe)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Vannes (voir annexe)"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Toulouse"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centre de Strasbourg-Europe"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"généraliste",
+"systèmes numériques et génie industriel"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- centres de Sénart, Lille, La Roche-sur-Yon, Vannes, Toulouse"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "PARIS",
+"titres": [
+"mécanique et automatique"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"CentraleSupélec"
+],
+"cp": "91190",
+"ville": "Gif-Sur-Yvette",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"L'université Paris-Saclay a été créée par le décret n° 2019-1131 du 5 novembre 2019"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"cybersécurité",
+"génie physique",
+"génie électrique",
+"informatique",
+"systèmes numériques",
+"électronique"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Paris-Saclay et Rennes",
+"site de Rennes",
+"site de Metz"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de l'électronique et de ses applications"
+],
+"cp": "95014",
+"ville": "Cergy-Pontoise",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste",
+"électronique et informatique industrielle"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure d'informatique pour l'industrie et l'entreprise"
+],
+"cp": "91025",
+"ville": "Évry",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste",
+"informatique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Versailles-Saint-Quentin-en-Yvelines",
+"Institut des sciences et techniques des Yvelines"
+],
+"cp": "78140",
+"ville": "Vélizy-Villacoublay",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"informatique",
+"mécatronique",
+"systèmes numériques et production industrielle",
+"systèmes électroniques embarqués"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Mantes-la-Ville"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université Paris-X",
+"UFR SITEC"
+],
+"cp": "92410",
+"ville": "Ville-D'Avray",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"mécanique"
+],
+"voies": [
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université Paris-Saclay",
+"École polytechnique universitaire"
+],
+"cp": "91405",
+"ville": "Orsay",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"informatique",
+"matériaux",
+"photonique",
+"électronique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"CY Cergy Paris Université",
+"CY Tech"
+],
+"cp": "95000",
+"ville": "Cergy-Pontoise",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"biotechnologie et chimie",
+"génie civil",
+"informatique",
+"mathématiques appliquées"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Cergy-Pontoise"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences et industries du vivant et de l'environnement (AgroParisTech)"
+],
+"cp": "91123",
+"ville": "Palaiseau",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"L'université Paris-Saclay a été créée par le décret n° 2019-1131 du 5 novembre 2019"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École polytechnique"
+],
+"cp": "91128",
+"ville": "Palaiseau",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"Télécom Paris"
+],
+"cp": "91120",
+"ville": "Palaiseau",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"Télécom SudParis"
+],
+"cp": "91011",
+"ville": "Évry",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste",
+"informatique et réseaux"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Groupe des écoles nationales d'économie et statistique",
+"École nationale de la statistique et de l'administration économique"
+],
+"cp": "91120",
+"ville": "Palaiseau",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de techniques avancées"
+],
+"cp": "91120",
+"ville": "Palaiseau",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste",
+"mécanique, transféré à l'École nationale supérieure de techniques avancées",
+"systèmes embarqués, transféré à l'École nationale supérieure de techniques avancées"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Brest"
+],
+"specialisation": false
+},
+{
+"noms": [
+"CESI",
+"Siège social - 1, avenue du Général-de-Gaulle - Tour PB5"
+],
+"cp": "92074",
+"ville": "Paris La Défense",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"bâtiment et travaux publics",
+"bâtiment et travaux publics, en convention avec Builders École d'ingénieurs",
+"bâtiment et travaux publics, en convention avec l'université de La Rochelle",
+"bâtiment et travaux publics, en convention avec le Conservatoire national des arts et métiers",
+"généraliste",
+"informatique",
+"informatique, en convention avec l'EPF",
+"systèmes électriques et électroniques embarqués",
+"systèmes électriques et électroniques embarqués, en convention avec l'université de Toulouse"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites d'Angoulême, Arras, Bordeaux, Lyon, Nancy, Nanterre, Nice et Rouen (voir annexe)",
+"site de Nantes",
+"site de Saint-Nazaire",
+"sites d'Angoulême, Arras, Dijon, Le Mans, Lyon, Montpellier, Nancy, Nanterre, Nice, Pau, Rouen et Saint-Nazaire (voir annexe)",
+"site de Tours",
+"sites d'Arras, Bordeaux, Lyon, Nancy, Nanterre, Rouen, Saint-Nazaire et Toulouse (voir annexe)",
+"sites d'Aix-en-Provence, Arras, Bordeaux, Caen, La Rochelle, Lille, Lyon, Nancy, Nanterre, Nice, Orléans, Pau, Reims, Rouen, Saint-Nazaire, Strasbourg et Toulouse (voir annexe)",
+"sites d'Aix-en-Provence, Angoulême, Arras, Bordeaux, Caen, Dijon, La Rochelle, Lille, Lyon, Montpellier, Nancy, Nanterre, Nice, Orléans, Pau, Reims, Rouen, Saint-Nazaire, Strasbourg et Toulouse (voir annexe)",
+"sites d'Aix-en-Provence, Angoulême, Arras, Bordeaux, Caen, Dijon, La Rochelle, Lille, Lyon, Montpellier, Nancy, Nanterre, Nice, Orléans, Pau, Reims, Rouen, Saint-Nazaire, Strasbourg et Toulouse",
+"site de Montpellier",
+"sites d'Angoulême, Brest et Strasbourg",
+"sites d'Arras, Aix-en-Provence, Bordeaux et Lyon",
+"site de Nanterre",
+"site du Mans",
+"site de La Rochelle",
+"site de Montpellier",
+"site de Rouen",
+"site du Mans",
+"site de Nanterre",
+"site de Toulouse"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École de biologie industrielle"
+],
+"cp": "95895",
+"ville": "Cergy-Pontoise",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ECAM-EPMI"
+],
+"cp": "95092",
+"ville": "Cergy-Pontoise",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"génie énergétique",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Cergy-Pontoise et de Grasse"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure des techniques aéronautiques et de construction automobile"
+],
+"cp": "20749",
+"ville": "Montigny",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"génie industriel pour l'aéronautique et l'espace",
+"généraliste",
+"systèmes embarqués et numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Montigny-le-Bretonneux",
+"site de Laval",
+"site de Laval"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut d'optique théorique et appliquée"
+],
+"cp": "91127",
+"ville": "Palaiseau",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure d'ingénieurs Léonard de Vinci"
+],
+"cp": "92916",
+"ville": "Paris La Défense",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Nantes"
+],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Montpellier (pour les 3 premières années de la formation)"
+],
+"specialisation": false
+},
+{
+"noms": [
+"ESIEE IT - CCI Paris Ile-de-France Éducation"
+],
+"cp": "95300",
+"ville": "Cergy-Pontoise",
+"statut": "Consulaire",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure de fonderie et de forge"
+],
+"cp": "92310",
+"ville": "Sèvres",
+"statut": "Privé",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences et techniques nucléaires",
+"Point courrier n° 35"
+],
+"cp": "91191",
+"ville": "Gif-Sur-Yvette",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": true
+},
+{
+"noms": [
+"École nationale supérieure du pétrole et des moteurs"
+],
+"cp": "92500",
+"ville": "Rueil-Malmaison",
+"statut": "Public",
+"region": "ILE-DE-FRANCE",
+"academie": "VERSAILLES",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": true
+},
+{
+"noms": [
+"Université de La Réunion",
+"École supérieure d'ingénieurs Réunion océan Indien"
+],
+"cp": "97455",
+"ville": "Saint-Pierre",
+"statut": "Public",
+"region": "de LA REUNION",
+"academie": "VERSAILLES",
+"titres": [
+"agroalimentaire",
+"bâtiment et énergie",
+"informatique"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure d'ingénieurs de Caen"
+],
+"cp": "14050",
+"ville": "Caen",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"génie industriel",
+"génie physique et systèmes embarqués",
+"informatique",
+"matériaux-chimie"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Caen",
+"École d'ingénieurs de l'université de Caen (ESIX Normandie)"
+],
+"cp": "50130",
+"ville": "Cherbourg-En-Cotentin",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"génie industriel",
+"génie nucléaire",
+"génie énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"\\- Site de Caen"
+],
+"cp": "14032",
+"ville": "Caen",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"agroalimentaire",
+"mécatronique et systèmes embarqués"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées de Rouen"
+],
+"cp": "76801",
+"ville": "Saint-Étienne-Du-Rouvray",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"chimie et génie chimique",
+"génie civil et urbain",
+"génie des procédés",
+"génie des procédés et gestion des risques",
+"génie industriel",
+"génie énergétique",
+"informatique et technologies de l'information",
+"informatique industrielle",
+"mathématiques appliquées",
+"mécanique",
+"énergétique et propulsion"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site du Havre",
+"site de Vernon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Rouen",
+"Ecole supérieure d'ingénieurs en innovation technologique (ESITech)"
+],
+"cp": "76801",
+"ville": "Saint-Étienne-Du-Rouvray",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"génie biologique, en convention avec l'institut national des sciences appliquées de Rouen",
+"génie physique et santé"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université du Havre",
+"Institut supérieur d'études logistiques"
+],
+"cp": "76063",
+"ville": "Le Havre",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"génie industriel",
+"génie énergétique et électrique",
+"généraliste",
+"mécanique et production"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Puteaux",
+"site de Vernon",
+"site de Vernon"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure maritime"
+],
+"cp": "76600",
+"ville": "Le Havre",
+"statut": "Public",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Nantes"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Builders École d'Ingénieurs"
+],
+"cp": "14610",
+"ville": "Épron",
+"statut": "Privé",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Vaulx-en-Velin"
+],
+"specialisation": false
+},
+{
+"noms": [
+"ESIGELEC (Ex-École supérieure d'ingénieurs en génie électrique)"
+],
+"cp": "76801",
+"ville": "Saint-Étienne-Du-Rouvray",
+"statut": "Privé",
+"region": "NORMANDIE",
+"academie": "VERSAILLES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Poitiers"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure de chimie, de biologie et de physique"
+],
+"cp": "33607",
+"ville": "Pessac",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"agroalimentaire et génie biologique",
+"agroalimentaire et génie industriel",
+"chimie et génie physique",
+"matériaux",
+"matériaux composites et mécanique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure d'électronique, informatique, télécommunications, mathématique et mécanique de Bordeaux"
+],
+"cp": "33402",
+"ville": "Talence",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"informatique",
+"mathématiques appliquées et mécanique",
+"réseaux et informatique",
+"systèmes électroniques embarqués",
+"télécommunications",
+"électronique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure de technologie des biomolécules de Bordeaux"
+],
+"cp": "33076",
+"ville": "Bordeaux",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure de cognitique"
+],
+"cp": "33405",
+"ville": "Talence",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure en environnement, géoressources et ingénierie du développement durable"
+],
+"cp": "33607",
+"ville": "Pessac",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut polytechnique de Bordeaux",
+"École nationale supérieure pour la performance industrielle et la maintenance aéronautique"
+],
+"cp": "33700",
+"ville": "Mérignac",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Pau",
+"École nationale supérieure en génie des technologies industrielles"
+],
+"cp": "64075",
+"ville": "Pau",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"génie des procédés",
+"génie électrique et informatique industrielle",
+"énergétique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Pau",
+"Institut supérieur aquitain du bâtiment et des travaux publics"
+],
+"cp": "64600",
+"ville": "Anglet",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"bâtiment et travaux publics"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Talence"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure des sciences agronomiques de Bordeaux Aquitaine (Bordeaux Sciences Agro)"
+],
+"cp": "33175",
+"ville": "Gradignan",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure des technologies industrielles avancées"
+],
+"cp": "64210",
+"ville": "Bidart",
+"statut": "Consulaire",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "BORDEAUX",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Limoges",
+"École d'ingénieurs ENSIL-ENSCI"
+],
+"cp": "87068",
+"ville": "Limoges",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "LIMOGES",
+"titres": [
+"céramique industrielle",
+"génie civil",
+"génie de l'eau et environnement",
+"matériaux",
+"mécatronique",
+"photonique",
+"systèmes d'information",
+"électronique et télécommunications"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Limoges et de Brive",
+"sites de Limoges et d'Égletons"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut d'ingénierie informatique de Limoges"
+],
+"cp": "87015",
+"ville": "Limoges",
+"statut": "Privé",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "LIMOGES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Rodez",
+"site de Saint-Herblain"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de mécanique et d'aérotechnique de Poitiers"
+],
+"cp": "86961",
+"ville": "Futuroscope-Chasseneuil",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "POITIERS",
+"titres": [
+"génie industriel pour l'aéronautique et l'espace, en convention avec le CNAM Nouvelle-Aquitaine",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Poitiers",
+"École nationale supérieure d'ingénieurs de Poitiers"
+],
+"cp": "86073",
+"ville": "Poitiers",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "POITIERS",
+"titres": [
+"génie de l'eau et génie civil",
+"énergétique et environnement"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Poitiers",
+"École nationale supérieure des sciences applicatives et du risque (ENSAR)"
+],
+"cp": "86073",
+"ville": "Poitiers",
+"statut": "Public",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "POITIERS",
+"titres": [
+"gestion des risques",
+"science de la donnée"
+],
+"voies": [
+"apprentissage",
+"continue"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École d'ingénieurs généralistes - La Rochelle (EIGSI)"
+],
+"cp": "17041",
+"ville": "La Rochelle",
+"statut": "Privé",
+"region": "NOUVELLE-AQUITAINE",
+"academie": "POITIERS",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de La Rochelle et de Casablanca (Maroc)"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale supérieure de chimie de Montpellier"
+],
+"cp": "34296",
+"ville": "Montpellier",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Montpellier",
+"École polytechnique universitaire"
+],
+"cp": "34095",
+"ville": "Montpellier",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"génie biologique et agroalimentaire",
+"génie de l'eau",
+"informatique",
+"matériaux",
+"mécanique",
+"électronique et informatique industrielle"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Nîmes"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Perpignan"
+],
+"cp": "66100",
+"ville": "Perpignan",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"énergétique"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national d'enseignement supérieur pour l'agriculture, l'alimentation et l'environnement (Institut Agro)",
+"École nationale d'études supérieures agronomiques de Montpellier (Institut Agro Montpellier)"
+],
+"cp": "34060",
+"ville": "Montpellier",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"agronomie"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"agronomie et agroalimentaire"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"École nationale supérieure des mines d'Alès"
+],
+"cp": "30319",
+"ville": "Alès",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "MONTPELLIER",
+"titres": [
+"bâtiment",
+"généraliste",
+"informatique et réseaux",
+"mécatronique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national polytechnique de Toulouse",
+"École nationale supérieure agronomique de Toulouse"
+],
+"cp": "32607",
+"ville": "Auzeville-Tolosane",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national polytechnique de Toulouse",
+"École nationale supérieure des ingénieurs en arts chimiques et technologiques"
+],
+"cp": "31030",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"chimie",
+"génie chimique",
+"génie des procédés",
+"génie industriel",
+"matériaux"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national polytechnique de Toulouse",
+"École nationale supérieure d'électrotechnique, d'électronique, d'informatique, d'hydraulique et des télécommunications"
+],
+"cp": "31071",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"informatique et télécommunications",
+"mécanique et génie hydraulique",
+"électronique et génie électrique"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national des sciences appliquées de Toulouse"
+],
+"cp": "31077",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"automatique et électronique",
+"génie biologique",
+"génie civil",
+"génie des procédés et environnement",
+"génie mécanique",
+"génie physique",
+"informatique et réseaux",
+"mathématiques appliquées"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Rodez et de Toulouse"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Institut national universitaire Jean-François Champollion"
+],
+"cp": "81012",
+"ville": "Albi",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"informatique pour la santé"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de technologie de Tarbes",
+"École nationale d'ingénieurs de Tarbes"
+],
+"cp": "65016",
+"ville": "Tarbes",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Toulouse"
+],
+"cp": "31062",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"génie civil et géosciences",
+"robotique",
+"télécommunications et réseaux"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur de l'aéronautique et de l'espace"
+],
+"cp": "31055",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"génie industriel",
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale de l'aviation civile"
+],
+"cp": "31055",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"sites de Montpellier et de Toulouse"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale de la météorologie"
+],
+"cp": "31057",
+"ville": "Toulouse",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"École nationale supérieure des mines d'Albi-Carmaux"
+],
+"cp": "81013",
+"ville": "Albi Ct",
+"statut": "Public",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École d'ingénieurs de Purpan"
+],
+"cp": "31076",
+"ville": "Toulouse",
+"statut": "Privé",
+"region": "OCCITANIE",
+"academie": "TOULOUSE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École centrale de Nantes"
+],
+"cp": "44321",
+"ville": "Nantes",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"bâtiment et travaux publics",
+"génie maritime",
+"généraliste",
+"mécanique",
+"systèmes embarqués"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Nantes Université",
+"École polytechnique universitaire"
+],
+"cp": "44306",
+"ville": "Nantes",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"génie civil",
+"génie des procédés",
+"génie électrique",
+"génie électrique et énergétique",
+"informatique",
+"matériaux",
+"thermique-énergétique",
+"électronique et technologies numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de la Roche-sur-Yon",
+"site de Saint-Nazaire"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université du Mans",
+"École nationale supérieure d'ingénieurs du Mans"
+],
+"cp": "72085",
+"ville": "Le Mans",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"acoustique et instrumentation",
+"informatique"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université d'Angers",
+"École polytechnique universitaire"
+],
+"cp": "49000",
+"ville": "Angers",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"automatique et informatique",
+"bâtiment et sécurité",
+"génie biologique et santé",
+"génie industriel"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Conservatoire national des arts et métiers - École supérieure des géomètres et topographes"
+],
+"cp": null,
+"ville": null,
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École nationale vétérinaire, agroalimentaire et de l'alimentation de Nantes-Atlantique (ONIRIS)"
+],
+"cp": "44307",
+"ville": "Nantes",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut Mines-Télécom",
+"École nationale supérieure Mines-Télécom Atlantique Bretagne Pays de la Loire"
+],
+"cp": "44307",
+"ville": "Nantes",
+"statut": "Public",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure angevine d'informatique et de productique"
+],
+"cp": "49180",
+"ville": "Saint-Barthélemy-D'Anjou",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"gestion des risques et environnement",
+"informatique et réseaux"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site d'Aix-en-Provence",
+"sites de Saint-Barthélemy-d'Anjou et Aix-en-Provence",
+"site de Saint-Barthélemy-d'Anjou"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure d'électronique de l'Ouest"
+],
+"cp": "49107",
+"ville": "Angers",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure des agricultures"
+],
+"cp": "49007",
+"ville": "Angers",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"site de Saint-Quentin-en-Yvelines"
+],
+"specialisation": false
+},
+{
+"noms": [
+"École supérieure du bois"
+],
+"cp": "44306",
+"ville": "Nantes",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur des matériaux du Mans - Groupe CESI"
+],
+"cp": "72000",
+"ville": "Le Mans",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"ISTOM (École supérieure d'agro-développement international)"
+],
+"cp": "49000",
+"ville": "Angers",
+"statut": "Privé",
+"region": "PAYS DE LA LOIRE",
+"academie": "NANTES",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École centrale de Marseille"
+],
+"cp": "13451",
+"ville": "Marseille",
+"statut": "Public",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "AIX-MARSEILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"apprentissage",
+"étudiant"
+],
+"sites": [
+"site de Nice"
+],
+"specialisation": false
+},
+{
+"noms": [
+"Université d'Aix-Marseille",
+"École polytechnique universitaire"
+],
+"cp": "13288",
+"ville": "Marseille",
+"statut": "Public",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "AIX-MARSEILLE",
+"titres": [
+"génie biologique",
+"génie biomédical",
+"génie industriel et informatique",
+"matériaux",
+"systèmes numériques",
+"écologie industrielle et environnement"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"École de l'air et de l'espace"
+],
+"cp": "13661",
+"ville": "Salon-De-Provence",
+"statut": "Public",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "AIX-MARSEILLE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Institut supérieur du bâtiment et des travaux publics"
+],
+"cp": "13006",
+"ville": "Marseille",
+"statut": "Consulaire",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "AIX-MARSEILLE",
+"titres": [],
+"voies": [],
+"sites": [],
+"specialisation": true
+},
+{
+"noms": [
+"Université Côte d'Azur",
+"École polytechnique universitaire"
+],
+"cp": "06930",
+"ville": "Sophia Antipolis",
+"statut": "Public",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "NICE",
+"titres": [
+"bâtiment",
+"génie biologique",
+"génie de l'eau",
+"génie de l'eau et de l'aménagement",
+"informatique",
+"mathématiques appliquées",
+"robotique",
+"électronique",
+"électronique et informatique industrielle",
+"électronique et systèmes embarqués"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Université de Toulon",
+"École d'ingénieurs de l'université de Toulon"
+],
+"cp": "83041",
+"ville": "Toulon",
+"statut": "Public",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "NICE",
+"titres": [
+"généraliste",
+"matériaux",
+"systèmes numériques"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"EURECOM"
+],
+"cp": "06410",
+"ville": "Biot",
+"statut": "Privé",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "NICE",
+"titres": [
+"généraliste"
+],
+"voies": [
+"continue",
+"étudiant"
+],
+"sites": [],
+"specialisation": false
+},
+{
+"noms": [
+"Yncréa Méditerranée",
+"Institut supérieur de l'électronique et du numérique"
+],
+"cp": "83000",
+"ville": "Toulon",
+"statut": "Privé",
+"region": "PROVENCE-ALPES-CÔTE-D'AZUR",
+"academie": "NICE",
+"titres": [
+"généraliste",
+"électronique et informatique industrielle"
+],
+"voies": [
+"apprentissage",
+"continue",
+"étudiant"
+],
+"sites": [
+"sites de Marseille et Toulon"
+],
+"specialisation": false
+}
+]
