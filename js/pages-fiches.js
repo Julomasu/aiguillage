@@ -193,7 +193,7 @@
 
   /* ——— Fiche métier */
   A.pages.metier = function (el, id) {
-    const m = A.metierParId[id];
+    const m = A.metierParId[id] || A.metiers.find(x => x.id === id);
     if (!m) { A.pages.metiers(el); return; }
     const l = A.ligneParId[m.ligne], p = A.etat.profil;
     const compat = A.compatibilite(m, p);

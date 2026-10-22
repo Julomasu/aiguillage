@@ -1,7 +1,7 @@
 /* Service worker : rend le site installable et utilisable hors ligne.
    Pages et scripts : réseau d'abord (pour recevoir les mises à jour), cache en secours.
    Données (data/) : cache d'abord, rafraîchi en arrière-plan. Fonds de carte et API : jamais mis en cache ici. */
-const CACHE = "aiguillage-v11";
+const CACHE = "aiguillage-v12";
 const ESSENTIEL = [
   "./", "index.html", "manifest.webmanifest", "css/style.css",
   "js/data/formations.js", "js/data/metiers.js", "js/data/contenus.js", "js/data/passerelles.js", "js/data/metiers-acces-1.js", "js/data/metiers-acces-2.js", "js/data/metiers-acces-3.js", "js/data/metiers-acces-4.js", "js/data/metiers-acces-5.js", "js/data/metiers-acces-6.js", "js/data/metiers-plus.js", "js/pages-passerelles.js", "js/core.js", "js/defis.js", "js/i18n.js",
@@ -23,7 +23,9 @@ self.addEventListener("activate", ev => {
 self.addEventListener("fetch", ev => {
   const url = new URL(ev.request.url);
   if (ev.request.method !== "GET" || url.origin !== location.origin || url.pathname.includes("/api/")) return;
-  if (url.pathname.includes("/data/") || url.pathname.includes("/vendor/")) {
+  // Cache d'abord seulement pour les gros fichiers JSON et la bibliothèque de carte ; le code (dont js/data/*.js) passe toujours par le réseau,
+  // sinon un ancien fichier en cache peut se mélanger avec du code neuf et casser des pages.
+  if (/\/data\/[^/]+\.json$/.test(url.pathname) && !url.pathname.includes("/js/") || url.pathname.includes("/vendor/")) {
     ev.respondWith(caches.open(CACHE).then(async c => {
       const enCache = await c.match(ev.request);
       const frais = fetch(ev.request).then(r => { if (r.ok) c.put(ev.request, r.clone()); return r; }).catch(() => enCache);

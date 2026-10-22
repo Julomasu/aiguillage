@@ -279,4 +279,7 @@ A.metiers.push(
     moins: ["Horaires décalés, week-ends", "Clients parfois exigeants"],
     formations: ["bts-mhr", "bts-tourisme"], savais: "Beaucoup de directeur·rices d'hôtel ont commencé à la réception." }
 );
-A.indexerMetiers();
+/* Réindexer ici sans dépendre d'une fonction d'un autre fichier (un ancien metiers.js en cache ne l'aurait pas) */
+A.metierParId = Object.fromEntries(A.metiers.map(m => [m.id, m]));
+A.metiersDeFormation = {};
+A.metiers.forEach(m => m.formations.forEach(f => { (A.metiersDeFormation[f] = A.metiersDeFormation[f] || []).push(m.id); }));
