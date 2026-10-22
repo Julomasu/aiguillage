@@ -47,6 +47,7 @@
     const n = A.ajouterUnique(A.etat.check, id);
     A.sauver();
     A.gagner(5, "reseau-" + id, "Étape réseau validée");
+    A.activite("reseau", id);
     const faites = [...ETAPES, ...MISSIONS].filter(x => A.etat.check.includes(x.id)).length;
     if (faites >= 6) A.tamponner("reseau");
     return n;
@@ -133,6 +134,7 @@
 
       <section class="bloc">
         <h2>D'autres outils gratuits</h2>
+        <a class="bandeau-lien" href="#temoignages"><strong>Lis des témoignages d'étudiant·es</strong><span>Ou écris le tien si tu es déjà dans le supérieur.</span></a>
         <div class="grille-aides">${OUTILS.map(o => `
           <article class="carte-aide"><h3>${A.e(o.nom)}</h3><p>${A.e(o.texte)}</p><a class="lien-fleche" href="${o.lien}" target="_blank" rel="noopener">Ouvrir</a></article>`).join("")}
         </div>

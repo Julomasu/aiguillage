@@ -1,0 +1,34 @@
+# Publie un témoignage quand un·e modérateur·rice ajoute le label « approuvé » à l'issue.
+# Les témoignages sont des issues créées avec le formulaire .github/ISSUE_TEMPLATE/temoignage.yml.
+name: Publier un témoignage
+on:
+  issues:
+    types: [labeled]
+permissions:
+  contents: write
+  issues: write
+jobs:
+  publier:
+    if: github.event.label.name == 'approuvé' && contains(github.event.issue.labels.*.name, 'temoignage')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ajouter le témoignage
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python3 outils/temoignage.py
+      - name: Enregistrer et clore l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMERO: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "aiguillage-bot"
+          git config user.email "aiguillage-bot@users.noreply.github.com"
+          git add data/temoignages.json
+          git diff --cached --quiet || (git commit -m "Témoignage #$NUMERO" && git push)
+          gh issue comment "$NUMERO" --body "Merci ! Ton témoignage est publié sur le site. Pour le retirer, écris ici."
+          gh issue close "$NUMERO"

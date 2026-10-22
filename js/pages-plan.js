@@ -124,6 +124,7 @@
       A.ajouterUnique(A.etat.lignes, id);
       A.sauver();
       A.gagner(10, "ligne-" + id, "Ligne explorée : " + A.ligneParId[id].court);
+      A.activite("ligne", id);
       A.verifierTampons();
     }
     dessiner(el);

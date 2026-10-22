@@ -1,0 +1,70 @@
+name: Témoignage d'étudiant·e
+description: Raconte ton parcours en quelques lignes pour aider les lycéen·nes. Un·e modérateur·rice relit avant publication.
+title: "Témoignage : "
+labels: ["temoignage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Ton texte sera relu avant d'apparaître sur le site. **N'écris pas ton nom de famille, ton adresse, ton numéro, ni de lien.**
+  - type: input
+    id: prenom
+    attributes:
+      label: Prénom ou pseudo
+      description: Pas de nom de famille.
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type de formation
+      options: [BTS, BUT, Licence, Prépa, École d'ingé, École de commerce, Santé, Social, Autre]
+    validations:
+      required: true
+  - type: input
+    id: formation
+    attributes:
+      label: Ta formation
+      description: Ex. BUT Techniques de commercialisation, Licence de droit…
+    validations:
+      required: true
+  - type: input
+    id: ville
+    attributes:
+      label: Ville
+    validations:
+      required: true
+  - type: input
+    id: annee
+    attributes:
+      label: Année d'entrée dans la formation
+      description: Ex. 2025
+    validations:
+      required: true
+  - type: dropdown
+    id: bac
+    attributes:
+      label: Ton bac
+      options: [Général, Technologique, Professionnel]
+    validations:
+      required: true
+  - type: textarea
+    id: texte
+    attributes:
+      label: Ton témoignage (600 caractères maximum)
+      description: Comment ça se passe vraiment ? Ce qui t'a surpris·e, ce qui est dur, ce qui est bien.
+    validations:
+      required: true
+  - type: textarea
+    id: conseil
+    attributes:
+      label: Ce que j'aurais aimé savoir avant (300 caractères maximum)
+    validations:
+      required: false
+  - type: checkboxes
+    id: consentement
+    attributes:
+      label: Accord
+      options:
+        - label: J'accepte que ce texte soit publié sur Aiguillage, sous ce prénom ou pseudo. Je peux demander son retrait à tout moment.
+          required: true

@@ -157,6 +157,8 @@ A.badges = [
   { id: "collection", nom: "Collectionneur·se",emoji: "⭐", desc: "Mettre 3 métiers en favoris" },
   { id: "comparateur",nom: "Comparateur·rice", emoji: "⚖️", desc: "Comparer 2 types de formations" },
   { id: "budget",     nom: "Budget malin",     emoji: "💶", desc: "Découvrir les aides financières" },
+  { id: "defi",       nom: "Défi relevé",      emoji: "🎯", desc: "Réussir un défi de la semaine" },
+  { id: "serie",      nom: "Régulier·ère",     emoji: "🔥", desc: "Relever des défis 3 semaines de suite" },
   { id: "reseau",     nom: "Réseauteur·se",    emoji: "🔗", desc: "Valider 6 étapes de la page Réseau & LinkedIn" }
 ];
 
@@ -188,6 +190,7 @@ A.chiffres = {
   repasCrous: 1,               // repas Crous à 1 € pour tous depuis le 4 mai 2026
   smicNetHoraire: 9.74,        // SMIC net estimé au 1er juin 2026 (1 477,93 € / 151,67 h)
   smicBrutMensuel: 1867.02,
+  smicNetMensuel: 1478,        // SMIC net estimé au 1er juin 2026 (info.gouv.fr)
   // Plafonds de loyer pris en compte pour l'APL, personne seule, au 1er octobre 2026 (caf.fr)
   plafondsApl: { zone1: 336.97, zone2: 293.68, zone3: 275.25 }
 };

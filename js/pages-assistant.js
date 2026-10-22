@@ -282,6 +282,7 @@ Règles :
       }
       conversation.push({ role: "assistant", content: texte });
       A.gagner(10, "assistant", "Première question posée à l'assistant");
+      A.activite("assistant", String(conversation.length));
     } catch (e) {
       const code = e && e.code;
       const msg = code === "cancelled" || (e && e.name === "AbortError") ? "Réponse arrêtée."

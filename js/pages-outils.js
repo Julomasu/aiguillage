@@ -38,6 +38,7 @@
         A.sauver();
         A.$("#nb-flips").textContent = n;
         A.gagner(2, "mot-" + c.dataset.mot, false);
+        A.activite("mot", c.dataset.mot);
         A.verifierTampons();
       }
     };
@@ -76,6 +77,7 @@
     A.etat.vfBest = Math.max(A.etat.vfBest, vf.score);
     A.sauver();
     A.gagner(40, "vraifaux", "Quiz vrai ou faux terminé");
+    A.activite("quiz", "x");
     A.verifierTampons();
   }
 

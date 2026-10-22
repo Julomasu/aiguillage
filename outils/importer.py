@@ -4,6 +4,7 @@ Sources :
   - Parcoursup 2025 (MESR) : fr-esr-parcoursup, data.enseignementsup-recherche.gouv.fr (Licence Ouverte)
   - ROME 4.0 (France Travail) : arborescence principale, appellations de métiers (Licence Ouverte)
   - Contours des départements : github.com/gregoiredavid/france-geojson (Licence Ouverte, d'après IGN)
+  - InserSup (MESR) : emploi et salaire des diplômés 18 mois après le diplôme, lignes « National », jeu fr-esr-insersup (Licence Ouverte)
   - Carte des loyers 2025 (ANIL / DHUP) : indicateur appartements 1-2 pièces, par commune (Licence Ouverte)
 
 Usage :
@@ -23,6 +24,11 @@ PSUP_API = "https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/cata
 PSUP_CHAMPS = ["session", "cod_aff_form", "g_ea_lib_vx", "ville_etab", "dep", "fili", "fil_lib_voe_acc", "detail_forma",
                "contrat_etab", "select_form", "g_olocalisation_des_formations", "capa_fin", "voe_tot", "taux_acces_ens",
                "part_acces_gen", "part_acces_tec", "part_acces_pro", "pct_bours"]
+INSERSUP_API = ("https://data.enseignementsup-recherche.gouv.fr/api/explore/v2.1/catalog/datasets/fr-esr-insersup/exports/json?select="
+                "type_diplome_long,dom_lib,discipli_lib,libelle_diplome,promo,nb_sortants_18,nb_poursuivants_18,tx_sortants_en_emploi_sal_fr_18,"
+                "tx_sortants_en_emploi_stable_18,salaire_q1_18,salaire_q2_18,salaire_q3_18&where=uo_lib%3D%22National%22%20and%20genre%3D%22ensemble%22"
+                "%20and%20nationalite%3D%22ensemble%22%20and%20regime_inscription%3D%22ensemble%22%20and%20obtention_diplome%3D%22ensemble%22"
+                "%20and%20(promo%3D%222021%22%20or%20promo%3D%222022%22%20or%20promo%3D%222023%22)")
 ROME_PAGE = "https://www.data.gouv.fr/api/1/datasets/58da857388ee384902e505f5/"
 GEOJSON = "https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson"
 LOYERS = "https://static.data.gouv.fr/resources/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025/20251211-144934/pred-app12-mef-dhup.csv"
@@ -194,6 +200,65 @@ def convertir_contours():
     ecrire("france.json", {"source": "france-geojson (d'après IGN, Licence Ouverte)", "departements": deps})
 
 
+# ——— InserSup : emploi et salaire 18 mois après le diplôme
+def _nombre(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return None
+
+
+def convertir_insersup():
+    chemin = os.path.join(BRUT, "insersup-national.json")
+    if not os.path.exists(chemin):
+        print("  (insersup : aucun fichier, étape ignorée)")
+        return
+    with open(chemin, encoding="utf-8") as f:
+        lignes = json.load(f)
+    # Pour chaque (type de diplôme, discipline) on garde la promotion la plus récente qui a la valeur voulue :
+    # une seule promotion de préférence, sinon un cumul de deux promotions (publié quand les effectifs sont petits).
+    groupes = defaultdict(list)
+    for r in lignes:
+        groupes[(r["type_diplome_long"], r["libelle_diplome"].strip())].append(r)
+
+    def meilleure(rs, champ, annees):
+        for annee in annees:
+            for r in rs:
+                if r["promo"] == [annee] and _nombre(r.get(champ)) is not None:
+                    return r, annee
+        for r in sorted(rs, key=lambda r: r["promo"][-1], reverse=True):
+            if len(r["promo"]) == 2 and _nombre(r.get(champ)) is not None:
+                return r, "-".join(r["promo"])
+        return None, None
+
+    types, disciplines = {}, defaultdict(dict)
+    for (type_diplome, libelle), rs in groupes.items():
+        emploi, an_e = meilleure(rs, "tx_sortants_en_emploi_sal_fr_18", ["2023", "2022", "2021"])
+        if not emploi:
+            continue
+        sortants = _nombre(emploi.get("nb_sortants_18")) or 0
+        if sortants < 30:
+            continue
+        poursuivants = _nombre(emploi.get("nb_poursuivants_18")) or 0
+        sal, an_s = meilleure(rs, "salaire_q2_18", ["2022", "2021"])
+        fiche = {"e": round(_nombre(emploi["tx_sortants_en_emploi_sal_fr_18"])),
+                 "s": round(_nombre(emploi.get("tx_sortants_en_emploi_stable_18"))) if _nombre(emploi.get("tx_sortants_en_emploi_stable_18")) is not None else None,
+                 "n": int(sortants), "p": int(poursuivants), "pe": an_e}
+        if sal:
+            q = [_nombre(sal.get(k)) for k in ("salaire_q1_18", "salaire_q2_18", "salaire_q3_18")]
+            if all(v is not None for v in q):
+                fiche["q"] = [int(v) for v in q]
+                fiche["ps"] = an_s
+        if libelle.lower().startswith("tout"):
+            types[type_diplome] = fiche
+        elif type_diplome in ("Licence générale", "Licence professionnelle", "Master LMD"):
+            disciplines[type_diplome][libelle] = fiche
+    ecrire("insertion.json", {
+        "source": "InserSup, ministère de l'Enseignement supérieur (Licence Ouverte), national, 18 mois après le diplôme",
+        "note": "emploi : part des diplômés ayant quitté les études qui occupent un emploi salarié en France ; salaires : net mensuel, équivalent temps plein",
+        "types": types, "disciplines": disciplines})
+
+
 # ——— Loyers
 def convertir_loyers():
     """Fichier national complet si présent, sinon l'extrait des villes étudiantes (API tabulaire de data.gouv)."""
@@ -238,6 +303,7 @@ def main():
         for f in glob.glob(os.path.join(BRUT, "psup-*.json")):
             os.remove(f)
         telecharger(PSUP_API + "?select=" + ",".join(PSUP_CHAMPS), os.path.join(BRUT, "psup-tout.json"))
+        telecharger(INSERSUP_API, os.path.join(BRUT, "insersup-national.json"))
         telecharger(GEOJSON, os.path.join(BRUT, "departements.geojson"))
         telecharger(LOYERS, os.path.join(BRUT, "loyers-app12.csv"))
         with urllib.request.urlopen(ROME_PAGE, timeout=60) as r:
@@ -254,6 +320,7 @@ def main():
     convertir_rome(lire_rome())
     convertir_contours()
     convertir_loyers()
+    convertir_insersup()
     print("Terminé.")
 
 

@@ -235,6 +235,7 @@
     A.ajouterUnique(A.etat.lus, m.id);
     A.sauver();
     A.gagner(10, "lu-" + m.id, "Fiche lue : " + m.nom);
+    A.activite("metier", m.id); A.activite("metier-" + m.ligne, m.id);
     A.verifierTampons();
   };
 
@@ -292,6 +293,7 @@
         ["Encadrement", t => jauge(t.encadrement)],
         ["Pratique / stages", t => jauge(t.pratique)],
         ["Alternance", t => t.alternance ? "Possible" : "Rare"],
+        ["Emploi à 18 mois", t => { const r = A.insRecords && A.recordInsertion(A.insertionDuType[t.id], A.insRecords); return r ? `<b>${r.e} %</b> en emploi salarié${r.q ? `<span>Salaire net médian : ${A.euros(r.q[1])}</span>` : ""}<span class="petit">${Math.round(r.p / (r.n + r.p) * 100)} % poursuivent leurs études</span>` : `<span class="petit">Non publié pour ce diplôme</span>`; }],
         ["Pour toi si…", t => A.e(t.pourQui)],
         ["Et après ?", t => A.e(t.apres)]
       ];
@@ -329,6 +331,7 @@
       majComparateur();
       if (c.length >= 2) { A.gagner(15, "comparer", "Formations comparées"); A.tamponner("comparateur"); }
     };
+    A.insertion().then(ins => { A.insRecords = ins; majComparateur(); }).catch(() => {});
     majComparateur();
     majListe();
   };
@@ -340,6 +343,13 @@
     const p = A.etat.profil;
     const liste = A.formations.filter(f => f.type === t.id);
     setTimeout(() => A.statsType(t.id, A.$("#psup-type")));
+    setTimeout(() => {
+      const cle = A.insertionDuType[t.id];
+      if (cle) A.insertion().then(ins => {
+        const r = A.recordInsertion(cle, ins), z = A.$("#ins-type");
+        if (r && z) { z.hidden = false; z.innerHTML = `<h2>Et après, en chiffres</h2><p class="petit">Diplômé·es de : ${A.e(cle[0].toLowerCase())} (France entière).</p>` + A.blocInsertion(r); }
+      }).catch(() => {});
+    });
     el.innerHTML = `
       <article class="fiche fiche-type">
         <a class="retour" href="#formations">← Toutes les formations</a>
@@ -363,6 +373,7 @@
         <section class="bloc"><h2>Et après ?</h2><p>${A.e(t.apres)}</p></section>
         <aside class="encart encart-savais"><strong>Bon à savoir</strong><p>${A.e(t.bonASavoir)}</p></aside>
         <section class="bloc" id="psup-type" hidden></section>
+        <section class="bloc" id="ins-type" hidden></section>
         ${liste.length ? `<section class="bloc"><h2>Exemples sur le plan</h2><div class="liste-formations">${liste.map(f => A.ligneFormation(f, p && p.bac)).join("")}</div></section>` : ""}
       </article>`;
   };
@@ -425,12 +436,28 @@
           ${f.ideal.length ? `<p class="petit">Atouts : ${f.ideal.map(x => `<span class="puce puce-statique">${A.e(nomAtout(x))}</span>`).join(" ")}</p>` : ""}
         </section>
         <section class="bloc"><h2>Et après ?</h2><p>${A.e(f.apres)}</p></section>
+        ${f.insertion ? `<section class="bloc" id="ins-formation"><h2>Et après, en chiffres</h2><p class="petit">Chargement…</p></section>` : ""}
         ${f.psup ? `<section class="bloc" id="psup-formation"><h2>En vrai, sur Parcoursup</h2><p class="petit">Chargement des données officielles…</p></section>` : ""}
         ${metiers.length ? `<section class="bloc"><h2>Ça mène à</h2><div class="grille-metiers">${metiers.map(m => A.carteMetier(m, A.compatibilite(m, p))).join("")}</div></section>` : ""}
         <p class="petit source">Vérifie toujours la fiche officielle : <a href="https://www.parcoursup.gouv.fr" target="_blank" rel="noopener">Parcoursup</a> (taux d'accès, attendus) et <a href="https://www.onisep.fr/recherche?text=${encodeURIComponent(f.long)}" target="_blank" rel="noopener">Onisep</a>.</p>
       </article>`;
     A.gagner(5, "formation-" + f.id, false);
+    A.activite("formation", f.id);
     if (f.psup) statsFormation(f);
+    if (f.insertion) A.insertion().then(ins => {
+      const z = A.$("#ins-formation"), r = A.recordInsertion(f.insertion, ins);
+      if (!z) return;
+      if (!r) { z.remove(); return; }
+      const lib = f.insertion[1] ? `${f.insertion[0]} · ${f.insertion[1].toLowerCase()}` : f.insertion[0];
+      z.innerHTML = `<h2>Et après, en chiffres</h2><p class="petit">Diplômé·es de : ${A.e(lib)} (France entière).</p>` + A.blocInsertion(r);
+    }).catch(() => { const z = A.$("#ins-formation"); if (z) z.remove(); });
+    else if (["bts", "but", "de", "cpge"].includes(f.type)) {
+      const note = document.createElement("p");
+      note.className = "petit note-ins";
+      note.textContent = "Taux d'emploi : le ministère ne publie pas de chiffres à 18 mois pour ce type de diplôme dans le jeu InserSup (les BUT sont trop récents, les BTS suivis ailleurs). Regarde les fiches des licences pros et des écoles qui y font suite.";
+      const cible = A.$("#psup-formation") || A.$(".source");
+      if (cible) cible.insertAdjacentElement("beforebegin", note);
+    }
     el.onclick = ev => {
       if (!ev.target.closest("[data-voir-carte]")) return;
       A.carteDemande = { formation: f.id };

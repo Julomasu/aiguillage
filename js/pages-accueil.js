@@ -112,6 +112,8 @@
         </div>
       </section>
 
+      ${A.blocDefis(true)}
+
       <section class="vf-teaser">
         <div>
           <p class="surtitre">Vrai ou faux ?</p>

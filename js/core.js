@@ -4,8 +4,8 @@
 
   const etatInitial = () => ({
     km: 0, gains: {}, badges: {}, lus: [], lignes: [], favs: [], profil: null,
-    check: [], flips: [], vfBest: 0, compare: [], ville: null, budget: null,
-    reglages: { theme: "system", taille: 1, calme: false }
+    check: [], flips: [], vfBest: 0, compare: [], ville: null, budget: null, compareF: [],
+    reglages: { theme: "system", taille: 1, calme: false, voix: 1 }
   });
 
   function charger() {
@@ -105,6 +105,36 @@
     return A._psup;
   };
 
+  /* ——— Insertion professionnelle (InserSup) */
+  A.insertion = () => A.donnees("insertion");
+  A.recordInsertion = function (cle, ins) {
+    if (!cle || !ins) return null;
+    const [type, disc] = cle;
+    if (disc) return (ins.disciplines[type] || {})[disc] || null;
+    return ins.types[type] || null;
+  };
+
+  /* Bloc « Et après ? » en chiffres : emploi, stabilité, salaire, poursuite d'études */
+  A.blocInsertion = function (r) {
+    if (!r) return "";
+    const poursuite = Math.round(r.p / (r.n + r.p) * 100);
+    const smic = A.chiffres ? A.chiffres.smicNetMensuel : 1478;
+    const jauge = (v, couleur) => `<span class="ins-jauge"><i style="width:${v}%;background:${couleur}"></i></span>`;
+    return `<div class="insertion">
+      <div class="ins-chiffres">
+        <div><span class="petit">En emploi salarié à 18 mois</span><strong>${r.e} %</strong>${jauge(r.e, "var(--ok)")}</div>
+        ${r.s != null ? `<div><span class="petit">Dont emploi stable (CDI, fonction publique…)</span><strong>${r.s} %</strong>${jauge(r.s, "#2F5BEA")}</div>` : ""}
+        <div><span class="petit">Poursuivent leurs études</span><strong>${poursuite} %</strong>${jauge(poursuite, "#F2A71B")}</div>
+      </div>
+      ${r.q ? `<div class="ins-salaire"><span class="petit">Salaire net mensuel, temps plein, à 18 mois</span>
+        <div class="sal-piste"><span class="sal-smic" style="left:${Math.min(96, smic / 3500 * 100)}%"><i>SMIC net</i></span>
+        <span class="sal-barre" style="left:${r.q[0] / 3500 * 100}%;width:${(r.q[2] - r.q[0]) / 3500 * 100}%"></span>
+        <span class="sal-pt sal-pt-fin" style="left:${r.q[1] / 3500 * 100}%"></span></div>
+        <div class="sal-valeurs"><span>1 sur 4 gagne moins de <b>${A.euros(r.q[0])}</b></span><span>Médiane <b>${A.euros(r.q[1])}</b></span><span>1 sur 4 gagne plus de <b>${A.euros(r.q[2])}</b></span></div></div>` : `<p class="petit">Salaire non publié pour ce diplôme (effectifs trop faibles).</p>`}
+      <p class="petit">${r.n.toLocaleString("fr-FR")} diplômé·es de la promotion ${r.pe} ont quitté les études : les pourcentages d'emploi ne concernent qu'eux, pas celles et ceux qui continuent en master. Source : InserSup, ministère de l'Enseignement supérieur.</p>
+    </div>`;
+  };
+
   A.lienParcoursup = id => "https://dossierappel.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=" + id;
 
   A.correspond = function (ligne, matcher) {
@@ -197,6 +227,7 @@
     else root.setAttribute("data-theme", r.theme);
     root.style.setProperty("--zoom", [1, 1.12, 1.25][r.taille] || 1);
     root.classList.toggle("calme", !!r.calme);
+    if (!synthese) root.classList.add("sans-voix");
   };
 
   /* ——— Compatibilité métier / profil */
@@ -231,8 +262,8 @@
 
   /* ——— Routeur : #accueil, #metiers, #metier-infirmier, #formation-bts-sio, #type-bts… */
   A.pages = {};
-  const PARAMETRES = ["metier", "formation", "type"];
-  const ONGLET = { metier: "metiers", formation: "formations", type: "formations" };
+  const PARAMETRES = ["metier", "formation", "type", "classe"];
+  const ONGLET = { metier: "metiers", formation: "formations", type: "formations", comparer: "carte", classe: "classe" };
 
   A.lireHash = function () {
     const h = (location.hash || "").replace(/^#/, "") || "accueil";
@@ -247,7 +278,70 @@
     else location.hash = cible;
   };
 
+  /* ——— Lecture à voix haute (synthèse vocale du navigateur, gratuite et hors ligne) */
+  const synthese = "speechSynthesis" in window ? window.speechSynthesis : null;
+  let lectureEnCours = false;
+
+  function texteALire(racine) {
+    const exclus = "script,style,svg,canvas,button,input,select,textarea,kbd,.sr,.toasts,[hidden],[aria-hidden='true']";
+    const marcheur = document.createTreeWalker(racine, NodeFilter.SHOW_TEXT, {
+      acceptNode: n => n.nodeValue.trim() && !n.parentElement.closest(exclus) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+    });
+    const morceaux = [];
+    for (let n = marcheur.nextNode(); n; n = marcheur.nextNode()) {
+      let t = n.nodeValue.replace(/\s+/g, " ").trim();
+      const bloc = n.parentElement.closest("h1,h2,h3,li,p,td,th,dt,dd,summary");
+      if (bloc && /^H[1-3]$/.test(bloc.tagName) && !/[.!?:]$/.test(t)) t += ".";
+      morceaux.push(t);
+    }
+    return morceaux.join(" ").replace(/\s+([.,;:!?])/g, "$1").replace(/(\d) %/g, "$1 pour cent").replace(/€/g, " euros").replace(/\bbac\+/gi, "bac plus ");
+  }
+
+  function decouper(texte) {
+    const phrases = texte.match(/[^.!?]+[.!?]*/g) || [texte], blocs = [];
+    let courant = "";
+    phrases.forEach(p => {
+      if ((courant + p).length > 220 && courant) { blocs.push(courant); courant = ""; }
+      courant += p;
+    });
+    if (courant.trim()) blocs.push(courant);
+    return blocs;
+  }
+
+  A.arreterLecture = function () {
+    if (synthese) synthese.cancel();
+    lectureEnCours = false;
+    majBoutonAudio();
+  };
+
+  A.basculerLecture = function () {
+    if (!synthese) return;
+    if (lectureEnCours) { A.arreterLecture(); return; }
+    const blocs = decouper(texteALire(A.$("#app")));
+    if (!blocs.length) return;
+    const voix = synthese.getVoices().find(v => /^fr/i.test(v.lang));
+    lectureEnCours = true;
+    majBoutonAudio();
+    blocs.forEach((b, i) => {
+      const u = new SpeechSynthesisUtterance(b);
+      u.lang = "fr-FR"; if (voix) u.voice = voix;
+      u.rate = A.etat.reglages.voix || 1;
+      if (i === blocs.length - 1) { u.onend = () => { lectureEnCours = false; majBoutonAudio(); }; }
+      u.onerror = () => { lectureEnCours = false; majBoutonAudio(); };
+      synthese.speak(u);
+    });
+    A.gagner(5, "audio", "Lecture à voix haute activée");
+  };
+
+  function majBoutonAudio() {
+    const b = A.$("#btn-audio");
+    if (!b) return;
+    b.setAttribute("aria-pressed", String(lectureEnCours));
+    b.querySelector("span").textContent = lectureEnCours ? "Arrêter" : "Écouter";
+  }
+
   A.rendre = function () {
+    if (lectureEnCours) A.arreterLecture();
     const { page, param } = A.lireHash();
     const main = A.$("#app");
     const rendu = A.pages[page] || A.pages.accueil;
@@ -307,6 +401,7 @@
         if (cle === "theme") r.theme = val;
         if (cle === "taille") r.taille = Number(val);
         if (cle === "calme") r.calme = !r.calme;
+        if (cle === "voix") r.voix = Number(val);
         A.sauver();
         A.appliquerReglages();
         majBoutonsReglages();
@@ -319,6 +414,8 @@
     if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) {
       navigator.serviceWorker.register("sw.js").catch(() => { /* non disponible ici */ });
     }
+    if (synthese) synthese.getVoices(); // charge la liste des voix
+    document.addEventListener("click", ev => { if (ev.target.closest("#btn-audio")) A.basculerLecture(); });
     window.addEventListener("hashchange", A.rendre);
     A.rendre();
   };
@@ -327,7 +424,7 @@
     const r = A.etat.reglages;
     A.$$("[data-reglage]").forEach(b => {
       const [cle, val] = b.dataset.reglage.split(":");
-      const actif = cle === "theme" ? r.theme === val : cle === "taille" ? r.taille === Number(val) : !!r.calme;
+      const actif = cle === "theme" ? r.theme === val : cle === "taille" ? r.taille === Number(val) : cle === "voix" ? r.voix === Number(val) : !!r.calme;
       b.setAttribute("aria-pressed", String(actif));
     });
   }

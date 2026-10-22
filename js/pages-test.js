@@ -154,6 +154,7 @@
     A.ajouterUnique(A.etat.check, "c2");
     A.sauver();
     A.gagner(80, "test", "Test terminé, ton profil est prêt");
+    A.activite("test", "x");
     A.verifierTampons();
     t = null;
     A.aller("resultat");
@@ -218,6 +219,8 @@
         </div>
       </section>
 
+      ${A.blocCodeClasse ? A.blocCodeClasse() : ""}
+
       <section class="bloc">
         <h2>Les métiers qui te ressemblent</h2>
         <div class="grille-metiers">${metiers.map(({ m, c }) => A.carteMetier(m, c)).join("")}</div>
@@ -233,5 +236,6 @@
         <strong>Comment lire ces résultats ?</strong>
         <p>Le test s'inspire du modèle RIASEC du psychologue John Holland, utilisé par beaucoup de conseiller·ères d'orientation. C'est une boussole, pas un verdict : tes goûts vont évoluer, et tu peux réussir dans un métier qui n'apparaît pas ici. Pour aller plus loin, prends rendez-vous avec le/la Psy-EN de ton lycée.</p>
       </aside>`;
+    if (A.brancherCodeClasse) A.brancherCodeClasse(el);
   };
 })();

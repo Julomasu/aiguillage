@@ -179,6 +179,7 @@
         } else if (!majDepuis(id)) return;
         A.sauver();
         A.gagner(15, "budget", "Budget simulé");
+        A.activite("budget", "x");
         garderFocus(dessiner, id);
       };
       el.onclick = ev => {

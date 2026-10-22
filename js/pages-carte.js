@@ -53,6 +53,7 @@
         </div>
         <div class="carte-liste" id="carte-liste" aria-live="polite"></div>
       </div>
+      <div class="plateau" id="plateau" hidden></div>
       <p class="petit source">Source : Parcoursup, session 2025 (ministère de l'Enseignement supérieur, Licence Ouverte). Taux d'accès = part des candidat·es ayant reçu une proposition. Fond de carte : OpenFreeMap, données © contributeurs OpenStreetMap (sinon contours IGN via france-geojson). Les formations d'outre-mer apparaissent dans la liste, pas sur la carte.</p>`;
 
     Promise.all([A.parcoursup(), A.donnees("villes"), A.donnees("france")]).then(([psup, villes, france]) => {
@@ -63,9 +64,21 @@
       brancher(el);
       recentrer();
       maj();
+      majPlateau();
       essayerVraieCarte();
     }).catch(() => { A.$("#carte-etat").innerHTML = A.messageErreurDonnees; });
   };
+
+  function majPlateau() {
+    const z = A.$("#plateau");
+    if (!z) return;
+    const ids = A.compareIds();
+    z.hidden = !ids.length;
+    if (!ids.length || !carte) return;
+    const noms = ids.map(id => carte.psup.lignes.find(r => r.id === id)).filter(Boolean);
+    z.innerHTML = `<span><strong>${noms.length}/3</strong> à comparer : ${noms.map(r => A.e((r.intitule || r.fili).slice(0, 38) + " · " + r.ville)).join(" ; ")}</span>
+      <span class="plateau-actions"><button type="button" class="btn-texte" data-vider-comparaison>Vider</button><a class="btn btn-signal" href="#comparer">${noms.length > 1 ? "Comparer" : "Voir"}</a></span>`;
+  }
 
   function trouverVille(saisie) {
     if (!saisie || !carte) return null;
@@ -136,7 +149,10 @@
         ${r.bours != null ? `<span>${r.bours} % boursier·es</span>` : ""}
       </div>
       ${barreAdmis(r)}
-      <a class="lien-fleche" href="${A.lienParcoursup(r.id)}" target="_blank" rel="noopener">Fiche Parcoursup</a>
+      <div class="cf-actions">
+        <a class="lien-fleche" href="${A.lienParcoursup(r.id)}" target="_blank" rel="noopener">Fiche Parcoursup</a>
+        <button type="button" class="btn-coche" data-cmp-form="${r.id}" aria-pressed="${A.compareIds().includes(r.id)}">${A.compareIds().includes(r.id) ? "Dans la comparaison ✓" : "Comparer"}</button>
+      </div>
     </article>`;
   }
 
@@ -230,6 +246,7 @@
       A.etat.ville = v; A.sauver();
       f.voirPlus = 0; carte.selection = null;
       A.gagner(15, "carte", "Carte explorée autour de " + v.nom);
+      A.activite("carte", v.nom);
       recentrer(); maj();
     };
     A.$("#carte-ville").addEventListener("change", ev => choisirVille(ev.target.value));
@@ -251,6 +268,12 @@
         A.$$("[data-famille]").forEach(x => x.setAttribute("aria-pressed", String(f.familles.has(x.dataset.famille))));
       } else if ("public" in b.dataset) { f.publicSeul = !f.publicSeul; b.setAttribute("aria-pressed", String(f.publicSeul)); }
       else if ("bacpro" in b.dataset) { f.bacPro = !f.bacPro; b.setAttribute("aria-pressed", String(f.bacPro)); }
+      else if (b.dataset.cmpForm) {
+        const id = Number(b.dataset.cmpForm), dedans = A.basculerComparaison(id);
+        A.$$(`[data-cmp-form="${id}"]`).forEach(x => { x.setAttribute("aria-pressed", String(dedans)); x.textContent = dedans ? "Dans la comparaison ✓" : "Comparer"; });
+        majPlateau(); return;
+      }
+      else if ("viderComparaison" in b.dataset) { A.etat.compareF = []; A.sauver(); A.$$("[data-cmp-form]").forEach(x => { x.setAttribute("aria-pressed", "false"); x.textContent = "Comparer"; }); majPlateau(); return; }
       else if ("retirerFormation" in b.dataset) { f.formation = null; A.pages.carte(el); return; }
       else if ("voirPlus" in b.dataset) { f.voirPlus += 30; }
       else if (b.dataset.villeRapide) { A.$("#carte-ville").value = b.dataset.villeRapide; choisirVille(b.dataset.villeRapide); return; }
@@ -304,6 +327,7 @@
 
   function montrerSelection(meilleur) {
     carte.selection = meilleur.id;
+    majPlateau();
     const zone = A.$("#carte-liste");
     let carteEl = A.$("#cf-" + meilleur.id);
     if (!carteEl) {
