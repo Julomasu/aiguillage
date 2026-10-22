@@ -25,8 +25,9 @@
 
   /* Toutes les fonctions du site, rangées par besoin : chaque porte a son icône pour qu'on comprenne d'un coup d'œil. */
   const GROUPES = [
-    { id: "trouver", cols: 3, icone: "🧭", titre: "Se trouver", portes: [
+    { id: "trouver", cols: 4, icone: "🧭", titre: "Se trouver", portes: [
       { id: "test", i: "🎯", c: "#FFC629", nom: "Le test", desc: "18 situations, ton profil, les métiers et formations qui te correspondent." },
+      { id: "parcours", i: "🧭", c: "#17824F", nom: "Ta situation", desc: "Bourse, aides, études payantes, prêt, rester ou partir : ton plan sur mesure." },
       { id: "plan", i: "🚇", c: "#2F5BEA", nom: "L'arborescence", desc: "Bac, domaines, formations, métiers : vois où mène chaque voie selon ton bac." },
       { id: "metiers", i: "💼", c: "#E4572E", nom: "Les métiers", desc: "Journée type, salaire, études, et ce qu'on ne te dit pas toujours." }
     ] },
@@ -43,6 +44,10 @@
       { id: "aides", i: "🧾", c: "#1B998B", nom: "Budget & aides", desc: "Ce que ça coûte, ce qu'on te doit" },
       { id: "reseau", i: "🔗", c: "#6BBF59", nom: "LinkedIn & réseau", desc: "Vois ce qu'ont fait les gens avant toi et ose leur écrire." },
       { id: "decodeur", i: "🔓", c: "#7A3FD1", nom: "Le décodeur", desc: "« Oui-si », ECTS, CVEC, DSE… le jargon expliqué simplement." }
+    ] },
+    { id: "etudiants", cols: 2, icone: "🎓", titre: "Déjà étudiant·e ? Changer de voie", portes: [
+      { id: "passerelles", i: "🌉", c: "#2F5BEA", nom: "Passerelles", desc: "BTS, BUT ou licence vers une école de commerce, d'ingénieurs, Sciences Po, le droit ou l'étranger." },
+      { id: "epreuve-tage-mage", i: "🧮", c: "#E4572E", nom: "Tests d'admission", desc: "Tage Mage, Tage 2, GMAT, IAE-Message, TOEIC : format, prix, dates, conseils." }
     ] },
     { id: "plus", cols: 3, icone: "✨", titre: "Aller plus loin", portes: [
       { id: "assistant", i: "💬", c: "#F6D23B", nom: "Pose ta question", desc: "Un assistant qui répond à partir des fiches et des données officielles." },

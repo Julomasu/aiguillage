@@ -10,9 +10,37 @@
   }
 
   A.pages.test = function (el) {
-    if (!t) t = nouveauTest();
+    if (!t) { t = nouveauTest(); t.fork = true; }
     dessiner(el);
   };
+
+  /* Premier écran : découvrir un métier (questionnaire) ou partir de sa situation (aides, financement, ville) */
+  function ecranFork(el) {
+    el.innerHTML = `
+      <section class="test">
+        <p class="surtitre">Par où commencer ?</p>
+        <h1>Tu veux découvrir quel métier est fait pour toi ?</h1>
+        <p class="chapo">Deux façons d'avancer : à partir de ce que tu aimes, ou à partir de ta situation (budget, aides, lieu). Tu pourras faire les deux.</p>
+        <div class="fork">
+          <button type="button" class="fork-carte" data-fork="oui">
+            <span class="fk-ico" aria-hidden="true">🎯</span>
+            <strong>Oui, fais-moi découvrir des métiers</strong>
+            <span>Un questionnaire de 18 situations. Tu obtiens ton profil, des métiers et des formations.</span>
+          </button>
+          <button type="button" class="fork-carte" data-fork="non">
+            <span class="fk-ico" aria-hidden="true">🧭</span>
+            <strong>Non, je veux savoir ce que je peux faire</strong>
+            <span>Aides, bourses, études payantes ou gratuites, prêt, rester ou partir de ta ville : un parcours pour tracer ton plan.</span>
+          </button>
+        </div>
+      </section>`;
+    el.onclick = ev => {
+      const b = ev.target.closest("[data-fork]");
+      if (!b) return;
+      if (b.dataset.fork === "oui") { t.fork = false; dessiner(el); focusQ(el); }
+      else { t = null; A.aller("parcours"); }
+    };
+  }
 
   function lignePro() {
     const total = A.questions.length;
@@ -27,6 +55,7 @@
 
   function dessiner(el) {
     const nbQ = A.questions.length;
+    if (t.fork) { ecranFork(el); return; }
     if (t.etape === 0) {
       el.innerHTML = `
         <section class="test">
@@ -230,6 +259,12 @@
         <h2>Les formations à regarder de près</h2>
         <p class="petit">Classées selon ton bac, tes spécialités et tes préférences. L'étiquette indique à quel point la formation accueille des profils comme le tien.</p>
         <div class="liste-formations">${formations.map(f => A.ligneFormation(f, p.bac)).join("")}</div>
+      </section>
+
+      <section class="bloc bloc-parcours">
+        <h2>Et maintenant, ta situation</h2>
+        <p>Budget, bourse, études payantes, prêt, rester dans ta ville ou partir : on trace ton plan concret.</p>
+        <a class="btn btn-signal" href="#parcours">Faire mon plan d'aides et de financement</a>
       </section>
 
       <aside class="encart">

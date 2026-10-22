@@ -152,6 +152,44 @@
     }).catch(() => { zone.innerHTML = intro + A.messageErreurDonnees; }), 250);
   }
 
+  /* ——— Employeurs, accès concret, réseau et savoirs (js/data/metiers-acces-*.js) */
+  const NET = [null, ["Peu important", "Le dossier et les diplômes suffisent."], ["Utile", "Un contact aide, sans être indispensable."], ["Décisif", "Beaucoup d'embauches passent par le réseau."]];
+
+  function blocAcces(m) {
+    const d = (A.METIERS_ACCES || {})[m.id];
+    if (!d) return "";
+    const tst = (d.tst || (A.TESTS_METIERS || {})[m.id] || []).map(id => (A.TESTS || []).find(t => t.id === id)).filter(Boolean);
+    const net = NET[d.net[0]];
+    return `
+        <section class="bloc bloc-acces">
+          <h2>Qui recrute</h2>
+          <div class="emp-groupes">${d.emp.map(([t, l]) => `<div class="emp-groupe"><h3>${A.e(t)}</h3><p>${A.e(l)}</p></div>`).join("")}</div>
+          <p class="petit">Liste indicative et non exhaustive. Vérifie les offres actuelles sur les sites carrière des entreprises.</p>
+        </section>
+
+        <section class="bloc bloc-acces">
+          <h2>Comment y entrer, concrètement</h2>
+          <div class="reseau-jauge" role="group" aria-label="Importance du réseau">
+            <span class="petit">Poids du réseau</span>
+            <strong>${net[0]}</strong>
+            <span class="points" aria-hidden="true">${[1, 2, 3].map(k => `<i class="${k <= d.net[0] ? "on" : ""}"></i>`).join("")}</span>
+          </div>
+          <p class="reseau-texte">${A.e(d.net[1])}</p>
+          <ol class="etapes-acces">${d.acces.map(s => `<li>${A.e(s)}</li>`).join("")}</ol>
+          <p class="petit"><a href="#reseau">Voir comment construire ton réseau sur LinkedIn</a></p>
+        </section>
+
+        <section class="bloc bloc-acces">
+          <h2>Ce qu'il faut savoir et maîtriser</h2>
+          <div class="deux-col">
+            <div><h3>Connaissances</h3><ul class="liste-sav">${d.sav.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
+            <div><h3>Outils et certifications</h3><ul class="liste-sav">${d.out.map(s => `<li>${A.e(s)}</li>`).join("")}</ul></div>
+          </div>
+          ${tst.length ? `<p class="tests-liens"><span class="petit">Tests et concours utiles :</span> ${tst.map(t => `<a class="puce puce-lien" href="#epreuve-${t.id}">${t.emoji} ${A.e(t.nom)}</a>`).join(" ")}</p>` : ""}
+          ${d.evo ? `<p class="evo"><strong>Évolution :</strong> ${A.e(d.evo)}</p>` : ""}
+        </section>`;
+  }
+
   /* ——— Fiche métier */
   A.pages.metier = function (el, id) {
     const m = A.metierParId[id];
@@ -213,6 +251,8 @@
           </ol>
           <p class="petit">Ce sont les chemins les plus courants. Il en existe d'autres (reconversion, passerelles, alternance).</p>
         </section>
+
+        ${blocAcces(m)}
 
         <aside class="encart encart-savais"><strong>Le savais-tu ?</strong><p>${A.e(m.savais)}</p></aside>
 

@@ -325,3 +325,35 @@ BJOP École de bijouterie-joaillerie | BJOP | art-design | prive | Paris | dossi
 ## Santé, paramédical et ostéopathie (écoles privées)
 École supérieure d'ostéopathie (ESO) | ESO | sante | prive | Paris | dossier | Établissement agréé | Ostéopathie (5 ans) | eso paris
 Institut supérieur d'ostéopathie (ISO) | ISO | sante | prive | Lyon, Rennes, Strasbourg, Toulouse, Aix-en-Provence | dossier | Établissement agréé | Ostéopathie (5 ans) | iso osteopathie;institut superieur d osteopathie
+
+## Compléments : sport, culture, communication, écoles en ligne et bootcamps, écoles étrangères en France
+AMOS Sport Business School | AMOS | commerce,social-sport | prive | Paris, Lyon, Nantes, Toulouse | dossier, apprentissage | Titres RNCP (niveaux 6 et 7), à vérifier sur France compétences | Bachelor marketing et événementiel sportif (3 ans) ; Master en management des organisations sportives (2 ans) | amos;amos sport business school;amos sport management
+ISEG Marketing & Communication School | ISEG | commerce,media | prive | Paris, Lyon, Bordeaux, Lille, Nantes, Toulouse, Strasbourg | dossier, apprentissage | Titres RNCP | Bachelors et masters en marketing, communication, digital | iseg marketing;iseg school;iseg
+Institut Mines-Télécom Business School | IMT-BS | commerce | public | Évry-Courcouronnes | psup, concours | Diplôme visé, grade de master | Programme Grande École (accès Bac+2 ou Bac+3, concours Passerelle) | imt business school;imt bs;institut mines telecom business school;telecom ecole de management
+NÉGOCIA | Négocia | commerce | consulaire | Paris | dossier, apprentissage | Titres RNCP | Bachelor et masters en alternance (vente, commerce) | negocia
+Pigier | Pigier | commerce | prive | Paris, Lyon, Lille, Nantes | psup, dossier, apprentissage | BTS et titres RNCP | BTS en alternance (gestion, commerce, communication) et bachelors | pigier
+ISEFAC Bachelor | ISEFAC | commerce,media | prive | Paris, Lyon, Bordeaux, Lille, Nantes, Toulouse | dossier, apprentissage | Titres RNCP | Bachelors (communication, marketing, événementiel) | isefac
+ICART | ICART | culture,commerce | prive | Paris | dossier | Titre RNCP (à vérifier) | Management de la culture et du marché de l'art | icart
+IESA Arts & Culture | IESA | culture | prive | Paris | dossier | Titre RNCP (à vérifier) | Bachelor et master en management de l'art et de la culture | iesa
+American University of Paris | AUP | universite | prive | Paris | dossier | Accréditation américaine (NECHE) | Bachelors et masters en anglais (relations internationales, business, communication) | american university of paris;aup
+Parsons Paris | Parsons | art-design | prive | Paris | dossier | Diplôme américain (The New School) | Bachelors et masters de design en anglais | parsons paris;the new school paris
+Toulouse School of Economics | TSE | universite | public | Toulouse | dossier | Université Toulouse Capitole | Licence et master d'économie, parcours internationaux | toulouse school of economics;tse
+Paris School of Economics | PSE | universite | public | Paris | dossier | Master reconnu | Masters d'économie (analyse et politique économiques…) | paris school of economics;pse
+Cours Simon | Cours Simon | culture | prive | Paris | dossier | Cours privé d'art dramatique | Formation de comédien·ne (3 ans) | cours simon
+École Normale de Musique de Paris Alfred Cortot | ENM Cortot | culture | prive | Paris | dossier | Diplômes de l'école, certains reconnus | Musique (instrument, pédagogie) | cortot;ecole normale de musique
+Conservatoire national supérieur de musique et de danse de Paris | CNSMDP | culture | public | Paris | concours | Diplôme national supérieur | Musique, danse (3 à 5 ans) | cnsmdp;conservatoire national superieur de musique et de danse de paris
+École nationale supérieure des arts et techniques du théâtre | ENSATT | culture | public | Lyon | concours | Diplôme national | Théâtre : jeu, mise en scène, technique | ensatt
+École du TNS | TNS | culture | public | Strasbourg | concours | Diplôme national supérieur | Art dramatique, régie, scénographie | tns;theatre national de strasbourg
+École Kourtrajmé | Kourtrajmé | media,culture | associatif | Montfermeil, Marseille | dossier | Formation gratuite, à vérifier | Cinéma et audiovisuel (réalisation, scénario, image) | kourtrajme
+École de la Cité | Cité du cinéma | media | prive | Saint-Denis | dossier | À vérifier | Cinéma, audiovisuel, jeu vidéo | ecole de la cite;la cite du cinema
+ESEC | ESEC | media | prive | Paris | dossier | Titre RNCP | Cinéma et audiovisuel (réalisation, montage, production) | esec;ecole superieure d etudes cinematographiques
+ESJ Paris | ESJ Paris | media | prive | Paris | dossier, concours | Formation reconnue par la profession (à vérifier) | Journalisme (5 ans) | esj paris;ecole superieure de journalisme de paris
+L'École Multimédia | EM | numerique,art-design | prive | Paris | dossier | Titre RNCP | Design, digital, jeu vidéo, web | ecole multimedia
+Zone01 | Zone01 | numerique | associatif | Rouen | dossier | Pas de diplôme d'État, formation gratuite sur sélection | Développement logiciel (pédagogie par projets, sans cours) | zone01
+Wild Code School | WCS | numerique | prive | Paris, Lyon, Lille, Bordeaux, Toulouse, Nantes | dossier | Titres RNCP | Développement web, data, cybersécurité (formations courtes) | wild code school
+Ironhack | Ironhack | numerique | prive | Paris | dossier | Bootcamp, pas de diplôme d'État | Web, data, cybersécurité (bootcamps) | ironhack
+OpenClassrooms | OC | numerique | prive | En ligne | dossier | Titres RNCP (niveaux 5 à 7) | Parcours diplômants en ligne en alternance (développement, data, marketing) | openclassrooms
+La Plateforme | La Plateforme | numerique | prive | Marseille | dossier | À vérifier | Développement, web, data (bachelors) | la plateforme marseille
+École nationale supérieure d'ingénieurs électroniciens (ENSEA) | ENSEA | ingenieur | public | Cergy | concours | Diplôme d'ingénieur (CTI) | Ingénieur (électronique, informatique, télécoms) | ensea
+École supérieure d'agricultures (ESA) | ESA | agro,ingenieur | associatif | Angers | psup, concours | Diplôme d'ingénieur (CTI) | Ingénieur en agriculture, agroalimentaire | esa angers;ecole superieure d agricultures
+ENSAIA (Université de Lorraine) | ENSAIA | agro,ingenieur | public | Nancy | concours | Diplôme d'ingénieur (CTI) | Ingénieur en agronomie et agroalimentaire | ensaia

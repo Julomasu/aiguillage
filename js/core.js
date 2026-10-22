@@ -264,8 +264,8 @@
 
   /* ——— Routeur : #accueil, #metiers, #metier-infirmier, #formation-bts-sio, #type-bts… */
   A.pages = {};
-  const PARAMETRES = ["metier", "formation", "type", "classe", "ecole"];
-  const ONGLET = { metier: "metiers", formation: "formations", type: "formations", comparer: "carte", classe: "classe", ecole: "ecoles" };
+  const PARAMETRES = ["metier", "formation", "type", "classe", "ecole", "epreuve"];
+  const ONGLET = { metier: "metiers", formation: "formations", type: "formations", comparer: "carte", classe: "classe", ecole: "ecoles", epreuve: "passerelles" };
 
   A.lireHash = function () {
     const h = (location.hash || "").replace(/^#/, "") || "accueil";
