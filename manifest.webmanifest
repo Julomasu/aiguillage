@@ -1,0 +1,22 @@
+{
+  "name": "Aiguillage — orientation après le bac",
+  "short_name": "Aiguillage",
+  "description": "Test d'orientation, plan des études, fiches métiers, carte Parcoursup, budget et réseau, pour les lycéen·nes.",
+  "lang": "fr",
+  "start_url": "./#accueil",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F5FA",
+  "theme_color": "#131A33",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icones/icone-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icones/icone-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icones/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Le test", "url": "./#test" },
+    { "name": "La carte", "url": "./#carte" },
+    { "name": "Les métiers", "url": "./#metiers" }
+  ]
+}

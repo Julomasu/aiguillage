@@ -1,0 +1,21 @@
+{
+  "name": "aiguillage",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Site d'orientation pour lycéen·nes : test, plan des études, fiches métiers, carte Parcoursup, budget, assistant.",
+  "type": "module",
+  "scripts": {
+    "start": "node serveur/serveur.mjs",
+    "donnees": "python3 outils/importer.py --telecharger",
+    "apercu": "python3 outils/apercu.py"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "maplibre-gl": "^4.7.1"
+  }
+}

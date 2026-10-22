@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aiguillage</title>
+<meta name="description" content="Aiguillage aide les lycéen·nes à choisir leurs études : test d'orientation, plan des formations, fiches métiers, comparateur, aides financières.">
+<meta name="theme-color" content="#131A33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icones/icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icones/apple-touch-icon.png">
+</head>
+<body>
+<!-- APP:DEBUT -->
+<a class="evitement" href="#app">Aller au contenu</a>
+<header class="entete">
+  <div class="entete-in">
+    <a class="logo" href="#accueil" aria-label="Aiguillage, accueil">
+      <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M3 22 H14 C22 22 24 6 34 6 H37" class="lg-a"/><path d="M3 22 H37" class="lg-b"/><circle cx="6" cy="22" r="3.2" class="lg-g"/></svg>
+      <span>Aiguillage</span>
+    </a>
+    <nav class="nav-haut" aria-label="Navigation principale">
+      <a href="#test" data-nav="test">Le test</a>
+      <a href="#plan" data-nav="plan">Le plan</a>
+      <a href="#metiers" data-nav="metiers">Métiers</a>
+      <a href="#formations" data-nav="formations">Formations</a>
+      <a href="#carte" data-nav="carte">Carte</a>
+      <a href="#assistant" data-nav="assistant">Assistant</a>
+      <button type="button" class="nav-plus" data-ouvre-plus aria-expanded="false" aria-controls="plus">Plus</button>
+    </nav>
+    <a class="km-chip" href="#carnet" data-nav="carnet" aria-label="Mon carnet de voyage"><span data-km>0</span>&nbsp;km</a>
+  </div>
+</header>
+
+<div class="plus" id="plus" hidden>
+  <nav aria-label="Autres outils">
+    <a href="#carte" data-nav="carte" class="plus-mobile"><strong>La carte</strong><span>14 000 formations près de chez toi</span></a>
+    <a href="#assistant" data-nav="assistant" class="plus-mobile"><strong>L'assistant</strong><span>Pose tes questions</span></a>
+    <a href="#formations" data-nav="formations" class="plus-mobile"><strong>Les formations</strong><span>Comparateur BTS, BUT, prépa…</span></a>
+    <a href="#budget" data-nav="budget"><strong>Simulateur de budget</strong><span>Loyer, bourse, reste à vivre</span></a>
+    <a href="#reseau" data-nav="reseau"><strong>LinkedIn & réseau</strong><span>Vois ce qu'ont fait les gens avant toi</span></a>
+    <a href="#decodeur" data-nav="decodeur"><strong>Le décodeur</strong><span>Le jargon expliqué</span></a>
+    <a href="#vraifaux" data-nav="vraifaux"><strong>Vrai ou faux</strong><span>12 idées reçues</span></a>
+    <a href="#calendrier" data-nav="calendrier"><strong>Le calendrier</strong><span>Parcoursup étape par étape</span></a>
+    <a href="#aides" data-nav="aides"><strong>Budget & aides</strong><span>Ce que ça coûte, ce qu'on te doit</span></a>
+    <a href="#resultat" data-nav="resultat"><strong>Mes résultats</strong><span>Ton profil du test</span></a>
+    <a href="#carnet" data-nav="carnet"><strong>Mon carnet</strong><span>Km, tampons, favoris</span></a>
+  </nav>
+  <div class="reglages" aria-label="Affichage">
+    <p class="surtitre">Affichage</p>
+    <div class="reg-ligne" role="group" aria-label="Thème">
+      <button type="button" data-reglage="theme:system">Auto</button>
+      <button type="button" data-reglage="theme:light">Clair</button>
+      <button type="button" data-reglage="theme:dark">Sombre</button>
+    </div>
+    <div class="reg-ligne" role="group" aria-label="Taille du texte">
+      <button type="button" data-reglage="taille:0">A</button>
+      <button type="button" data-reglage="taille:1" class="t2">A+</button>
+      <button type="button" data-reglage="taille:2" class="t3">A++</button>
+    </div>
+    <div class="reg-ligne">
+      <button type="button" data-reglage="calme:1">Réduire les animations</button>
+    </div>
+  </div>
+</div>
+
+<main id="app" class="app" tabindex="-1"></main>
+
+<footer class="pied">
+  <p><strong>Aiguillage</strong> est un outil d'information indépendant. Les chiffres (salaires, coûts, accès) sont indicatifs : vérifie toujours sur <a href="https://www.parcoursup.gouv.fr" target="_blank" rel="noopener">Parcoursup</a> et <a href="https://www.onisep.fr" target="_blank" rel="noopener">Onisep</a>, et parles-en au/à la Psy-EN de ton lycée.</p>
+  <p class="petit">Données officielles : Parcoursup 2025 (MESR), ROME (France Travail), carte des loyers 2025 (ANIL), barèmes service-public.gouv.fr, sous Licence Ouverte. Ton carnet reste sur ton appareil. En mode guidé, l'assistant n'envoie rien ; avec Claude, seules tes questions lui sont envoyées pour y répondre.</p>
+</footer>
+
+<nav class="onglets" aria-label="Navigation rapide">
+  <a href="#accueil" data-nav="accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg>Accueil</a>
+  <a href="#test" data-nav="test"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m15 9-2 5-4 1 2-5z"/></svg>Test</a>
+  <a href="#plan" data-nav="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 L12 12 L20 6 M12 12 L20 18 M12 12V4"/><circle cx="12" cy="12" r="2.5"/></svg>Plan</a>
+  <a href="#metiers" data-nav="metiers"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M9 8V5h6v3"/></svg>Métiers</a>
+  <button type="button" data-ouvre-plus aria-expanded="false" aria-controls="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/></svg>Plus</button>
+</nav>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<!-- APP:FIN -->
+
+<script src="js/data/formations.js"></script>
+<script src="js/data/metiers.js"></script>
+<script src="js/data/contenus.js"></script>
+<script src="js/core.js"></script>
+<script src="js/pages-accueil.js"></script>
+<script src="js/pages-test.js"></script>
+<script src="js/pages-plan.js"></script>
+<script src="js/pages-fiches.js"></script>
+<script src="js/pages-outils.js"></script>
+<script src="js/pages-carte.js"></script>
+<script src="js/pages-budget.js"></script>
+<script src="js/pages-assistant.js"></script>
+<script src="js/pages-reseau.js"></script>
+<script>A.demarrer();</script>
+</body>
+</html>

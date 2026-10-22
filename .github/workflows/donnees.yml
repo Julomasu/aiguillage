@@ -1,0 +1,24 @@
+# Met à jour les données officielles (Parcoursup, ROME, loyers) chaque mois, gratuitement.
+name: Mettre à jour les données
+on:
+  schedule:
+    - cron: "17 4 3 * *"   # le 3 de chaque mois à 4h17 (UTC)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  importer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+      - run: python3 outils/importer.py --telecharger
+      - name: Enregistrer si les données ont changé
+        run: |
+          git config user.name "aiguillage-bot"
+          git config user.email "aiguillage-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "Mise à jour des données officielles" && git push)
