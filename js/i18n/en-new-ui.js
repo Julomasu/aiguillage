@@ -1,6 +1,8 @@
 /* Dictionary additions (English) for strings added after the first translation pass.
    Same format as en-ui.js: French key (digits replaced by {n}), English value. */
 A.EN_UI = Object.assign(A.EN_UI || {}, {
+  "Mentions légales": "Legal notice", "Confidentialité": "Privacy",
+  "Informations légales": "Legal information", "Ta vie privée": "Your privacy",
   /* Premium home (poster-style) */
   "Gratuit · Sans inscription · Données officielles Parcoursup": "Free · No sign-up · Official Parcoursup data",
   "Trouve": "Find", "ta voie.": "your path.",

@@ -10,9 +10,9 @@ import { repondre, assistantDisponible } from "./assistant.mjs";
 const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = Number(process.env.PORT) || 8000;
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
-  ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".ico": "image/x-icon", ".webmanifest": "application/manifest+json" };
+  ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".png": "image/png", ".ico": "image/x-icon", ".webmanifest": "application/manifest+json" };
 // Seuls ces dossiers sont servis (pas les données brutes ni le code serveur)
-const PUBLICS = ["index.html", "manifest.webmanifest", "sw.js", "css/", "js/", "data/", "icones/"];
+const PUBLICS = ["index.html", "manifest.webmanifest", "sw.js", "css/", "js/", "data/", "icones/", "fonts/"];
 
 async function servirFichier(res, chemin) {
   const relatif = path.relative(RACINE, chemin).split(path.sep).join("/");

@@ -1269,3 +1269,13 @@ input[type="text"], input[type="number"], input[type="search"], select, textarea
 .gare-btn .g-nom { min-width: 0; }
 .liste-form-plan, .liste-form-plan li { min-width: 0; }
 .legende-acces { grid-auto-flow: row; grid-template-columns: repeat(auto-fit, minmax(150px, max-content)); }
+
+/* Pages légales */
+.legal { display: grid; gap: 36px; max-width: 760px; }
+.legal section { display: grid; gap: 12px; }
+.legal h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); }
+.legal ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.legal p, .legal li { max-width: 70ch; }
+.alerte-config { border-left: 6px solid var(--warn); }
+.pied-liens { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.pied-liens a { font-weight: 600; }

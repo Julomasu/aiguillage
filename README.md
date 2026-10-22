@@ -159,3 +159,10 @@ Cinq pôles, chacun avec sa sous-navigation (définis dans `A.HUBS`, `js/core.js
 ## Logos
 
 `js/logos.js` affiche les logos des écoles, des employeurs cités et des sites officiels. L'icône de chaque organisme est chargée par le navigateur depuis le service de favicons de Google (aucune donnée n'est envoyée à Aiguillage) ; sans logo connu ou hors ligne, la pastille affiche les initiales ou une icône. Les visiteurs peuvent désactiver les logos dans « Plus ». LinkedIn est dessiné en local (SVG). Pour ajouter un logo d'école, ajoute son identifiant et son site dans `A.LOGO_ECOLES`. Les logos et marques appartiennent à leurs propriétaires.
+
+## Pages légales, vie privée et audience
+
+- `#mentions` (mentions légales) et `#confidentialite` (confidentialité) sont rédigées dans `js/pages-legal.js`. Elles décrivent ce que le site fait vraiment : **toute évolution technique** (nouveau service externe, nouvelle donnée stockée) doit y être reportée. Ces textes sont à faire valider pour ta situation précise (statut d'éditeur, hébergeur).
+- **Identité de l'éditeur** : à renseigner dans `js/config.js` (`editeur`). Tant que le nom et l'e-mail sont vides, la page affiche un avertissement.
+- **Mesure d'audience** : GoatCounter, sans cookie, chargé seulement si `audience.goatcounter` est renseigné dans `js/config.js` (code du compte, créé gratuitement sur goatcounter.com pour un usage non commercial). Rien n'est compté en local, dans l'aperçu claude.ai, avec « Do Not Track », ou si la personne a refusé sur la page Confidentialité. Seul l'identifiant de la page est envoyé, jamais les réponses du test.
+- **Polices hébergées** (`fonts/`, `css/fonts.css`, licence SIL OFL) : aucune requête vers Google Fonts. Les seuls services externes encore contactés sont OpenFreeMap (page Carte) et le service d'icônes de Google (logos, désactivable).

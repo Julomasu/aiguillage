@@ -339,6 +339,7 @@
       document.title = page === "accueil" ? "Aiguillage" : titre.textContent.trim() + " · Aiguillage";
     }
     A.premierRenduFait = true;
+    if (A.audience) A.audience.compter();
   };
 
   /* ——— Menu « Plus » et réglages */
@@ -350,6 +351,7 @@
 
   A.demarrer = function () {
     A.appliquerReglages();
+    if (A.audience) A.audience.init();
     // largeur d'une barre de défilement classique : sert à centrer exactement les sections pleine largeur (.plein)
     const mesurerBarre = () => document.documentElement.style.setProperty("--sbw", Math.max(0, window.innerWidth - document.documentElement.clientWidth) + "px");
     mesurerBarre(); window.addEventListener("resize", mesurerBarre);
