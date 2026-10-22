@@ -51,6 +51,11 @@
         </a>`).join("")}
       </section>
 
+      <section class="lien-paperasse">
+        <div><p class="surtitre">Après le bac, l'administration</p><h2>Impôts, logement, micro-entreprise ?</h2><p>Paperasse explique les démarches que personne ne t'apprend, avec les chiffres officiels de 2026.</p></div>
+        <a class="btn btn-ligne" href="https://julomasu.github.io/paperasse/" target="_blank" rel="noopener">Ouvrir Paperasse</a>
+      </section>
+
       <section class="plein appel"><div class="cadre">
         <p class="surtitre">5 minutes, pas plus</p>
         <h2>Et si tu commençais par toi ?</h2>

@@ -1276,6 +1276,11 @@ input[type="text"], input[type="number"], input[type="search"], select, textarea
 .legal h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); }
 .legal ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
 .legal p, .legal li { max-width: 70ch; }
-.alerte-config { border-left: 6px solid var(--warn); }
+.alerte-config { display: block; border-left: 6px solid var(--warn); }
 .pied-liens { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .pied-liens a { font-weight: 600; }
+
+.lien-paperasse { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; padding: clamp(22px, 3vw, 34px); background: var(--surface); border-radius: var(--r); }
+.lien-paperasse > div { display: grid; gap: 8px; max-width: 60ch; }
+.lien-paperasse h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.lien-paperasse p:last-child { color: var(--muted); }

@@ -1,6 +1,10 @@
 /* Dictionary additions (English) for strings added after the first translation pass.
    Same format as en-ui.js: French key (digits replaced by {n}), English value. */
 A.EN_UI = Object.assign(A.EN_UI || {}, {
+  "Après le bac, l'administration": "After the bac, the paperwork",
+  "Impôts, logement, micro-entreprise ?": "Taxes, housing, starting a business?",
+  "Paperasse explique les démarches que personne ne t'apprend, avec les chiffres officiels de 2026.": "Paperasse explains the admin steps nobody teaches you, with the official 2026 figures (in French).",
+  "Ouvrir Paperasse": "Open Paperasse",
   "Mentions légales": "Legal notice", "Confidentialité": "Privacy",
   "Informations légales": "Legal information", "Ta vie privée": "Your privacy",
   /* Premium home (poster-style) */
