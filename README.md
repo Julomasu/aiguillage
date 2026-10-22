@@ -46,7 +46,32 @@ Le site doit être servi en HTTP (pas en ouvrant `index.html` à la main), car i
 | Réseau | `#reseau` | Tuto LinkedIn en 6 étapes, missions « vois ce qu'ont fait les gens avant toi » (outil Anciens élèves), générateur de premier message, sécurité, outils publics gratuits |
 | Budget | `#budget` | Reste à vivre : loyers officiels de 217 villes, barème des bourses 2026-2027, APL, job, alternance |
 | Assistant | `#assistant` | Chat qui répond à partir des fiches, du profil et des données Parcoursup : mode guidé gratuit, ou Claude quand il est disponible |
+| Comparer | `#comparer` | Deux formations précises côte à côte : taux d'accès, places, profil des admis, coût, emploi à 18 mois |
+| Portes ouvertes | `#jpo` | Les établissements de sa ville (Parcoursup) + planning personnel avec export agenda `.ics` (rappels la veille et le jour même). Les dates ne sont pas des données ouvertes : chaque personne saisit les siennes |
+| Défis de la semaine | `#defis` | 3 défis tirés au sort chaque semaine (graine = semaine ISO, donc les mêmes pour tout le monde), série de semaines |
+| Espace prof / Psy-EN | `#classe` | Code de classe, lien à envoyer aux élèves, profils anonymes (code court avec somme de contrôle, sans serveur) et synthèse de la classe |
+| Témoignages | `#temoignages` | Formulaire (texte ou lien vidéo) → ticket GitHub → relecture → publication dans `data/temoignages.json` |
 | Décodeur, Vrai/faux, Calendrier, Aides, Carnet | `#decodeur`… | Jargon, idées reçues, étapes de terminale, aides, progression (km, tampons) |
+
+Emploi à 18 mois : `data/insertion.json` reprend les lignes nationales d'**InserSup** (MESR). Les BTS et BUT n'y figurent pas : les fiches l'indiquent.
+
+Lecture audio : le bouton « Écouter » du bandeau lit la page avec la synthèse vocale du navigateur (vitesse réglable dans les réglages).
+
+## Anglais
+
+Le bouton **FR / EN** du bandeau change la langue (choix mémorisé ; sans choix, anglais seulement si le navigateur est en anglais et ne propose pas le français).
+
+- `js/i18n.js` : moteur. En anglais, il charge `js/i18n/en-*.js`, remplace les contenus rédigés (`en-data-*.js` : lignes, formations, 76 métiers, lexique, vrai/faux…) puis traduit les textes de l'interface au fil de l'affichage.
+- `js/i18n/en-ui.js` (dictionnaire généré), `en-extra.js` (compléments à la main), `en-rules.js` (phrases qui mélangent des données et du texte) : clé française, `{n}` à la place des nombres.
+- Tout texte sans traduction reste en français : rien ne casse. Restent volontairement en français : noms de formations et d'établissements issus de Parcoursup, intitulés du ROME, message-type LinkedIn (destiné à des contacts en France).
+- Nouveau texte dans l'interface → ajouter sa clé dans `en-extra.js`. Nouveau métier ou formation → ajouter son `id` dans `en-data-metiers*.js` / `en-data-formations.js`.
+- L'assistant (mode guidé comme Claude) répond dans la langue du site.
+
+## Témoignages : mise en place
+
+1. Renseigner le dépôt dans `js/config.js` (`depotGithub: "compte/depot"`), sinon le formulaire propose l'envoi par e-mail (`emailTemoignages`).
+2. Créer l'étiquette `approuvé` dans le dépôt. `.github/workflows/temoignages.yml` publie le témoignage dans `data/temoignages.json` quand quelqu'un d'autorisé pose cette étiquette sur le ticket : c'est la modération.
+3. Voir `outils/temoignage.py` pour la conversion d'un ticket en entrée du fichier.
 
 ## Données officielles
 
@@ -84,6 +109,8 @@ css/style.css            styles (tokens en haut du fichier)
 js/data/*.js             contenus rédigés : lignes, formations, métiers, test, lexique, chiffres officiels
 js/core.js               état local, progression, chargement de data/, routeur
 js/pages-*.js            une fonction de rendu par page (A.pages.<nom>)
+js/defis.js, config.js   défis hebdomadaires ; réglages du dépôt (témoignages)
+js/i18n.js, js/i18n/     version anglaise
 data/*.json              données ouvertes converties (générées)
 serveur/                 serveur Node (site + API de l'assistant)
 outils/importer.py       import des données officielles

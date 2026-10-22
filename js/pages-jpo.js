@@ -55,7 +55,7 @@
     return "https://calendar.google.com/calendar/render?" + q.toString();
   }
 
-  const dateFr = e => new Date(`${e.date}T${e.heure || "10:00"}`).toLocaleString("fr-FR", { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
+  const dateFr = e => new Date(`${e.date}T${e.heure || "10:00"}`).toLocaleString(A.locale, { weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" });
   const recherche = nom => "https://duckduckgo.com/?q=" + encodeURIComponent(nom + " journée portes ouvertes");
 
   A.pages.jpo = function (el) {

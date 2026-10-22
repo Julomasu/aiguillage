@@ -203,7 +203,7 @@
           return `<div class="tampon ${t ? "obtenu" : ""}">
             <span class="tp-cercle" aria-hidden="true">${t ? b.emoji : "?"}</span>
             <strong>${A.e(b.nom)}</strong>
-            <span class="petit">${t ? "Obtenu le " + new Date(t).toLocaleDateString("fr-FR") : A.e(b.desc)}</span>
+            <span class="petit">${t ? "Obtenu le " + new Date(t).toLocaleDateString(A.locale) : A.e(b.desc)}</span>
           </div>`;
         }).join("")}</div>
       </section>

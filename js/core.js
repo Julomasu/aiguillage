@@ -17,6 +17,8 @@
   }
 
   A.etat = charger();
+  A.locale = "fr-FR";    // modifié par js/i18n.js pour la version anglaise
+  A.lang = "fr";
 
   A.sauver = function () {
     try { localStorage.setItem(CLE, JSON.stringify(A.etat)); } catch (e) { /* idem */ }
@@ -37,7 +39,7 @@
   };
   A.$ = (sel, racine) => (racine || document).querySelector(sel);
   A.$$ = (sel, racine) => Array.from((racine || document).querySelectorAll(sel));
-  A.euros = n => n.toLocaleString("fr-FR") + " €";
+  A.euros = n => A.lang === "en" ? "€" + n.toLocaleString(A.locale) : n.toLocaleString(A.locale) + " €";
   A.ajouterUnique = (liste, v) => { if (!liste.includes(v)) liste.push(v); return liste.length; };
 
   A.pastilleLigne = function (id, avecNom) {
@@ -131,7 +133,7 @@
         <span class="sal-barre" style="left:${r.q[0] / 3500 * 100}%;width:${(r.q[2] - r.q[0]) / 3500 * 100}%"></span>
         <span class="sal-pt sal-pt-fin" style="left:${r.q[1] / 3500 * 100}%"></span></div>
         <div class="sal-valeurs"><span>1 sur 4 gagne moins de <b>${A.euros(r.q[0])}</b></span><span>Médiane <b>${A.euros(r.q[1])}</b></span><span>1 sur 4 gagne plus de <b>${A.euros(r.q[2])}</b></span></div></div>` : `<p class="petit">Salaire non publié pour ce diplôme (effectifs trop faibles).</p>`}
-      <p class="petit">${r.n.toLocaleString("fr-FR")} diplômé·es de la promotion ${r.pe} ont quitté les études : les pourcentages d'emploi ne concernent qu'eux, pas celles et ceux qui continuent en master. Source : InserSup, ministère de l'Enseignement supérieur.</p>
+      <p class="petit">${r.n.toLocaleString(A.locale)} diplômé·es de la promotion ${r.pe} ont quitté les études : les pourcentages d'emploi ne concernent qu'eux, pas celles et ceux qui continuent en master. Source : InserSup, ministère de l'Enseignement supérieur.</p>
     </div>`;
   };
 

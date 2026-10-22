@@ -61,7 +61,7 @@
         ["Type", r => A.e(r.famille.nom) + (r.selective ? `<span class="petit">Sélective</span>` : `<span class="petit">Non sélective</span>`)],
         ville ? [`Distance de ${A.e(ville.nom)}`, r => r.lat == null ? "–" : `<b>${Math.round(A.distanceKm(ville.lat, ville.lon, r.lat, r.lon))} km</b>`] : null,
         ["Taux d'accès", r => r.taux == null ? "–" : `<b class="${r.taux === mTaux ? "meilleur" : ""}">${r.taux} %</b><span class="petit">des candidat·es ont reçu une proposition</span>`],
-        ["Places", r => r.places == null ? "–" : `<b class="${r.places === mPlaces ? "meilleur" : ""}">${r.places}</b>${r.voeux ? `<span class="petit">${r.voeux.toLocaleString("fr-FR")} vœux, soit ${(r.voeux / Math.max(1, r.places)).toFixed(1).replace(".", ",")} par place</span>` : ""}`],
+        ["Places", r => r.places == null ? "–" : `<b class="${r.places === mPlaces ? "meilleur" : ""}">${r.places}</b>${r.voeux ? `<span class="petit">${r.voeux.toLocaleString(A.locale)} vœux, soit ${(r.voeux / Math.max(1, r.places)).toFixed(1).replace(".", ",")} par place</span>` : ""}`],
         ["Qui est admis", barre],
         p ? [`Admis de ton bac (${{ g: "général", t: "techno", p: "pro" }[p.bac]})`, r => { const v = { g: r.gen, t: r.tec, p: r.pro }[p.bac]; return v == null ? "–" : `<b>${v} %</b>`; }] : null,
         ["Boursier·es admis", r => r.bours == null ? "–" : r.bours + " %"],

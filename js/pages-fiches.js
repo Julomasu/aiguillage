@@ -392,9 +392,9 @@
       zone.hidden = false;
       zone.innerHTML = `<h2>Les chiffres Parcoursup ${st.session}</h2>
         <div class="chiffres chiffres-psup">
-          <div><span class="petit">Formations</span><strong>${s.reduce((a, x) => a + x.formations, 0).toLocaleString("fr-FR")}</strong></div>
-          <div><span class="petit">Places</span><strong>${places.toLocaleString("fr-FR")}</strong></div>
-          <div><span class="petit">Vœux reçus</span><strong>${s.reduce((a, x) => a + x.voeux, 0).toLocaleString("fr-FR")}</strong></div>
+          <div><span class="petit">Formations</span><strong>${s.reduce((a, x) => a + x.formations, 0).toLocaleString(A.locale)}</strong></div>
+          <div><span class="petit">Places</span><strong>${places.toLocaleString(A.locale)}</strong></div>
+          <div><span class="petit">Vœux reçus</span><strong>${s.reduce((a, x) => a + x.voeux, 0).toLocaleString(A.locale)}</strong></div>
           <div><span class="petit">Taux d'accès médian</span><strong>${s[0].tauxMedian} %</strong></div>
         </div>
         <div class="admis admis-grand">
@@ -480,8 +480,8 @@
       const p = A.etat.profil;
       zone.innerHTML = `<h2>En vrai, sur Parcoursup</h2>
         <div class="chiffres chiffres-psup">
-          <div><span class="petit">Formations en France</span><strong>${rs.length.toLocaleString("fr-FR")}</strong><span class="petit">dont ${publics} publiques</span></div>
-          <div><span class="petit">Places</span><strong>${places.toLocaleString("fr-FR")}</strong></div>
+          <div><span class="petit">Formations en France</span><strong>${rs.length.toLocaleString(A.locale)}</strong><span class="petit">dont ${publics} publiques</span></div>
+          <div><span class="petit">Places</span><strong>${places.toLocaleString(A.locale)}</strong></div>
           <div><span class="petit">Taux d'accès médian</span><strong>${med != null ? med + " %" : "–"}</strong><span class="petit">des candidat·es reçoivent une proposition</span></div>
           <div><span class="petit">Boursier·es parmi les admis</span><strong>${pond("bours")} %</strong></div>
         </div>

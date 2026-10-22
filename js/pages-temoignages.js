@@ -53,11 +53,11 @@
         <p class="petit">5 minutes, sans ton nom de famille ni coordonnées. Ça aidera des centaines de lycéen·nes qui hésitent.</p>
         <form class="tem-form" id="tem-form" onsubmit="return false">
           <label class="champ"><span>Prénom ou pseudo</span><input id="tf-prenom" maxlength="40" autocomplete="off"></label>
-          <label class="champ"><span>Type de formation</span><select id="tf-type">${TYPES.map(t => `<option ${t === brouillon.type ? "selected" : ""}>${A.e(t)}</option>`).join("")}</select></label>
+          <label class="champ"><span>Type de formation</span><select id="tf-type">${TYPES.map(t => `<option value="${A.e(t)}" ${t === brouillon.type ? "selected" : ""}>${A.e(t)}</option>`).join("")}</select></label>
           <label class="champ"><span>Ta formation</span><input id="tf-formation" maxlength="90" placeholder="Ex. BUT Techniques de commercialisation" autocomplete="off"></label>
           <label class="champ"><span>Ville</span><input id="tf-ville" maxlength="50" autocomplete="off"></label>
           <label class="champ"><span>Année d'entrée</span><input id="tf-annee" maxlength="4" inputmode="numeric" value="${A.e(brouillon.annee)}"></label>
-          <label class="champ"><span>Ton bac</span><select id="tf-bac">${BACS.map(b => `<option>${b}</option>`).join("")}</select></label>
+          <label class="champ"><span>Ton bac</span><select id="tf-bac">${BACS.map(b => `<option value="${b}">${b}</option>`).join("")}</select></label>
           <label class="champ tem-large"><span>Ton témoignage <b id="tf-n1" class="petit">0/600</b></span><textarea id="tf-texte" rows="5" maxlength="600" placeholder="Comment ça se passe vraiment ? Ce qui t'a surpris·e, ce qui est dur, ce qui est bien."></textarea></label>
           <label class="champ tem-large"><span>Ce que j'aurais aimé savoir avant (facultatif) <b id="tf-n2" class="petit">0/300</b></span><textarea id="tf-conseil" rows="2" maxlength="300"></textarea></label>
           <p class="petit tem-large" id="tf-alerte" role="alert"></p>

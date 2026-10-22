@@ -8,15 +8,26 @@
   let enCours = null;      // AbortController de la réponse en cours
   let moteur;              // promesse : "sample" | "api" | null
 
-  const SUGGESTIONS = [
+  const EN = () => A.lang === "en";
+  const T = (fr, en) => EN() ? en : fr;
+
+  const SUGGESTIONS_FR = [
     "Quelle différence entre un BTS et un BUT ?",
     "Comment devenir analyste M&A ?",
     "Je suis en bac pro commerce, je peux viser une école de commerce ?",
     "Quelles formations en informatique sans quitter Rennes ?",
     "Combien coûte une année d'études à Lyon ?"
   ];
+  const SUGGESTIONS_EN = [
+    "What is the difference between a BTS and a BUT?",
+    "How do I become an M&A analyst?",
+    "I'm doing a vocational bac in sales: can I aim for a business school?",
+    "Which computer science programs can I do without leaving Rennes?",
+    "How much does a year of studies cost in Lyon?"
+  ];
+  const suggestions = () => EN() ? SUGGESTIONS_EN : SUGGESTIONS_FR;
 
-  const REGLES = `Tu es l'assistant d'orientation d'Aiguillage, un site gratuit qui aide les lycéen·nes français·es à choisir leurs études.
+  const reglesFr = `Tu es l'assistant d'orientation d'Aiguillage, un site gratuit qui aide les lycéen·nes français·es à choisir leurs études.
 Règles :
 - Réponds en français, en tutoyant, avec des phrases simples (niveau lycée). 120 à 250 mots maximum sauf si on te demande plus de détail.
 - Appuie-toi d'abord sur les DONNÉES DU SITE fournies ci-dessous. Si une information n'y figure pas, dis-le et renvoie vers Parcoursup, l'Onisep ou le/la Psy-EN du lycée. N'invente jamais un chiffre, un taux d'accès, un salaire ou une date.
@@ -25,6 +36,16 @@ Règles :
 - Sois honnête sur la sélectivité, mais ne décourage jamais : propose toujours au moins un chemin réaliste depuis le bac de la personne, y compris l'alternance et les passerelles.
 - Tu ne connais pas les notes de la personne : ne prédis pas ses chances d'admission.
 - Pas de sujets hors orientation, études, métiers, vie étudiante : recentre gentiment.`;
+  const reglesEn = `You are the guidance assistant of Aiguillage, a free site that helps French high-school students choose their studies. Many users are English-speaking families or students at French schools abroad.
+Rules:
+- Answer in English, in a friendly and simple tone (high-school level). 120 to 250 words maximum unless asked for more detail. Keep the French names of degrees and of Parcoursup (BTS, BUT, prépa, licence…) and explain them briefly the first time.
+- Rely first on the SITE DATA provided below. If something is not there, say so and point to Parcoursup, Onisep or the school's guidance counselor (Psy-EN). Never invent a figure, an access rate, a salary or a date.
+- Parcoursup figures are from the 2025 session. Say so when you quote them.
+- When you mention a career or a program present in the data, add a Markdown link to its page, exactly as [Name](#metier-identifier) or [Name](#formation-identifier).
+- Be honest about selectivity but never discourage: always offer at least one realistic path from the person's bac, including work-study and bridges.
+- You do not know the person's grades: do not predict their chances of admission.
+- No topics outside guidance, studies, careers and student life: gently refocus.`;
+  const regles = () => EN() ? reglesEn : reglesFr;
 
   function detecterMoteur() {
     if (moteur) return moteur;
@@ -44,7 +65,7 @@ Règles :
 
   /* ——— Contexte : les fiches les plus proches de la question, plus le profil */
   function motsCles(texte) {
-    const vides = new Set("les des une pour avec dans quel quelle quels quelles est que qui quoi comment faire sans mon mes ton tes son ses sur par pas plus moins tout tous etre avoir peux veux bac formation formations etude etudes metier metiers quitter devenir travailler aller apres ville faut entre difference quelle quelles quels dans sans chez".split(" "));
+    const vides = new Set("the and for what how which does can you your with about between difference best are was was this that from want like have has should would could into than then there their".split(" ").concat("les des une pour avec dans quel quelle quels quelles est que qui quoi comment faire sans mon mes ton tes son ses sur par pas plus moins tout tous etre avoir peux veux bac formation formations etude etudes metier metiers quitter devenir travailler aller apres ville faut entre difference quelle quelles quels dans sans chez".split(" ")));
     return A.sansAccents(texte).split(/[^a-z0-9&]+/).filter(m => m.length > 2 && !vides.has(m));
   }
 
@@ -107,25 +128,30 @@ Règles :
       let proches = psup.lignes.filter(r => r.lat != null && A.distanceKm(v[2], v[3], r.lat, r.lon) <= 30);
       const filtrees = mots.length ? proches.filter(r => score(r.intitule + " " + r.fili + " " + r.etab, mots) > 0) : [];
       proches = (filtrees.length ? filtrees : proches).sort((a, b) => (b.places || 0) - (a.places || 0)).slice(0, 15);
-      return `FORMATIONS PARCOURSUP 2025 À MOINS DE 30 KM DE ${v[0].toUpperCase()} (extrait) :\n` + proches.map(r =>
-        `- ${r.fili} ${r.intitule} — ${r.etab}, ${r.ville} (${r.public ? "public" : "privé"}) : ${r.places} places, taux d'accès ${r.taux} %, admis ${r.gen}/${r.tec}/${r.pro} % (général/techno/pro)`).join("\n") +
-        "\nPour la liste complète, renvoie vers [la carte](#carte).";
+      return T(`FORMATIONS PARCOURSUP 2025 À MOINS DE 30 KM DE ${v[0].toUpperCase()} (extrait) :\n`, `PARCOURSUP 2025 PROGRAMS WITHIN 30 KM OF ${v[0].toUpperCase()} (excerpt):\n`) + proches.map(r =>
+        T(`- ${r.fili} ${r.intitule} — ${r.etab}, ${r.ville} (${r.public ? "public" : "privé"}) : ${r.places} places, taux d'accès ${r.taux} %, admis ${r.gen}/${r.tec}/${r.pro} % (général/techno/pro)`,
+          `- ${r.fili} ${r.intitule} — ${r.etab}, ${r.ville} (${r.public ? "public" : "private"}): ${r.places} places, access rate ${r.taux}%, admitted ${r.gen}/${r.tec}/${r.pro}% (general/techno/vocational bac)`)).join("\n") +
+        T("\nPour la liste complète, renvoie vers [la carte](#carte).", "\nFor the full list, point to [the map](#carte).");
     } catch (e) { return ""; }
   }
 
   /* ——— Mode guidé : réponse construite localement à partir des données du site */
   const THEMES = [
-    { motif: /\bbts\b.*\bbut\b|\bbut\b.*\bbts\b|difference|comparer|choisir entre/, types: ["bts", "but"] },
-    { motif: /\bprepa|cpge/, types: ["cpge"] },
-    { motif: /\bfac\b|universite|licence/, types: ["licence"] },
-    { motif: /medecine|pass\b|l\.?as\b|sante/, types: ["pass-las"] },
-    { motif: /commerce|management/, types: ["ecole-commerce"] },
-    { motif: /ingenieur|inge\b/, types: ["ecole-inge"] },
-    { motif: /alternance|apprenti/, types: [], texte: "**L'alternance** : tu partages ton temps entre l'école et une entreprise qui te paie, et ta formation est gratuite. C'est possible en BTS, BUT, licence pro, écoles… Pour trouver une entreprise : [La bonne alternance](https://labonnealternance.apprentissage.beta.gouv.fr) et [1 jeune 1 solution](https://www.1jeune1solution.gouv.fr)." },
-    { motif: /bourse|argent|cout|coute|budget|loyer|logement|apl|crous|payer|cher/, types: [], texte: null, aides: true },
-    { motif: /parcoursup|voeu|date|calendrier|quand/, types: [], calendrier: true },
-    { motif: /linkedin|reseau|contacter|ecrire a/, types: [], texte: "Pour voir ce qu'ont fait les gens avant toi et oser leur écrire, suis le [tuto LinkedIn & réseau](#reseau)." },
-    { motif: /reorient|rate|redoubl|changer de/, types: [], texte: "**Se réorienter, c'est possible** : tu peux refaire des vœux sur Parcoursup, utiliser des passerelles ou garder tes crédits ECTS validés. Parles-en au service d'orientation de ton établissement." }
+    { motif: /\bbts\b.*\bbut\b|\bbut\b.*\bbts\b|difference|comparer|choisir entre|compare|versus|\bvs\b|between/, types: ["bts", "but"] },
+    { motif: /\bprepa|cpge|preparatory/, types: ["cpge"] },
+    { motif: /\bfac\b|universite|university|licence|bachelor.?s degree/, types: ["licence"] },
+    { motif: /medecine|medicine|medical|pass\b|l\.?as\b|sante|health|nurs|doctor/, types: ["pass-las"] },
+    { motif: /commerce|management|business school/, types: ["ecole-commerce"] },
+    { motif: /ingenieur|inge\b|engineer/, types: ["ecole-inge"] },
+    { motif: /alternance|apprenti|work.?study/, types: [],
+      texte: () => T("**L'alternance** : tu partages ton temps entre l'école et une entreprise qui te paie, et ta formation est gratuite. C'est possible en BTS, BUT, licence pro, écoles… Pour trouver une entreprise : [La bonne alternance](https://labonnealternance.apprentissage.beta.gouv.fr) et [1 jeune 1 solution](https://www.1jeune1solution.gouv.fr).",
+        "**Work-study (alternance)**: you split your time between school and a company that pays you, and your training is free. It is possible in BTS, BUT, licence pro, schools… To find a company: [La bonne alternance](https://labonnealternance.apprentissage.beta.gouv.fr) and [1 jeune 1 solution](https://www.1jeune1solution.gouv.fr) (French sites).") },
+    { motif: /bourse|argent|cout|coute|budget|loyer|logement|apl|crous|payer|cher|scholarship|grant|money|cost|rent|housing|afford|expensive|price|tuition|fees/, types: [], texte: null, aides: true },
+    { motif: /parcoursup|voeu|voeux|date|calendrier|quand|deadline|when|calendar|apply|application/, types: [], calendrier: true },
+    { motif: /linkedin|reseau|contacter|ecrire a|network|contact/, types: [],
+      texte: () => T("Pour voir ce qu'ont fait les gens avant toi et oser leur écrire, suis le [tuto LinkedIn & réseau](#reseau).", "To see what people before you did and dare to write to them, follow the [LinkedIn & networking tutorial](#reseau).") },
+    { motif: /reorient|rate|redoubl|changer de|change (my )?(course|major|direction|degree)|failed|drop out|retake|switch/, types: [],
+      texte: () => T("**Se réorienter, c'est possible** : tu peux refaire des vœux sur Parcoursup, utiliser des passerelles ou garder tes crédits ECTS validés. Parles-en au service d'orientation de ton établissement.", "**Changing direction is possible**: you can make new choices on Parcoursup, use bridges between programs or keep the ECTS credits you passed. Talk to your school's guidance service.") }
   ];
 
   async function reponseGuidee(question) {
@@ -133,34 +159,38 @@ Règles :
     THEMES.filter(t => t.motif.test(q)).forEach(t => {
       t.types.forEach(id => {
         const ty = A.typeParId[id];
-        blocs.push(`**${ty.nom}** (${ty.long}) : ${ty.duree}, ${ty.niveau}. ${ty.resume} Coût : ${ty.cout}. ${ty.bonASavoir} [En savoir plus](#type-${id})`);
+        blocs.push(`**${ty.nom}** (${ty.long}): ${ty.duree}, ${ty.niveau}. ${ty.resume} ${T("Coût", "Cost")}: ${ty.cout}. ${ty.bonASavoir} [${T("En savoir plus", "Learn more")}](#type-${id})`);
       });
-      if (t.texte) blocs.push(t.texte);
-      if (t.aides) blocs.push(`**Côté argent** : les BTS et prépas publics sont gratuits, la licence coûte ${A.chiffres.droitsLicence} € + ${A.chiffres.cvec} € de CVEC (0 € pour les boursier·es). La bourse va de ${A.euros(A.chiffres.bourses[1].annuel)} à ${A.euros(A.chiffres.bourses[8].annuel)} par an, et le repas Crous coûte 1 €. Calcule ton reste à vivre avec le [simulateur de budget](#budget).`);
-      if (t.calendrier) blocs.push("**Le calendrier** :\n" + A.calendrier.slice(1, 7).map(c => `- ${c.quand} : ${c.titre}`).join("\n") + "\n\nLes dates exactes sont publiées sur parcoursup.gouv.fr. Tout est sur [le calendrier](#calendrier).");
+      if (t.texte) blocs.push(t.texte());
+      if (t.aides) blocs.push(T(`**Côté argent** : les BTS et prépas publics sont gratuits, la licence coûte ${A.chiffres.droitsLicence} € + ${A.chiffres.cvec} € de CVEC (0 € pour les boursier·es). La bourse va de ${A.euros(A.chiffres.bourses[1].annuel)} à ${A.euros(A.chiffres.bourses[8].annuel)} par an, et le repas Crous coûte 1 €. Calcule ton reste à vivre avec le [simulateur de budget](#budget).`,
+        `**Money matters**: public BTS and prépas are free, a licence costs €${A.chiffres.droitsLicence} + €${A.chiffres.cvec} CVEC (€0 for scholarship holders). The scholarship ranges from ${A.euros(A.chiffres.bourses[1].annuel)} to ${A.euros(A.chiffres.bourses[8].annuel)} a year, and a Crous canteen meal costs €1. Work out what you have left to live on with the [budget simulator](#budget).`));
+      if (t.calendrier) blocs.push(T("**Le calendrier** :\n", "**The calendar**:\n") + A.calendrier.slice(1, 7).map(c => `- ${c.quand}: ${c.titre}`).join("\n") + T("\n\nLes dates exactes sont publiées sur parcoursup.gouv.fr. Tout est sur [le calendrier](#calendrier).", "\n\nThe exact dates are published on parcoursup.gouv.fr. Everything is on [the calendar](#calendrier)."));
     });
     const qMots = " " + q.replace(/[^a-z0-9]+/g, " ") + " ";
     const mot = A.lexique.find(l => l.mot.length > 3 && qMots.includes(" " + A.sansAccents(l.mot).replace(/[^a-z0-9]+/g, " ").trim() + " "));
-    if (mot && !blocs.length) blocs.push(`**${mot.mot}** : ${mot.def}`);
+    if (mot && !blocs.length) blocs.push(`**${mot.mot}**: ${mot.def}`);
 
     const metiers = A.metiers.map(m => ({ m, s: score(m.nom, mots) * 3 + score(m.accroche + " " + m.competences.join(" "), mots) }))
       .filter(x => x.s > 1 || (x.s > 0 && score(x.m.nom, mots))).sort((a, b) => b.s - a.s).slice(0, 3);
-    if (metiers.length) blocs.push("**Métiers qui correspondent** :\n" + metiers.map(({ m }) =>
-      `- [${m.nom}](#metier-${m.id}) : ${m.accroche} Études : ${m.etudes}, dès ${A.euros(m.salaire[0])} brut par mois.`).join("\n"));
+    if (metiers.length) blocs.push(T("**Métiers qui correspondent** :\n", "**Matching careers**:\n") + metiers.map(({ m }) =>
+      T(`- [${m.nom}](#metier-${m.id}) : ${m.accroche} Études : ${m.etudes}, dès ${A.euros(m.salaire[0])} brut par mois.`,
+        `- [${m.nom}](#metier-${m.id}): ${m.accroche} Studies: ${m.etudes}, from ${A.euros(m.salaire[0])} gross per month.`)).join("\n"));
     // Quand la question porte sur une famille de formations (BTS, prépa…), on n'ajoute que les formations très proches
     const seuil = THEMES.some(t => t.types.length && t.motif.test(q)) ? 3 : 1;
     const forms = A.formations.map(f => ({ f, s: score(f.nom + " " + f.long, mots) * 2 + score(f.desc, mots) }))
       .filter(x => x.s > seuil).sort((a, b) => b.s - a.s).slice(0, 3);
-    if (forms.length) blocs.push("**Formations à regarder** :\n" + forms.map(({ f }) =>
-      `- [${f.nom}](#formation-${f.id}) : ${f.desc}`).join("\n"));
+    if (forms.length) blocs.push(T("**Formations à regarder** :\n", "**Programs to look at**:\n") + forms.map(({ f }) =>
+      `- [${f.nom}](#formation-${f.id}): ${f.desc}`).join("\n"));
 
     const ville = await villeDansQuestion(question);
     if (ville) {
       const lignes = ville.split("\n").filter(l => l.startsWith("- ")).slice(0, 6);
-      blocs.push(`**Près de chez toi (Parcoursup 2025)** :\n${lignes.join("\n")}\n\nToutes les formations sont sur [la carte](#carte).`);
+      blocs.push(T(`**Près de chez toi (Parcoursup 2025)** :\n${lignes.join("\n")}\n\nToutes les formations sont sur [la carte](#carte).`,
+        `**Near you (Parcoursup 2025)**:\n${lignes.join("\n")}\n\nAll the programs are on [the map](#carte).`));
     }
     if (!blocs.length) {
-      return "Je n'ai rien trouvé de précis dans le site pour cette question. Essaie avec un métier (« infirmière », « trader »), une formation (« BTS », « prépa »), une ville (« formations à Lille ») ou un sujet (« bourse », « alternance », « Parcoursup »).\n\nTu peux aussi poser ta question gratuitement à un·e conseiller·ère de l'Onisep sur [Mon orientation en ligne](https://www.monorientationenligne.fr).";
+      return T("Je n'ai rien trouvé de précis dans le site pour cette question. Essaie avec un métier (« infirmière », « trader »), une formation (« BTS », « prépa »), une ville (« formations à Lille ») ou un sujet (« bourse », « alternance », « Parcoursup »).\n\nTu peux aussi poser ta question gratuitement à un·e conseiller·ère de l'Onisep sur [Mon orientation en ligne](https://www.monorientationenligne.fr).",
+        "I found nothing specific on the site for that question. Try a career (“nurse”, “trader”), a program (“BTS”, “prépa”), a city (“programs in Lille”) or a topic (“scholarship”, “work-study”, “Parcoursup”).\n\nYou can also ask your question for free to an Onisep advisor on [Mon orientation en ligne](https://www.monorientationenligne.fr) (in French).");
     }
     return blocs.join("\n\n");
   }
@@ -233,8 +263,9 @@ Règles :
     if (!fil) return;
     fil.innerHTML = conversation.length ? conversation.map(m =>
       `<div class="bulle bulle-${m.role === "user" ? "moi" : "ia"}">${m.role === "user" ? `<p>${A.e(m.content)}</p>` : rendre(m.content)}</div>`).join("")
-      : `<div class="bulle bulle-ia"><p>Salut ! Je connais les ${A.metiers.length} fiches métiers du site, les formations et les données Parcoursup 2025. Pose-moi une question, ou pars d'un exemple ci-dessous.</p></div>`;
-    A.$("#chat-suggestions").innerHTML = conversation.length ? "" : SUGGESTIONS.map(s => `<button type="button" class="puce" data-suggestion="${A.e(s)}">${A.e(s)}</button>`).join("");
+      : `<div class="bulle bulle-ia"><p>${T(`Salut ! Je connais les ${A.metiers.length} fiches métiers du site, les formations et les données Parcoursup 2025. Pose-moi une question, ou pars d'un exemple ci-dessous.`,
+          `Hi! I know the ${A.metiers.length} career profiles on the site, the programs and the Parcoursup 2025 data. Ask me a question, or start from an example below.`)}</p></div>`;
+    A.$("#chat-suggestions").innerHTML = conversation.length ? "" : suggestions().map(s => `<button type="button" class="puce" data-suggestion="${A.e(s)}">${A.e(s)}</button>`).join("");
   }
 
   async function envoyer() {
@@ -263,13 +294,13 @@ Règles :
         texte = await reponseGuidee(question);
         surTexte(texte);
       } else if (m === "sample") {
-        const entree = [{ role: "user", content: REGLES + "\n\nDONNÉES DU SITE :\n" + contexte + "\n\nLa conversation commence au message suivant." }, { role: "assistant", content: "Compris, je réponds à partir de ces données." }, ...tours];
+        const entree = [{ role: "user", content: regles() + "\n\nDONNÉES DU SITE :\n" + contexte + "\n\nLa conversation commence au message suivant." }, { role: "assistant", content: "Compris, je réponds à partir de ces données." }, ...tours];
         const r = await A._sample(entree, { cache: false, signal: enCours.signal, onText: ({ text }) => surTexte(text) });
         texte = r.text; surTexte(texte);
       } else {
         const rep = await fetch("api/assistant", {
           method: "POST", headers: { "Content-Type": "application/json" }, signal: enCours.signal,
-          body: JSON.stringify({ messages: tours, contexte })
+          body: JSON.stringify({ messages: tours, contexte, lang: A.lang })
         });
         if (!rep.ok || !rep.body) throw { code: rep.status === 429 ? "rate_limited" : "serveur" };
         const lecteur = rep.body.getReader(), dec = new TextDecoder();

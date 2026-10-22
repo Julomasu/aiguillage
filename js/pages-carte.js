@@ -115,7 +115,7 @@
     dessiner();
     const zone = A.$("#carte-liste");
     if (!ville) {
-      zone.innerHTML = `<div class="panneau-vide"><p class="surtitre">${carte.toutes.length.toLocaleString("fr-FR")} formations affichées</p>
+      zone.innerHTML = `<div class="panneau-vide"><p class="surtitre">${carte.toutes.length.toLocaleString(A.locale)} formations affichées</p>
         <p>Indique ta ville pour voir les formations autour de toi, triées par distance.</p>
         <div class="puces">${carte.villes.slice(0, 8).map(v => `<button type="button" class="puce" data-ville-rapide="${A.e(v[0])} (${v[1]})">${A.e(v[0])}</button>`).join("")}</div></div>`;
       return;
@@ -123,7 +123,7 @@
     const n = liste.length, max = 30 + f.voirPlus;
     const places = liste.reduce((s, r) => s + (r.places || 0), 0);
     zone.innerHTML = `
-      <div class="carte-resume"><strong>${n.toLocaleString("fr-FR")} formation${n > 1 ? "s" : ""}</strong> à moins de ${f.rayon} km de ${A.e(ville.nom)} · ${places.toLocaleString("fr-FR")} places</div>
+      <div class="carte-resume"><strong>${n.toLocaleString(A.locale)} formation${n > 1 ? "s" : ""}</strong> à moins de ${f.rayon} km de ${A.e(ville.nom)} · ${places.toLocaleString(A.locale)} places</div>
       ${n ? liste.slice(0, max).map(carteFormation).join("") : `<p class="vide-inline">Rien dans ce rayon avec ces filtres. Augmente le rayon ou retire un filtre.</p>`}
       ${n > max ? `<button type="button" class="btn btn-ligne" data-voir-plus>Voir 30 de plus</button>` : ""}`;
   }

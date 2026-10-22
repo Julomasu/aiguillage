@@ -1,10 +1,10 @@
 /* Service worker : rend le site installable et utilisable hors ligne.
    Pages et scripts : réseau d'abord (pour recevoir les mises à jour), cache en secours.
    Données (data/) : cache d'abord, rafraîchi en arrière-plan. Fonds de carte et API : jamais mis en cache ici. */
-const CACHE = "aiguillage-v5";
+const CACHE = "aiguillage-v7";
 const ESSENTIEL = [
   "./", "index.html", "manifest.webmanifest", "css/style.css",
-  "js/data/formations.js", "js/data/metiers.js", "js/data/contenus.js", "js/core.js", "js/defis.js",
+  "js/data/formations.js", "js/data/metiers.js", "js/data/contenus.js", "js/core.js", "js/defis.js", "js/i18n.js",
   "js/pages-accueil.js", "js/pages-test.js", "js/pages-plan.js", "js/pages-fiches.js", "js/pages-outils.js",
   "js/pages-carte.js", "js/pages-comparer.js", "js/pages-jpo.js", "js/pages-classe.js", "js/pages-temoignages.js", "js/config.js", "js/pages-budget.js", "js/pages-assistant.js", "js/pages-reseau.js",
   "data/parcoursup-stats.json", "data/villes.json", "data/loyers.json", "icones/icone-192.png"

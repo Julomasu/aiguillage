@@ -19,6 +19,8 @@
       <a href="#assistant" data-nav="assistant">Assistant</a>
       <button type="button" class="nav-plus" data-ouvre-plus aria-expanded="false" aria-controls="plus">Plus</button>
     </nav>
+    <button type="button" class="btn-langue" id="btn-langue" aria-label="Switch to English">EN</button>
+    <button type="button" class="btn-audio" id="btn-audio" aria-pressed="false" aria-label="Écouter cette page à voix haute"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><span>Écouter</span></button>
     <a class="km-chip" href="#carnet" data-nav="carnet" aria-label="Mon carnet de voyage"><span data-km>0</span>&nbsp;km</a>
   </div>
 </header>
@@ -29,6 +31,10 @@
     <a href="#assistant" data-nav="assistant" class="plus-mobile"><strong>L'assistant</strong><span>Pose tes questions</span></a>
     <a href="#formations" data-nav="formations" class="plus-mobile"><strong>Les formations</strong><span>Comparateur BTS, BUT, prépa…</span></a>
     <a href="#budget" data-nav="budget"><strong>Simulateur de budget</strong><span>Loyer, bourse, reste à vivre</span></a>
+    <a href="#temoignages" data-nav="temoignages"><strong>Témoignages</strong><span>Des étudiant·es racontent</span></a>
+    <a href="#classe" data-nav="classe"><strong>Espace enseignant·e</strong><span>Lancer le test en classe</span></a>
+    <a href="#defis" data-nav="defis"><strong>Défis de la semaine</strong><span>3 défis, 25 km chacun</span></a>
+    <a href="#jpo" data-nav="jpo"><strong>Portes ouvertes</strong><span>Ton planning et tes rappels agenda</span></a>
     <a href="#reseau" data-nav="reseau"><strong>LinkedIn & réseau</strong><span>Vois ce qu'ont fait les gens avant toi</span></a>
     <a href="#decodeur" data-nav="decodeur"><strong>Le décodeur</strong><span>Le jargon expliqué</span></a>
     <a href="#vraifaux" data-nav="vraifaux"><strong>Vrai ou faux</strong><span>12 idées reçues</span></a>
@@ -48,6 +54,11 @@
       <button type="button" data-reglage="taille:0">A</button>
       <button type="button" data-reglage="taille:1" class="t2">A+</button>
       <button type="button" data-reglage="taille:2" class="t3">A++</button>
+    </div>
+    <div class="reg-ligne" role="group" aria-label="Vitesse de lecture à voix haute">
+      <button type="button" data-reglage="voix:0.8">Voix lente</button>
+      <button type="button" data-reglage="voix:1">Voix normale</button>
+      <button type="button" data-reglage="voix:1.25">Voix rapide</button>
     </div>
     <div class="reg-ligne">
       <button type="button" data-reglage="calme:1">Réduire les animations</button>
@@ -76,6 +87,9 @@
 <script src="js/data/metiers.js"></script>
 <script src="js/data/contenus.js"></script>
 <script src="js/core.js"></script>
+<script src="js/defis.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/config.js"></script>
 <script src="js/pages-accueil.js"></script>
 <script src="js/pages-test.js"></script>
 <script src="js/pages-plan.js"></script>
@@ -85,4 +99,8 @@
 <script src="js/pages-budget.js"></script>
 <script src="js/pages-assistant.js"></script>
 <script src="js/pages-reseau.js"></script>
-<script>A.demarrer();</script>
+<script src="js/pages-comparer.js"></script>
+<script src="js/pages-jpo.js"></script>
+<script src="js/pages-classe.js"></script>
+<script src="js/pages-temoignages.js"></script>
+<script>A.langueChargee.then(() => A.demarrer());</script>

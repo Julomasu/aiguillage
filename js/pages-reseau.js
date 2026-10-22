@@ -114,7 +114,8 @@
             <label class="champ"><span>Ta question (facultatif)</span><input id="gen-question" value="${A.e(modele.question)}" placeholder="comment se passe la 1re année ?" autocomplete="off"></label>
           </div>
           <div class="gen-sortie">
-            <p class="gen-message" id="gen-message">${A.e(message())}</p>
+            <p class="gen-message" id="gen-message" data-i18n-skip>${A.e(message())}</p>
+            <p class="petit">Le message est rédigé en français, pour des contacts en France.</p>
             <p class="petit" id="gen-compte"></p>
             <button type="button" class="btn btn-ligne" data-copier>Copier le message</button>
           </div>

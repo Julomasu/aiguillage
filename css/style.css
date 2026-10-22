@@ -844,3 +844,7 @@ code { font-size: .9em; background: var(--surface-2); padding: 1px 5px; border-r
 .tem-large { grid-column: 1 / -1; }
 .btn.desactive { opacity: .45; pointer-events: none; }
 @media (max-width: 720px) { .tem-form { grid-template-columns: 1fr; } }
+
+/* ——— Bascule de langue */
+.btn-langue { padding: 7px 10px; border-radius: 999px; border: 2px solid var(--ink); background: transparent; font-weight: 800; font-size: .8rem; letter-spacing: .04em; }
+.btn-langue:hover { background: var(--surface-2); }

@@ -5,7 +5,7 @@ import Anthropic from "@anthropic-ai/sdk";
 const client = new Anthropic(); // clé lue dans ANTHROPIC_API_KEY
 
 // Mêmes règles que dans js/pages-assistant.js (utilisées là-bas pour l'aperçu claude.ai) : garder les deux en phase.
-const REGLES = `Tu es l'assistant d'orientation d'Aiguillage, un site gratuit qui aide les lycéen·nes français·es à choisir leurs études.
+const REGLES_FR = `Tu es l'assistant d'orientation d'Aiguillage, un site gratuit qui aide les lycéen·nes français·es à choisir leurs études.
 Règles :
 - Réponds en français, en tutoyant, avec des phrases simples (niveau lycée). 120 à 250 mots maximum sauf si on te demande plus de détail.
 - Appuie-toi d'abord sur les DONNÉES DU SITE fournies ci-dessous. Si une information n'y figure pas, dis-le et renvoie vers Parcoursup, l'Onisep ou le/la Psy-EN du lycée. N'invente jamais un chiffre, un taux d'accès, un salaire ou une date.
@@ -14,6 +14,16 @@ Règles :
 - Sois honnête sur la sélectivité, mais ne décourage jamais : propose toujours au moins un chemin réaliste depuis le bac de la personne, y compris l'alternance et les passerelles.
 - Tu ne connais pas les notes de la personne : ne prédis pas ses chances d'admission.
 - Pas de sujets hors orientation, études, métiers, vie étudiante : recentre gentiment.`;
+
+const REGLES_EN = `You are the guidance assistant of Aiguillage, a free site that helps French high-school students choose their studies. Many users are English-speaking families or students at French schools abroad.
+Rules:
+- Answer in English, in a friendly and simple tone (high-school level). 120 to 250 words maximum unless asked for more detail. Keep the French names of degrees and of Parcoursup (BTS, BUT, prépa, licence…) and explain them briefly the first time.
+- Rely first on the SITE DATA provided below. If something is not there, say so and point to Parcoursup, Onisep or the school's guidance counselor (Psy-EN). Never invent a figure, an access rate, a salary or a date.
+- Parcoursup figures are from the 2025 session. Say so when you quote them.
+- When you mention a career or a program present in the data, add a Markdown link to its page, exactly as [Name](#metier-identifier) or [Name](#formation-identifier).
+- Be honest about selectivity but never discourage: always offer at least one realistic path from the person's bac, including work-study and bridges.
+- You do not know the person's grades: do not predict their chances of admission.
+- No topics outside guidance, studies, careers and student life: gently refocus.`;
 
 const LIMITES = { messages: 12, caracteresMessage: 2000, caracteresContexte: 40000, requetesParFenetre: 20, fenetreMs: 10 * 60 * 1000 };
 const compteurs = new Map(); // ip -> [horodatages]
@@ -33,7 +43,7 @@ function valider(corps) {
     .map(m => ({ role: m.role, content: m.content.slice(0, LIMITES.caracteresMessage) }));
   while (messages.length && messages[0].role !== "user") messages.shift();
   if (!messages.length || messages[messages.length - 1].role !== "user") return null;
-  return { messages, contexte: corps.contexte.slice(0, LIMITES.caracteresContexte) };
+  return { messages, contexte: corps.contexte.slice(0, LIMITES.caracteresContexte), lang: corps.lang === "en" ? "en" : "fr" };
 }
 
 export function assistantDisponible() {
@@ -59,8 +69,8 @@ export async function repondre(requete, ip = "inconnue") {
           betas: ["server-side-fallback-2026-07-01"],
           fallbacks: "default", // si un filtre de sécurité refuse, l'API relance sur le modèle de repli recommandé
           system: [
-            { type: "text", text: REGLES, cache_control: { type: "ephemeral" } },
-            { type: "text", text: "DONNÉES DU SITE :\n" + corps.contexte }
+            { type: "text", text: corps.lang === "en" ? REGLES_EN : REGLES_FR, cache_control: { type: "ephemeral" } },
+            { type: "text", text: (corps.lang === "en" ? "SITE DATA:\n" : "DONNÉES DU SITE :\n") + corps.contexte }
           ],
           messages: corps.messages
         }, { signal: requete.signal });
@@ -72,16 +82,16 @@ export async function repondre(requete, ip = "inconnue") {
         }
         const final = await stream.finalMessage();
         if (final.stop_reason === "refusal") {
-          controleur.enqueue(encodeur.encode("\n\nJe ne peux pas répondre à cette question. Reformule-la, ou demande au/à la Psy-EN de ton lycée."));
+          controleur.enqueue(encodeur.encode(corps.lang === "en" ? "\n\nI can't answer that question. Rephrase it, or ask your school's Psy-EN." : "\n\nJe ne peux pas répondre à cette question. Reformule-la, ou demande au/à la Psy-EN de ton lycée."));
         } else if (final.stop_reason === "max_tokens") {
-          controleur.enqueue(encodeur.encode("\n\n(Réponse coupée : pose une question plus précise.)"));
+          controleur.enqueue(encodeur.encode(corps.lang === "en" ? "\n\n(Answer cut short: ask a more specific question.)" : "\n\n(Réponse coupée : pose une question plus précise.)"));
         }
       } catch (e) {
-        if (e instanceof Anthropic.RateLimitError) controleur.enqueue(encodeur.encode("\n\n(Beaucoup de demandes en ce moment : réessaie dans une minute.)"));
+        if (e instanceof Anthropic.RateLimitError) controleur.enqueue(encodeur.encode(corps.lang === "en" ? "\n\n(Lots of requests right now: try again in a minute.)" : "\n\n(Beaucoup de demandes en ce moment : réessaie dans une minute.)"));
         else if (e instanceof Anthropic.APIUserAbortError || requete.signal?.aborted) { /* la personne a arrêté */ }
         else {
           console.error("assistant :", e);
-          controleur.enqueue(encodeur.encode("\n\n(L'assistant a rencontré une erreur. Réessaie dans un instant.)"));
+          controleur.enqueue(encodeur.encode(corps.lang === "en" ? "\n\n(The assistant ran into an error. Try again in a moment.)" : "\n\n(L'assistant a rencontré une erreur. Réessaie dans un instant.)"));
         }
       } finally {
         controleur.close();
