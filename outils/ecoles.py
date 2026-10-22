@@ -284,7 +284,7 @@ for s in cti:
     noms = [n for n in s["noms"] if n]
     if not noms:
         continue
-    if re.match(r"^(\\|-|–|le décret|décret|siège|point courrier|formations?\b|\.)", noms[0].strip().lower()) or any(("décret" in n.lower() or "créée" in n.lower()) for n in noms) or (not s["titres"] and not s["specialisation"]):
+    if re.match(r"^(\\|-|–|le décret|décret|siège|point courrier|formations?\b|\.)", noms[0].strip().lower()) or any(("décret" in n.lower() or "créée" in n.lower() or n.lstrip().startswith(("\\", "-", "–"))) for n in noms) or (not s["titres"] and not s["specialisation"]):
         continue
     ecole = re.sub(r"\s+-\s+(Campus|Site|Bâtiment|B\.?P).*$", "", noms[-1])
     parent = noms[0] if len(noms) > 1 else ""

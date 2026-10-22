@@ -53,6 +53,8 @@ A.EN_UI = Object.assign(A.EN_UI || {}, {
   "Les informations de cette fiche sont indicatives et peuvent être incomplètes. Les frais de scolarité, les dates et la reconnaissance du diplôme changent : vérifie-les sur le site de l'école.": "The information on this page is indicative and may be incomplete. Tuition fees, dates and degree recognition change: check them on the school's website.",
   "Les établissements de Parcoursup, les écoles d'ingénieurs accréditées, et celles qui recrutent hors Parcoursup : écoles de design, de numérique, de cinéma, grandes écoles de commerce en {n} ans…": "The institutions of Parcoursup, the accredited engineering schools, and those that recruit outside Parcoursup: design, digital and film schools, {n}-year business schools…", "Voir sur la carte": "See on the map",
   "Annuaire": "Directory", "Les écoles": "The schools", "IÉSEG, École Bleue, Epitech… toutes les écoles, même celles hors Parcoursup.": "IÉSEG, École Bleue, Epitech… all the schools, even those outside Parcoursup.",
+  "Se trouver": "Find yourself", "Choisir sa formation ou son école": "Choose your program or school", "Préparer son dossier": "Prepare your application", "Aller plus loin": "Go further",
+  "Comparer {n} formations": "Compare {n} programs", "Taux d'accès, places, profil des admis, emploi : deux formations précises face à face.": "Access rate, places, admitted profile, employment: two specific programs face to face.",
   "Taux d'accès": "Access rate",
   "Où": "Where",
   "Université (licence, BUT, PASS)": "University (licence, BUT, PASS)",

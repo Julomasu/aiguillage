@@ -19,6 +19,7 @@
         <h1>La carte des formations</h1>
         <p class="chapo">Toutes les formations de Parcoursup, avec leur vrai taux d'accès et le profil des admis l'an dernier. Choisis ta ville pour voir ce qui est accessible sans déménager.</p>
       </section>
+      <div class="panneau-filtres">
       <div class="carte-outils">
         <label class="champ"><span>Ta ville</span>
           <input id="carte-ville" list="liste-villes" type="search" autocomplete="off" placeholder="Ex. Lille, Rennes, Pau…" value="${A.e(A.etat.ville ? A.etat.ville.nom : "")}">
@@ -39,6 +40,7 @@
       <div class="puces">
         <button type="button" class="puce" data-public aria-pressed="${f.publicSeul}">Public seulement</button>
         <button type="button" class="puce" data-bacpro aria-pressed="${f.bacPro}">A admis des bacs pro${p && p.bac === "p" ? " (comme toi)" : ""}</button>
+      </div>
       </div>
       <div class="carte-zone">
         <div class="carte-boite">

@@ -1,7 +1,7 @@
 /* Service worker : rend le site installable et utilisable hors ligne.
    Pages et scripts : réseau d'abord (pour recevoir les mises à jour), cache en secours.
    Données (data/) : cache d'abord, rafraîchi en arrière-plan. Fonds de carte et API : jamais mis en cache ici. */
-const CACHE = "aiguillage-v8";
+const CACHE = "aiguillage-v9";
 const ESSENTIEL = [
   "./", "index.html", "manifest.webmanifest", "css/style.css",
   "js/data/formations.js", "js/data/metiers.js", "js/data/contenus.js", "js/core.js", "js/defis.js", "js/i18n.js",

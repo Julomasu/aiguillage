@@ -158,6 +158,7 @@
         <h1>Toutes les écoles</h1>
         <p class="chapo" id="ec-chapo">Les établissements de Parcoursup, les écoles d'ingénieurs accréditées, et celles qui recrutent <strong>hors Parcoursup</strong> : écoles de design, de numérique, de cinéma, grandes écoles de commerce en 5 ans…</p>
       </section>
+      <div class="panneau-filtres">
       <div class="carte-outils">
         <label class="champ"><span>Nom, sigle ou ville</span>
           <input id="ec-q" type="search" autocomplete="off" placeholder="Ex. IÉSEG, École Bleue, Rennes, design…" value="${A.e(f.q)}">
@@ -176,10 +177,11 @@
         </label>
       </div>
       <div class="puces" role="group" aria-label="Domaines">
-        ${CATS.map(c => `<button type="button" class="puce puce-famille" data-cat="${c[0]}" aria-pressed="${f.cats.has(c[0])}" style="--c:${c[2]}"><i></i>${A.e(c[1])}</button>`).join("")}
+        ${CATS.map(c => `<button type="button" class="puce puce-dom" data-cat="${c[0]}" aria-pressed="${f.cats.has(c[0])}" style="--c:${c[2]}"><i></i>${A.e(c[1])}<span class="ec-n" data-n="${c[0]}"></span></button>`).join("")}
       </div>
       <div class="puces">
         <button type="button" class="puce" data-hors aria-pressed="${f.hors}">Hors Parcoursup seulement</button>
+      </div>
       </div>
       <p class="ec-compte" id="ec-compte" aria-live="polite">Chargement de l'annuaire…</p>
       <div class="ec-liste" id="ec-liste"></div>
@@ -190,6 +192,9 @@
       if (A.lireHash().page !== "ecoles") return;
       donnees = preparer(d);
       A.$("#ec-chapo").innerHTML = `${donnees.length.toLocaleString(A.locale)} établissements : les ${donnees.filter(o => o.ps).length.toLocaleString(A.locale)} de Parcoursup, les écoles d'ingénieurs accréditées, et <strong>${donnees.filter(o => !o.ps).length.toLocaleString(A.locale)} qui recrutent hors Parcoursup</strong> (écoles de design, de numérique, de cinéma, grandes écoles en 5 ans…).`;
+      const n = {};
+      donnees.forEach(o => o.c.forEach(c => { n[c] = (n[c] || 0) + 1; }));
+      A.$$("[data-n]").forEach(x => { x.textContent = n[x.dataset.n] || 0; });
       brancher(el);
       maj();
     }).catch(() => { A.$("#ec-compte").innerHTML = A.messageErreurDonnees; });
