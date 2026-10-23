@@ -45,8 +45,8 @@
           </ul>
         </section>
         <section>
-          <h2>Logos et marques</h2>
-          <p>Les logos et noms d'établissements, d'entreprises et d'organismes appartiennent à leurs propriétaires. Ils sont affichés uniquement pour identifier l'organisme concerné, sans suggérer de partenariat. Ils peuvent être masqués dans « Plus », rubrique Affichage. Pour demander le retrait d'un logo ou d'un nom, utilise les coordonnées ci-dessus.</p>
+          <h2>Marques</h2>
+          <p>Les noms d'établissements, d'entreprises et d'organismes appartiennent à leurs propriétaires. Ils sont cités uniquement pour identifier l'organisme concerné, sans suggérer de partenariat. Le site n'affiche aucun logo. Pour demander le retrait d'un nom, utilise les coordonnées ci-dessus.</p>
         </section>
         <section>
           <h2>Droits sur le site</h2>
@@ -73,7 +73,7 @@
         </section>
         <section>
           <h2>Ce qui reste dans ton navigateur</h2>
-          <p>Pour fonctionner, le site enregistre sur ton appareil (stockage local du navigateur, qui n'est pas un cookie) : ton profil et tes réponses au test, tes métiers favoris, ta ville et ton budget, la liste de formations à comparer, et tes réglages (thème, taille du texte, langue, logos, voix). Ces données servent uniquement à te les ré-afficher. Tu peux tout effacer depuis « Plus », rubrique « Mes favoris », bouton « Effacer mes données », ou en vidant les données du site dans ton navigateur.</p>
+          <p>Pour fonctionner, le site enregistre sur ton appareil (stockage local du navigateur, qui n'est pas un cookie) : ton profil et tes réponses au test, tes métiers favoris, ta ville et ton budget, la liste de formations à comparer, et tes réglages (thème, taille du texte, langue, voix). Ces données servent uniquement à te les ré-afficher. Tu peux tout effacer depuis « Plus », rubrique « Mes favoris », bouton « Effacer mes données », ou en vidant les données du site dans ton navigateur.</p>
         </section>
         <section>
           <h2>Les services extérieurs qui peuvent voir ton adresse IP</h2>
@@ -81,7 +81,6 @@
           <ul>
             <li><strong>Hébergement (GitHub Pages)</strong> : chaque visite génère des journaux techniques standard chez GitHub, Inc. Voir <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">la politique de confidentialité de GitHub</a>.</li>
             <li><strong>Page Carte</strong> : le fond de carte est chargé depuis OpenFreeMap (tiles.openfreemap.org). Ce service reçoit ton adresse IP et la zone que tu regardes. Rien d'autre n'est envoyé.</li>
-            <li><strong>Logos</strong> : les logos des écoles et organismes sont chargés depuis le service d'icônes de Google (google.com/s2/favicons), qui reçoit ton adresse IP et le nom de domaine de chaque organisme affiché. Tu peux l'éviter en désactivant « Logos des écoles » dans « Plus ».</li>
             <li><strong>Polices</strong> : hébergées sur ce site, aucune requête vers Google Fonts.</li>
             <li><strong>Liens sortants</strong> (Parcoursup, Onisep, LinkedIn, sites d'écoles…) : une fois le lien ouvert, tu es sur un autre site, avec sa propre politique.</li>
             <li><strong>Témoignages</strong> : le bouton « Proposer » ouvre un formulaire GitHub. Si tu l'envoies, il est publié comme une demande publique sous ton compte GitHub. Seuls le prénom et le texte que tu choisis de partager sont repris sur le site, après relecture.</li>

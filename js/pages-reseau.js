@@ -55,7 +55,7 @@
     el.innerHTML = `
       <section class="tete-page">
         <p class="surtitre">Ton réseau, dès le lycée</p>
-        <h1 class="titre-logo">${A.logoLinkedIn(44)}<span>LinkedIn & réseau</span></h1>
+        <h1>LinkedIn & réseau</h1>
         <p class="chapo">Beaucoup de stages et d'alternances se trouvent grâce à des contacts. Et surtout, tu peux voir ce qu'ont fait les gens avant toi : leurs études, leurs premiers jobs, leurs détours. C'est gratuit, et ça s'apprend en 15 minutes.</p>
       </section>
 
@@ -93,7 +93,7 @@
           <label class="champ"><span>Un métier ou une formation à explorer</span>
             <input id="li-terme" type="search" placeholder="Ex. analyste M&A, BUT GEA, infirmière" autocomplete="off">
           </label>
-          <a class="btn btn-signal btn-logo" id="li-lien" href="https://www.linkedin.com/search/results/people/" target="_blank" rel="noopener">${A.logoLinkedIn(20)}<span>Chercher sur LinkedIn</span></a>
+          <a class="btn btn-signal" id="li-lien" href="https://www.linkedin.com/search/results/people/" target="_blank" rel="noopener"><span>Chercher sur LinkedIn</span></a>
         </form>
         <p class="petit">Il faut être connecté·e à LinkedIn pour voir les résultats. Sans compte, tape la même recherche dans un moteur de recherche suivi de « LinkedIn ».</p>
       </section>
@@ -134,7 +134,7 @@
         <h2>D'autres outils gratuits</h2>
         <a class="bandeau-lien" href="#temoignages"><strong>Lis des témoignages d'étudiant·es</strong><span>Ou écris le tien si tu es déjà dans le supérieur.</span></a>
         <div class="grille-aides">${OUTILS.map(o => `
-          <article class="carte-aide"><div class="ca-tete">${A.logoSite(o.lien, o.nom, 32)}</div><h3>${A.e(o.nom)}</h3><p>${A.e(o.texte)}</p><a class="lien-fleche" href="${o.lien}" target="_blank" rel="noopener">Ouvrir</a></article>`).join("")}
+          <article class="carte-aide"><h3>${A.e(o.nom)}</h3><p>${A.e(o.texte)}</p><a class="lien-fleche" href="${o.lien}" target="_blank" rel="noopener">Ouvrir</a></article>`).join("")}
         </div>
       </section>`;
 

@@ -376,7 +376,6 @@
         if (cle === "theme") r.theme = val;
         if (cle === "taille") r.taille = Number(val);
         if (cle === "calme") r.calme = !r.calme;
-        if (cle === "logos") { r.logos = r.logos === false; A.sauver(); A.rendre(); }
         if (cle === "voix") r.voix = Number(val);
         A.sauver();
         A.appliquerReglages();
@@ -400,7 +399,7 @@
     const r = A.etat.reglages;
     A.$$("[data-reglage]").forEach(b => {
       const [cle, val] = b.dataset.reglage.split(":");
-      const actif = cle === "theme" ? r.theme === val : cle === "taille" ? r.taille === Number(val) : cle === "voix" ? r.voix === Number(val) : cle === "logos" ? r.logos !== false : !!r.calme;
+      const actif = cle === "theme" ? r.theme === val : cle === "taille" ? r.taille === Number(val) : cle === "voix" ? r.voix === Number(val) : !!r.calme;
       b.setAttribute("aria-pressed", String(actif));
     });
   }

@@ -1,6 +1,9 @@
 /* Annuaire des écoles : tous les établissements de Parcoursup, les écoles d'ingénieurs accréditées (CTI) et des écoles
    qui recrutent hors Parcoursup (École Bleue, Epitech, IÉSEG en 5 ans…). Données : data/ecoles.json, générées par outils/ecoles.py. */
 (function () {
+  const EMOJI_CAT = { commerce: "💼", ingenieur: "⚙️", numerique: "💻", "art-design": "🎨", media: "🎬", "sciences-po": "🏛️", universite: "🎓", sante: "⚕️", "social-sport": "🤝",
+    hotellerie: "🍽️", architecture: "📐", "aero-maritime": "✈️", "service-public": "🛡️", droit: "⚖️", agro: "🌱", culture: "🎭", lycee: "🏫", autre: "🏫" };
+  const emojiEcole = o => `<span class="ec-emoji" aria-hidden="true">${EMOJI_CAT[(o.c || [])[0]] || "🏫"}</span>`;
   const CATS = [
     ["commerce", "Commerce & management", "#3BB3E0"], ["ingenieur", "Ingénieur", "#1B998B"], ["numerique", "Numérique & jeu vidéo", "#2F5BEA"],
     ["art-design", "Art, design & mode", "#E85D9E"], ["media", "Communication, médias & cinéma", "#7A3FD1"], ["sciences-po", "Sciences po & politique", "#7A3FD1"],
@@ -133,7 +136,7 @@
     const reco = (o.r || []).slice(0, 2).map(r => `<span class="ec-reco">${A.e(trData(r))}</span>`).join("");
     return `<article class="ec" id="ec-${A.e(o.id)}">
       <header class="ec-carte-logo">
-        ${A.logoEcole(o, 44)}
+        ${emojiEcole(o)}
         <h3><a href="#ecole-${A.e(o.id)}">${A.e(o.n)}</a>${o.s && !sa(o.n).includes(sa(o.s)) ? ` <span class="ec-sigle">${A.e(o.s)}</span>` : ""}</h3>
         ${o.dist != null && o.dist !== Infinity ? `<span class="ec-dist">${o.dist < 1 ? "< 1" : Math.round(o.dist)} km</span>` : ""}
       </header>
@@ -252,7 +255,7 @@
         <section class="tete-page ec-tete">
           <a class="retour" href="#ecoles">← L'annuaire</a>
           <p class="surtitre">${o.c.map(c => (CAT[c] || CAT.autre).nom).join(" · ")}</p>
-          <div class="ec-tete-logo">${A.logoEcole(o, 72)}<h1>${A.e(o.n)}${o.s && !sa(o.n).includes(sa(o.s)) ? ` <small class="ec-sigle">${A.e(o.s)}</small>` : ""}</h1></div>
+          <div class="ec-tete-logo">${emojiEcole(o)}<h1>${A.e(o.n)}${o.s && !sa(o.n).includes(sa(o.s)) ? ` <small class="ec-sigle">${A.e(o.s)}</small>` : ""}</h1></div>
           <div class="ec-lignes">${o.c.map(puceCat).join("")}<span class="ec-statut">${A.e(STATUT[o.st] || "")}</span>${badgeParcoursup(o)}</div>
         </section>
         <div class="ec-grille">
