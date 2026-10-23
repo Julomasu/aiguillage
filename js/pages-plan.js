@@ -53,6 +53,7 @@
       </div>
       <p class="conseil-bac">${CONSEIL[vue.bac]} <span id="conseil-chiffres"></span></p>
       <ul class="legende-acces">${A.acces.slice().reverse().map(a => `<li>${A.tagAcces(a.niv)}</li>`).join("")}</ul>
+      <p class="petit">Estimation rédigée par l'équipe en octobre 2026, pas une donnée officielle. Pour les taux d'accès réels, ouvre la carte : elle affiche les chiffres Parcoursup de chaque formation.</p>
       <div class="domaines">${A.lignes.map(carteDomaine).join("")}</div>`;
   }
 

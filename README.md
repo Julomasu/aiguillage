@@ -142,7 +142,7 @@ manifest.webmanifest, sw.js, icones/   application installable (PWA)
 
 Ajouter un métier : un objet dans `A.metiers` avec `formations: [ids]`. Relier une formation à Parcoursup : une entrée dans `PSUP` (`js/data/formations.js`), `[filière, motif sur l'intitulé]`.
 
-Les salaires et certains niveaux d'accès sont des estimations rédigées : à faire relire avant une mise en ligne publique.
+Les salaires et les niveaux d'accès sont des estimations rédigées : chaque fiche et la page Plan l'indiquent (« estimation rédigée par l'équipe, pas une donnée officielle »). À faire relire avant une diffusion large.
 
 ## Organisation du site
 
