@@ -22,7 +22,7 @@
           <h3>Conseils</h3>
           <ul>${t.conseils.map(c => `<li>${A.e(c)}</li>`).join("")}</ul>
           ${t.note ? `<p class="petit">${A.e(t.note)}</p>` : ""}
-          <p class="petit"><span class="titre-logo">${A.logoSite(t.lien, t.nom, 24)}<a href="${A.e(t.lien)}" target="_blank" rel="noopener">Site officiel</a></span> · Prix et dates changent : vérifie toujours avant de t'inscrire.</p>
+          <p class="petit"><a href="${A.e(t.lien)}" target="_blank" rel="noopener">Site officiel</a> · Prix et dates changent : vérifie toujours avant de t'inscrire.</p>
         </div>
       </details>`;
   }

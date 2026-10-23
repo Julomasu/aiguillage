@@ -147,7 +147,7 @@
   A.pages.aides = function (el) {
     const carte = a => `
           <article class="carte-aide">
-            <div class="ca-tete">${A.logoSite(a.lien, a.titre, 32)}<span class="ca-montant">${A.e(a.montant)}</span></div>
+            <div class="ca-tete"><span class="ca-montant">${A.e(a.montant)}</span></div>
             <h3>${A.e(a.titre)}</h3>
             <p>${A.e(a.texte)}</p>
             <a class="lien-fleche" href="${a.lien}" target="_blank" rel="noopener">${A.e(a.lienTexte)}</a>
