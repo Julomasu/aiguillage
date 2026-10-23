@@ -36,7 +36,7 @@
         <span class="sal-pt sal-pt-fin" style="left:${pos(m.salaire[1])}%"></span>
       </div>
       <div class="sal-valeurs"><span><b>${A.euros(m.salaire[0])}</b> en début de carrière</span><span><b>${m.salaire[1] >= ECHELLE ? "+ de " : ""}${A.euros(m.salaire[1])}</b> confirmé·e</span></div>
-      <p class="petit">Brut mensuel indicatif, hors primes. Ça varie selon la région, le secteur (public/privé) et le statut.</p>
+      <p class="petit">Estimation rédigée par l'équipe en octobre 2026, pas une donnée officielle. Brut mensuel, hors primes. Ça varie selon la région, le secteur (public/privé) et le statut. Vérifie sur les sites officiels avant de décider.</p>
     </div>`;
   }
 
@@ -449,6 +449,7 @@
         <section class="bloc">
           <h2>Accès selon ton bac</h2>
           <ul class="acces-bacs">${A.bacs.map(b => `<li class="${p && p.bac === b.id ? "le-tien" : ""}"><span>${b.nom}${p && p.bac === b.id ? " <em>(toi)</em>" : ""}</span>${A.tagAcces(f.acces[b.id])}</li>`).join("")}</ul>
+          <p class="petit">Estimation rédigée par l'équipe en octobre 2026, pas une donnée officielle. Pour les taux d'accès réels, ouvre la carte : elle affiche les chiffres Parcoursup de chaque formation.</p>
           ${f.ideal.length ? `<p class="petit">Atouts : ${f.ideal.map(x => `<span class="puce puce-statique">${A.e(nomAtout(x))}</span>`).join(" ")}</p>` : ""}
         </section>
         <section class="bloc"><h2>Et après ?</h2><p>${A.e(f.apres)}</p></section>

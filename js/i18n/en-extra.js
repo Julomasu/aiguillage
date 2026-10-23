@@ -1,6 +1,10 @@
 /* Compléments du dictionnaire de l'interface (anglais), écrits à la main : libellés qui ressemblent à des données
    et que le relevé automatique de en-ui.js n'avait donc pas retenus. Même format : clé française, {n} pour les nombres. */
 A.EN_UI = Object.assign(A.EN_UI || {}, {
+  "Estimation rédigée par l'équipe en octobre {n}, pas une donnée officielle. Brut mensuel, hors primes. Ça varie selon la région, le secteur (public/privé) et le statut. Vérifie sur les sites officiels avant de décider.":
+    "Estimate written by the team in October {n}, not official data. Gross monthly, bonuses excluded. It varies with the region, the sector (public/private) and the status. Check the official sites before deciding.",
+  "Estimation rédigée par l'équipe en octobre {n}, pas une donnée officielle. Pour les taux d'accès réels, ouvre la carte : elle affiche les chiffres Parcoursup de chaque formation.":
+    "Estimate written by the team in October {n}, not official data. For actual admission rates, open the map: it shows the Parcoursup figures for each programme.",
   "Il répond à partir des fiches du site et des données Parcoursup. C'est une aide pour réfléchir : vérifie toujours sur Parcoursup et parles-en au/à la Psy-EN de ton lycée.":
     "It answers from the site's profiles and the Parcoursup data. It is a thinking aid: always check on Parcoursup and talk to your school's Psy-EN.",
   "Il répond à partir des fiches du site et des données Parcoursup, en tenant compte de ton profil. C'est une aide pour réfléchir : vérifie toujours sur Parcoursup et parles-en au/à la Psy-EN de ton lycée.":
