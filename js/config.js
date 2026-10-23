@@ -5,10 +5,12 @@ A.CONFIG = {
   // Adresse e-mail (facultative) qui reçoit aussi les témoignages.
   emailTemoignages: "",
   // Identité de l'éditeur, affichée dans les mentions légales. À renseigner avant de communiquer largement sur le site.
-  // Un éditeur non professionnel peut rester anonyme (loi du 21 juin 2004, art. 6-III-2) à condition de communiquer son identité à l'hébergeur
-  // et d'indiquer ici les coordonnées de l'hébergeur ; un éditeur professionnel doit indiquer nom, adresse, e-mail et directeur de la publication.
+  // Un éditeur non professionnel peut rester anonyme (loi n° 2004-575 du 21 juin 2004, art. 1-1, II, en vigueur depuis le 23/05/2024 ; Légifrance, vérifié le 2026-10-23)
+  // à condition d'avoir communiqué son identité (nom, prénoms, domicile, téléphone) à l'hébergeur : les mentions n'indiquent alors que l'hébergeur.
+  // Un éditeur professionnel (revenus réguliers, activité lucrative) doit publier son identité : repasser alors à anonyme: false et remplir les champs ci-dessous.
   // Ces règles sont à faire valider pour ta situation précise.
   editeur: {
+    anonyme: true,            // true = éditeur non professionnel anonyme (identité donnée à l'hébergeur) ; les champs ci-dessous restent vides
     nom: "",                  // nom et prénom, ou raison sociale
     statut: "",               // ex. « personne physique, non professionnel » ou « association », « société »…
     directeurPublication: "", // souvent identique à l'éditeur

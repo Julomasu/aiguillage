@@ -6,6 +6,7 @@
   const ed = () => A.CONFIG.editeur || {};
   const ligneEd = (libelle, valeur) => valeur ? `<li><strong>${libelle}</strong> : ${e(valeur)}</li>` : "";
   const editeurComplet = () => !!(ed().nom && ed().contact);
+  const anonyme = () => !!ed().anonyme;
 
   function tete(surtitre, titre, chapo) {
     return `<section class="tete-page"><p class="surtitre">${surtitre}</p><h1>${titre}</h1><p class="chapo">${chapo}</p></section>`;
@@ -18,7 +19,7 @@
       <div class="legal">
         <section>
           <h2>Éditeur du site</h2>
-          ${editeurComplet() ? `<ul>
+          ${anonyme() ? `<p>Le site est édité par une personne physique, à titre non professionnel. Elle a choisi de rester anonyme, comme la loi le permet (article 1-1, II de la <a href="https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000049568614" target="_blank" rel="noopener">loi n° 2004-575 du 21 juin 2004</a>, en vigueur depuis le 23 mai 2024 ; texte vérifié sur Légifrance le 23 octobre 2026). Son identité a été communiquée à l'hébergeur indiqué plus bas.</p>` : editeurComplet() ? `<ul>
             ${ligneEd("Éditeur", d.nom)}${ligneEd("Statut", d.statut)}${ligneEd("Directeur·rice de la publication", d.directeurPublication || d.nom)}${ligneEd("Adresse", d.adresse)}${ligneEd("Contact", d.contact)}
           </ul>` : `<p class="encart alerte-config"><strong>Informations de l'éditeur à compléter.</strong> Renseigne le nom et l'adresse e-mail de contact dans <code>js/config.js</code> (rubrique <code>editeur</code>) avant de publier le site largement.</p>`}
           <p>Aiguillage est un service d'information gratuit, sans but lucratif et indépendant. Il n'est lié ni au ministère de l'Enseignement supérieur, ni à Parcoursup, ni à l'Onisep, ni à aucun établissement cité.</p>
@@ -30,7 +31,7 @@
         <section>
           <h2>Contenus et responsabilité</h2>
           <p>Les informations (salaires, coûts, conditions d'accès, aides, calendriers) sont données à titre indicatif et peuvent être incomplètes ou dépassées. Elles ne remplacent ni les sites officiels (Parcoursup, Onisep, Service-Public, établissements) ni l'avis d'un·e professionnel·le de l'orientation. Vérifie toujours avant de t'engager ou de déposer un dossier.</p>
-          <p>Une erreur, une information à mettre à jour, un contenu à retirer ? ${d.contact ? `Écris à <strong>${e(d.contact)}</strong> ou` : ""} ouvre une demande sur <a href="https://github.com/${e(A.CONFIG.depotGithub)}/issues" target="_blank" rel="noopener">le dépôt du projet</a>.</p>
+          <p>Une erreur, une information à mettre à jour, un contenu à retirer ? ${d.contact ? `Écris à <strong>${e(d.contact)}</strong> ou` : ""} ouvre une demande sur <a href="https://github.com/${e(A.CONFIG.depotGithub)}/issues" target="_blank" rel="noopener">le dépôt du projet</a>.${anonyme() && !d.contact ? " Cette demande est publique : n'y écris aucune donnée personnelle." : ""}</p>
         </section>
         <section>
           <h2>Sources des données et licences</h2>
@@ -101,7 +102,7 @@
         </section>
         <section>
           <h2>Tes droits</h2>
-          <p>Le site ne conserve pas de données personnelles te concernant en dehors des journaux techniques de l'hébergeur. Pour toute question ou demande (accès, effacement, opposition)${d.contact ? `, écris à <strong>${e(d.contact)}</strong>` : ", utilise les coordonnées des mentions légales"}. Tu peux aussi saisir la CNIL : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr/fr/plaintes</a>.</p>
+          <p>Le site ne conserve pas de données personnelles te concernant en dehors des journaux techniques de l'hébergeur. Pour toute question ou demande (accès, effacement, opposition)${d.contact ? `, écris à <strong>${e(d.contact)}</strong>` : ", ouvre une demande sur <a href=\"https://github.com/" + e(A.CONFIG.depotGithub) + "/issues\" target=\"_blank\" rel=\"noopener\">le dépôt du projet</a> (elle est publique : n'y écris aucune donnée personnelle)"}. Tu peux aussi saisir la CNIL : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr/fr/plaintes</a>.</p>
         </section>
         <p class="petit">Dernière mise à jour : ${MAJ}. Voir aussi les <a href="#mentions">mentions légales</a>.</p>
       </div>`;
