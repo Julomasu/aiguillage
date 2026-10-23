@@ -15,7 +15,7 @@ A.CONFIG = {
     contact: "",              // adresse e-mail de contact (affichée publiquement)
     adresse: ""               // adresse postale (obligatoire pour un éditeur professionnel ; facultative sinon, si l'identité est donnée à l'hébergeur)
   },
-  // Mesure d'audience sans cookie : GoatCounter (gratuit pour un usage non commercial). Renseigner le code du compte
+  // Mesure d'audience sans cookie : GoatCounter (service hébergé gratuit pour un « usage public raisonnable », vérifié sur goatcounter.com le 2026-10-23). Renseigner le code du compte
   // (« monsite » pour monsite.goatcounter.com). Vide = aucune mesure et aucun script chargé.
-  audience: { goatcounter: "" }
+  audience: { goatcounter: "aiguillage" }
 };
